@@ -2,12 +2,13 @@ project:
   type: website
 
 website:
-  title: "DSPProgramHandbook.AUBiology.github.io"
+  title: "DSPProgram.AUBiology.github.io"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      #- about.qmd
+      - about.qmd
+      - handbookIntro.qmd
 
 format:
   html:

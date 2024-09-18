@@ -6,61 +6,63 @@ title: "Introduction to the Handbook"
 
 ## What this handbook *is*.
 
-The DSP Program Handbook contains information on the DSP Program (see ###) as well as resources for data collection, analysis and statistical modelling tasks.
+The DSP Program Handbook contains information on the DSP Program as well as resources for data collection, analysis and statistical modelling tasks.
 
-The information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercise consistent with our teaching.  We aim to give explicit, complete examples (avoiding common shortcuts to coding syntax) so the computational logic is clear and to aid in applying skills across programming languages.
+The information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercises consistent with the DSP Program.
 
 ## What this handbook *is not*.
 
 There are many, many resources available for help with both programming and statistical modelling. Our intention is not to "reinvent the wheel".  Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out. 
 
-**The methods contained in this handbook are not your only options** Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.  
+**The methods contained in this handbook are not your only options.** Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.  
 
 ## DSP Program tools
 
-The ideas and theory developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.
+The ideas and tools developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.
 
 ### Why use a scripted programming language?
 
 The benefits of using a scripted programming language vs. 'point & click' programs (e.g. Excel, but see ### below) is that programming languages help make sure:  
 
 1) your analysis is kept separate from your data, and 
+
 2) your analysis is explicit and documented.
 
-With a programming language, your original data remains unchanged during your analysis (securing your data against any errors), and your work-flow is documented as a complete "recipe" of what you have done.  This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis.  It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.  
+With a programming language, your original data remains unchanged during your analysis and your work-flow is documented as a complete "recipe" of what you have done.  This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis.  It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.  
 
-It's not enough for you to trust your own work.  You have to work in a way that others can trast in your work as well.  Programming languages help you do that.  
+It is not enough for **you** to trust your own work.  You have to work in a way that others can trust in your work as well.  Programming languages help you do that.  
 
 #### What language to choose first?
 
 Your first language should be one that is
 
--   relevant (one that matches your immediate needs)
+-   relevant (one that matches your immediate needs),
 
--   common (one that is used by your community)
+-   common (one that is used by your community), and
 
 -   free (one that doesn't require an expensive license)
 
 #### Why R?
 
-R is a scripted programming language and an environment for statistical computing and graphics. 
+Our starting point will be the R Programming Language.  
 
-Our starting point will be the R Programming Language.  R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs.  R is available for Windows, MacOS, and Linux. We will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses. 
+R is a scripted programming language and an environment for statistical computing and graphics.  R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs.  R is available for Windows, MacOS, and Linux. 
 
-Regardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future.  This is because learning a programming language involves learning (computational thinking - how to break down a task into steps and communicate this to a computer)^[Computational thinking includes skills in decomposition (breaking down tasks into small steps), pattern recognition (observing patterns in tasks and data), abstraction (identifying and extracting relevant information, ignoring or removing unnecessary information), algorithms (creating an ordered set of instructions for solving a problem), modelling and simulation (statistical modelling for hypothesis testing, imitating processes and problems), and evaluation (determining the effectiveness of a solution, generalizing to apply the solution to a new problem)
+We will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses. 
+
+Regardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future.  This is because learning a programming language involves learning (computational thinking, or how to break down a task into steps and communicate this to a computer)^[Computational thinking includes skills in decomposition (breaking down tasks into small steps), pattern recognition (observing patterns in tasks and data), abstraction (identifying and extracting relevant information, ignoring or removing unnecessary information), algorithms (creating an ordered set of instructions for solving a problem), modelling and simulation (statistical modelling for hypothesis testing, imitating processes and problems), and evaluation (determining the effectiveness of a solution, generalizing to apply the solution to a new problem)
 - adapted from digitalcareers.csiro.au.].  These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.
 
 #### What language to choose next?
 
-Our advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. Some ideas for your next programming language:  
-
-If you find yourself needing a more general purpose language, try [Python](https://www.python.org/) or [Julia](https://julialang.org/).  
+Our advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. If you find yourself needing a more general purpose language, try [Python](https://www.python.org/) or [Julia](https://julialang.org/).  
 
 ### Other tools: Why Excel?
 
-You will quickly note that we won't *only* be learning R in the DSP Program, but we will also go over skills for correctly using a spreadsheet editor (e.g. Microsoft's Excel) in your work.  This is because Biologists still use Excel for a number of tasks (e.g. designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers.  Even though Excel is not a programming language, we will still be using best practices to ensure that 
+You will quickly note that you will not *only* be learning R in the DSP Program.  We will also go over skills for correctly using a spreadsheet editor (e.g. Microsoft's Excel) in your work.  This is because Biologists still use Excel for a large number of tasks (e.g. designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers.  Even though Excel is not a programming language, we will still be using best practices to ensure that 
 
 1) your analysis is kept separate from your data, and 
+
 2) your analysis is explicit and documented.
 
 ## DSP Program Handbook Sections: {.unnumbered}

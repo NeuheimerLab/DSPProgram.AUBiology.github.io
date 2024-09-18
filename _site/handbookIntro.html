@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DSPProgramHandbook.AUBiology.github.io - Introduction to the Handbook</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">DSPProgramHandbook.AUBiology.github.io</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./handbookIntro.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Introduction to the Handbook</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-the-dsp-program-handbook" id="toc-introduction-to-the-dsp-program-handbook" class="nav-link active" data-scroll-target="#introduction-to-the-dsp-program-handbook">Introduction to the DSP Program Handbook</a>
+  <ul class="collapse">
+  <li><a href="#what-this-handbook-is." id="toc-what-this-handbook-is." class="nav-link" data-scroll-target="#what-this-handbook-is.">What this handbook <em>is</em>.</a></li>
+  <li><a href="#what-this-handbook-is-not." id="toc-what-this-handbook-is-not." class="nav-link" data-scroll-target="#what-this-handbook-is-not.">What this handbook <em>is not</em>.</a></li>
+  <li><a href="#dsp-program-tools" id="toc-dsp-program-tools" class="nav-link" data-scroll-target="#dsp-program-tools">DSP Program tools</a>
+  <ul class="collapse">
+  <li><a href="#why-use-a-scripted-programming-language" id="toc-why-use-a-scripted-programming-language" class="nav-link" data-scroll-target="#why-use-a-scripted-programming-language">Why use a scripted programming language?</a></li>
+  <li><a href="#other-tools-why-excel" id="toc-other-tools-why-excel" class="nav-link" data-scroll-target="#other-tools-why-excel">Other tools: Why Excel?</a></li>
+  </ul></li>
+  <li><a href="#dsp-program-handbook-sections" id="toc-dsp-program-handbook-sections" class="nav-link" data-scroll-target="#dsp-program-handbook-sections">DSP Program Handbook Sections:</a></li>
+  <li><a href="#data-collection-curation" id="toc-data-collection-curation" class="nav-link" data-scroll-target="#data-collection-curation">Data Collection &amp; Curation</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a></li>
+  <li><a href="#statistical-modelling" id="toc-statistical-modelling" class="nav-link" data-scroll-target="#statistical-modelling">Statistical Modelling</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction to the Handbook</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction-to-the-dsp-program-handbook" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction to the DSP Program Handbook</h1>
+<section id="what-this-handbook-is." class="level2">
+<h2 class="anchored" data-anchor-id="what-this-handbook-is.">What this handbook <em>is</em>.</h2>
+<p>The DSP Program Handbook contains information on the DSP Program (see ###) as well as resources for data collection, analysis and statistical modelling tasks.</p>
+<p>The information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercise consistent with our teaching. We aim to give explicit, complete examples (avoiding common shortcuts to coding syntax) so the computational logic is clear and to aid in applying skills across programming languages.</p>
+</section>
+<section id="what-this-handbook-is-not." class="level2">
+<h2 class="anchored" data-anchor-id="what-this-handbook-is-not.">What this handbook <em>is not</em>.</h2>
+<p>There are many, many resources available for help with both programming and statistical modelling. Our intention is not to “reinvent the wheel”. Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out.</p>
+<p><strong>The methods contained in this handbook are not your only options</strong> Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.</p>
+</section>
+<section id="dsp-program-tools" class="level2">
+<h2 class="anchored" data-anchor-id="dsp-program-tools">DSP Program tools</h2>
+<p>The ideas and theory developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.</p>
+<section id="why-use-a-scripted-programming-language" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-a-scripted-programming-language">Why use a scripted programming language?</h3>
+<p>The benefits of using a scripted programming language vs.&nbsp;‘point &amp; click’ programs (e.g.&nbsp;Excel, but see ### below) is that programming languages help make sure:</p>
+<ol type="1">
+<li>your analysis is kept separate from your data, and</li>
+<li>your analysis is explicit and documented.</li>
+</ol>
+<p>With a programming language, your original data remains unchanged during your analysis (securing your data against any errors), and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.</p>
+<p>It’s not enough for you to trust your own work. You have to work in a way that others can trast in your work as well. Programming languages help you do that.</p>
+<section id="what-language-to-choose-first" class="level4">
+<h4 class="anchored" data-anchor-id="what-language-to-choose-first">What language to choose first?</h4>
+<p>Your first language should be one that is</p>
+<ul>
+<li><p>relevant (one that matches your immediate needs)</p></li>
+<li><p>common (one that is used by your community)</p></li>
+<li><p>free (one that doesn’t require an expensive license)</p></li>
+</ul>
+</section>
+<section id="why-r" class="level4">
+<h4 class="anchored" data-anchor-id="why-r">Why R?</h4>
+<p>R is a scripted programming language and an environment for statistical computing and graphics.</p>
+<p>Our starting point will be the R Programming Language. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux. We will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.</p>
+<p>Regardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking - how to break down a task into steps and communicate this to a computer)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.</p>
+</section>
+<section id="what-language-to-choose-next" class="level4">
+<h4 class="anchored" data-anchor-id="what-language-to-choose-next">What language to choose next?</h4>
+<p>Our advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. Some ideas for your next programming language:</p>
+<p>If you find yourself needing a more general purpose language, try <a href="https://www.python.org/">Python</a> or <a href="https://julialang.org/">Julia</a>.</p>
+</section>
+</section>
+<section id="other-tools-why-excel" class="level3">
+<h3 class="anchored" data-anchor-id="other-tools-why-excel">Other tools: Why Excel?</h3>
+<p>You will quickly note that we won’t <em>only</em> be learning R in the DSP Program, but we will also go over skills for correctly using a spreadsheet editor (e.g.&nbsp;Microsoft’s Excel) in your work. This is because Biologists still use Excel for a number of tasks (e.g.&nbsp;designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that</p>
+<ol type="1">
+<li>your analysis is kept separate from your data, and</li>
+<li>your analysis is explicit and documented.</li>
+</ol>
+</section>
+</section>
+<section id="dsp-program-handbook-sections" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="dsp-program-handbook-sections">DSP Program Handbook Sections:</h2>
+</section>
+<section id="data-collection-curation" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-curation"><a href="handbookDCIntro.qmd">Data Collection &amp; Curation</a></h2>
+</section>
+<section id="data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis"><a href="handbookDAIntro.qmd">Data Analysis</a></h2>
+</section>
+<section id="statistical-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-modelling"><a href="handbookSMIntro.qmd">Statistical Modelling</a></h2>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Computational thinking includes skills in decomposition (breaking down tasks into small steps), pattern recognition (observing patterns in tasks and data), abstraction (identifying and extracting relevant information, ignoring or removing unnecessary information), algorithms (creating an ordered set of instructions for solving a problem), modelling and simulation (statistical modelling for hypothesis testing, imitating processes and problems), and evaluation (determining the effectiveness of a solution, generalizing to apply the solution to a new problem) - adapted from digitalcareers.csiro.au.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
