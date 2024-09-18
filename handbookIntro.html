@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to the Handbook – DSPProgramHandbook.AUBiology.github.io</title>
+<title>Introduction to the Handbook – DSPProgram.AUBiology.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">DSPProgramHandbook.AUBiology.github.io</span>
+    <span class="navbar-title">DSPProgram.AUBiology.github.io</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -91,6 +91,14 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./handbookIntro.html" aria-current="page"> 
+<span class="menu-text">Introduction to the Handbook</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -151,53 +159,53 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="unnumbered">Introduction to the DSP Program Handbook</h1>
 <section id="what-this-handbook-is." class="level2">
 <h2 class="anchored" data-anchor-id="what-this-handbook-is.">What this handbook <em>is</em>.</h2>
-<p>The DSP Program Handbook contains information on the DSP Program (see ###) as well as resources for data collection, analysis and statistical modelling tasks.</p>
-<p>The information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercise consistent with our teaching. We aim to give explicit, complete examples (avoiding common shortcuts to coding syntax) so the computational logic is clear and to aid in applying skills across programming languages.</p>
+<p>The DSP Program Handbook contains information on the DSP Program as well as resources for data collection, analysis and statistical modelling tasks.</p>
+<p>The information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercises consistent with the DSP Program.</p>
 </section>
 <section id="what-this-handbook-is-not." class="level2">
 <h2 class="anchored" data-anchor-id="what-this-handbook-is-not.">What this handbook <em>is not</em>.</h2>
 <p>There are many, many resources available for help with both programming and statistical modelling. Our intention is not to “reinvent the wheel”. Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out.</p>
-<p><strong>The methods contained in this handbook are not your only options</strong> Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.</p>
+<p><strong>The methods contained in this handbook are not your only options.</strong> Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.</p>
 </section>
 <section id="dsp-program-tools" class="level2">
 <h2 class="anchored" data-anchor-id="dsp-program-tools">DSP Program tools</h2>
-<p>The ideas and theory developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.</p>
+<p>The ideas and tools developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.</p>
 <section id="why-use-a-scripted-programming-language" class="level3">
 <h3 class="anchored" data-anchor-id="why-use-a-scripted-programming-language">Why use a scripted programming language?</h3>
 <p>The benefits of using a scripted programming language vs.&nbsp;‘point &amp; click’ programs (e.g.&nbsp;Excel, but see ### below) is that programming languages help make sure:</p>
 <ol type="1">
-<li>your analysis is kept separate from your data, and</li>
-<li>your analysis is explicit and documented.</li>
+<li><p>your analysis is kept separate from your data, and</p></li>
+<li><p>your analysis is explicit and documented.</p></li>
 </ol>
-<p>With a programming language, your original data remains unchanged during your analysis (securing your data against any errors), and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.</p>
-<p>It’s not enough for you to trust your own work. You have to work in a way that others can trast in your work as well. Programming languages help you do that.</p>
+<p>With a programming language, your original data remains unchanged during your analysis and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.</p>
+<p>It is not enough for <strong>you</strong> to trust your own work. You have to work in a way that others can trust in your work as well. Programming languages help you do that.</p>
 <section id="what-language-to-choose-first" class="level4">
 <h4 class="anchored" data-anchor-id="what-language-to-choose-first">What language to choose first?</h4>
 <p>Your first language should be one that is</p>
 <ul>
-<li><p>relevant (one that matches your immediate needs)</p></li>
-<li><p>common (one that is used by your community)</p></li>
+<li><p>relevant (one that matches your immediate needs),</p></li>
+<li><p>common (one that is used by your community), and</p></li>
 <li><p>free (one that doesn’t require an expensive license)</p></li>
 </ul>
 </section>
 <section id="why-r" class="level4">
 <h4 class="anchored" data-anchor-id="why-r">Why R?</h4>
-<p>R is a scripted programming language and an environment for statistical computing and graphics.</p>
-<p>Our starting point will be the R Programming Language. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux. We will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.</p>
-<p>Regardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking - how to break down a task into steps and communicate this to a computer)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.</p>
+<p>Our starting point will be the R Programming Language.</p>
+<p>R is a scripted programming language and an environment for statistical computing and graphics. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux.</p>
+<p>We will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.</p>
+<p>Regardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking, or how to break down a task into steps and communicate this to a computer)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.</p>
 </section>
 <section id="what-language-to-choose-next" class="level4">
 <h4 class="anchored" data-anchor-id="what-language-to-choose-next">What language to choose next?</h4>
-<p>Our advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. Some ideas for your next programming language:</p>
-<p>If you find yourself needing a more general purpose language, try <a href="https://www.python.org/">Python</a> or <a href="https://julialang.org/">Julia</a>.</p>
+<p>Our advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. If you find yourself needing a more general purpose language, try <a href="https://www.python.org/">Python</a> or <a href="https://julialang.org/">Julia</a>.</p>
 </section>
 </section>
 <section id="other-tools-why-excel" class="level3">
 <h3 class="anchored" data-anchor-id="other-tools-why-excel">Other tools: Why Excel?</h3>
-<p>You will quickly note that we won’t <em>only</em> be learning R in the DSP Program, but we will also go over skills for correctly using a spreadsheet editor (e.g.&nbsp;Microsoft’s Excel) in your work. This is because Biologists still use Excel for a number of tasks (e.g.&nbsp;designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that</p>
+<p>You will quickly note that you will not <em>only</em> be learning R in the DSP Program. We will also go over skills for correctly using a spreadsheet editor (e.g.&nbsp;Microsoft’s Excel) in your work. This is because Biologists still use Excel for a large number of tasks (e.g.&nbsp;designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that</p>
 <ol type="1">
-<li>your analysis is kept separate from your data, and</li>
-<li>your analysis is explicit and documented.</li>
+<li><p>your analysis is kept separate from your data, and</p></li>
+<li><p>your analysis is explicit and documented.</p></li>
 </ol>
 </section>
 </section>
@@ -316,7 +324,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/NeuheimerLab\.github\.io\/DSPProgramHandbook\.AUBiology\.github\.io\/");
+      var filterRegex = new RegExp("https:\/\/NeuheimerLab\.github\.io\/DSPProgram\.AUBiology\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
