@@ -1,11 +1,16 @@
 ---
-title: "DSPProgram.AUBiology.github.io"
+title: "Data Skills Portfolio Program"
 ---
 
-This is a Quarto website.
+# Welcome to the Data Skills Portfolio Program! {.unnumbered}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+The Data Skills Portfolio (DSP) Program is based at Aarhus University's Department of Biology.
 
-```{r}
-1 + 1
-```
+The DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.
+
+Here you will find a description of the program along with DSP handbook materials.
+
+Explore and enjoy!
+
+And remember: [your feedback is welcome!](feedback.qmd)
+
