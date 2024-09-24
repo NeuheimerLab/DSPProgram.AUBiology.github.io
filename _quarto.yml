@@ -9,6 +9,11 @@ website:
         text: Home
       - about.qmd
       - handbookIntro.qmd
+      - intro.qmd
+      - structure.qmd
+      - feedback.qmd
+      - FAQ.qmd
+      - philosophy.qmd
 
 format:
   html:

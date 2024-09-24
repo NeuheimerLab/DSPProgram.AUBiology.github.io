@@ -1,0 +1,99 @@
+---
+title: "DSP Program - Philosophy"
+---
+
+
+## Motivation
+
+The AU Strategy 2025 prioritises the teaching of general skills and competences and specifically identifies digital skills as an important component of future education. The DSP Program builds on current data skills training efforts to make students more capable, confident & employable.
+
+The DSP Program aims to
+
+*   provide essential skills for biologists:
+
+    - Biology has historically been mislabelled a "soft-science" with little emphasis on the quantitative nature of the research, but this is rapidly changing (McCallen et al. 2019). Quantitative and computing skills are essential to robust hypothesis testing in biological research and are integral to supporting research ethics and transparency. These skills are necessary for the pursuit of robust, ethical, and independent science. Moreover, many biological questions concern the handling and analysis of "big data" - this includes time series analysis of sensor data, bioinformatics as well as processing of satellite imagery and spatial calculations in Geographic Information System (GIS). It is our responsibility to provide our students with the data skills necessary to address current research hypotheses in big-data areas and beyond, and to introduce computational thinking without sacrificing biological domain knowledge. To this end, we feel it is important that the data skills are taught BY biologists, ensuring skills are relevant, and teaching is rooted in the motivation of biological research.
+
+*   increase the employability of our graduates:
+
+    - Quantitative and computing skills are also applicable to (and often a prerequisite for) a wide range of careers both within and beyond those careers traditionally held by biology graduates. By providing students with these skills, as well as the tools with which they can promote themselves in their job search, we can increase the employment success of our graduates. In addition, data skills are fundamental to the student's ability to pursue graduate education and an academic career.  
+
+* increase student recruitment and retention:
+
+    - We can increase our attractiveness as a Biology program by increasing our ability to provide students with up-to-date data skills. Our reputation for providing students with useful, robust research skills and increasing the employment success of our graduates will increase the attractiveness for potential students of the program. In particular, this will increase the academic strength of our applicants as we attract students interested in developing quantitative skills (including data skills).
+
+
+## Terminology
+
+__Data skills__: We use the term "data skills" to represent the quantitative and computing skills involved in many fields of research (including biological) and in demand from a range of employers. This includes data literacy (the collecting, management, archiving and wrangling of data), computational thinking (computational logic, problem solving, pattern identification, algorithms), analytical skills (collecting and considering information, making decisions), model building and hypothesis testing, and other quantitative skills. Other terms used in the literature, community and job market are "data science" and "digital competence". computational thinking and analytical skills. Data literacy is the ability to read, work with, analyze and communicate with data Qlik 2019
+
+__Portfolio__: We use the term "portfolio" to represent the collection of data skills the student will acquire throughout the degree. Later modules in the program are tied to elective courses so that students will have portfolios that vary based on their experience. In all cases, the students will create an explicit Data Skills Portfolio (DSP) to develop their awareness and confidence in their skills, help clarify the applicability of their skills across disciplines, and more easily communicate their skills to future employers. 
+
+## Core competencies
+
+Skills are identified through the following core competencies
+
+-   critical thinking
+
+-   general programming
+
+-   data management
+
+-   data visualization
+
+-   statistical modelling
+
+-   project management
+
+-   skills marketing
+
+
+## Guiding principles of the DSP Program
+
+
+#### Relevance
+
+The data skills taught will be relevant and state-of-the-art with respect to the current needs of both the biological research community and the greater job market. Skills will be taught in the context of current biological research.  
+
+#### Best Practices
+
+Course content and instruction will follow current best-practices for teaching data skills and for teaching to a diversity of students (diversity of backgrounds, learning styles). To this end, a common teaching strategy will be developed.
+
+#### Cohesion
+
+Cohesion throughout the DSP Program is necessary for student learning and mastering of skills. Program cohesion will be developed through repetition, consistency and clarity: Students will have a chance to apply skills repeatedly and regularly with DSP courses and modules positioned in as many semesters as possible. Skills will be taught with consistency with instructors using a common framework, syntax and terminology across DSP courses and modules. Learned skills will be made clear to the students as they will be explictly trained to communicate why and how they are applying skills to accomplish tasks through the development of their Data Skills Portfolio.
+
+#### Resilience
+
+Program development will support resilience of both the student and the program as a whole.
+
+**Student resilience will be nurtured by:**
+
+i)  encouraging an understanding of the "how" and "why" behind the data skills they are learning so they are aware of the general applicability of their skills.
+
+ii) repeated exposure to the training throughout their career so they have a number of opportunities to practice skills, 
+
+iii) developing awareness of the skills they are learning through the building of their Data Skills Portfolio that follows them throughout their degree,
+
+iv) feedback opportunities where students are able to identify areas they find challenging so that swift interventions are made, and no student is left behind, and
+
+v) accessible tools: Where possible, open-source programs and languages will be taught to allow students uninterrupted access to tools after they leave their education. 
+
+**Program resilience will be nurtured by:**
+
+i)  the DSP Program being a shared goal & responsibility across sections: The program will be grounded by input from all Sections in the Department of Biology. Teaching responsibilities will shared by all Sections.  The current make-up of the DSP Program Taskforce is available [here](feedback.qmd).
+
+ii) building in redundancy in teaching responsibilities: Courses and modules will be team taught as much as possible to allow for consistency in the program in the face of staff availability changes, and
+
+iii) development of maintainable online resources: Online resources (including this handbook) will be structured to maintanence as minimal as possible. 
+
+## Program assessment
+
+Plans for the assessment of the program for scope and effectiveness are in development. These will include:
+
+-   Course evaluations to assess new courses and modules
+
+-   Midterm and final evaluation of the DSP program with students
+
+-   Feedback from employers 1-2 years after the first cohort graduates after the DSP Program.
+
+-   Employment statistics of our graduates including employment rates and areas of employment.  

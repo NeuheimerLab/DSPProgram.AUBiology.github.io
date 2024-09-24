@@ -1,0 +1,34 @@
+# What is the DSP Program?
+
+## Purpose
+
+The goal of the DSP Program is to help students become more capable, confident and employable:
+
+**Capable**: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills
+
+__Confident__: A major focus of the DSP program is to make the students aware of the skills they are learning (the "why" and the "how") and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.
+
+__Employable__: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU's Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, "radar".
+
+
+## Learning objectives
+
+The Data Skills Portfolio participants will gain training in:
+
+-   Computational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)
+
+-   Data handling and management - data acquisition, manipulation, exploration, visualization, and storage
+
+-   Research ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms
+
+-   Experimental design - robust, ethical experimental design
+
+-   Hypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.
+
+-   Skills marketing - communicating data skills, and marketing skills to a wide-range of career positions
+
+## [More information on the DSP Program](philosophy.qmd)
+
+## Interested in contributing to the DSP Program?
+
+Modules are being designed to fit into existing course activities (and ECTS). Please [contact the DSP Program Taskforce](feedback.qmd) if you would like to co-develop a DSP module for your course.
