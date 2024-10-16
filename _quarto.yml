@@ -12,6 +12,16 @@ website:
       contents:
         - philosophy.qmd
         - structure.qmd
+    - section: "The DSP Program Handbook"
+      href: handbookIntro.qmd
+      contents: 
+        - handbookDCIntro.qmd
+        - handbookDAIntro.qmd
+        - handbookSMIntro.qmd
+        - FAQ.qmd
+    - section: "Feedback"
+      href: feedback.qmd
+    
 
 format:
   html:
