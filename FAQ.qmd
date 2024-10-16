@@ -10,4 +10,4 @@ title: "Frequently Asked Questions"
 
 ## [How do I send my comments/questions feedback?](feedback.qmd)
 
-## [I want to include a DSP module in my course. Whom should I talk to?](feedback.qmd)
+## [I want to include a DSP module in my course. Who should I contact?](feedback.qmd)
