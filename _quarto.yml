@@ -2,17 +2,16 @@ project:
   type: website
 
 website:
-  title: "DSPProgram.AUBiology.github.io"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - handbookIntro.qmd
-      - intro.qmd
-      - structure.qmd
-      - feedback.qmd
-      - FAQ.qmd
-      - philosophy.qmd
+  title: "Data Skills Portfolio Program"
+  sidebar: 
+    style: "docked"
+    search: true
+    contents: 
+    - section: "What is the DSP Program?"
+      href: intro.qmd
+      contents:
+        - philosophy.qmd
+        - structure.qmd
 
 format:
   html:
