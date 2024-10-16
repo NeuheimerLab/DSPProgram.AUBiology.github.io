@@ -1,47 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "feedback.html",
-    "href": "feedback.html",
-    "title": "Feedback for the DSP Program",
-    "section": "",
-    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
-  },
-  {
-    "objectID": "FAQ.html#how-do-i-send-my-commentsquestions-feedback",
-    "href": "FAQ.html#how-do-i-send-my-commentsquestions-feedback",
-    "title": "Frequently Asked Questions",
-    "section": "How do I send my comments/questions feedback?",
-    "text": "How do I send my comments/questions feedback?"
-  },
-  {
-    "objectID": "FAQ.html#i-want-to-include-a-dsp-module-in-my-course.-whom-should-i-talk-to",
-    "href": "FAQ.html#i-want-to-include-a-dsp-module-in-my-course.-whom-should-i-talk-to",
-    "title": "Frequently Asked Questions",
-    "section": "I want to include a DSP module in my course. Whom should I talk to?",
-    "text": "I want to include a DSP module in my course. Whom should I talk to?"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data Skills Portfolio Program",
-    "section": "",
-    "text": "Welcome to the Data Skills Portfolio Program!\nThe Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.\nThe DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.\nHere you will find a description of the program along with DSP handbook materials.\nExplore and enjoy!\nAnd remember: your feedback is welcome!"
-  },
-  {
-    "objectID": "structure.html",
-    "href": "structure.html",
-    "title": "Structure of the DSP Program",
-    "section": "",
-    "text": "The DSP Program consists of a series of modules intended to allow students to gain, practice, apply and communicate their data-skills.\nSemester:\n\n\n\n\n\n\n\n\n\n\n\n\nSemester\n2\n3\n4\n5 (in 2024)\n6 (in 2025)\nKandidat (in 2025)\n\n\n\n\n\nIntro Module:\nBFTP (Marshall)\nModule:\nMikrobiologi for biologer (Koren, Marzocchi)\nCourse:\nProgramming and Statistics for Biologists\nModule:\nAkvatisk Biologi (Neuheimer)\nModule:\nPlanters Økofysiologi (Eller, Sorrell, Neuheimer)\nExit Module:\nCareer (Taskforce)\n\n\n\n\nothers in development\n\nothers in development\nExit Module:\nResearch (Taskforce)\nothers in development\n\n\n\n\n\n\n\nothers in development"
-  },
-  {
     "objectID": "handbookIntro.html",
     "href": "handbookIntro.html",
     "title": "Introduction to the Handbook",
@@ -77,32 +35,18 @@
     "text": "Footnotes\n\n\nComputational thinking includes skills in decomposition (breaking down tasks into small steps), pattern recognition (observing patterns in tasks and data), abstraction (identifying and extracting relevant information, ignoring or removing unnecessary information), algorithms (creating an ordered set of instructions for solving a problem), modelling and simulation (statistical modelling for hypothesis testing, imitating processes and problems), and evaluation (determining the effectiveness of a solution, generalizing to apply the solution to a new problem) - adapted from digitalcareers.csiro.au.↩︎"
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course."
+    "objectID": "FAQ.html#how-do-i-send-my-commentsquestions-feedback",
+    "href": "FAQ.html#how-do-i-send-my-commentsquestions-feedback",
+    "title": "Frequently Asked Questions",
+    "section": "How do I send my comments/questions feedback?",
+    "text": "How do I send my comments/questions feedback?"
   },
   {
-    "objectID": "intro.html#purpose",
-    "href": "intro.html#purpose",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”."
-  },
-  {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions"
-  },
-  {
-    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course."
+    "objectID": "FAQ.html#i-want-to-include-a-dsp-module-in-my-course.-who-should-i-contact",
+    "href": "FAQ.html#i-want-to-include-a-dsp-module-in-my-course.-who-should-i-contact",
+    "title": "Frequently Asked Questions",
+    "section": "I want to include a DSP module in my course. Who should I contact?",
+    "text": "I want to include a DSP module in my course. Who should I contact?"
   },
   {
     "objectID": "philosophy.html",
@@ -145,5 +89,54 @@
     "title": "DSP Program - Philosophy",
     "section": "Program assessment",
     "text": "Program assessment\nPlans for the assessment of the program for scope and effectiveness are in development. These will include:\n\nCourse evaluations to assess new courses and modules\nMidterm and final evaluation of the DSP program with students\nFeedback from employers 1-2 years after the first cohort graduates after the DSP Program.\nEmployment statistics of our graduates including employment rates and areas of employment."
+  },
+  {
+    "objectID": "structure.html",
+    "href": "structure.html",
+    "title": "Structure of the DSP Program",
+    "section": "",
+    "text": "The DSP Program consists of a series of modules intended to allow students to gain, practice, apply and communicate their data-skills.\nSemester:\n\n\n\n\n\n\n\n\n\n\n\n\nSemester\n2\n3\n4\n5 (in 2024)\n6 (in 2025)\nKandidat (in 2025)\n\n\n\n\n\nIntro Module:\nBFTP (Marshall)\nModule:\nMikrobiologi for biologer (Koren, Marzocchi)\nCourse:\nProgramming and Statistics for Biologists\nModule:\nAkvatisk Biologi (Neuheimer)\nModule:\nPlanters Økofysiologi (Eller, Sorrell, Neuheimer)\nExit Module:\nCareer (Taskforce)\n\n\n\n\nothers in development\n\nothers in development\nExit Module:\nResearch (Taskforce)\nothers in development\n\n\n\n\n\n\n\nothers in development"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Skills Portfolio Program",
+    "section": "",
+    "text": "Welcome to the Data Skills Portfolio Program!\nThe Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.\nThe DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.\nHere you will find a description of the program along with DSP handbook materials.\nExplore and enjoy!\nAnd remember: your feedback is welcome!"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course."
+  },
+  {
+    "objectID": "intro.html#purpose",
+    "href": "intro.html#purpose",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”."
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions"
+  },
+  {
+    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course."
+  },
+  {
+    "objectID": "feedback.html",
+    "href": "feedback.html",
+    "title": "Contacts and Feedback for the DSP Program",
+    "section": "",
+    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
   }
 ]
