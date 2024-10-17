@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to the Handbook – Data Skills Portfolio Program</title>
+<title>Data Analysis Handbook – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookIntro.html">Introduction to the Handbook</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookDAIntro.html">Data Analysis Handbook</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./handbookIntro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./handbookIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to the Handbook</span></a>
   </div>
 </li>
@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link">
+  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Analysis Handbook</span></a>
   </div>
 </li>
@@ -161,19 +161,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-the-dsp-program-handbook" id="toc-introduction-to-the-dsp-program-handbook" class="nav-link active" data-scroll-target="#introduction-to-the-dsp-program-handbook">Introduction to the DSP Program Handbook</a>
+  <li><a href="#the-dsp-program-handbook-for-data-analysis" id="toc-the-dsp-program-handbook-for-data-analysis" class="nav-link active" data-scroll-target="#the-dsp-program-handbook-for-data-analysis">The DSP Program Handbook for Data Analysis</a>
   <ul class="collapse">
-  <li><a href="#what-this-handbook-is." id="toc-what-this-handbook-is." class="nav-link" data-scroll-target="#what-this-handbook-is.">What this handbook <em>is</em>.</a></li>
-  <li><a href="#what-this-handbook-is-not." id="toc-what-this-handbook-is-not." class="nav-link" data-scroll-target="#what-this-handbook-is-not.">What this handbook <em>is not</em>.</a></li>
-  <li><a href="#dsp-program-tools" id="toc-dsp-program-tools" class="nav-link" data-scroll-target="#dsp-program-tools">DSP Program tools</a>
+  <li><a href="#a-note-on-tools" id="toc-a-note-on-tools" class="nav-link" data-scroll-target="#a-note-on-tools">A note on tools:</a></li>
+  <li><a href="#a-note-on-learning-your-first-programming-language" id="toc-a-note-on-learning-your-first-programming-language" class="nav-link" data-scroll-target="#a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</a></li>
+  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The basics</a></li>
+  <li><a href="#so-you-want-to" id="toc-so-you-want-to" class="nav-link" data-scroll-target="#so-you-want-to">So you want to…</a>
   <ul class="collapse">
-  <li><a href="#why-use-a-scripted-programming-language" id="toc-why-use-a-scripted-programming-language" class="nav-link" data-scroll-target="#why-use-a-scripted-programming-language">Why use a scripted programming language?</a></li>
-  <li><a href="#other-tools-why-excel" id="toc-other-tools-why-excel" class="nav-link" data-scroll-target="#other-tools-why-excel">Other tools: Why Excel?</a></li>
+  <li><a href="#load-your-data-into-r" id="toc-load-your-data-into-r" class="nav-link" data-scroll-target="#load-your-data-into-r">… load your data into R</a></li>
+  <li><a href="#validate-and-explore-your-data" id="toc-validate-and-explore-your-data" class="nav-link" data-scroll-target="#validate-and-explore-your-data">… validate and explore your data</a></li>
+  <li><a href="#visualize-your-data-make-a-plot" id="toc-visualize-your-data-make-a-plot" class="nav-link" data-scroll-target="#visualize-your-data-make-a-plot">… visualize your data (make a plot!)</a></li>
+  <li><a href="#deal-with-missing-values" id="toc-deal-with-missing-values" class="nav-link" data-scroll-target="#deal-with-missing-values">… deal with missing values</a></li>
+  <li><a href="#sort-your-data" id="toc-sort-your-data" class="nav-link" data-scroll-target="#sort-your-data">… sort your data</a></li>
+  <li><a href="#subset-your-data" id="toc-subset-your-data" class="nav-link" data-scroll-target="#subset-your-data">… subset your data</a></li>
+  <li><a href="#work-with-dates-and-times" id="toc-work-with-dates-and-times" class="nav-link" data-scroll-target="#work-with-dates-and-times">… work with dates and times</a></li>
+  <li><a href="#transform-your-data" id="toc-transform-your-data" class="nav-link" data-scroll-target="#transform-your-data">… transform your data</a></li>
+  <li><a href="#manipulate-rows-or-columns-in-your-data" id="toc-manipulate-rows-or-columns-in-your-data" class="nav-link" data-scroll-target="#manipulate-rows-or-columns-in-your-data">… manipulate rows or columns in your data</a></li>
+  <li><a href="#manipulate-subsets-of-rows-or-columns" id="toc-manipulate-subsets-of-rows-or-columns" class="nav-link" data-scroll-target="#manipulate-subsets-of-rows-or-columns">… manipulate subsets of rows or columns</a></li>
+  <li><a href="#merge-your-data-with-another-data-set" id="toc-merge-your-data-with-another-data-set" class="nav-link" data-scroll-target="#merge-your-data-with-another-data-set">… merge your data with another data set</a></li>
+  <li><a href="#export-your-data-back-out-of-r" id="toc-export-your-data-back-out-of-r" class="nav-link" data-scroll-target="#export-your-data-back-out-of-r">…export your data back out of R</a></li>
   </ul></li>
-  <li><a href="#dsp-program-handbook-sections" id="toc-dsp-program-handbook-sections" class="nav-link" data-scroll-target="#dsp-program-handbook-sections">DSP Program Handbook Sections:</a></li>
-  <li><a href="#data-collection-curation" id="toc-data-collection-curation" class="nav-link" data-scroll-target="#data-collection-curation">Data Collection &amp; Curation</a></li>
-  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a></li>
-  <li><a href="#statistical-modelling" id="toc-statistical-modelling" class="nav-link" data-scroll-target="#statistical-modelling">Statistical Modelling</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best practices</a></li>
+  <li><a href="#other-topics" id="toc-other-topics" class="nav-link" data-scroll-target="#other-topics">Other topics</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -183,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to the Handbook</h1>
+<h1 class="title">Data Analysis Handbook</h1>
 </div>
 
 
@@ -200,83 +209,94 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction-to-the-dsp-program-handbook" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction to the DSP Program Handbook</h1>
-<section id="what-this-handbook-is." class="level2">
-<h2 class="anchored" data-anchor-id="what-this-handbook-is.">What this handbook <em>is</em>.</h2>
-<p>The DSP Program Handbook contains information on the DSP Program as well as resources for data collection, analysis and statistical modelling tasks.</p>
-<p>The information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercises consistent with the DSP Program.</p>
-</section>
-<section id="what-this-handbook-is-not." class="level2">
-<h2 class="anchored" data-anchor-id="what-this-handbook-is-not.">What this handbook <em>is not</em>.</h2>
-<p>There are many, many resources available for help with both programming and statistical modelling. Our intention is not to “reinvent the wheel”. Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out.</p>
-<p><strong>The methods contained in this handbook are not your only options.</strong> Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.</p>
-</section>
-<section id="dsp-program-tools" class="level2">
-<h2 class="anchored" data-anchor-id="dsp-program-tools">DSP Program tools</h2>
-<p>The ideas and tools developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.</p>
-<section id="why-use-a-scripted-programming-language" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-a-scripted-programming-language">Why use a scripted programming language?</h3>
-<p>The benefits of using a scripted programming language vs.&nbsp;‘point &amp; click’ programs (e.g.&nbsp;Excel, but see ### below) is that programming languages help make sure:</p>
-<ol type="1">
-<li><p>your analysis is kept separate from your data, and</p></li>
-<li><p>your analysis is explicit and documented.</p></li>
-</ol>
-<p>With a programming language, your original data remains unchanged during your analysis and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.</p>
-<p>It is not enough for <strong>you</strong> to trust your own work. You have to work in a way that others can trust in your work as well. Programming languages help you do that.</p>
-<section id="what-language-to-choose-first" class="level4">
-<h4 class="anchored" data-anchor-id="what-language-to-choose-first">What language to choose first?</h4>
-<p>Your first language should be one that is</p>
+<section id="the-dsp-program-handbook-for-data-analysis" class="level1 unnumbered">
+<h1 class="unnumbered">The DSP Program Handbook for Data Analysis</h1>
+<section id="a-note-on-tools" class="level2">
+<h2 class="anchored" data-anchor-id="a-note-on-tools">A note on tools:</h2>
+<p><strong>In general</strong> we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:</p>
 <ul>
-<li><p>relevant (one that matches your immediate needs),</p></li>
-<li><p>common (one that is used by your community), and</p></li>
-<li><p>free (one that doesn’t require an expensive license)</p></li>
+<li><p>keep your analysis separate from the data (and thereby safeguard the data),</p></li>
+<li><p>keep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and</p></li>
+<li><p>allow you to use powerful tools to accomplish your analysis tasks.</p></li>
+</ul>
+<p>That said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:</p>
+<ul>
+<li><p>keep your analysis separate from your data (e.g.&nbsp;in a separate sheet), and</p></li>
+<li><p>keep a record of all your analysis steps. This is done by:</p>
+<ul>
+<li><p>carefully and completely adding comments explaining your steps,</p></li>
+<li><p>and ensuring each cell contains only one step/piece of information.</p></li>
+</ul></li>
 </ul>
 </section>
-<section id="why-r" class="level4">
-<h4 class="anchored" data-anchor-id="why-r">Why R?</h4>
-<p>Our starting point will be the R Programming Language.</p>
-<p>R is a scripted programming language and an environment for statistical computing and graphics. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux.</p>
-<p>We will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.</p>
-<p>Regardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking, or how to break down a task into steps and communicate this to a computer)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.</p>
+<section id="a-note-on-learning-your-first-programming-language" class="level2">
+<h2 class="anchored" data-anchor-id="a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</h2>
+<p>A bit on strategy when learning any programming language (we’ll also cover more strategies in class): <strong>it’s important to struggle but not for too long</strong>. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.</p>
+<p><strong>Don’t worry about memorizing</strong> the details of this document or our discussions in class. You will always have reference material available to you (e.g.&nbsp;this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.</p>
 </section>
-<section id="what-language-to-choose-next" class="level4">
-<h4 class="anchored" data-anchor-id="what-language-to-choose-next">What language to choose next?</h4>
-<p>Our advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. If you find yourself needing a more general purpose language, try <a href="https://www.python.org/">Python</a> or <a href="https://julialang.org/">Julia</a>.</p>
+<section id="the-basics" class="level2">
+<h2 class="anchored" data-anchor-id="the-basics">The basics</h2>
+<p><a href="DA_RBasics.qmd">Here we will go over essential topics when you’re first learning a programming language.</a>. Here we cover:</p>
+<ul>
+<li><p>installing R</p></li>
+<li><p>scripts</p></li>
+<li><p>basic syntax</p></li>
+<li><p>getting help in R (how to read help files!)</p></li>
+<li><p>objects and data structures</p></li>
+<li><p>etc.</p></li>
+</ul>
+</section>
+<section id="so-you-want-to" class="level2">
+<h2 class="anchored" data-anchor-id="so-you-want-to">So you want to…</h2>
+<p>Here we will provide examples of how to accomplish common data analysis tasks.</p>
+<section id="load-your-data-into-r" class="level3">
+<h3 class="anchored" data-anchor-id="load-your-data-into-r"><a href="SYWT_Import.qmd">… load your data into R</a></h3>
+</section>
+<section id="validate-and-explore-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="validate-and-explore-your-data"><a href="SYWT_Validate.qmd">… validate and explore your data</a></h3>
+</section>
+<section id="visualize-your-data-make-a-plot" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-your-data-make-a-plot"><a href="SYWT_Visualize.qmd">… visualize your data (make a plot!)</a></h3>
+</section>
+<section id="deal-with-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="deal-with-missing-values"><a href="SYWT_NA.qmd">… deal with missing values</a></h3>
+</section>
+<section id="sort-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="sort-your-data"><a href="SYWT_Sort.qmd">… sort your data</a></h3>
+</section>
+<section id="subset-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="subset-your-data"><a href="SYWT_Subset.qmd">… subset your data</a></h3>
+</section>
+<section id="work-with-dates-and-times" class="level3">
+<h3 class="anchored" data-anchor-id="work-with-dates-and-times"><a href="SYWT_DatesTimes.qmd">… work with dates and times</a></h3>
+</section>
+<section id="transform-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="transform-your-data"><a href="SYWT_Transform.qmd">… transform your data</a></h3>
+</section>
+<section id="manipulate-rows-or-columns-in-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="manipulate-rows-or-columns-in-your-data"><a href="SYWT_ManipulateRowsColumns.qmd">… manipulate rows or columns in your data</a></h3>
+</section>
+<section id="manipulate-subsets-of-rows-or-columns" class="level3">
+<h3 class="anchored" data-anchor-id="manipulate-subsets-of-rows-or-columns"><a href="SYWT_ManipulateSubsets.qmd">… manipulate subsets of rows or columns</a></h3>
+</section>
+<section id="merge-your-data-with-another-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="merge-your-data-with-another-data-set"><a href="SYWT_Merge.qmd">… merge your data with another data set</a></h3>
+</section>
+<section id="export-your-data-back-out-of-r" class="level3">
+<h3 class="anchored" data-anchor-id="export-your-data-back-out-of-r"><a href="SYWT_Export.qmd">…export your data back out of R</a></h3>
 </section>
 </section>
-<section id="other-tools-why-excel" class="level3">
-<h3 class="anchored" data-anchor-id="other-tools-why-excel">Other tools: Why Excel?</h3>
-<p>You will quickly note that you will not <em>only</em> be learning R in the DSP Program. We will also go over skills for correctly using a spreadsheet editor (e.g.&nbsp;Microsoft’s Excel) in your work. This is because Biologists still use Excel for a large number of tasks (e.g.&nbsp;designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that</p>
-<ol type="1">
-<li><p>your analysis is kept separate from your data, and</p></li>
-<li><p>your analysis is explicit and documented.</p></li>
-</ol>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices"><a href="DA_BestPractices.qmd">Best practices</a></h2>
 </section>
-</section>
-<section id="dsp-program-handbook-sections" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="dsp-program-handbook-sections">DSP Program Handbook Sections:</h2>
-</section>
-<section id="data-collection-curation" class="level2">
-<h2 class="anchored" data-anchor-id="data-collection-curation"><a href="./handbookDCIntro.html">Data Collection &amp; Curation</a></h2>
-</section>
-<section id="data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="data-analysis"><a href="./handbookDAIntro.html">Data Analysis</a></h2>
-</section>
-<section id="statistical-modelling" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-modelling"><a href="handbookSMIntro.qmd">Statistical Modelling</a></h2>
+<section id="other-topics" class="level2">
+<h2 class="anchored" data-anchor-id="other-topics"><a href="DA_OtherTopics.qmd">Other topics</a></h2>
 
 
 </section>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Computational thinking includes skills in decomposition (breaking down tasks into small steps), pattern recognition (observing patterns in tasks and data), abstraction (identifying and extracting relevant information, ignoring or removing unnecessary information), algorithms (creating an ordered set of instructions for solving a problem), modelling and simulation (statistical modelling for hypothesis testing, imitating processes and problems), and evaluation (determining the effectiveness of a solution, generalizing to apply the solution to a new problem) - adapted from digitalcareers.csiro.au.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

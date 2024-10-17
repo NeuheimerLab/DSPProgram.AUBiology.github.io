@@ -128,6 +128,101 @@
     ]
   },
   {
+    "objectID": "handbookDAIntro.html",
+    "href": "handbookDAIntro.html",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nHere we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-tools",
+    "href": "handbookDAIntro.html#a-note-on-tools",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#the-basics",
+    "href": "handbookDAIntro.html#the-basics",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#so-you-want-to",
+    "href": "handbookDAIntro.html#so-you-want-to",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#purpose",
+    "href": "intro.html#purpose",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
     "objectID": "handbookIntro.html",
     "href": "handbookIntro.html",
     "title": "Introduction to the Handbook",
@@ -180,46 +275,6 @@
     "crumbs": [
       "The DSP Program Handbook",
       "Introduction to the Handbook"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#purpose",
-    "href": "intro.html#purpose",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
     ]
   },
   {
