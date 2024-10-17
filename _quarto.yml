@@ -17,20 +17,17 @@ website:
         href: feedback.qmd
         
   sidebar:
-    
-    search: true
-    
     - title: "What is the DSP Program?"
       style: "docked"
       background: light
       contents:
+        - intro.qmd
         - philosophy.qmd
         - structure.qmd
         
     - title: "The DSP Program Handbook"
-      style: "docked"
-      background: light
       contents: 
+        - handbookIntro.qmd
         - handbookDCIntro.qmd
         - handbookDAIntro.qmd
         - handbookSMIntro.qmd
