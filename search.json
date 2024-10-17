@@ -73,50 +73,58 @@
     "text": "Welcome to the Data Skills Portfolio Program!\nThe Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.\nThe DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.\nHere you will find a description of the program along with DSP handbook materials.\nExplore and enjoy!\nAnd remember: your feedback is welcome!"
   },
   {
-    "objectID": "feedback.html",
-    "href": "feedback.html",
-    "title": "Contacts and Feedback for the DSP Program",
+    "objectID": "handbookDCIntro.html",
+    "href": "handbookDCIntro.html",
+    "title": "Data Collection & Curation Handbook",
     "section": "",
-    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "text": "CHECK PSB2024",
     "crumbs": [
-      "What is the DSP Program?"
+      "The DSP Program Handbook",
+      "Data Collection & Curation Handbook"
     ]
   },
   {
-    "objectID": "intro.html#purpose",
-    "href": "intro.html#purpose",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.",
+    "objectID": "handbookDCIntro.html#experimental-design",
+    "href": "handbookDCIntro.html#experimental-design",
+    "title": "Data Collection & Curation Handbook",
+    "section": "Experimental design",
+    "text": "Experimental design\nThe usefulness and value of the data you are collecting are only as good as your experimental design. [more TBA]",
     "crumbs": [
-      "What is the DSP Program?"
+      "The DSP Program Handbook",
+      "Data Collection & Curation Handbook"
     ]
   },
   {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
+    "objectID": "handbookDCIntro.html#data-collection",
+    "href": "handbookDCIntro.html#data-collection",
+    "title": "Data Collection & Curation Handbook",
+    "section": "Data collection",
+    "text": "Data collection\nThe individual needs of your project will vary, but here we will present a standard way of structuring your data and data collection that will support robust and ethical research. Specifically we will cover:\n\nChoosing what you record\nChoosing how you record it\nNaming your columns and data files\nIncluding a “ReadMe” document\nAsking questions\nBacking up your data\n\nA note on tools: You will most likely be collecting your data in a spreadsheet editor like Excel1, but these guidelines are generally applicable for however you are collecting your data.\n\nChoosing what you record\nYou should be recording the conditions along with your observations. You should also include comments made during the data collection noting unusual conditions (e.g. weather) that might affect your observations (as a comments column). When in doubt record, record, record.\n\n\nChoosing how you record it\nBest practices is to record your data in “unique record format”2. Unique record format makes it easier to track how you have collected the data, it makes it easier for two or more researchers to collaborate on the data collection, and it reduces the chance of errors in your data collection.\nRecording your data in unique record format means that:\n\nevery column is a variable of one format (either numeric or character),\nevery row is an observation,\nevery cell holds only one piece of information (i.e. a single value), and\nyou record your data in a rectangular table: this means that all columns have the same number of rows. If needed, you can fill missing information with a value to show it is missing (e.g. using NA which is what R uses to indicate a missing value)\n\nIn addition - you should make sure there is no extra white space (e.g. blank rows) above or to the left of your data.\n\nit is most flexible to record dates as separate columns for year, month and day, and, similarly, record times as separate columns of hours and minutes. The handbook goes over analysis with complicated dates columns [link TBA], but having separate columns for each variable is easiest.\nrecord a decimal using “.” not “,” as this will be most consistent for the data analysis tools we will be using. Again, there are ways of working around this in R if your data does use commas as decimals.\n\n\nNaming your columns\nMake your variable (column) names simple but informative.\nAvoid spaces in your column names - instead you can include multiple words in your column names by using “snake_case” (e.g. total_length). Avoid having units in your column names (link to readme file)\n\n\nNaming your data files\nInclude a useful name for your data file that describes the type of data in the file and the project or person related to the project, e.g. “ChristensenMSc_EnviroData.csv”\nNote that you will likely record your data in a spreadsheet editor resulting in a file with e.g. .xlsx extension. That said, you may want to save your data file as a plain text file (e.g. with .txt or .csv extension). This is because a plain text file is the most “portable” both across platforms (e.g. Windows vs. Mac) and into the future. Also, this format avoids Excel reformatting data columns that can cause confusion with interpretation. You can change how your file is saved using “Save as” in the file menu.\nHere’s an example of good data collection practice (i.e. unique record format) - it’s a file called Pedersen_ExampleData.csv:\n\n\n\n\n\nNote that:\n1a) There is no white space above or to the left of the data.\n1b) Every column is a variable that is either a numeric or a character.\n1c) Each row is a unique observation.\n1d) Each cell holds only a single piece of information.\n1e) The data are recorded in a regular table (no missing rows or columns).\nIn contrast, here is an example of what NOT to do:\n\n\n\n\n\nNote in this bad-practice example:\n2a) There is white space above the data.\n2b) Some columns contain a mix of numeric and character data. Note that you it is better to give information on units (e.g. g) in the ReadMe file (see next section).\n2c) Rows contain more than one observation.\n2d) Some cells hold more than one piece of information.\n2e) The data are not recorded in a regular table (there are missing rows and columns).\n2f) A variable is not in its own column.\n2g) A column name contains white space.\n\n\n\nInclude a “ReadMe” document\nFor each data file, include a separate “ReadMe” document that describes the data. The ReadMe file documents (briefly) what the data are and where they came from. The document allows you to communicate your data to your colleagues and your future self.\nThis document should:\n\nbe a plain text or pdf document.\ninclude the name of the data file associated with the ReadMe document.\ninclude a description of where the data came from.\ninclude information on how the data can or can not be reused.\ninclude a contact person for the data and their contact details (e.g. email).\ninclude descriptions of each column, the type of data and the format of the data, including units.\ninclude a description of how missing values are recorded (e.g. NA).\n\nHere is an example of a ReadMe document to accompany the Pedersen_ExampleData.csv above:\n\n\n\n\n\n\n\nAsking questions\nRemember to ask questions! Asking your questions is one of the most valuable contributions you can make to science. Asking your questions will help us clarify methods, develop better strategies and stop accidents before they happen.\nIf you’re unsure how to do something - stop and ask!\nIf you’re unsure why you should do something - stop and ask!\nIf something doesn’t feel safe or comfortable - stop and ask!\n\n\nBacking up your data\nWhere to store your data [TBA]",
     "crumbs": [
-      "What is the DSP Program?"
+      "The DSP Program Handbook",
+      "Data Collection & Curation Handbook"
     ]
   },
   {
-    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "objectID": "handbookDCIntro.html#where-to-go-from-here",
+    "href": "handbookDCIntro.html#where-to-go-from-here",
+    "title": "Data Collection & Curation Handbook",
+    "section": "Where to go from here:",
+    "text": "Where to go from here:\nFor more ideas on best practices regarding data curation, try:\nWickham, H. . (2014). Tidy Data. Journal of Statistical Software, 59(10), 1–23. https://doi.org/10.18637/jss.v059.i10",
     "crumbs": [
-      "What is the DSP Program?"
+      "The DSP Program Handbook",
+      "Data Collection & Curation Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDCIntro.html#footnotes",
+    "href": "handbookDCIntro.html#footnotes",
+    "title": "Data Collection & Curation Handbook",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nthough may need databases↩︎\nalso called “long format”↩︎",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Collection & Curation Handbook"
     ]
   },
   {
@@ -173,6 +181,53 @@
       "The DSP Program Handbook",
       "Introduction to the Handbook"
     ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#purpose",
+    "href": "intro.html#purpose",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "feedback.html",
+    "href": "feedback.html",
+    "title": "Contacts and Feedback for the DSP Program",
+    "section": "",
+    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
   },
   {
     "objectID": "FAQ.html#how-do-i-send-my-commentsquestions-feedback",
