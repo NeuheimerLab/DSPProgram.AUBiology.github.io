@@ -7,19 +7,22 @@ website:
     style: "docked"
     search: true
     contents: 
-    - section: "What is the DSP Program?"
+    - title: "What is the DSP Program?"
       href: intro.qmd
       contents:
         - philosophy.qmd
         - structure.qmd
-    - section: "The DSP Program Handbook"
+    - title: "The DSP Program Handbook"
       href: handbookIntro.qmd
-      contents: 
-        - handbookDCIntro.qmd
-        - handbookDAIntro.qmd
-        - handbookSMIntro.qmd
-        - FAQ.qmd
-    - section: "Feedback"
+      section: "Data Curation"
+      href: handbookDCIntro.qmd
+      section: "Data Analysis"
+      href: handbookDAIntro.qmd
+      section: "Statistical Modelling"
+      href: handbookSMIntro.qmd
+      section: "FAQs"
+      href: FAQ.qmd
+    - title: "Feedback"
       href: feedback.qmd
     
 
