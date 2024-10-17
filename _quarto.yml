@@ -29,7 +29,7 @@ website:
       contents: 
         - handbookIntro.qmd
         - handbookDCIntro.qmd
-        #- handbookDAIntro.qmd
+        - handbookDAIntro.qmd
         #- handbookSMIntro.qmd
         - FAQ.qmd
     
