@@ -3,27 +3,38 @@ project:
 
 website:
   title: "Data Skills Portfolio Program"
-  sidebar: 
-    style: "docked"
+  navbar: 
+    background: primary
     search: true
-    contents: 
+    left: 
+      - text: "Home"
+        href: index.qmd
+      - text: "What is the DSP Program?"
+        href: intro.qmd
+      - text: "The DSP Program Handbook"
+        href: handbookIntro.qmd
+      - text: "Feedback"
+        href: feedback.qmd
+        
+  sidebar:
+    
+    search: true
+    
     - title: "What is the DSP Program?"
-      href: intro.qmd
+      style: "docked"
+      background: light
       contents:
         - philosophy.qmd
         - structure.qmd
+        
     - title: "The DSP Program Handbook"
-      href: handbookIntro.qmd
-      section: "Data Curation"
-      href: handbookDCIntro.qmd
-      section: "Data Analysis"
-      href: handbookDAIntro.qmd
-      section: "Statistical Modelling"
-      href: handbookSMIntro.qmd
-      section: "FAQs"
-      href: FAQ.qmd
-    - title: "Feedback"
-      href: feedback.qmd
+      style: "docked"
+      background: light
+      contents: 
+        - handbookDCIntro.qmd
+        - handbookDAIntro.qmd
+        - handbookSMIntro.qmd
+        - FAQ.qmd
     
 
 format:
