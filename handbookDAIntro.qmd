@@ -2,18 +2,6 @@
 title: "Data Analysis Handbook"
 ---
 
-```{r}
-#| echo: false
-
-TData<-read.csv("ExampleData.csv", # name of data file
-                 header=TRUE) # make sure R sees column names (this is the default)
-
- #ChlData<-read.csv("Chlorophyll.csv", header=TRUE)
- 
-#library(palmerpenguins)
-#penguins <- na.omit(penguins)
-
-```
 
 # The DSP Program Handbook for Data Analysis {.unnumbered}
 
