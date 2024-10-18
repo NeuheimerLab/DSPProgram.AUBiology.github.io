@@ -128,99 +128,11 @@
     ]
   },
   {
-    "objectID": "handbookDAIntro.html",
-    "href": "handbookDAIntro.html",
-    "title": "Data Analysis Handbook",
+    "objectID": "feedback.html",
+    "href": "feedback.html",
+    "title": "Contacts and Feedback for the DSP Program",
     "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nHere we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#a-note-on-tools",
-    "href": "handbookDAIntro.html#a-note-on-tools",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
-    "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#the-basics",
-    "href": "handbookDAIntro.html#the-basics",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#so-you-want-to",
-    "href": "handbookDAIntro.html#so-you-want-to",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#purpose",
-    "href": "intro.html#purpose",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
+    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
   },
   {
     "objectID": "handbookIntro.html",
@@ -278,11 +190,209 @@
     ]
   },
   {
-    "objectID": "feedback.html",
-    "href": "feedback.html",
-    "title": "Contacts and Feedback for the DSP Program",
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "What is the DSP Program?",
     "section": "",
-    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#purpose",
+    "href": "intro.html#purpose",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused career options. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished. Capable first and foremost as biologists. Practice grounded in biological theory. transferrable skills\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities. Also: repeated practice.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers, “radar”.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html",
+    "href": "handbookDAIntro.html",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nHere we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-tools",
+    "href": "handbookDAIntro.html#a-note-on-tools",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#the-basics",
+    "href": "handbookDAIntro.html#the-basics",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#so-you-want-to",
+    "href": "handbookDAIntro.html#so-you-want-to",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html",
+    "href": "handbookSMIntro.html",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "",
+    "text": "All science is explaining variability - explaining why observations are changing in time and/or space. These explanations1 lead us to mechanistic understandings of why the world is as we observe it.\nAs biologists, the variability that you are interested in relates to the biological world, but your job (explaining variability) is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.\nYou need your explanations of variability to be quantitative in order to:\n\ncommunicate how certain you are with your explanation,\ncommunicate how much variability still remains unexplained, and\nmake useful predictions about the biological world.\n\nStatistics provides the mathematical tools2 to accomplish these tasks. Statistics help you determine the evidence for causal3 mechanisms. And statistics help you make useful predictions4 about how a biological system might behave at a different time or location.\nStatistics help us answer:\n\ncan you explain the variability that you are seeing?\n\ngiven your hypothesis, how much variation can you explain?\ngiven your hypothesis, what would you predict to observe?",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#why-statistics",
+    "href": "handbookSMIntro.html#why-statistics",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "",
+    "text": "All science is explaining variability - explaining why observations are changing in time and/or space. These explanations1 lead us to mechanistic understandings of why the world is as we observe it.\nAs biologists, the variability that you are interested in relates to the biological world, but your job (explaining variability) is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.\nYou need your explanations of variability to be quantitative in order to:\n\ncommunicate how certain you are with your explanation,\ncommunicate how much variability still remains unexplained, and\nmake useful predictions about the biological world.\n\nStatistics provides the mathematical tools2 to accomplish these tasks. Statistics help you determine the evidence for causal3 mechanisms. And statistics help you make useful predictions4 about how a biological system might behave at a different time or location.\nStatistics help us answer:\n\ncan you explain the variability that you are seeing?\n\ngiven your hypothesis, how much variation can you explain?\ngiven your hypothesis, what would you predict to observe?",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#why-statistical-modelling",
+    "href": "handbookSMIntro.html#why-statistical-modelling",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "Why statistical modelling?",
+    "text": "Why statistical modelling?\nYou can quantify how much variability you can explain with your research hypothesis through statistical modelling. The model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:\n\ncan I explain the variability that I am seeing? (Can I reject my hypothesis?)\ngiven my hypothesis, how much variation in the observations can I explain?\ngiven my hypothesis, what would I expect (predict) to observe under different times or locations?\n\nYour job then is to explain observation variability in time and space by creating a “model” of what (you think) is going on - hence statistical modelling. This is your best guess of how the world is your hypothesis in mathematical form. Then you can use statistics to evaluate how useful that “best guess” is modelling actually let’s you accomplish two tasks (this is testing your hypothesis).\nIt is important to remember that any model is only an approximation of what is going on in the real world. As many have said before\n\nAll models are wrong but some are useful.\n\nWe will discuss how you can build useful models that you can use to test your hypotheses.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#introducing-a-statistical-modelling-framework",
+    "href": "handbookSMIntro.html#introducing-a-statistical-modelling-framework",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "Introducing a statistical modelling framework",
+    "text": "Introducing a statistical modelling framework\n\nThe focus of this section of the handbook is statistics that can be applied to your work as a biologist. For that reason, the motivation for what we are going to do together comes directly from your biological research hypotheses. As a biologist, you have a research hypothesis that you want to test. The method presented in this handbook will help you test it. You will learn how to move from biological theory to hypothesis to the statistical modelling process you will use to test your hypothesis.\nYou will learn this process of statistical modelling by walking through a “Statistical Modelling Framework”. This is a set of steps that you can use to go from your research hypothesis to designing a model, testing your hypothesis and communicating the results.\nThis handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.\nAs we’ll discuss later in the handbook, working through this framework will also guide you in creating the “guts” of a paper. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why should we explain this variation at all?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I’m trying to explain?). Once through, you’ll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We’ll talk about how this works in section.\nA note about our Statistical Modelling Framework: I have drawn the steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses5 as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e. the model is a valid one that we can use to test our hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.\n\nSteps in the statistical modelling framework:\n\n\nResponse(s)\nHere you will define your research question by identifying your response variable(s).\n\nWhat variability are you trying to explain?\nAnd why is it worth explaining? (your motivation)\n\nNote: we’ll begin by discussing how to model hypotheses with just one response variable before discussing multiple response variable(s).\n\n\nPredictor(s)\nHere you will choose your predictor variables.\n\nwhat could explain the variability in your response?\nwhat are the possible mechanisms behind your argument?\n\n\n\nHypothesis\nHere you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical model.\n\n\nStarting model\nHere you will choose and fit your starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data.\n\n\nModel validation\nHere you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence. You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.\n\n\nHypothesis testing\nHere you will test your hypothesis by assessing the evidence supporting your model. We will discuss a number of different methods to do this, but will focus on the model selection method as a robust way to evaluate what your model is telling you about your hypothesis.\n\n\nReporting\nHere you will report the results of your hypothesis testing.\nYou will report:\n\nyour best-specified model identified in the hypothesis testing\nthe effects (patterns) described by your model (including visualizing your model effects)\nhow well your model explains variability in your response.\n\n\n\nPredicting\nHere you will use your model to make predictions of your response under different conditions (while considering prediction limits).\n\n\n\nWhere we will begin: generalized linear models (GLMs)\nTo begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses. Also, learning statistics as derivatives or special cases of GLMs will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).\nRemember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.6). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we will compare GLMs to alternative model types here. And remember: the steps in the statistical modelling framework is generally applicable. Regardless of the method we apply, we need to ground our choices in good biological and statistical theory.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#a-note-on-tools",
+    "href": "handbookSMIntro.html#a-note-on-tools",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "A note on tools:",
+    "text": "A note on tools:",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#the-examples",
+    "href": "handbookSMIntro.html#the-examples",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "The examples",
+    "text": "The examples\nHere we’ve gathered examples following our statistical modelling framework structure. You can request/contribute new examples here",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#from-statistical-modelling-to-scientific-report-writing",
+    "href": "handbookSMIntro.html#from-statistical-modelling-to-scientific-report-writing",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "From statistical modelling to scientific report writing",
+    "text": "From statistical modelling to scientific report writing\nhow framework relates to communication",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#where-to-from-here",
+    "href": "handbookSMIntro.html#where-to-from-here",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "Where to from here?",
+    "text": "Where to from here?\n\nboosted regression trees\nBayesian negative bionomial regression mixed models\nnested design in mixed models\nrandom forest vs. GAMs\nmeta-analysis\ncomplex models\n\nclassification (categorical response) and regression (continous response) trees\nboosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit\nADMB and TMB\nmultivariate statistics\nexploratoryordination/clustering\ncross validation\n\n[[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al. 2023\n[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together\n\n\nAcknowledgements\nTBA\n\n\n\nhow framework relates to communication",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#where-to-from-here-1",
+    "href": "handbookSMIntro.html#where-to-from-here-1",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "Where to from here?",
+    "text": "Where to from here?\n\nboosted regression trees\nBayesian negative bionomial regression mixed models\nnested design in mixed models\nrandom forest vs. GAMs\nmeta-analysis\ncomplex models\n\nclassification (categorical response) and regression (continous response) trees\nboosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit\nADMB and TMB\nmultivariate statistics\nexploratoryordination/clustering\ncross validation\n\n[[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al. 2023\n[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together\n\n\nAcknowledgements\nTBA",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
+  },
+  {
+    "objectID": "handbookSMIntro.html#footnotes",
+    "href": "handbookSMIntro.html#footnotes",
+    "title": "The DSP Program Handbook for Statistical Modelling",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhere, we can also use the term “research hypothesis” instead of explanation and you’ll see we quickly switch to using this term↩︎\nMath skills have often been underemphasized in many Biology educations. This has not been helpful or necessary. Biologists need math and are very capable at applying math to solve problems, but the math needs to be useful; that is, math that we can apply to our own needs as we research biology. The DSP Program aims at providing statistical modelling tools that will be useful to you as a biologist. It’s a happy coincidence that the same skills can be applied to a lot of other situations as well. The programming and statistics skills you are learning here will be useful to you in the future - in your future courses, thesis-writing and a wide range of careers.↩︎\nmore on causal vs. correlative explanations coming soon↩︎\nuseful predictions will always include uncertainty↩︎\nand these will be educated guesses!↩︎\nDon’t worry if these terms don’t mean anything to you yet - more to come!↩︎",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "The DSP Program Handbook for Statistical Modelling"
+    ]
   },
   {
     "objectID": "FAQ.html#how-do-i-send-my-commentsquestions-feedback",

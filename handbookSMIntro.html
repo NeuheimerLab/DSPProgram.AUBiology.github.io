@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Analysis Handbook – Data Skills Portfolio Program</title>
+<title>The DSP Program Handbook for Statistical Modelling – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookDAIntro.html">Data Analysis Handbook</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookSMIntro.html">The DSP Program Handbook for Statistical Modelling</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -141,13 +141,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Analysis Handbook</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./handbookSMIntro.html" class="sidebar-item-text sidebar-link">
+  <a href="./handbookSMIntro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">The DSP Program Handbook for Statistical Modelling</span></a>
   </div>
 </li>
@@ -167,28 +167,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-dsp-program-handbook-for-data-analysis" id="toc-the-dsp-program-handbook-for-data-analysis" class="nav-link active" data-scroll-target="#the-dsp-program-handbook-for-data-analysis">The DSP Program Handbook for Data Analysis</a>
+  <li><a href="#why-statistics" id="toc-why-statistics" class="nav-link active" data-scroll-target="#why-statistics">Why statistics?</a></li>
+  <li><a href="#why-statistical-modelling" id="toc-why-statistical-modelling" class="nav-link" data-scroll-target="#why-statistical-modelling">Why statistical <strong><em>modelling</em></strong>?</a></li>
+  <li><a href="#introducing-a-statistical-modelling-framework" id="toc-introducing-a-statistical-modelling-framework" class="nav-link" data-scroll-target="#introducing-a-statistical-modelling-framework">Introducing a statistical modelling framework</a>
   <ul class="collapse">
-  <li><a href="#a-note-on-tools" id="toc-a-note-on-tools" class="nav-link" data-scroll-target="#a-note-on-tools">A note on tools:</a></li>
-  <li><a href="#a-note-on-learning-your-first-programming-language" id="toc-a-note-on-learning-your-first-programming-language" class="nav-link" data-scroll-target="#a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</a></li>
-  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The basics</a></li>
-  <li><a href="#so-you-want-to" id="toc-so-you-want-to" class="nav-link" data-scroll-target="#so-you-want-to">So you want to…</a>
-  <ul class="collapse">
-  <li><a href="#load-your-data-into-r" id="toc-load-your-data-into-r" class="nav-link" data-scroll-target="#load-your-data-into-r">… load your data into R</a></li>
-  <li><a href="#validate-and-explore-your-data" id="toc-validate-and-explore-your-data" class="nav-link" data-scroll-target="#validate-and-explore-your-data">… validate and explore your data</a></li>
-  <li><a href="#visualize-your-data-make-a-plot" id="toc-visualize-your-data-make-a-plot" class="nav-link" data-scroll-target="#visualize-your-data-make-a-plot">… visualize your data (make a plot!)</a></li>
-  <li><a href="#deal-with-missing-values" id="toc-deal-with-missing-values" class="nav-link" data-scroll-target="#deal-with-missing-values">… deal with missing values</a></li>
-  <li><a href="#sort-your-data" id="toc-sort-your-data" class="nav-link" data-scroll-target="#sort-your-data">… sort your data</a></li>
-  <li><a href="#subset-your-data" id="toc-subset-your-data" class="nav-link" data-scroll-target="#subset-your-data">… subset your data</a></li>
-  <li><a href="#work-with-dates-and-times" id="toc-work-with-dates-and-times" class="nav-link" data-scroll-target="#work-with-dates-and-times">… work with dates and times</a></li>
-  <li><a href="#transform-your-data" id="toc-transform-your-data" class="nav-link" data-scroll-target="#transform-your-data">… transform your data</a></li>
-  <li><a href="#manipulate-rows-or-columns-in-your-data" id="toc-manipulate-rows-or-columns-in-your-data" class="nav-link" data-scroll-target="#manipulate-rows-or-columns-in-your-data">… manipulate rows or columns in your data</a></li>
-  <li><a href="#manipulate-subsets-of-rows-or-columns" id="toc-manipulate-subsets-of-rows-or-columns" class="nav-link" data-scroll-target="#manipulate-subsets-of-rows-or-columns">… manipulate subsets of rows or columns</a></li>
-  <li><a href="#merge-your-data-with-another-data-set" id="toc-merge-your-data-with-another-data-set" class="nav-link" data-scroll-target="#merge-your-data-with-another-data-set">… merge your data with another data set</a></li>
-  <li><a href="#export-your-data-back-out-of-r" id="toc-export-your-data-back-out-of-r" class="nav-link" data-scroll-target="#export-your-data-back-out-of-r">…export your data back out of R</a></li>
+  <li><a href="#steps-in-the-statistical-modelling-framework" id="toc-steps-in-the-statistical-modelling-framework" class="nav-link" data-scroll-target="#steps-in-the-statistical-modelling-framework">Steps in the statistical modelling framework:</a></li>
+  <li><a href="#where-we-will-begin-generalized-linear-models-glms" id="toc-where-we-will-begin-generalized-linear-models-glms" class="nav-link" data-scroll-target="#where-we-will-begin-generalized-linear-models-glms">Where we will begin: generalized linear models (GLMs)</a></li>
   </ul></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best practices</a></li>
-  <li><a href="#other-topics" id="toc-other-topics" class="nav-link" data-scroll-target="#other-topics">Other topics</a></li>
+  <li><a href="#a-note-on-tools" id="toc-a-note-on-tools" class="nav-link" data-scroll-target="#a-note-on-tools">A note on tools:</a></li>
+  <li><a href="#the-examples" id="toc-the-examples" class="nav-link" data-scroll-target="#the-examples">The examples</a></li>
+  <li><a href="#from-statistical-modelling-to-scientific-report-writing" id="toc-from-statistical-modelling-to-scientific-report-writing" class="nav-link" data-scroll-target="#from-statistical-modelling-to-scientific-report-writing">From statistical modelling to scientific report writing</a></li>
+  <li><a href="#where-to-from-here" id="toc-where-to-from-here" class="nav-link" data-scroll-target="#where-to-from-here">Where to from here?</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
+  <li><a href="#where-to-from-here-1" id="toc-where-to-from-here-1" class="nav-link" data-scroll-target="#where-to-from-here-1">Where to from here?</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgements-1" id="toc-acknowledgements-1" class="nav-link" data-scroll-target="#acknowledgements-1">Acknowledgements</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -198,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Analysis Handbook</h1>
+<h1 class="title">The DSP Program Handbook for Statistical Modelling</h1>
 </div>
 
 
@@ -215,94 +210,187 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-dsp-program-handbook-for-data-analysis" class="level1 unnumbered">
-<h1 class="unnumbered">The DSP Program Handbook for Data Analysis</h1>
+<section id="why-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="why-statistics">Why statistics?</h2>
+<p>All science is explaining variability - explaining why observations are changing in time and/or space. These explanations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> lead us to mechanistic understandings of why the world is as we observe it.</p>
+<p>As biologists, the variability that you are interested in relates to the biological world, but your job (explaining variability) is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.</p>
+<p>You need your explanations of variability to be quantitative in order to:</p>
+<ul>
+<li>communicate how certain you are with your explanation,</li>
+<li>communicate how much variability still remains unexplained, and</li>
+<li>make useful predictions about the biological world.</li>
+</ul>
+<p>Statistics provides the mathematical tools<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to accomplish these tasks. Statistics help you determine the evidence for causal<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> mechanisms. And statistics help you make useful predictions<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> about how a biological system might behave at a different time or location.</p>
+<p>Statistics help us answer:</p>
+<ul>
+<li>can you explain the variability that you are seeing?<br>
+</li>
+<li>given your hypothesis, how much variation can you explain?</li>
+<li>given your hypothesis, what would you predict to observe?</li>
+</ul>
+</section>
+<section id="why-statistical-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="why-statistical-modelling">Why statistical <strong><em>modelling</em></strong>?</h2>
+<p>You can quantify how much variability you can explain with your research hypothesis through statistical modelling. The model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:</p>
+<ul>
+<li>can I explain the variability that I am seeing? (Can I reject my hypothesis?)</li>
+<li>given my hypothesis, how much variation in the observations can I explain?</li>
+<li>given my hypothesis, what would I expect (predict) to observe under different times or locations?</li>
+</ul>
+<p>Your job then is to explain observation variability in time and space by creating a “model” of what (you think) is going on - hence statistical modelling. This is your best guess of how the world is your hypothesis in mathematical form. Then you can use statistics to evaluate how useful that “best guess” is modelling actually let’s you accomplish two tasks (this is testing your hypothesis).</p>
+<p>It is important to remember that any model is only an approximation of what is going on in the real world. As many have said before</p>
+<blockquote class="blockquote">
+<p><em>All models are wrong but some are useful.</em></p>
+</blockquote>
+<p>We will discuss how you can build useful models that you can use to test your hypotheses.</p>
+</section>
+<section id="introducing-a-statistical-modelling-framework" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-a-statistical-modelling-framework">Introducing a statistical modelling framework</h2>
+<p><img src="./statsModFramework.png" align="right" width="150"></p>
+<p>The focus of this section of the handbook is statistics that can be applied to your work as a biologist. For that reason, the motivation for what we are going to do together comes directly from your biological research hypotheses. As a biologist, you have a research hypothesis that you want to test. The method presented in this handbook will help you test it. You will learn how to move from biological theory to hypothesis to the statistical modelling process you will use to test your hypothesis.</p>
+<p>You will learn this process of statistical modelling by walking through a “Statistical Modelling Framework”. This is a set of steps that you can use to go from your research hypothesis to designing a model, testing your hypothesis and communicating the results.</p>
+<p>This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.</p>
+<p>As we’ll discuss later in the handbook, working through this framework will also guide you in creating the “guts” of a paper. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why should we explain this variation at all?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I’m trying to explain?). Once through, you’ll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We’ll talk about how this works in <a href="">section</a>.</p>
+<p>A note about our Statistical Modelling Framework: I have drawn the steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e.&nbsp;the model is a valid one that we can use to test our hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.</p>
+<section id="steps-in-the-statistical-modelling-framework" class="level3">
+<h3 class="anchored" data-anchor-id="steps-in-the-statistical-modelling-framework">Steps in the statistical modelling framework:</h3>
+<!--
+<img src="./statsModFramework.png" align="left" width="150"/>
+-->
+<section id="responses" class="level4">
+<h4 class="anchored" data-anchor-id="responses"><a href="DSPH_SM_Responses.qmd">Response(s)</a></h4>
+<p>Here you will define your research question by identifying your response variable(s).</p>
+<ul>
+<li><p>What variability are you trying to explain?</p></li>
+<li><p>And why is it worth explaining? (your motivation)</p></li>
+</ul>
+<p>Note: we’ll begin by discussing how to model hypotheses with just one response variable before discussing multiple response variable(s).</p>
+</section>
+<section id="predictors" class="level4">
+<h4 class="anchored" data-anchor-id="predictors"><a href="DSPH_SM_Predictors.qmd">Predictor(s)</a></h4>
+<p>Here you will choose your predictor variables.</p>
+<ul>
+<li><p>what could explain the variability in your response?</p></li>
+<li><p>what are the possible mechanisms behind your argument?</p></li>
+</ul>
+</section>
+<section id="hypothesis" class="level4">
+<h4 class="anchored" data-anchor-id="hypothesis"><a href="DSPH_SM_Hypothesis.qmd">Hypothesis</a></h4>
+<p>Here you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical model.</p>
+</section>
+<section id="starting-model" class="level4">
+<h4 class="anchored" data-anchor-id="starting-model"><a href="DSPH_SM_StartingModel">Starting model</a></h4>
+<p>Here you will choose and fit your starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data.</p>
+</section>
+<section id="model-validation" class="level4">
+<h4 class="anchored" data-anchor-id="model-validation"><a href="DSPH_SM_ModelValidation.qmd">Model validation</a></h4>
+<p>Here you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence. You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.</p>
+</section>
+<section id="hypothesis-testing" class="level4">
+<h4 class="anchored" data-anchor-id="hypothesis-testing"><a href="DSPH_SM_HypothesisTesting.qmd">Hypothesis testing</a></h4>
+<p>Here you will test your hypothesis by assessing the evidence supporting your model. We will discuss a number of different methods to do this, but will focus on the model selection method as a robust way to evaluate what your model is telling you about your hypothesis.</p>
+</section>
+<section id="reporting" class="level4">
+<h4 class="anchored" data-anchor-id="reporting"><a href="DSPH_SM_Reporting.qmd">Reporting</a></h4>
+<p>Here you will report the results of your hypothesis testing.</p>
+<p>You will report:</p>
+<ul>
+<li><p>your best-specified model identified in the hypothesis testing</p></li>
+<li><p>the effects (patterns) described by your model (including visualizing your model effects)</p></li>
+<li><p>how well your model explains variability in your response.</p></li>
+</ul>
+</section>
+<section id="predicting" class="level4">
+<h4 class="anchored" data-anchor-id="predicting"><a href="DSPH_SM_Predicting.qmd">Predicting</a></h4>
+<p>Here you will use your model to make predictions of your response under different conditions (while considering prediction limits).</p>
+</section>
+</section>
+<section id="where-we-will-begin-generalized-linear-models-glms" class="level3">
+<h3 class="anchored" data-anchor-id="where-we-will-begin-generalized-linear-models-glms">Where we will begin: generalized linear models (GLMs)</h3>
+<p>To begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses. Also, learning statistics as derivatives or special cases of GLMs will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).</p>
+<p>Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we will compare GLMs to alternative model types <a href="ExCompareTraditionalGLMs.qmd">here</a>. And remember: the steps in the statistical modelling framework is generally applicable. Regardless of the method we apply, we need to ground our choices in good biological and statistical theory.</p>
+</section>
+</section>
 <section id="a-note-on-tools" class="level2">
 <h2 class="anchored" data-anchor-id="a-note-on-tools">A note on tools:</h2>
-<p><strong>In general</strong> we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:</p>
+</section>
+<section id="the-examples" class="level2">
+<h2 class="anchored" data-anchor-id="the-examples"><a href="examples.qmd">The examples</a></h2>
+<p>Here we’ve gathered examples following our statistical modelling framework structure. <a href="./feedback.html">You can request/contribute new examples here</a></p>
+</section>
+<section id="from-statistical-modelling-to-scientific-report-writing" class="level2">
+<h2 class="anchored" data-anchor-id="from-statistical-modelling-to-scientific-report-writing"><a href="communication.qmd">From statistical modelling to scientific report writing</a></h2>
+<p>how framework relates to communication</p>
+</section>
+<section id="where-to-from-here" class="level2">
+<h2 class="anchored" data-anchor-id="where-to-from-here">Where to from here?</h2>
 <ul>
-<li><p>keep your analysis separate from the data (and thereby safeguard the data),</p></li>
-<li><p>keep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and</p></li>
-<li><p>allow you to use powerful tools to accomplish your analysis tasks.</p></li>
+<li><p>boosted regression trees</p></li>
+<li><p>Bayesian negative bionomial regression mixed models</p></li>
+<li><p>nested design in mixed models</p></li>
+<li><p>random forest vs.&nbsp;GAMs</p></li>
+<li><p>meta-analysis</p></li>
+<li><p>complex models</p>
+<ul>
+<li><p>classification (categorical response) and regression (continous response) trees</p></li>
+<li><p>boosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit</p></li>
+<li><p>ADMB and TMB</p></li>
+<li><p>multivariate statistics</p></li>
+<li><p>exploratoryordination/clustering</p></li>
+<li><p>cross validation</p></li>
 </ul>
-<p>That said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:</p>
-<ul>
-<li><p>keep your analysis separate from your data (e.g.&nbsp;in a separate sheet), and</p></li>
-<li><p>keep a record of all your analysis steps. This is done by:</p>
-<ul>
-<li><p>carefully and completely adding comments explaining your steps,</p></li>
-<li><p>and ensuring each cell contains only one step/piece of information.</p></li>
-</ul></li>
+<p>[[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al.&nbsp;2023</p>
+<p>[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together</p></li>
 </ul>
+<section id="acknowledgements" class="level3">
+<h3 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
+<p>TBA</p>
+<div class="footnotes">
+
+</div>
+<p>how framework relates to communication</p>
 </section>
-<section id="a-note-on-learning-your-first-programming-language" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</h2>
-<p>A bit on strategy when learning any programming language (we’ll also cover more strategies in class): <strong>it’s important to struggle but not for too long</strong>. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.</p>
-<p><strong>Don’t worry about memorizing</strong> the details of this document or our discussions in class. You will always have reference material available to you (e.g.&nbsp;this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.</p>
 </section>
-<section id="the-basics" class="level2">
-<h2 class="anchored" data-anchor-id="the-basics">The basics</h2>
-<p><a href="DA_RBasics.qmd">Here we will go over essential topics when you’re first learning a programming language.</a>. Here we cover:</p>
+<section id="where-to-from-here-1" class="level2">
+<h2 class="anchored" data-anchor-id="where-to-from-here-1">Where to from here?</h2>
 <ul>
-<li><p>installing R</p></li>
-<li><p>scripts</p></li>
-<li><p>basic syntax</p></li>
-<li><p>getting help in R (how to read help files!)</p></li>
-<li><p>objects and data structures</p></li>
-<li><p>etc.</p></li>
+<li><p>boosted regression trees</p></li>
+<li><p>Bayesian negative bionomial regression mixed models</p></li>
+<li><p>nested design in mixed models</p></li>
+<li><p>random forest vs.&nbsp;GAMs</p></li>
+<li><p>meta-analysis</p></li>
+<li><p>complex models</p>
+<ul>
+<li><p>classification (categorical response) and regression (continous response) trees</p></li>
+<li><p>boosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit</p></li>
+<li><p>ADMB and TMB</p></li>
+<li><p>multivariate statistics</p></li>
+<li><p>exploratoryordination/clustering</p></li>
+<li><p>cross validation</p></li>
 </ul>
-</section>
-<section id="so-you-want-to" class="level2">
-<h2 class="anchored" data-anchor-id="so-you-want-to">So you want to…</h2>
-<p>Here we will provide examples of how to accomplish common data analysis tasks.</p>
-<section id="load-your-data-into-r" class="level3">
-<h3 class="anchored" data-anchor-id="load-your-data-into-r"><a href="SYWT_Import.qmd">… load your data into R</a></h3>
-</section>
-<section id="validate-and-explore-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="validate-and-explore-your-data"><a href="SYWT_Validate.qmd">… validate and explore your data</a></h3>
-</section>
-<section id="visualize-your-data-make-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="visualize-your-data-make-a-plot"><a href="SYWT_Visualize.qmd">… visualize your data (make a plot!)</a></h3>
-</section>
-<section id="deal-with-missing-values" class="level3">
-<h3 class="anchored" data-anchor-id="deal-with-missing-values"><a href="SYWT_NA.qmd">… deal with missing values</a></h3>
-</section>
-<section id="sort-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="sort-your-data"><a href="SYWT_Sort.qmd">… sort your data</a></h3>
-</section>
-<section id="subset-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="subset-your-data"><a href="SYWT_Subset.qmd">… subset your data</a></h3>
-</section>
-<section id="work-with-dates-and-times" class="level3">
-<h3 class="anchored" data-anchor-id="work-with-dates-and-times"><a href="SYWT_DatesTimes.qmd">… work with dates and times</a></h3>
-</section>
-<section id="transform-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="transform-your-data"><a href="SYWT_Transform.qmd">… transform your data</a></h3>
-</section>
-<section id="manipulate-rows-or-columns-in-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-rows-or-columns-in-your-data"><a href="SYWT_ManipulateRowsColumns.qmd">… manipulate rows or columns in your data</a></h3>
-</section>
-<section id="manipulate-subsets-of-rows-or-columns" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-subsets-of-rows-or-columns"><a href="SYWT_ManipulateSubsets.qmd">… manipulate subsets of rows or columns</a></h3>
-</section>
-<section id="merge-your-data-with-another-data-set" class="level3">
-<h3 class="anchored" data-anchor-id="merge-your-data-with-another-data-set"><a href="SYWT_Merge.qmd">… merge your data with another data set</a></h3>
-</section>
-<section id="export-your-data-back-out-of-r" class="level3">
-<h3 class="anchored" data-anchor-id="export-your-data-back-out-of-r"><a href="SYWT_Export.qmd">…export your data back out of R</a></h3>
-</section>
-</section>
-<section id="best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices"><a href="DA_BestPractices.qmd">Best practices</a></h2>
-</section>
-<section id="other-topics" class="level2">
-<h2 class="anchored" data-anchor-id="other-topics"><a href="DA_OtherTopics.qmd">Other topics</a></h2>
+<p>[[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al.&nbsp;2023</p>
+<p>[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together</p></li>
+</ul>
+<section id="acknowledgements-1" class="level3">
+<h3 class="anchored" data-anchor-id="acknowledgements-1">Acknowledgements</h3>
+<p>TBA</p>
 
 
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>here, we can also use the term “research hypothesis” instead of explanation and you’ll see we quickly switch to using this term<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Math skills have often been underemphasized in many Biology educations. This has not been helpful or necessary. Biologists need math and are very capable at applying math to solve problems, but the math needs to be useful; that is, math that we can apply to our own needs as we research biology. The DSP Program aims at providing statistical modelling tools that will be useful to you as a biologist. It’s a happy coincidence that the same skills can be applied to a lot of other situations as well. The programming and statistics skills you are learning here will be useful to you in the future - in your future courses, thesis-writing and a wide range of careers.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>more on causal vs.&nbsp;correlative explanations coming soon<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>useful predictions will always include uncertainty<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>and these will be educated guesses!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Don’t worry if these terms don’t mean anything to you yet - more to come!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
