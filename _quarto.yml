@@ -30,7 +30,7 @@ website:
         - handbookIntro.qmd
         - handbookDCIntro.qmd
         - handbookDAIntro.qmd
-        #- handbookSMIntro.qmd
+        - handbookSMIntro.qmd
         - FAQ.qmd
     
 
