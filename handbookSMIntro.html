@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The DSP Program Handbook for Statistical Modelling – Data Skills Portfolio Program</title>
+<title>Statistical Modelling Handbook – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookSMIntro.html">The DSP Program Handbook for Statistical Modelling</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookSMIntro.html">Statistical Modelling Handbook</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./handbookSMIntro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">The DSP Program Handbook for Statistical Modelling</span></a>
+ <span class="menu-text">Statistical Modelling Handbook</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,10 +181,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul></li>
-  <li><a href="#where-to-from-here-1" id="toc-where-to-from-here-1" class="nav-link" data-scroll-target="#where-to-from-here-1">Where to from here?</a>
-  <ul class="collapse">
-  <li><a href="#acknowledgements-1" id="toc-acknowledgements-1" class="nav-link" data-scroll-target="#acknowledgements-1">Acknowledgements</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -193,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The DSP Program Handbook for Statistical Modelling</h1>
+<h1 class="title">Statistical Modelling Handbook</h1>
 </div>
 
 
@@ -213,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="why-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="why-statistics">Why statistics?</h2>
 <p>All science is explaining variability - explaining why observations are changing in time and/or space. These explanations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> lead us to mechanistic understandings of why the world is as we observe it.</p>
-<p>As biologists, the variability that you are interested in relates to the biological world, but your job (explaining variability) is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.</p>
+<p>As biologists, the variability that you are interested in relates to the biological world, but your job is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.</p>
 <p>You need your explanations of variability to be quantitative in order to:</p>
 <ul>
 <li>communicate how certain you are with your explanation,</li>
@@ -231,13 +227,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="why-statistical-modelling" class="level2">
 <h2 class="anchored" data-anchor-id="why-statistical-modelling">Why statistical <strong><em>modelling</em></strong>?</h2>
-<p>You can quantify how much variability you can explain with your research hypothesis through statistical modelling. The model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:</p>
+<p>You can quantify how much variability you can explain with your research hypothesis through statistical modelling. Your statistical model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:</p>
 <ul>
 <li>can I explain the variability that I am seeing? (Can I reject my hypothesis?)</li>
 <li>given my hypothesis, how much variation in the observations can I explain?</li>
 <li>given my hypothesis, what would I expect (predict) to observe under different times or locations?</li>
 </ul>
-<p>Your job then is to explain observation variability in time and space by creating a “model” of what (you think) is going on - hence statistical modelling. This is your best guess of how the world is your hypothesis in mathematical form. Then you can use statistics to evaluate how useful that “best guess” is modelling actually let’s you accomplish two tasks (this is testing your hypothesis).</p>
+<p>Your job then is to explain observation variability in time and space by creating a “model” of what (you think) is going on - hence statistical modelling.</p>
 <p>It is important to remember that any model is only an approximation of what is going on in the real world. As many have said before</p>
 <blockquote class="blockquote">
 <p><em>All models are wrong but some are useful.</em></p>
@@ -250,8 +246,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The focus of this section of the handbook is statistics that can be applied to your work as a biologist. For that reason, the motivation for what we are going to do together comes directly from your biological research hypotheses. As a biologist, you have a research hypothesis that you want to test. The method presented in this handbook will help you test it. You will learn how to move from biological theory to hypothesis to the statistical modelling process you will use to test your hypothesis.</p>
 <p>You will learn this process of statistical modelling by walking through a “Statistical Modelling Framework”. This is a set of steps that you can use to go from your research hypothesis to designing a model, testing your hypothesis and communicating the results.</p>
 <p>This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.</p>
-<p>As we’ll discuss later in the handbook, working through this framework will also guide you in creating the “guts” of a paper. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why should we explain this variation at all?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I’m trying to explain?). Once through, you’ll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We’ll talk about how this works in <a href="">section</a>.</p>
-<p>A note about our Statistical Modelling Framework: I have drawn the steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e.&nbsp;the model is a valid one that we can use to test our hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.</p>
+<p>As we will discuss later in the handbook, working through this framework will also guide you in creating the “guts” of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I’m trying to explain?). Once through, you’ll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in <a href="DSPH_SM_Communicating.qmd">section</a>.</p>
+<p>A note about our Statistical Modelling Framework: The steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e.&nbsp;the model is a valid one that you can use to test your hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.</p>
 <section id="steps-in-the-statistical-modelling-framework" class="level3">
 <h3 class="anchored" data-anchor-id="steps-in-the-statistical-modelling-framework">Steps in the statistical modelling framework:</h3>
 <!--
@@ -276,15 +272,16 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="hypothesis" class="level4">
 <h4 class="anchored" data-anchor-id="hypothesis"><a href="DSPH_SM_Hypothesis.qmd">Hypothesis</a></h4>
-<p>Here you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical model.</p>
+<p>Here you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical modelling.</p>
 </section>
 <section id="starting-model" class="level4">
 <h4 class="anchored" data-anchor-id="starting-model"><a href="DSPH_SM_StartingModel">Starting model</a></h4>
-<p>Here you will choose and fit your starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data.</p>
+<p>Here you will choose and fit the starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data (i.e.&nbsp;confronting your model with your data).</p>
 </section>
 <section id="model-validation" class="level4">
 <h4 class="anchored" data-anchor-id="model-validation"><a href="DSPH_SM_ModelValidation.qmd">Model validation</a></h4>
-<p>Here you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence. You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.</p>
+<p>Here you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence.</p>
+<p>You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.</p>
 </section>
 <section id="hypothesis-testing" class="level4">
 <h4 class="anchored" data-anchor-id="hypothesis-testing"><a href="DSPH_SM_HypothesisTesting.qmd">Hypothesis testing</a></h4>
@@ -307,73 +304,38 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="where-we-will-begin-generalized-linear-models-glms" class="level3">
 <h3 class="anchored" data-anchor-id="where-we-will-begin-generalized-linear-models-glms">Where we will begin: generalized linear models (GLMs)</h3>
-<p>To begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses. Also, learning statistics as derivatives or special cases of GLMs will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).</p>
-<p>Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we will compare GLMs to alternative model types <a href="ExCompareTraditionalGLMs.qmd">here</a>. And remember: the steps in the statistical modelling framework is generally applicable. Regardless of the method we apply, we need to ground our choices in good biological and statistical theory.</p>
+<p>To begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses. Also, understanding how GLMs can be used to test your hypothesis will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).</p>
+<p>Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we compare GLMs to alternative model types <a href="ExCompareTraditionalGLMs.qmd">here</a>. And remember: the steps in the statistical modelling framework are generally applicable. Regardless of the method you apply, you need to ground your choices in good biological and statistical theory.</p>
 </section>
 </section>
 <section id="a-note-on-tools" class="level2">
 <h2 class="anchored" data-anchor-id="a-note-on-tools">A note on tools:</h2>
+<p>TBA</p>
 </section>
 <section id="the-examples" class="level2">
 <h2 class="anchored" data-anchor-id="the-examples"><a href="examples.qmd">The examples</a></h2>
 <p>Here we’ve gathered examples following our statistical modelling framework structure. <a href="./feedback.html">You can request/contribute new examples here</a></p>
 </section>
 <section id="from-statistical-modelling-to-scientific-report-writing" class="level2">
-<h2 class="anchored" data-anchor-id="from-statistical-modelling-to-scientific-report-writing"><a href="communication.qmd">From statistical modelling to scientific report writing</a></h2>
-<p>how framework relates to communication</p>
+<h2 class="anchored" data-anchor-id="from-statistical-modelling-to-scientific-report-writing">From statistical modelling to scientific report writing</h2>
+<p><a href="communication.qmd">Here</a> you can see how you can use the steps in the Statistical Modelling Framework to outline your communication of your hypothesis testing in reports and paper.</p>
 </section>
 <section id="where-to-from-here" class="level2">
 <h2 class="anchored" data-anchor-id="where-to-from-here">Where to from here?</h2>
+<p>TBA: - boosted regression trees - Bayesian negative bionomial regression mixed models - nested design in mixed models - random forest vs.&nbsp;GAMs - meta-analysis - complex models - classification (categorical response) and regression (continous response) trees - boosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit - ADMB and TMB</p>
 <ul>
-<li><p>boosted regression trees</p></li>
-<li><p>Bayesian negative bionomial regression mixed models</p></li>
-<li><p>nested design in mixed models</p></li>
-<li><p>random forest vs.&nbsp;GAMs</p></li>
-<li><p>meta-analysis</p></li>
-<li><p>complex models</p>
-<ul>
-<li><p>classification (categorical response) and regression (continous response) trees</p></li>
-<li><p>boosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit</p></li>
-<li><p>ADMB and TMB</p></li>
 <li><p>multivariate statistics</p></li>
 <li><p>exploratoryordination/clustering</p></li>
 <li><p>cross validation</p></li>
 </ul>
 <p>[[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al.&nbsp;2023</p>
-<p>[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together</p></li>
-</ul>
+<p>[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together</p>
 <section id="acknowledgements" class="level3">
 <h3 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
 <p>TBA</p>
 <div class="footnotes">
 
 </div>
-<p>how framework relates to communication</p>
-</section>
-</section>
-<section id="where-to-from-here-1" class="level2">
-<h2 class="anchored" data-anchor-id="where-to-from-here-1">Where to from here?</h2>
-<ul>
-<li><p>boosted regression trees</p></li>
-<li><p>Bayesian negative bionomial regression mixed models</p></li>
-<li><p>nested design in mixed models</p></li>
-<li><p>random forest vs.&nbsp;GAMs</p></li>
-<li><p>meta-analysis</p></li>
-<li><p>complex models</p>
-<ul>
-<li><p>classification (categorical response) and regression (continous response) trees</p></li>
-<li><p>boosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit</p></li>
-<li><p>ADMB and TMB</p></li>
-<li><p>multivariate statistics</p></li>
-<li><p>exploratoryordination/clustering</p></li>
-<li><p>cross validation</p></li>
-</ul>
-<p>[[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al.&nbsp;2023</p>
-<p>[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together</p></li>
-</ul>
-<section id="acknowledgements-1" class="level3">
-<h3 class="anchored" data-anchor-id="acknowledgements-1">Acknowledgements</h3>
-<p>TBA</p>
 
 
 </section>
@@ -384,7 +346,7 @@ ul.task-list li input[type="checkbox"] {
 
 <ol>
 <li id="fn1"><p>here, we can also use the term “research hypothesis” instead of explanation and you’ll see we quickly switch to using this term<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Math skills have often been underemphasized in many Biology educations. This has not been helpful or necessary. Biologists need math and are very capable at applying math to solve problems, but the math needs to be useful; that is, math that we can apply to our own needs as we research biology. The DSP Program aims at providing statistical modelling tools that will be useful to you as a biologist. It’s a happy coincidence that the same skills can be applied to a lot of other situations as well. The programming and statistics skills you are learning here will be useful to you in the future - in your future courses, thesis-writing and a wide range of careers.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Math skills have often been underemphasized in many Biology educations. This has not been helpful or necessary. Biologists need math and are very capable at applying math to solve problems, but the math needs to be useful; that is, math that you can apply to your own needs as you research biology. The DSP Program aims at providing statistical modelling tools that will be useful to you as a biologist. It is a happy coincidence that the same skills can be applied to a lot of other situations as well. The programming and statistics skills you are learning here will be useful to you in the future - in your future courses, thesis-writing and a wide range of careers.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>more on causal vs.&nbsp;correlative explanations coming soon<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>useful predictions will always include uncertainty<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>and these will be educated guesses!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
