@@ -1,5 +1,5 @@
 ---
-title: "The DSP Program Handbook for Statistical Modelling"
+title: "Statistical Modelling Handbook"
 ---
 
 ## Why statistics?
@@ -8,7 +8,7 @@ All science is explaining variability - explaining why observations are changing
 
 [^handbooksmintro-1]: here, we can also use the term "research hypothesis" instead of explanation and you'll see we quickly switch to using this term
 
-As biologists, the variability that you are interested in relates to the biological world, but your job (explaining variability) is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.
+As biologists, the variability that you are interested in relates to the biological world, but your job is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.
 
 You need your explanations of variability to be quantitative in order to:
 
@@ -20,7 +20,7 @@ You need your explanations of variability to be quantitative in order to:
 
 Statistics provides the mathematical tools[^handbooksmintro-2] to accomplish these tasks. Statistics help you determine the evidence for causal[^handbooksmintro-3] mechanisms. And statistics help you make useful predictions[^handbooksmintro-4] about how a biological system might behave at a different time or location.
 
-[^handbooksmintro-2]: Math skills have often been underemphasized in many Biology educations. This has not been helpful or necessary. Biologists need math and are very capable at applying math to solve problems, but the math needs to be useful; that is, math that we can apply to our own needs as we research biology. The DSP Program aims at providing statistical modelling tools that will be useful to you as a biologist. It's a happy coincidence that the same skills can be applied to a lot of other situations as well. The programming and statistics skills you are learning here will be useful to you in the future - in your future courses, thesis-writing and a wide range of careers.
+[^handbooksmintro-2]: Math skills have often been underemphasized in many Biology educations. This has not been helpful or necessary. Biologists need math and are very capable at applying math to solve problems, but the math needs to be useful; that is, math that you can apply to your own needs as you research biology. The DSP Program aims at providing statistical modelling tools that will be useful to you as a biologist. It is a happy coincidence that the same skills can be applied to a lot of other situations as well. The programming and statistics skills you are learning here will be useful to you in the future - in your future courses, thesis-writing and a wide range of careers.
 
 [^handbooksmintro-3]: more on causal vs. correlative explanations coming soon
 
@@ -35,22 +35,19 @@ Statistics help us answer:
 
 ## Why statistical ***modelling***?
 
-
-You can quantify how much variability you can explain with your research hypothesis through statistical modelling. The model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:
+You can quantify how much variability you can explain with your research hypothesis through statistical modelling. Your statistical model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:
 
 -   can I explain the variability that I am seeing? (Can I reject my hypothesis?)
 -   given my hypothesis, how much variation in the observations can I explain?
 -   given my hypothesis, what would I expect (predict) to observe under different times or locations?
 
-Your job then is to explain observation variability in time and space by creating a "model" of what (you think) is going on - hence statistical modelling. This is your best guess of how the world is your hypothesis in mathematical form.  Then you can use statistics to evaluate how useful that "best guess" is  modelling actually let's you accomplish two tasks (this is testing your hypothesis).  
+Your job then is to explain observation variability in time and space by creating a "model" of what (you think) is going on - hence statistical modelling.  
 
 It is important to remember that any model is only an approximation of what is going on in the real world. As many have said before
 
 > *All models are wrong but some are useful.*
 
 We will discuss how you can build useful models that you can use to test your hypotheses.
-
-
 
 
 ## Introducing a statistical modelling framework
@@ -64,9 +61,10 @@ You will learn this process of statistical modelling by walking through a "Stati
 
 This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.
 
-As we'll discuss later in the handbook, working through this framework will also guide you in creating the "guts" of a paper. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why should we explain this variation at all?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I'm trying to explain?). Once through, you'll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We'll talk about how this works in [section]().
+As we will discuss later in the handbook, working through this framework will also guide you in creating the "guts" of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I'm trying to explain?). Once through, you'll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in [section](DSPH_SM_Communicating.qmd).
 
-A note about our Statistical Modelling Framework: I have drawn the steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses[^handbooksmintro-5] as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e. the model is a valid one that we can use to test our hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.
+
+A note about our Statistical Modelling Framework: The steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses[^handbooksmintro-5] as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e. the model is a valid one that you can use to test your hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.
 
 [^handbooksmintro-5]: and these will be educated guesses!
 
@@ -102,18 +100,17 @@ Here you will choose your predictor variables.
 
 #### [Hypothesis](DSPH_SM_Hypothesis.qmd)
 
-Here you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical model.
+Here you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical modelling.
 
 #### [Starting model](DSPH_SM_StartingModel)
 
-Here you will choose and fit your starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data.
+Here you will choose and fit the starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data (i.e. confronting your model with your data).
 
 #### [Model validation](DSPH_SM_ModelValidation.qmd) 
 
-Here you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence. You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.
+Here you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence.
 
-
-
+You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.
 
 #### [Hypothesis testing](DSPH_SM_HypothesisTesting.qmd)
 
@@ -138,24 +135,25 @@ Here you will use your model to make predictions of your response under differen
 
 ### Where we will begin: generalized linear models (GLMs) 
 
-To begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses.  Also, learning statistics as derivatives or special cases of GLMs will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).
+To begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses.  Also, understanding how GLMs can be used to test your hypothesis will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).
 
-Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.^[Don't worry if these terms don't mean anything to you yet - more to come!]). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we will compare GLMs to alternative model types [here](ExCompareTraditionalGLMs.qmd). And remember: the steps in the statistical modelling framework is generally applicable. Regardless of the method we apply, we need to ground our choices in good biological and statistical theory.
+Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.^[Don't worry if these terms don't mean anything to you yet - more to come!]). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we compare GLMs to alternative model types [here](ExCompareTraditionalGLMs.qmd). And remember: the steps in the statistical modelling framework are generally applicable. Regardless of the method you apply, you need to ground your choices in good biological and statistical theory.
 
 
 ## A note on tools:
 
-
+TBA
 
 ## [The examples](examples.qmd) 
 
 Here we've gathered examples following our statistical modelling framework structure. [You can request/contribute new examples here](feedback.qmd)
 
-## [From statistical modelling to scientific report writing](communication.qmd)
+## From statistical modelling to scientific report writing
 
-how framework relates to communication
+[Here](communication.qmd) you can see how you can use the steps in the Statistical Modelling Framework to outline your communication of your hypothesis testing in reports and paper.
 
 ## Where to from here?
+TBA:
 - boosted regression trees
 - Bayesian
 negative bionomial regression
@@ -191,32 +189,5 @@ TBA
 
 
 
-how framework relates to communication
-
-## Where to from here?
-- boosted regression trees
-- Bayesian
-negative bionomial regression
-mixed models
-- nested design in mixed models
-- random forest vs. GAMs
-- meta-analysis
-- complex models
-  - classification (categorical response) and regression (continous response) trees
-  - boosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit
-  - ADMB and TMB
-  
-  - multivariate statistics
-  - exploratoryordination/clustering
-  
-  - cross validation
-  
-  [[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al. 2023
-  
-  [[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together
-
-### Acknowledgements
-
-TBA
 
 
