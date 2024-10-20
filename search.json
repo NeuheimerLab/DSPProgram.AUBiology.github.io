@@ -135,6 +135,101 @@
     "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
   },
   {
+    "objectID": "handbookDAIntro.html",
+    "href": "handbookDAIntro.html",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nHere we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-tools",
+    "href": "handbookDAIntro.html#a-note-on-tools",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#the-basics",
+    "href": "handbookDAIntro.html#the-basics",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#so-you-want-to",
+    "href": "handbookDAIntro.html#so-you-want-to",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#purpose",
+    "href": "intro.html#purpose",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
     "objectID": "handbookIntro.html",
     "href": "handbookIntro.html",
     "title": "Introduction to the Handbook",
@@ -190,99 +285,32 @@
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "What is the DSP Program?",
+    "objectID": "DSPH_DA_MissingValues.html",
+    "href": "DSPH_DA_MissingValues.html",
+    "title": "So you want to: deal with missing values",
     "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
+    "text": "Missing values are important and interesting, and they can affect how functions can be used on your data."
   },
   {
-    "objectID": "intro.html#purpose",
-    "href": "intro.html#purpose",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
+    "objectID": "DSPH_DA_MissingValues.html#apply-functions-to-data-containing-missing-values",
+    "href": "DSPH_DA_MissingValues.html#apply-functions-to-data-containing-missing-values",
+    "title": "So you want to: deal with missing values",
+    "section": "Apply functions to data containing missing values",
+    "text": "Apply functions to data containing missing values\nWe can apply functions to objects or their components when missing values are present by letting R know what we want to do with the missing values. For example, getting the overall mean of the chlorophyll column without telling R how to handle missing values:\n\nmean(ChlData$Chl)\n\n[1] NA\n\n\nvs. telling R to remove them with the na.rm = ... argument:\n\nmean(ChlData$Chl, na.rm = TRUE)\n\n[1] 32.42375\n\n\nNote that the data frame itself remains unchanged, but R ignores the NAs when calculating the mean. We can find out more about how a particular function handles missing values by looking at the function’s help file (e.g. ?mean)."
   },
   {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
+    "objectID": "DSPH_DA_MissingValues.html#locating-missing-values",
+    "href": "DSPH_DA_MissingValues.html#locating-missing-values",
+    "title": "So you want to: deal with missing values",
+    "section": "Locating missing values",
+    "text": "Locating missing values\nWe can also find missing values using the is.na() function:\n\nis.na(ChlData$Chl)\n\n [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE\n[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n\n\nand identify locations of missing values with:\n\nwhich(is.na(ChlData$Chl) == TRUE)\n\n[1] 5 8 9"
   },
   {
-    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html",
-    "href": "handbookDAIntro.html",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nHere we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#a-note-on-tools",
-    "href": "handbookDAIntro.html#a-note-on-tools",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
-    "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#the-basics",
-    "href": "handbookDAIntro.html#the-basics",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#so-you-want-to",
-    "href": "handbookDAIntro.html#so-you-want-to",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
+    "objectID": "DSPH_DA_MissingValues.html#removing-missing-values",
+    "href": "DSPH_DA_MissingValues.html#removing-missing-values",
+    "title": "So you want to: deal with missing values",
+    "section": "Removing missing values",
+    "text": "Removing missing values\nFinally, we can remove all rows that are incomplete (i.e. containing any missing values) with the na.omit() function:\n\nhead(ChlData) # Original data frame\n\n  Station Year Month   Chl\n1     HL2 2007     2 16.07\n2     S27 2005    10 31.31\n3     HL2 2002    NA 40.38\n4     HL2 2001     2 32.00\n5     HL2 2001    10    NA\n6     S27 2007    10 29.71\n\nChlData &lt;- na.omit(ChlData) # Remove the NAs\n\nhead(ChlData) # Data frame without NAs\n\n   Station Year Month   Chl\n1      HL2 2007     2 16.07\n2      S27 2005    10 31.31\n4      HL2 2001     2 32.00\n6      S27 2007    10 29.71\n7      S27 2006     7 59.20\n10     HL2 2003     5 26.00\n\n\nNote that above I reassign the output of the na.omit() function back to the name ChlData. This replaces the original data frame with the new data frame without missing values. I could also save it as a new object (with a new name) so the original is not overwritten.\n\n\n\n\n\n\nTip\n\n\n\n\n\nTake a look at the numbers that print out to the left of the data frame:\n\nhead(ChlData)\n\n   Station Year Month   Chl\n1      HL2 2007     2 16.07\n2      S27 2005    10 31.31\n4      HL2 2001     2 32.00\n6      S27 2007    10 29.71\n7      S27 2006     7 59.20\n10     HL2 2003     5 26.00\n\n\nThese are row names that were assigned when the data were read in. We can ignore row names but I wanted to to explain them as they can be distracting when one starts manipulating data frames. Unless we specify otherwise, rows are named by their original position when the data are read in to R, e.g. initially row #3 was assigned the name “3”, and row #4 was assigned the name “4”, etc. Since we’ve removed some rows with na.omit() above, the row names now skip from e.g. 2 to 4 (row 3 has been removed), but note that the 3rd row in the data frame can still be accessed with:\n\nChlData[3,]\n\n  Station Year Month Chl\n4     HL2 2001     2  32\n\n\nYou can choose your own row names with the rownames() function (or column names with the colnames() function) as well as with arguments in e.g. read.csv()."
   },
   {
     "objectID": "handbookSMIntro.html",

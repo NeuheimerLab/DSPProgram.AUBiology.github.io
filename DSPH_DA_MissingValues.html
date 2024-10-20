@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Analysis Handbook – Data Skills Portfolio Program</title>
+<title>So you want to: deal with missing values – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">What is the DSP Program?</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./handbookIntro.html" aria-current="page"> 
+    <a class="nav-link" href="./handbookIntro.html"> 
 <span class="menu-text">The DSP Program Handbook</span></a>
   </li>  
   <li class="nav-item">
@@ -110,84 +144,22 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookDAIntro.html">Data Analysis Handbook</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to the Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDCIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Collection &amp; Curation Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Analysis Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookSMIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Modelling Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./FAQ.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frequently Asked Questions</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-dsp-program-handbook-for-data-analysis" id="toc-the-dsp-program-handbook-for-data-analysis" class="nav-link active" data-scroll-target="#the-dsp-program-handbook-for-data-analysis">The DSP Program Handbook for Data Analysis</a>
+  <li><a href="#why-you-want-to-do-it" id="toc-why-you-want-to-do-it" class="nav-link active" data-scroll-target="#why-you-want-to-do-it">Why you want to do it:</a></li>
+  <li><a href="#how-you-can-do-it" id="toc-how-you-can-do-it" class="nav-link" data-scroll-target="#how-you-can-do-it">How you can do it:</a>
   <ul class="collapse">
-  <li><a href="#a-note-on-tools" id="toc-a-note-on-tools" class="nav-link" data-scroll-target="#a-note-on-tools">A note on tools:</a></li>
-  <li><a href="#a-note-on-learning-your-first-programming-language" id="toc-a-note-on-learning-your-first-programming-language" class="nav-link" data-scroll-target="#a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</a></li>
-  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The basics</a></li>
-  <li><a href="#so-you-want-to" id="toc-so-you-want-to" class="nav-link" data-scroll-target="#so-you-want-to">So you want to…</a>
-  <ul class="collapse">
-  <li><a href="#load-your-data-into-r" id="toc-load-your-data-into-r" class="nav-link" data-scroll-target="#load-your-data-into-r">… load your data into R</a></li>
-  <li><a href="#validate-and-explore-your-data" id="toc-validate-and-explore-your-data" class="nav-link" data-scroll-target="#validate-and-explore-your-data">… validate and explore your data</a></li>
-  <li><a href="#visualize-your-data-make-a-plot" id="toc-visualize-your-data-make-a-plot" class="nav-link" data-scroll-target="#visualize-your-data-make-a-plot">… visualize your data (make a plot!)</a></li>
-  <li><a href="#deal-with-missing-values" id="toc-deal-with-missing-values" class="nav-link" data-scroll-target="#deal-with-missing-values">… deal with missing values</a></li>
-  <li><a href="#sort-your-data" id="toc-sort-your-data" class="nav-link" data-scroll-target="#sort-your-data">… sort your data</a></li>
-  <li><a href="#subset-your-data" id="toc-subset-your-data" class="nav-link" data-scroll-target="#subset-your-data">… subset your data</a></li>
-  <li><a href="#work-with-dates-and-times" id="toc-work-with-dates-and-times" class="nav-link" data-scroll-target="#work-with-dates-and-times">… work with dates and times</a></li>
-  <li><a href="#manipulate-rows-or-columns-in-your-data" id="toc-manipulate-rows-or-columns-in-your-data" class="nav-link" data-scroll-target="#manipulate-rows-or-columns-in-your-data">… manipulate rows or columns in your data</a></li>
-  <li><a href="#manipulate-subsets-of-rows-or-columns" id="toc-manipulate-subsets-of-rows-or-columns" class="nav-link" data-scroll-target="#manipulate-subsets-of-rows-or-columns">… manipulate subsets of rows or columns</a></li>
-  <li><a href="#merge-your-data-with-another-data-set" id="toc-merge-your-data-with-another-data-set" class="nav-link" data-scroll-target="#merge-your-data-with-another-data-set">… merge your data with another data set</a></li>
-  <li><a href="#control-the-flow-of-your-program" id="toc-control-the-flow-of-your-program" class="nav-link" data-scroll-target="#control-the-flow-of-your-program">… control the flow of your program</a></li>
-  <li><a href="#export-your-data-back-out-of-r" id="toc-export-your-data-back-out-of-r" class="nav-link" data-scroll-target="#export-your-data-back-out-of-r">…export your data back out of R</a></li>
-  </ul></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best practices</a></li>
+  <li><a href="#apply-functions-to-data-containing-missing-values" id="toc-apply-functions-to-data-containing-missing-values" class="nav-link" data-scroll-target="#apply-functions-to-data-containing-missing-values">Apply functions to data containing missing values</a></li>
+  <li><a href="#locating-missing-values" id="toc-locating-missing-values" class="nav-link" data-scroll-target="#locating-missing-values">Locating missing values</a></li>
+  <li><a href="#removing-missing-values" id="toc-removing-missing-values" class="nav-link" data-scroll-target="#removing-missing-values">Removing missing values</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Analysis Handbook</h1>
+<h1 class="title">So you want to: deal with missing values</h1>
 </div>
 
 
@@ -214,85 +186,134 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-dsp-program-handbook-for-data-analysis" class="level1 unnumbered">
-<h1 class="unnumbered">The DSP Program Handbook for Data Analysis</h1>
-<section id="a-note-on-tools" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-tools">A note on tools:</h2>
-<p><strong>In general</strong> we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:</p>
-<ul>
-<li><p>keep your analysis separate from the data (and thereby safeguard the data),</p></li>
-<li><p>keep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and</p></li>
-<li><p>allow you to use powerful tools to accomplish your analysis tasks.</p></li>
-</ul>
-<p>That said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:</p>
-<ul>
-<li><p>keep your analysis separate from your data (e.g.&nbsp;in a separate sheet), and</p></li>
-<li><p>keep a record of all your analysis steps. This is done by:</p>
-<ul>
-<li><p>carefully and completely adding comments explaining your steps,</p></li>
-<li><p>and ensuring each cell contains only one step/piece of information.</p></li>
-</ul></li>
-</ul>
+<section id="why-you-want-to-do-it" class="level1">
+<h1>Why you want to do it:</h1>
+<p>Missing values are important and interesting, and they can affect how functions can be used on your data.</p>
 </section>
-<section id="a-note-on-learning-your-first-programming-language" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</h2>
-<p>A bit on strategy when learning any programming language (we’ll also cover more strategies in class): <strong>it’s important to struggle but not for too long</strong>. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.</p>
-<p><strong>Don’t worry about memorizing</strong> the details of this document or our discussions in class. You will always have reference material available to you (e.g.&nbsp;this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.</p>
+<section id="how-you-can-do-it" class="level1">
+<h1>How you can do it:</h1>
+<p>Note that R uses <code>NA</code> (i.e.&nbsp;‘not available’) to indicate missing values of any class (numeric, character, factor):</p>
+<p><img src="MissingValues.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>R will also use <code>NaN</code> (i.e.&nbsp;“Not a Number”) for missing numerics, and <code>NULL</code> when results of a function are undefined. We can also tell R what we want to consider a missing number (e.g.&nbsp;in some databases 9999 is used to represent a missing value) with the <code>na.strings=...</code> argument when we read in the data.</p>
+</div>
+</div>
+</div>
+<section id="apply-functions-to-data-containing-missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="apply-functions-to-data-containing-missing-values">Apply functions to data containing missing values</h2>
+<p>We can apply functions to objects or their components when missing values are present by letting R know what we want to do with the missing values. For example, getting the overall mean of the chlorophyll column without telling R how to handle missing values:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ChlData<span class="sc">$</span>Chl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>vs.&nbsp;telling R to remove them with the <code>na.rm = ...</code> argument:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ChlData<span class="sc">$</span>Chl, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32.42375</code></pre>
+</div>
+</div>
+<p>Note that the data frame itself remains unchanged, but R ignores the NAs when calculating the mean. We can find out more about how a particular function handles missing values by looking at the function’s help file (e.g.&nbsp;<code>?mean</code>).</p>
 </section>
-<section id="the-basics" class="level2">
-<h2 class="anchored" data-anchor-id="the-basics">The basics</h2>
-<p><a href="DSPH_DA_RBasics.qmd">Here we will go over essential topics when you’re first learning a programming language.</a>. Here we cover:</p>
-<ul>
-<li><p>installing R</p></li>
-<li><p>scripts</p></li>
-<li><p>basic syntax</p></li>
-<li><p>getting help in R (how to read help files!)</p></li>
-<li><p>objects and data structures</p></li>
-<li><p>etc.</p></li>
-</ul>
+<section id="locating-missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="locating-missing-values">Locating missing values</h2>
+<p>We can also find missing values using the <code>is.na()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(ChlData<span class="sc">$</span>Chl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE
+[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+</div>
+</div>
+<p>and identify locations of missing values with:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">is.na</span>(ChlData<span class="sc">$</span>Chl) <span class="sc">==</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5 8 9</code></pre>
+</div>
+</div>
 </section>
-<section id="so-you-want-to" class="level2">
-<h2 class="anchored" data-anchor-id="so-you-want-to">So you want to…</h2>
-<p>Here we will provide examples of how to accomplish common data analysis tasks.</p>
-<section id="load-your-data-into-r" class="level3">
-<h3 class="anchored" data-anchor-id="load-your-data-into-r"><a href="DSPH_DA_Import.qmd">… load your data into R</a></h3>
-</section>
-<section id="validate-and-explore-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="validate-and-explore-your-data"><a href="DSPH_DA_Validate.qmd">… validate and explore your data</a></h3>
-</section>
-<section id="visualize-your-data-make-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="visualize-your-data-make-a-plot"><a href="DSPH_DA_Visualization.qmd">… visualize your data (make a plot!)</a></h3>
-</section>
-<section id="deal-with-missing-values" class="level3">
-<h3 class="anchored" data-anchor-id="deal-with-missing-values"><a href="./DSPH_DA_MissingValues.html">… deal with missing values</a></h3>
-</section>
-<section id="sort-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="sort-your-data"><a href="DSPH_DA_Sort.qmd">… sort your data</a></h3>
-</section>
-<section id="subset-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="subset-your-data"><a href="DSPH_DA_Subset.qmd">… subset your data</a></h3>
-</section>
-<section id="work-with-dates-and-times" class="level3">
-<h3 class="anchored" data-anchor-id="work-with-dates-and-times"><a href="DSPH_DA_DatesTimes.qmd">… work with dates and times</a></h3>
-</section>
-<section id="manipulate-rows-or-columns-in-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-rows-or-columns-in-your-data"><a href="DSPH_DA_ManipulateRowsColumns.qmd">… manipulate rows or columns in your data</a></h3>
-</section>
-<section id="manipulate-subsets-of-rows-or-columns" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-subsets-of-rows-or-columns"><a href="DSPH_DA_ManipulateSubsets.qmd">… manipulate subsets of rows or columns</a></h3>
-</section>
-<section id="merge-your-data-with-another-data-set" class="level3">
-<h3 class="anchored" data-anchor-id="merge-your-data-with-another-data-set"><a href="DSPH_DA_Merge.qmd">… merge your data with another data set</a></h3>
-</section>
-<section id="control-the-flow-of-your-program" class="level3">
-<h3 class="anchored" data-anchor-id="control-the-flow-of-your-program"><a href="DSPH_DA_Control.qmd">… control the flow of your program</a></h3>
-</section>
-<section id="export-your-data-back-out-of-r" class="level3">
-<h3 class="anchored" data-anchor-id="export-your-data-back-out-of-r"><a href="DSPH_DA_Export.qmd">…export your data back out of R</a></h3>
-</section>
-</section>
-<section id="best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices"><a href="DSPH_DA_BestPractices.qmd">Best practices</a></h2>
+<section id="removing-missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="removing-missing-values">Removing missing values</h2>
+<p>Finally, we can remove all rows that are incomplete (i.e.&nbsp;containing <strong>any</strong> missing values) with the <code>na.omit()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ChlData) <span class="co"># Original data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Station Year Month   Chl
+1     HL2 2007     2 16.07
+2     S27 2005    10 31.31
+3     HL2 2002    NA 40.38
+4     HL2 2001     2 32.00
+5     HL2 2001    10    NA
+6     S27 2007    10 29.71</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ChlData <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(ChlData) <span class="co"># Remove the NAs</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ChlData) <span class="co"># Data frame without NAs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Station Year Month   Chl
+1      HL2 2007     2 16.07
+2      S27 2005    10 31.31
+4      HL2 2001     2 32.00
+6      S27 2007    10 29.71
+7      S27 2006     7 59.20
+10     HL2 2003     5 26.00</code></pre>
+</div>
+</div>
+<p>Note that above I reassign the output of the <code>na.omit()</code> function back to the name <code>ChlData</code>. This replaces the original data frame with the new data frame without missing values. I could also save it as a new object (with a new name) so the original is not overwritten.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Take a look at the numbers that print out to the left of the data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ChlData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Station Year Month   Chl
+1      HL2 2007     2 16.07
+2      S27 2005    10 31.31
+4      HL2 2001     2 32.00
+6      S27 2007    10 29.71
+7      S27 2006     7 59.20
+10     HL2 2003     5 26.00</code></pre>
+</div>
+</div>
+<p>These are row names that were assigned when the data were read in. We can ignore row names but I wanted to to explain them as they can be distracting when one starts manipulating data frames. Unless we specify otherwise, rows are named by their original position when the data are read in to R, e.g.&nbsp;initially row #3 was assigned the name “3”, and row #4 was assigned the name “4”, etc. Since we’ve removed some rows with <code>na.omit()</code> above, the row names now skip from e.g.&nbsp;2 to 4 (row 3 has been removed), but note that the 3rd row in the data frame can still be accessed with:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ChlData[<span class="dv">3</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Station Year Month Chl
+4     HL2 2001     2  32</code></pre>
+</div>
+</div>
+<p>You can choose your own row names with the <code>rownames()</code> function (or column names with the <code>colnames()</code> function) as well as with arguments in e.g.&nbsp;<code>read.csv()</code>.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+
+</div>
 
 
 </section>
