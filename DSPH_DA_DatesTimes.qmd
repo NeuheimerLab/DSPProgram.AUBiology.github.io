@@ -1,0 +1,100 @@
+---
+title: "So you want to: work with dates and times"
+---
+
+# Why you want to do it: 
+
+You will often have a time component to your biological research and research hypotheses - i.e. you might want to explain variability over time..  As mentioned in the Data Collection and Curation section, it is a good idea to record the time of your observation as separate columns of year, month, day, etc. But you will also need to work with data collected by others where date (and sometimes time) information is together one column (variable).  
+
+# How you can do it: 
+
+Working with dates and times involves two steps: 
+
+- First, you need to let R know the data should be viewed as a date and time object (formatting the data as a date and time object)
+
+- Second, you might want to extract some part of the date and time object (e.g. extract the year)
+
+
+R has many options for working with dates and times.  
+
+
+## In the base package: 
+
+In the base package which is installed along with R^[no need to load a separate package], you can use the `as.Date()` function to format your data as a date:
+
+Consider the data:
+```{r}
+
+myDat <- read.csv("DTData.csv") # load in the data
+
+head(myDat) # examine the first few rows
+```
+where the `Dat$Time` column gives the year, month, day, hour and minutes of an observation given in the `Dat$Value` column.
+
+1) You can format the `Dat$Time` column as a date and time with:
+
+```{r}
+
+myDat$Time <- as.Date(x = myDat$Time, # the date and time column
+                      format = "%Y/%m/%d %H:%M") # describing the format of the date and time column
+
+head(myDat) # examine the first few rows
+
+```
+
+You can learn more about the formatting syntax with `?strptime`.  Note that the code above replaces the `myDat$Time` column with the new, formatted date and time information.
+
+2) You can extract parts of the date and time column with functions like `months()` for months, `years()` for years, etc.
+
+For example:
+
+```{r}
+
+myDat$Months <- months(myDat$Time) # extract only the months
+
+str(myDat) # structure of the data frame
+
+```
+
+## Using the lubridate package:
+
+The lubridate package was created to make working with dates and times easier.  There are still two steps to the process.  You can repeat the steps above but now with the lubridate package.
+
+Again, consider the data:
+```{r}
+
+myDat <- read.csv("DTData.csv") # load in the data
+
+head(myDat) # examine the first few rows
+
+```
+where the `Dat$Time` column gives the year, month, day, hour and minutes of an observation given in the `Dat$Value` column.
+
+1) You can format the `Dat$Time` column as a date and time with:
+
+```{r}
+
+library(lubridate) # load the lubridate package
+
+myDat$Time <- ymd_hm(myDat$Time) # the date and time column
+
+str(myDat) # examine the structure of the data
+
+```
+
+2) You can extract parts of the date and time column with functions like `month()` for months, `year()` for years, etc. **Notice that the function names are not plural with the lubridate package.**^[Both `months()` and `month()` will work with lubridate, but `months()` is also used to denote a *duration* of a month.  [See the cheat sheet for more.](https://github.com/rstudio/cheatsheets/blob/main/lubridate.pdf)]
+
+For example:
+
+```{r}
+
+myDat$Months <- month(myDat$Time) # extract only the months
+
+str(myDat) # examine the structure of the data
+
+```
+
+Much more is available in the lubridate packages, including determining durations and dealing with time-zones. Check the [lubridate package "cheat sheet"](https://github.com/rstudio/cheatsheets/blob/main/lubridate.pdf) for more information.
+
+::: footnotes
+:::

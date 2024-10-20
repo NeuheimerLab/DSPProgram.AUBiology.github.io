@@ -1,0 +1,91 @@
+---
+title: "So you want to: deal with missing values"
+---
+
+# Why you want to do it: 
+
+Missing values are important and interesting, and they can affect how functions can be used on your data.
+
+# How you can do it: 
+
+
+```{r echo= FALSE}
+
+ ChlData<-read.csv("Chlorophyll.csv", header=TRUE)
+```
+
+Note that R uses `NA` (i.e. 'not available') to indicate missing values of any class (numeric, character, factor):  
+
+![](MissingValues.png)
+  
+  
+::: {.callout-tip collapse="true"}
+R will also use `NaN` (i.e. "Not a Number") for missing numerics, and `NULL` when results of a function are undefined.  We can also tell R what we want to consider a missing number (e.g. in some databases 9999 is used to represent a missing value) with the `na.strings=...` argument when we read in the data.  
+
+:::
+
+## Apply functions to data containing missing values
+
+We can apply functions to objects or their components when missing values are present by letting R know what we want to do with the missing values.  For example, getting the overall mean of the chlorophyll column without telling R how to handle missing values:  
+
+```{r}
+mean(ChlData$Chl)
+```
+
+vs. telling R to remove them with the `na.rm = ...` argument:  
+
+```{r}
+mean(ChlData$Chl, na.rm = TRUE)
+```
+
+Note that the data frame itself remains unchanged, but R ignores the NAs when calculating the mean.  We can find out more about how a particular function handles missing values by looking at the function's help file (e.g. `?mean`).
+  
+## Locating missing values
+    
+We can also find missing values using the `is.na()` function:
+```{r}
+is.na(ChlData$Chl)
+```
+
+and identify locations of missing values with:
+```{r}
+which(is.na(ChlData$Chl) == TRUE)
+```
+
+
+## Removing missing values
+
+Finally, we can remove all rows that are incomplete (i.e. containing **any** missing values) with the `na.omit()` function:  
+
+```{r}
+head(ChlData) # Original data frame
+ 
+ChlData <- na.omit(ChlData) # Remove the NAs
+
+head(ChlData) # Data frame without NAs
+```
+
+Note that above I reassign the output of the `na.omit()` function back to the name `ChlData`.  This replaces the original data frame with the new data frame without missing values.  I could also save it as a new object (with a new name) so the original is not overwritten.
+  
+  
+::: {.callout-tip collapse="true"}
+
+Take a look at the numbers that print out to the left of the data frame:
+
+```{r}
+head(ChlData)
+```
+
+These are row names that were assigned when the data were read in.  We can ignore row names but I wanted to to explain them as they can be distracting when one starts manipulating data frames.  Unless we specify otherwise, rows are named by their original position when the data are read in to R, e.g. initially row #3 was assigned the name "3", and row #4 was assigned the name "4", etc. Since we've removed some rows with `na.omit()` above, the row names now skip from e.g. 2 to 4 (row 3 has been removed), but note that the 3rd row in the data frame can still be accessed with:  
+
+```{r}
+ChlData[3,]
+```
+
+You can choose your own row names with the `rownames()` function (or column names with the `colnames()` function) as well as with arguments in e.g. `read.csv()`.  
+
+:::
+
+
+::: footnotes
+:::
