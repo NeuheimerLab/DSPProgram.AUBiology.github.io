@@ -34,7 +34,7 @@ A bit on strategy when learning any programming language (we'll also cover more 
 
 ## The basics
 
-[Here we will go over essential topics when you're first learning a programming language.](DA_RBasics.qmd). Here we cover:
+[Here we will go over essential topics when you're first learning a programming language.](DSPH_DA_RBasics.qmd). Here we cover:
 
 * installing R 
 
@@ -53,31 +53,30 @@ A bit on strategy when learning any programming language (we'll also cover more 
 
 Here we will provide examples of how to accomplish common data analysis tasks.
 
-### [... load your data into R](SYWT_Import.qmd) 
+### [... load your data into R](DSPH_DA_Import.qmd) 
 
-### [... validate and explore your data](SYWT_Validate.qmd)
+### [... validate and explore your data](DSPH_DA_Validate.qmd)
 
-### [... visualize your data (make a plot!)](SYWT_Visualize.qmd)
+### [... visualize your data (make a plot!)](DSPH_DA_Visualization.qmd)
 
-### [... deal with missing values](SYWT_NA.qmd)
+### [... deal with missing values](DSPH_DA_MissingValues.qmd)
 
-### [... sort your data](SYWT_Sort.qmd)
+### [... sort your data](DSPH_DA_Sort.qmd)
 
-### [... subset your data](SYWT_Subset.qmd) 
+### [... subset your data](DSPH_DA_Subset.qmd) 
 
-### [... work with dates and times](SYWT_DatesTimes.qmd)
+### [... work with dates and times](DSPH_DA_DatesTimes.qmd)
 
-### [... transform your data](SYWT_Transform.qmd)
+### [... manipulate rows or columns in your data](DSPH_DA_ManipulateRowsColumns.qmd) 
 
-### [... manipulate rows or columns in your data](SYWT_ManipulateRowsColumns.qmd) 
+### [... manipulate subsets of rows or columns](DSPH_DA_ManipulateSubsets.qmd) 
 
-### [... manipulate subsets of rows or columns](SYWT_ManipulateSubsets.qmd) 
+### [... merge your data with another data set](DSPH_DA_Merge.qmd)
 
-### [... merge your data with another data set](SYWT_Merge.qmd)
+### [... control the flow of your program](DSPH_DA_Control.qmd)
 
-### [...export your data back out of R](SYWT_Export.qmd)
+### [...export your data back out of R](DSPH_DA_Export.qmd)
 
-## [Best practices](DA_BestPractices.qmd)
+## [Best practices](DSPH_DA_BestPractices.qmd)
 
-## [Other topics](DA_OtherTopics.qmd)
 

@@ -139,11 +139,6 @@ To begin with, we will be discussing generalized linear models (GLMs) as models 
 
 Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.^[Don't worry if these terms don't mean anything to you yet - more to come!]). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we compare GLMs to alternative model types [here](ExCompareTraditionalGLMs.qmd). And remember: the steps in the statistical modelling framework are generally applicable. Regardless of the method you apply, you need to ground your choices in good biological and statistical theory.
 
-
-## A note on tools:
-
-TBA
-
 ## [The examples](examples.qmd) 
 
 Here we've gathered examples following our statistical modelling framework structure. [You can request/contribute new examples here](feedback.qmd)

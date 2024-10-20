@@ -2,10 +2,9 @@
 title: "DSP Program - Philosophy"
 ---
 
-
 ## Motivation
 
-The AU Strategy 2025 prioritises the teaching of general skills and competences and specifically identifies digital skills as an important component of future education. The DSP Program builds on current data skills training efforts to make students more capable, confident & employable.
+The AU Strategy 2025 prioritizes the teaching of general skills and competences and specifically identifies digital skills as an important component of future education. The DSP Program builds on current data skills training efforts to make students more capable, confident & employable.
 
 The DSP Program aims to
 
@@ -24,7 +23,7 @@ The DSP Program aims to
 
 ## Terminology
 
-__Data skills__: We use the term "data skills" to represent the quantitative and computing skills involved in many fields of research (including biological) and in demand from a range of employers. This includes data literacy (the collecting, management, archiving and wrangling of data), computational thinking (computational logic, problem solving, pattern identification, algorithms), analytical skills (collecting and considering information, making decisions), model building and hypothesis testing, and other quantitative skills. Other terms used in the literature, community and job market are "data science" and "digital competence". computational thinking and analytical skills. Data literacy is the ability to read, work with, analyze and communicate with data Qlik 2019
+__Data skills__: We use the term "data skills" to represent the quantitative and computing skills involved in many fields of research (including biological) and in demand from a range of employers. This includes data literacy (the collecting, management, archiving and wrangling of data), computational thinking (computational logic, problem solving, pattern identification, algorithms), analytical skills (collecting and considering information, making decisions), model building and hypothesis testing, and other quantitative skills. Other terms used in the literature, community and job market are "data science" and "digital competences"
 
 __Portfolio__: We use the term "portfolio" to represent the collection of data skills the student will acquire throughout the degree. Later modules in the program are tied to elective courses so that students will have portfolios that vary based on their experience. In all cases, the students will create an explicit Data Skills Portfolio (DSP) to develop their awareness and confidence in their skills, help clarify the applicability of their skills across disciplines, and more easily communicate their skills to future employers. 
 
