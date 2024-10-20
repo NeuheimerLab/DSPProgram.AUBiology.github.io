@@ -169,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#the-dsp-program-handbook-for-data-collection-curation" id="toc-the-dsp-program-handbook-for-data-collection-curation" class="nav-link active" data-scroll-target="#the-dsp-program-handbook-for-data-collection-curation">The DSP Program Handbook for Data Collection &amp; Curation</a>
   <ul class="collapse">
-  <li><a href="#experimental-design" id="toc-experimental-design" class="nav-link" data-scroll-target="#experimental-design">Experimental design</a></li>
+  <li><a href="#experimental-vs.-observational-studies" id="toc-experimental-vs.-observational-studies" class="nav-link" data-scroll-target="#experimental-vs.-observational-studies">Experimental vs.&nbsp;observational studies</a></li>
   <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data collection</a>
   <ul class="collapse">
   <li><a href="#choosing-what-you-record" id="toc-choosing-what-you-record" class="nav-link" data-scroll-target="#choosing-what-you-record">Choosing what you record</a></li>
@@ -205,56 +205,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>CHECK PSB2024</p>
 <section id="the-dsp-program-handbook-for-data-collection-curation" class="level1 unnumbered">
 <h1 class="unnumbered">The DSP Program Handbook for Data Collection &amp; Curation</h1>
 <p>Data <strong>curation</strong> is the <strong>collection</strong> and on-going management of data.</p>
 <p>Good data curation helps maintain data quality, and allows you and others to discover, access, and re-use your data. Data curation skills then are essential for ethical, transparent and reproducible science, and are an important part of your contribution to the field of biology.</p>
-<section id="experimental-design" class="level2">
-<h2 class="anchored" data-anchor-id="experimental-design">Experimental design</h2>
-<p>The usefulness and value of the data you are collecting are only as good as your experimental design. [more TBA]</p>
+<section id="experimental-vs.-observational-studies" class="level2">
+<h2 class="anchored" data-anchor-id="experimental-vs.-observational-studies">Experimental vs.&nbsp;observational studies</h2>
+<p>Depending on your research question, hypothesis and methods available, you may collect data (observations) from an experimental (e.g.&nbsp;in a lab) or observational study (e.g.&nbsp;in the field).</p>
+<p>Both strategies have advantages and disadvantages. For example, experimental studies allow you to control many of the factors that may influence your study outside your research hypothesis. Experimental studies also allow you to more easily test every combination of predictors allowing you to better disentangle effects of multiple predictors on your response. In contrast, experimental studies are limited in their ability to represent the “real world” while field studies allow you to explore your hypothesis <em>in situ</em>.</p>
 </section>
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data collection</h2>
 <p>The individual needs of your project will vary, but here we will present a standard way of structuring your data and data collection that will support robust and ethical research. Specifically we will cover:</p>
 <ul>
-<li>Choosing what you record</li>
-<li>Choosing how you record it</li>
-<li>Naming your columns and data files</li>
-<li>Including a “ReadMe” document</li>
-<li>Asking questions</li>
-<li>Backing up your data</li>
+<li><p>Choosing what you record</p></li>
+<li><p>Choosing how you record it</p></li>
+<li><p>Naming your columns and data files</p></li>
+<li><p>Including a “ReadMe” document</p></li>
+<li><p>Asking questions</p></li>
+<li><p>Backing up your data</p></li>
 </ul>
 <p><strong>A note on tools:</strong> You will most likely be collecting your data in a spreadsheet editor like Excel<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but these guidelines are generally applicable for however you are collecting your data.</p>
 <section id="choosing-what-you-record" class="level3">
 <h3 class="anchored" data-anchor-id="choosing-what-you-record">Choosing what you record</h3>
-<p>You should be recording the conditions along with your observations. You should also include comments made during the data collection noting unusual conditions (e.g.&nbsp;weather) that might affect your observations (as a comments column). When in doubt record, record, record.</p>
+<p>You will need to record observations of each predictor and response. You should include comments made during the data collection noting unusual conditions (e.g.&nbsp;weather, equipment issues) that might affect your observations (as a comments column). When in doubt record, record, record.</p>
 </section>
 <section id="choosing-how-you-record-it" class="level3">
 <h3 class="anchored" data-anchor-id="choosing-how-you-record-it">Choosing how you record it</h3>
-<p>Best practices is to record your data in “unique record format”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Unique record format makes it easier to track how you have collected the data, it makes it easier for two or more researchers to collaborate on the data collection, and it reduces the chance of errors in your data collection.</p>
+<p>Best practices is to record your data in “unique record format”(also called “long format”). Unique record format makes it easier to track how you have collected the data, it makes it easier for two or more researchers to collaborate on the data collection, and it reduces the chance of errors in your data collection.</p>
 <p>Recording your data in unique record format means that:</p>
 <ul>
-<li><p>every column is a variable of one format (either numeric or character),</p></li>
+<li><p>every column is a variable with one format (either numeric or character),</p></li>
 <li><p>every row is an observation,</p></li>
 <li><p>every cell holds only one piece of information (i.e.&nbsp;a single value), and</p></li>
 <li><p>you record your data in a rectangular table: this means that all columns have the same number of rows. If needed, you can fill missing information with a value to show it is missing (e.g.&nbsp;using <code>NA</code> which is what R uses to indicate a missing value)</p></li>
 </ul>
 <p>In addition - you should make sure there is no extra white space (e.g.&nbsp;blank rows) above or to the left of your data.</p>
 <ul>
-<li><p>it is most flexible to record dates as separate columns for year, month and day, and, similarly, record times as separate columns of hours and minutes. The handbook goes over analysis with complicated dates columns [link TBA], but having separate columns for each variable is easiest.</p></li>
-<li><p>record a decimal using “.” not “,” as this will be most consistent for the data analysis tools we will be using. Again, there are ways of working around this in R if your data does use commas as decimals.</p></li>
+<li><p>it is most flexible to record dates as separate columns for year, month and day, and, similarly, record times as separate columns of hours and minutes. The handbook goes over working with with complicated dates columns (R can handle that)[DSPH_DA_DatesTimes.qmd], but having separate columns for each variable is easiest.</p></li>
+<li><p>record a decimal using “.” not “,” as this will be most consistent for the data analysis tools you will be using. Again, there are ways of working around this in R if your data does use commas as decimals.</p></li>
 </ul>
 <section id="naming-your-columns" class="level4">
 <h4 class="anchored" data-anchor-id="naming-your-columns">Naming your columns</h4>
-<p>Make your variable (column) names simple but informative.<br>
-Avoid spaces in your column names - instead you can include multiple words in your column names by using “snake_case” (e.g.&nbsp;total_length). Avoid having units in your column names (link to readme file)</p>
+<ul>
+<li><p>Make your variable (column) names simple but informative.</p></li>
+<li><p>Avoid spaces in your column names - instead you can include multiple words in your column names by using “snake_case” (e.g.&nbsp;total_length).</p></li>
+<li><p>Avoid having units in your column names (use a readme file instead, see below)</p></li>
+</ul>
 </section>
 <section id="naming-your-data-files" class="level4">
 <h4 class="anchored" data-anchor-id="naming-your-data-files">Naming your data files</h4>
 <p>Include a useful name for your data file that describes the type of data in the file and the project or person related to the project, e.g.&nbsp;“ChristensenMSc_EnviroData.csv”</p>
-<p>Note that you will likely record your data in a spreadsheet editor resulting in a file with e.g.&nbsp;<code>.xlsx</code> extension. That said, you may want to save your data file as a plain text file (e.g.&nbsp;with <code>.txt</code> or <code>.csv</code> extension). This is because a plain text file is the most “portable” both across platforms (e.g.&nbsp;Windows vs.&nbsp;Mac) and into the future. Also, this format avoids Excel reformatting data columns that can cause confusion with interpretation. You can change how your file is saved using “Save as” in the file menu.</p>
-<p>Here’s an example of good data collection practice (i.e.&nbsp;unique record format) - it’s a file called <code>Pedersen_ExampleData.csv</code>:</p>
+<p>Note that you will likely record your data in a spreadsheet editor resulting in a file with e.g.&nbsp;<code>.xlsx</code> extension. That said, you may want to save your data as a plain text file (e.g.&nbsp;with <code>.txt</code> or <code>.csv</code> extension). This is because a plain text file is the most “portable” across platforms (e.g.&nbsp;Windows vs.&nbsp;Mac) and into the future. Also, this format avoids Excel reformatting data columns that can cause confusion with interpretation. You can change how your file is saved using “Save as” in the file menu.</p>
+<p>Here’s an example of best-practice data collection practice (i.e.&nbsp;unique record format) - it is a file called <code>Pedersen_ExampleData.csv</code>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="longFormat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
@@ -266,15 +269,10 @@ Avoid spaces in your column names - instead you can include multiple words in yo
 1c) Each row is a unique observation.<br>
 1d) Each cell holds only a single piece of information.<br>
 1e) The data are recorded in a regular table (no missing rows or columns).</p>
-<p>In contrast, here is an example of what NOT to do:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="wideFormat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700"></p>
-</figure>
-</div>
-<p>Note in this bad-practice example:</p>
+<p>In contrast, here is an example of what <strong>NOT</strong> to do:</p>
+<p><img src="wideFormat.png" class="img-fluid quarto-figure quarto-figure-center" width="700"> Note in this not-great-practice example:</p>
 <p>2a) There is white space above the data.<br>
-2b) Some columns contain a mix of numeric and character data. Note that you it is better to give information on units (e.g.&nbsp;g) in the ReadMe file (see next section).<br>
+2b) Some columns contain a mix of numeric and character data. Note that it is better to give information on units (e.g.&nbsp;g) in the ReadMe file (see next section).<br>
 2c) Rows contain more than one observation.<br>
 2d) Some cells hold more than one piece of information.<br>
 2e) The data are not recorded in a regular table (there are missing rows and columns).<br>
@@ -284,18 +282,18 @@ Avoid spaces in your column names - instead you can include multiple words in yo
 </section>
 <section id="include-a-readme-document" class="level3">
 <h3 class="anchored" data-anchor-id="include-a-readme-document">Include a “ReadMe” document</h3>
-<p>For each data file, include a separate “ReadMe” document that describes the data. The ReadMe file documents (briefly) what the data are and where they came from. The document allows you to communicate your data to your colleagues and your future self.</p>
+<p>For each data file, include a separate “ReadMe” document that describes the data. The ReadMe file documents (briefly) what the data are, where they came from, and how they can be reused. The document allows you to communicate your data to your colleagues and your future self.</p>
 <p>This document should:</p>
 <ul>
-<li>be a plain text or pdf document.</li>
-<li>include the name of the data file associated with the ReadMe document.</li>
-<li>include a description of where the data came from.</li>
-<li>include information on how the data can or can not be reused.</li>
-<li>include a contact person for the data and their contact details (e.g.&nbsp;email).</li>
-<li>include descriptions of each column, the type of data and the format of the data, including units.</li>
-<li>include a description of how missing values are recorded (e.g.&nbsp;<code>NA</code>).</li>
+<li><p>be a plain text or pdf document.</p></li>
+<li><p>include the name of the data file associated with the ReadMe document.</p></li>
+<li><p>include a description of where the data came from.</p></li>
+<li><p>include information on how the data can or can not be reused.</p></li>
+<li><p>include a contact person for the data and their contact details (e.g.&nbsp;email).</p></li>
+<li><p>include descriptions of each column, the type of data and the format of the data, including units.</p></li>
+<li><p>include a description of how missing values are recorded (e.g.&nbsp;<code>NA</code>).</p></li>
 </ul>
-<p>Here is an example of a ReadMe document to accompany the <code>Pedersen_ExampleData.csv</code> above:</p>
+<p>Here is an example of a ReadMe document called <code>Pedersen_ExampleData_ReadMe.pdf</code> to accompany the <code>Pedersen_ExampleData.csv</code> above:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ReadMe.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
@@ -305,13 +303,16 @@ Avoid spaces in your column names - instead you can include multiple words in yo
 <section id="asking-questions" class="level3">
 <h3 class="anchored" data-anchor-id="asking-questions">Asking questions</h3>
 <p>Remember to ask questions! Asking your questions is one of the most valuable contributions you can make to science. Asking your questions will help us clarify methods, develop better strategies and stop accidents before they happen.</p>
-<p>If you’re unsure how to do something - stop and ask!</p>
-<p>If you’re unsure why you should do something - stop and ask!</p>
-<p>If something doesn’t feel safe or comfortable - stop and ask!</p>
+<ul>
+<li><p>If you are unsure <strong>how</strong> to do something - stop and ask!</p></li>
+<li><p>If you are unsure <strong>why</strong> you should do something - stop and ask!</p></li>
+<li><p>If something does not feel <strong>safe and comfortable</strong> - stop and ask!</p></li>
+</ul>
+<p><a href="https://abneuheimer.org/teaching-outreach/#GETTINGOUTOFYOUROWNWAY">more here</a></p>
 </section>
 <section id="backing-up-your-data" class="level3">
 <h3 class="anchored" data-anchor-id="backing-up-your-data">Backing up your data</h3>
-<p>Where to store your data [TBA]</p>
+<p>Remember to back up your data on multiple sources. (more TBA)</p>
 </section>
 </section>
 <section id="where-to-go-from-here" class="level2">
@@ -327,8 +328,7 @@ Avoid spaces in your column names - instead you can include multiple words in yo
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>though may need databases<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>also called “long format”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>though you may have projects where you are working with databases<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
