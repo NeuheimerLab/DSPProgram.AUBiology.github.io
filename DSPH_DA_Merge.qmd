@@ -2,6 +2,27 @@
 title: "So you want to: merge your data sets"
 ---
 
+# Why you want to do it: 
+
+Often times we are interested in exploring connections among variables from different sources. Merging your data files can be a way of collecting all the variables of interest so you can explore research questions and hypotheses about the data.
+
+In addition, merging can be used to label your observations.  We go through examples below.
+
+# What merging is:
+
+Merging joins columns from two or more data frames based on matching row information across the data frames.
+
+![](mergeEx.png)
+
+# What merging isn't:
+
+Merging isn't about joining data frames by *rows*.  Instead row binding is what you need if you have two data frames with the exact same variables (columns) that you want to join in one data frame.  For this, try the `rbind()` function in base R. 
+
+![](rbindEx.png)
+
+# How you can do it: 
+
+There are a number of different ways of merging files in R.  For these examples, let's consider two data frames:
 
 ```{r echo = FALSE}
 
