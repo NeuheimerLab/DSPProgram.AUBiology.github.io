@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -123,6 +157,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#why-you-want-to-do-it" id="toc-why-you-want-to-do-it" class="nav-link active" data-scroll-target="#why-you-want-to-do-it">Why you want to do it:</a></li>
   <li><a href="#what-merging-is" id="toc-what-merging-is" class="nav-link" data-scroll-target="#what-merging-is">What merging is:</a></li>
   <li><a href="#what-merging-isnt" id="toc-what-merging-isnt" class="nav-link" data-scroll-target="#what-merging-isnt">What merging isn’t:</a></li>
+  <li><a href="#how-you-can-do-it" id="toc-how-you-can-do-it" class="nav-link" data-scroll-target="#how-you-can-do-it">How you can do it:</a>
+  <ul class="collapse">
+  <li><a href="#in-the-base-package-using-merge" id="toc-in-the-base-package-using-merge" class="nav-link" data-scroll-target="#in-the-base-package-using-merge">in the base package using <code>merge()</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -162,8 +200,93 @@ ul.task-list li input[type="checkbox"] {
 <h1>What merging isn’t:</h1>
 <p>Merging isn’t about joining data frames by <em>rows</em>. Instead row binding is what you need if you have two data frames with the exact same variables (columns) that you want to join in one data frame. For this, try the <code>rbind()</code> function in base R.</p>
 <p><img src="rbindEx.png" class="img-fluid"></p>
+</section>
+<section id="how-you-can-do-it" class="level1">
+<h1>How you can do it:</h1>
+<p>There are a number of different ways of merging files in R. For these examples, let’s consider two data frames:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The first data frame (Dat1) contains information on </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Day: day of sampling</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Length: length at sampling</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  3 variables:
+ $ ID    : chr  "id29" "id30" "id22" "id31" ...
+ $ Day   : num  1 2 1 2 1 1 2 1 2 2 ...
+ $ Length: num  150 164 110 134 155 125 144 144 139 167 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The second data frame (Dat2) contains information on </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Day: day of sampling</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Temp: temperature at sampling</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  3 variables:
+ $ ID  : chr  "id23" "id20" "id25" "id29" ...
+ $ Day : num  2 2 2 1 1 1 2 1 2 1 ...
+ $ Temp: num  7.1 7.2 6.4 7.4 6.3 7.2 7 8.1 7.1 6.1 ...</code></pre>
+</div>
+</div>
+<section id="in-the-base-package-using-merge" class="level2">
+<h2 class="anchored" data-anchor-id="in-the-base-package-using-merge">in the base package using <code>merge()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mDat<span class="ot">&lt;-</span><span class="fu">merge</span>(Dat1, <span class="co"># data frame to merge</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>             Dat2, <span class="co"># other data frame to merge</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ID"</span>, <span class="st">"Day"</span>)) <span class="co"># merge by variable(s)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mDat) <span class="co"># take a look at the object I made</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  4 variables:
+ $ ID    : chr  "id20" "id20" "id21" "id21" ...
+ $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...
+ $ Length: num  195 139 144 180 110 97 149 184 139 143 ...
+ $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...</code></pre>
+</div>
+</div>
+<p>Note that you don’t need to have the same number of observations (rows) in your two data frames to merge. Merging can be a great way of labelling your data. Here’s an example:</p>
+<p>Consider a data frame with strain information for each of your organism IDs:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Strain: strain of organism</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   20 obs. of  2 variables:
+ $ ID    : chr  "id24" "id30" "id33" "id26" ...
+ $ Strain: chr  "A" "C" "B" "C" ...</code></pre>
+</div>
+</div>
+<p>Note that <code>Dat1</code> and <code>Dat2</code> each contained 40 observations - one observation for each of 20 IDs made on each of 2 days.</p>
+<p>In contrast <code>Dat3</code> only has 20 observations - information about the strain for each of 20 IDs.</p>
+<p>By using <code>merge()</code>, we can add the strain information to <code>mDat</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>allDat <span class="ot">&lt;-</span> <span class="fu">merge</span>(mDat, <span class="co"># one data frame</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                Dat3, <span class="co"># the other data frame</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">by =</span> <span class="st">"ID"</span>) <span class="co"># variables to merge by</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(allDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  5 variables:
+ $ ID    : chr  "id20" "id20" "id21" "id21" ...
+ $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...
+ $ Length: num  195 139 144 180 110 97 149 184 139 143 ...
+ $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...
+ $ Strain: chr  "C" "C" "A" "A" ...</code></pre>
+</div>
+</div>
+<p>Now we have our observations labelled by the strain information!</p>
+<p>Some things to note:</p>
+<ul>
+<li><p>if you leave out the <code>by =</code> function totally, R will look for column names that are similar between the two data frames and use that for the merge.</p></li>
+<li><p>you can designate that the “merge by” variables have different column names in the two data frames. This is done with the <code>by.x =</code> and <code>by.y =</code> arguments. Check <code>?merge</code> for more.</p></li>
+<li><p>you can control what happens to unmatched columns (e.g.&nbsp;if an ID appeared in only one of the two data frames). This is done with the <code>all =</code>, <code>all.x =</code>, and <code>all.y =</code> arguments. Check <code>?merge</code> for more.</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
