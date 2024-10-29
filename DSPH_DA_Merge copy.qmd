@@ -133,13 +133,13 @@ The dplyr package includes the `full_join()` function as another way to merge yo
 
 ```{r}
 
-# library(dplyr) # load dplyr package
-# 
-# mDat<-full_join(Dat1, # data frame to merge
-#                 Dat2, # other data frame to merge
-#                 by = join_by(ID, Day)) # merge by column
-# 
-# str(mDat) # take a look at the object I made
+library(dplyr) # load dplyr package
+
+mDat<-full_join(Dat1, # data frame to merge
+                Dat2, # other data frame to merge
+                by = join_by(ID, Day)) # merge by column
+
+str(mDat) # take a look at the object I made
 
 ```
 
@@ -159,23 +159,23 @@ Some things to note:
 
 ```{r}
 
-# k <- 5 # pick a random row to check.  Let's choose 5! 
-# 
-# Dat1[k,] # looking at the 5th row of the first data frame
-# 
-# indsD2 <- which(Dat2$ID == Dat1$ID[k] & Dat2$Day == Dat1$Day[k]) # which row in Dat2 has the ID and Day from the kth row in Dat1
-# 
-# indsD2 # row with matching data
-# 
-# Dat2[indsD2, ] # matching data
-# 
-# indsMD <- which(mDat$ID == Dat1$ID[k] & mDat$Day == Dat1$Day[k]) # which row in mDat has the ID and Day from the kth row in Dat1
-# 
-# indsMD # row with matching data
-# 
-# mDat[indsMD, ] # matching data
-# 
-# ## The length and temperature in the merged data (mDat) match the data in the original data frames (Dat1 & Dat2)
+k <- 5 # pick a random row to check.  Let's choose 5! 
+
+Dat1[k,] # looking at the 5th row of the first data frame
+
+indsD2 <- which(Dat2$ID == Dat1$ID[k] & Dat2$Day == Dat1$Day[k]) # which row in Dat2 has the ID and Day from the kth row in Dat1
+
+indsD2 # row with matching data
+
+Dat2[indsD2, ] # matching data
+
+indsMD <- which(mDat$ID == Dat1$ID[k] & mDat$Day == Dat1$Day[k]) # which row in mDat has the ID and Day from the kth row in Dat1
+
+indsMD # row with matching data
+
+mDat[indsMD, ] # matching data
+
+## The length and temperature in the merged data (mDat) match the data in the original data frames (Dat1 & Dat2)
 
 
 ```
