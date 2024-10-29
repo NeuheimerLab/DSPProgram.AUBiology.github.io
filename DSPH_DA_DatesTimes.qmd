@@ -72,6 +72,13 @@ where the `Dat$Time` column gives the year, month, day, hour and minutes of an o
 
 1) You can format the `Dat$Time` column as a date and time with:
 
+```{r include=FALSE}
+
+install.packages("lubridate")
+
+```
+
+
 ```{r}
 
 library(lubridate) # load the lubridate package
