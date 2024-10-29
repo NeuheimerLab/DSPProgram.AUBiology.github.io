@@ -291,52 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="in-the-dplyr-package-using-full_join">in the dplyr package using <code>full_join()</code></h2>
 <p>The dplyr package includes the <code>full_join()</code> function as another way to merge your data frames</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># Downloading packages -------------------------------------------------------
-- Downloading dplyr from CRAN ...               OK [1.4 Mb in 0.43s]
-- Downloading generics from CRAN ...            OK [71.5 Kb in 0.69s]
-- Downloading magrittr from CRAN ...            OK [226.7 Kb in 0.39s]
-- Downloading pillar from CRAN ...              OK [629.4 Kb in 0.69s]
-- Downloading fansi from CRAN ...               OK [298.7 Kb in 0.4s]
-- Downloading utf8 from CRAN ...                OK [142.7 Kb in 0.4s]
-- Downloading vctrs from CRAN ...               OK [1.2 Mb in 0.4s]
-- Downloading tibble from CRAN ...              OK [656.3 Kb in 0.39s]
-- Downloading pkgconfig from CRAN ...           OK [17.1 Kb in 0.38s]
-- Downloading tidyselect from CRAN ...          OK [216.9 Kb in 0.73s]
-- Downloading withr from CRAN ...               OK [214.7 Kb in 0.94s]
-Successfully downloaded 11 packages in 8.2 seconds.
-
-The following package(s) will be installed:
-- dplyr      [1.1.4]
-- fansi      [1.0.6]
-- generics   [0.1.3]
-- magrittr   [2.0.3]
-- pillar     [1.9.0]
-- pkgconfig  [2.0.3]
-- tibble     [3.2.1]
-- tidyselect [1.2.1]
-- utf8       [1.2.4]
-- vctrs      [0.6.5]
-- withr      [3.0.2]
-These packages will be installed into "~/work/DSPProgram.AUBiology.github.io/DSPProgram.AUBiology.github.io/renv/library/R-4.2/x86_64-pc-linux-gnu".
-
-# Installing packages --------------------------------------------------------
-- Installing generics ...                       OK [installed binary and cached in 0.42s]
-- Installing magrittr ...                       OK [installed binary and cached in 0.43s]
-- Installing fansi ...                          OK [installed binary and cached in 0.42s]
-- Installing utf8 ...                           OK [installed binary and cached in 0.43s]
-- Installing vctrs ...                          OK [installed binary and cached in 0.59s]
-- Installing pillar ...                         OK [installed binary and cached in 0.65s]
-- Installing pkgconfig ...                      OK [installed binary and cached in 0.41s]
-- Installing tibble ...                         OK [installed binary and cached in 0.69s]
-- Installing withr ...                          OK [installed binary and cached in 0.42s]
-- Installing tidyselect ...                     OK [installed binary and cached in 0.54s]
-- Installing dplyr ...                          OK [installed binary and cached in 0.78s]
-Successfully installed 11 packages in 6.1 seconds.</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># load dplyr package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># load dplyr package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -351,11 +306,11 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mDat<span class="ot">&lt;-</span><span class="fu">full_join</span>(Dat1, <span class="co"># data frame to merge</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                Dat2, <span class="co"># other data frame to merge</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">by =</span> <span class="fu">join_by</span>(ID, Day)) <span class="co"># merge by column</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mDat) <span class="co"># take a look at the object I made</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mDat<span class="ot">&lt;-</span><span class="fu">full_join</span>(Dat1, <span class="co"># data frame to merge</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                Dat2, <span class="co"># other data frame to merge</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">by =</span> <span class="fu">join_by</span>(ID, Day)) <span class="co"># merge by column</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mDat) <span class="co"># take a look at the object I made</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   40 obs. of  4 variables:
  $ ID    : chr  "id29" "id30" "id22" "id31" ...
@@ -378,36 +333,36 @@ Attaching package: 'dplyr'</code></pre>
 <li>it’s ALWAYS a good idea to check your merged data frame to make sure the merge behaved as you expected. This can be done by taking a random row in the first file (<code>Dat1</code>) and comparing the information for that row (ID and Day) in the second file (<code>Dat2</code>) and the merged file (<code>mDat</code>). Here is an example:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># pick a random row to check.  Let's choose 5! </span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>Dat1[k,] <span class="co"># looking at the 5th row of the first data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># pick a random row to check.  Let's choose 5! </span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Dat1[k,] <span class="co"># looking at the 5th row of the first data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     ID Day Length
 20 id31   1    155</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="ot">&lt;-</span> <span class="fu">which</span>(Dat2<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> Dat2<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in Dat2 has the ID and Day from the kth row in Dat1</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="ot">&lt;-</span> <span class="fu">which</span>(Dat2<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> Dat2<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in Dat2 has the ID and Day from the kth row in Dat1</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 19</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Dat2[indsD2, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Dat2[indsD2, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     ID Day Temp
 20 id31   1  5.6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>indsMD <span class="ot">&lt;-</span> <span class="fu">which</span>(mDat<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> mDat<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in mDat has the ID and Day from the kth row in Dat1</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>indsMD <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>indsMD <span class="ot">&lt;-</span> <span class="fu">which</span>(mDat<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> mDat<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in mDat has the ID and Day from the kth row in Dat1</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>indsMD <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>mDat[indsMD, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mDat[indsMD, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    ID Day Length Temp
 5 id31   1    155  5.6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The length and temperature in the merged data (mDat) match the data in the original data frames (Dat1 &amp; Dat2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The length and temperature in the merged data (mDat) match the data in the original data frames (Dat1 &amp; Dat2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
