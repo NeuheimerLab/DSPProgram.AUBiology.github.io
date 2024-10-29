@@ -232,6 +232,34 @@
     ]
   },
   {
+    "objectID": "DSPH_DA_DatesTimes.html",
+    "href": "DSPH_DA_DatesTimes.html",
+    "title": "So you want to: work with dates and times",
+    "section": "",
+    "text": "You will often have a time component to your biological research and research hypotheses - i.e. you might want to explain variability over time.. As mentioned in the Data Collection and Curation section, it is a good idea to record the time of your observation as separate columns of year, month, day, etc. But you will also need to work with data collected by others where date (and sometimes time) information is together one column (variable)."
+  },
+  {
+    "objectID": "DSPH_DA_DatesTimes.html#in-the-base-package",
+    "href": "DSPH_DA_DatesTimes.html#in-the-base-package",
+    "title": "So you want to: work with dates and times",
+    "section": "In the base package:",
+    "text": "In the base package:\nIn the base package which is installed along with R1, you can use the as.Date() function to format your data as a date:\nConsider the data:\n\nmyDat &lt;- read.csv(\"DTData.csv\") # load in the data\n\nhead(myDat) # examine the first few rows\n\n             Time Value\n1 2024/10/3 10:32    36\n2   2020/6/9 0:17    35\n3 2020/10/7 18:38    57\n4 2021/10/9 11:42    43\n5   2020/6/4 1:40    44\n6 2021/12/2 20:42    36\n\n\nwhere the Dat$Time column gives the year, month, day, hour and minutes of an observation given in the Dat$Value column.\n\nYou can format the Dat$Time column as a date and time with:\n\n\nmyDat$Time &lt;- as.Date(x = myDat$Time, # the date and time column\n                      format = \"%Y/%m/%d %H:%M\") # describing the format of the date and time column\n\nhead(myDat) # examine the first few rows\n\n        Time Value\n1 2024-10-03    36\n2 2020-06-09    35\n3 2020-10-07    57\n4 2021-10-09    43\n5 2020-06-04    44\n6 2021-12-02    36\n\n\nYou can learn more about the formatting syntax with ?strptime. Note that the code above replaces the myDat$Time column with the new, formatted date and time information.\n\nYou can extract parts of the date and time column with functions like months() for months, years() for years, etc.\n\nFor example:\n\nmyDat$Months &lt;- months(myDat$Time) # extract only the months\n\nstr(myDat) # structure of the data frame\n\n'data.frame':   15 obs. of  3 variables:\n $ Time  : Date, format: \"2024-10-03\" \"2020-06-09\" ...\n $ Value : int  36 35 57 43 44 36 47 39 38 50 ...\n $ Months: chr  \"October\" \"June\" \"October\" \"October\" ..."
+  },
+  {
+    "objectID": "DSPH_DA_DatesTimes.html#using-the-lubridate-package",
+    "href": "DSPH_DA_DatesTimes.html#using-the-lubridate-package",
+    "title": "So you want to: work with dates and times",
+    "section": "Using the lubridate package:",
+    "text": "Using the lubridate package:\nThe lubridate package was created to make working with dates and times easier. There are still two steps to the process. You can repeat the steps above but now with the lubridate package.\nAgain, consider the data:\n\nmyDat &lt;- read.csv(\"DTData.csv\") # load in the data\n\nhead(myDat) # examine the first few rows\n\n             Time Value\n1 2024/10/3 10:32    36\n2   2020/6/9 0:17    35\n3 2020/10/7 18:38    57\n4 2021/10/9 11:42    43\n5   2020/6/4 1:40    44\n6 2021/12/2 20:42    36\n\n\nwhere the Dat$Time column gives the year, month, day, hour and minutes of an observation given in the Dat$Value column.\n\nYou can format the Dat$Time column as a date and time with:\n\n\nlibrary(lubridate) # load the lubridate package\n\n\nAttaching package: 'lubridate'\n\n\nThe following objects are masked from 'package:base':\n\n    date, intersect, setdiff, union\n\nmyDat$Time &lt;- ymd_hm(myDat$Time) # the date and time column\n\nstr(myDat) # examine the structure of the data\n\n'data.frame':   15 obs. of  2 variables:\n $ Time : POSIXct, format: \"2024-10-03 10:32:00\" \"2020-06-09 00:17:00\" ...\n $ Value: int  36 35 57 43 44 36 47 39 38 50 ...\n\n\n\nYou can extract parts of the date and time column with functions like month() for months, year() for years, etc. Notice that the function names are not plural with the lubridate package.2\n\nFor example:\n\nmyDat$Months &lt;- month(myDat$Time) # extract only the months\n\nstr(myDat) # examine the structure of the data\n\n'data.frame':   15 obs. of  3 variables:\n $ Time  : POSIXct, format: \"2024-10-03 10:32:00\" \"2020-06-09 00:17:00\" ...\n $ Value : int  36 35 57 43 44 36 47 39 38 50 ...\n $ Months: num  10 6 10 10 6 12 3 4 11 11 ...\n\n\nMuch more is available in the lubridate packages, including determining durations and dealing with time-zones. Check the lubridate package “cheat sheet” for more information."
+  },
+  {
+    "objectID": "DSPH_DA_DatesTimes.html#footnotes",
+    "href": "DSPH_DA_DatesTimes.html#footnotes",
+    "title": "So you want to: work with dates and times",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nno need to load a separate package↩︎\nBoth months() and month() will work with lubridate, but months() is also used to denote a duration of a month. See the cheat sheet for more.↩︎"
+  },
+  {
     "objectID": "intro.html",
     "href": "intro.html",
     "title": "What is the DSP Program?",
