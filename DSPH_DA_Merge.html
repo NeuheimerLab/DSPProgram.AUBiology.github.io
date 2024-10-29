@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Skills Portfolio Program - So you want to: merge your data sets</title>
+<title>So you want to: merge your data sets – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -79,7 +45,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,39 +75,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Data Skills Portfolio Program</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./intro.html" rel="" target="">
- <span class="menu-text">What is the DSP Program?</span></a>
+    <a class="nav-link" href="./intro.html"> 
+<span class="menu-text">What is the DSP Program?</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./handbookIntro.html" rel="" target="">
- <span class="menu-text">The DSP Program Handbook</span></a>
+    <a class="nav-link" href="./handbookIntro.html"> 
+<span class="menu-text">The DSP Program Handbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./feedback.html" rel="" target="">
- <span class="menu-text">Feedback</span></a>
+    <a class="nav-link" href="./feedback.html"> 
+<span class="menu-text">Feedback</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -150,12 +123,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-you-want-to-do-it" id="toc-why-you-want-to-do-it" class="nav-link active" data-scroll-target="#why-you-want-to-do-it">Why you want to do it:</a></li>
   <li><a href="#what-merging-is" id="toc-what-merging-is" class="nav-link" data-scroll-target="#what-merging-is">What merging is:</a></li>
   <li><a href="#what-merging-isnt" id="toc-what-merging-isnt" class="nav-link" data-scroll-target="#what-merging-isnt">What merging isn’t:</a></li>
-  <li><a href="#how-you-can-do-it" id="toc-how-you-can-do-it" class="nav-link" data-scroll-target="#how-you-can-do-it">How you can do it:</a>
-  <ul class="collapse">
-  <li><a href="#in-the-base-package-using-merge" id="toc-in-the-base-package-using-merge" class="nav-link" data-scroll-target="#in-the-base-package-using-merge">in the base package using <code>merge()</code></a></li>
-  <li><a href="#in-the-dplyr-package-using-full_join" id="toc-in-the-dplyr-package-using-full_join" class="nav-link" data-scroll-target="#in-the-dplyr-package-using-full_join">in the dplyr package using <code>full_join()</code></a></li>
-  </ul></li>
-  <li><a href="#a-final-note" id="toc-a-final-note" class="nav-link" data-scroll-target="#a-final-note">A final note:</a></li>
   </ul>
 </nav>
     </div>
@@ -177,7 +144,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="why-you-want-to-do-it" class="level1">
 <h1>Why you want to do it:</h1>
@@ -187,174 +156,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-merging-is" class="level1">
 <h1>What merging is:</h1>
 <p>Merging joins columns from two or more data frames based on matching row information across the data frames.</p>
-<p><img src="./mergeEx.png" align="center" width="800px"></p>
+<p><img src="mergeEx.png" class="img-fluid"></p>
 </section>
 <section id="what-merging-isnt" class="level1">
 <h1>What merging isn’t:</h1>
 <p>Merging isn’t about joining data frames by <em>rows</em>. Instead row binding is what you need if you have two data frames with the exact same variables (columns) that you want to join in one data frame. For this, try the <code>rbind()</code> function in base R.</p>
-<p><img src="./rbindEx.png" align="center" width="800px"></p>
-</section>
-<section id="how-you-can-do-it" class="level1">
-<h1>How you can do it:</h1>
-<p>There are a number of different ways of merging files in R. For these examples, let’s consider two data frames:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The first data frame (Dat1) contains information on </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Day: day of sampling</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Length: length at sampling</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   40 obs. of  3 variables:
- $ ID    : chr  "id29" "id30" "id22" "id31" ...
- $ Day   : num  1 2 1 2 1 1 2 1 2 2 ...
- $ Length: num  150 164 110 134 155 125 144 144 139 167 ...</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The second data frame (Dat2) contains information on </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Day: day of sampling</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Temp: temperature at sampling</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   40 obs. of  3 variables:
- $ ID  : chr  "id23" "id20" "id25" "id29" ...
- $ Day : num  2 2 2 1 1 1 2 1 2 1 ...
- $ Temp: num  7.1 7.2 6.4 7.4 6.3 7.2 7 8.1 7.1 6.1 ...</code></pre>
-</div>
-</div>
-<section id="in-the-base-package-using-merge" class="level2">
-<h2 class="anchored" data-anchor-id="in-the-base-package-using-merge">in the base package using <code>merge()</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mDat<span class="ot">&lt;-</span><span class="fu">merge</span>(Dat1, <span class="co"># data frame to merge</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>             Dat2, <span class="co"># other data frame to merge</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ID"</span>, <span class="st">"Day"</span>)) <span class="co"># merge by variable(s)</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mDat) <span class="co"># take a look at the object I made</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   40 obs. of  4 variables:
- $ ID    : chr  "id20" "id20" "id21" "id21" ...
- $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...
- $ Length: num  195 139 144 180 110 97 149 184 139 143 ...
- $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...</code></pre>
-</div>
-</div>
-<p>Note that you don’t need to have the same number of observations (rows) in your two data frames to merge. Merging can be a great way of labelling your data. Here’s an example:</p>
-<p>Consider a data frame with strain information for each of your organism IDs:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Strain: strain of organism</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   20 obs. of  2 variables:
- $ ID    : chr  "id24" "id30" "id33" "id26" ...
- $ Strain: chr  "A" "C" "B" "C" ...</code></pre>
-</div>
-</div>
-<p>Note that <code>Dat1</code> and <code>Dat2</code> each contained 40 observations - one observation for each of 20 IDs made on each of 2 days.</p>
-<p>In contrast <code>Dat3</code> only has 20 observations - information about the strain for each of 20 IDs.</p>
-<p>By using <code>merge()</code>, we can add the strain information to <code>mDat</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>allDat <span class="ot">&lt;-</span> <span class="fu">merge</span>(mDat, <span class="co"># one data frame</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                Dat3, <span class="co"># the other data frame</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">by =</span> <span class="st">"ID"</span>) <span class="co"># variables to merge by</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(allDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   40 obs. of  5 variables:
- $ ID    : chr  "id20" "id20" "id21" "id21" ...
- $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...
- $ Length: num  195 139 144 180 110 97 149 184 139 143 ...
- $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...
- $ Strain: chr  "C" "C" "A" "A" ...</code></pre>
-</div>
-</div>
-<p>Now we have our observations labelled by the strain information!</p>
-<p>Some things to note:</p>
-<ul>
-<li><p>if you leave out the <code>by =</code> function totally, R will look for column names that are similar between the two data frames and use that for the merge.</p></li>
-<li><p>you can designate that the “merge by” variables have different column names in the two data frames. This is done with the <code>by.x =</code> and <code>by.y =</code> arguments. Check <code>?merge</code> for more.</p></li>
-<li><p>you can control what happens to unmatched columns (e.g.&nbsp;if an ID appeared in only one of the two data frames). This is done with the <code>all =</code>, <code>all.x =</code>, and <code>all.y =</code> arguments. Check <code>?merge</code> for more.</p></li>
-</ul>
-</section>
-<section id="in-the-dplyr-package-using-full_join" class="level2">
-<h2 class="anchored" data-anchor-id="in-the-dplyr-package-using-full_join">in the dplyr package using <code>full_join()</code></h2>
-<p>The dplyr package includes the <code>full_join()</code> function as another way to merge your data frames</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># load dplyr package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mDat<span class="ot">&lt;-</span><span class="fu">full_join</span>(Dat1, <span class="co"># data frame to merge</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                Dat2, <span class="co"># other data frame to merge</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">by =</span> <span class="fu">join_by</span>(ID, Day)) <span class="co"># merge by column</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mDat) <span class="co"># take a look at the object I made</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   40 obs. of  4 variables:
- $ ID    : chr  "id29" "id30" "id22" "id31" ...
- $ Day   : num  1 2 1 2 1 1 2 1 2 2 ...
- $ Length: num  150 164 110 134 155 125 144 144 139 167 ...
- $ Temp  : num  7.4 7.3 6.9 7.5 5.6 7.8 7.8 6.3 7.9 7.1 ...</code></pre>
-</div>
-</div>
-<p>Some things to note:</p>
-<ul>
-<li><p>The <code>full_join()</code> function keeps all observations appearing in either data frame.</p></li>
-<li><p>The <code>left_join()</code> function keeps all observations in the first data frame (<code>Dat1</code>) but you will lose any <em>unmatched</em> observations in the second data frame (<code>Dat2</code>).</p></li>
-<li><p>The <code>right_join()</code> function keeps all observations in the second data frame (<code>Dat2</code>) but you will lose any <em>unmatched</em> observations in the first data frame (<code>Dat1</code>)</p></li>
-</ul>
-</section>
-</section>
-<section id="a-final-note" class="level1">
-<h1>A final note:</h1>
-<ul>
-<li>it’s ALWAYS a good idea to check your merged data frame to make sure the merge behaved as you expected. This can be done by taking a random row in the first file (<code>Dat1</code>) and comparing the information for that row (ID and Day) in the second file (<code>Dat2</code>) and the merged file (<code>mDat</code>). Here is an example:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># pick a random row to check.  Let's choose 5! </span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Dat1[k,] <span class="co"># looking at the 5th row of the first data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     ID Day Length
-20 id31   1    155</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="ot">&lt;-</span> <span class="fu">which</span>(Dat2<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> Dat2<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in Dat2 has the ID and Day from the kth row in Dat1</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 19</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Dat2[indsD2, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     ID Day Temp
-20 id31   1  5.6</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>indsMD <span class="ot">&lt;-</span> <span class="fu">which</span>(mDat<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> mDat<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in mDat has the ID and Day from the kth row in Dat1</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>indsMD <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mDat[indsMD, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    ID Day Length Temp
-5 id31   1    155  5.6</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The length and temperature in the merged data (mDat) match the data in the original data frames (Dat1 &amp; Dat2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><img src="rbindEx.png" class="img-fluid"></p>
 
 
 </section>
@@ -395,18 +202,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -438,11 +234,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/NeuheimerLab\.github\.io\/DSPProgram\.AUBiology\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -452,8 +287,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -465,7 +309,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -509,6 +476,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -534,6 +502,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -594,6 +588,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
