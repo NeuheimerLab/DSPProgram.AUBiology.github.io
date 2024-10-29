@@ -20,5 +20,112 @@ Merging isn't about joining data frames by *rows*.  Instead row binding is what 
 
 ![](rbindEx.png)
 
+# How you can do it: 
+
+There are a number of different ways of merging files in R.  For these examples, let's consider two data frames:
+
+```{r echo = FALSE}
+
+rm(list=ls())
+set.seed(45)
+n<-20
+ID <- paste("id", sample(c(20:40), n, replace = FALSE), sep="")
+Day <- c(1,2)
+Strain <- sample(c("A", "B", "C"), n, replace = TRUE)
+
+Dat1 <- data.frame(ID = rep(ID, times =length(Day)),
+                   Day = rep(Day, each = n),
+                   Length = round(rnorm(n*2, 140, 20))
+                   )
+
+Dat1 <-Dat1[sample(c(1:nrow(Dat1)), nrow(Dat1)),]
+
+Dat2 <- data.frame(ID = rep(ID, times =length(Day)),
+                   Day = rep(Day, each = n),
+                   Temp = round(rnorm(n*2, 7, 1), 1))
+
+
+Dat2 <-Dat2[sample(c(1:nrow(Dat2)), nrow(Dat2)),]
+
+
+
+Dat3 <- data.frame(ID = ID,
+                   Strain = Strain)
+
+```
+
+```{r}
+# The first data frame (Dat1) contains information on 
+## ID: organism ID
+## Day: day of sampling
+## Length: length at sampling
+
+str(Dat1)
+
+# The second data frame (Dat2) contains information on 
+## ID: organism ID
+## Day: day of sampling
+## Temp: temperature at sampling
+
+str(Dat2)
+
+```
+
+## in the base package using `merge()`
+
+```{r}
+
+mDat<-merge(Dat1, # data frame to merge
+             Dat2, # other data frame to merge
+             by = c("ID", "Day")) # merge by variable(s)
+
+str(mDat) # take a look at the object I made
+
+```
+
+Note that you don't need to have the same number of observations (rows) in your two data frames to merge.  Merging can be a great way of labelling your data.  Here's an example:
+
+Consider a data frame with strain information for each of your organism IDs:
+
+```{r}
+
+## ID: organism ID
+## Strain: strain of organism
+
+str(Dat3)
+
+```
+
+Note that `Dat1` and `Dat2` each contained 40 observations - one observation for each of 20 IDs made on each of 2 days.
+
+In contrast `Dat3` only has 20 observations - information about the strain for each of 20 IDs.  
+
+By using `merge()`, we can add the strain information to `mDat`:
+
+```{r}
+
+allDat <- merge(mDat, # one data frame
+                Dat3, # the other data frame
+                by = "ID") # variables to merge by
+
+str(allDat)
+
+```
+Now we have our observations labelled by the strain information!
+
+
+Some things to note:
+
+* if you leave out the `by = ` function totally, R will look for column names that are similar between the two data frames and use that for the merge.
+
+* you can designate that the "merge by" variables have different column names in the two data frames.  This is done with the `by.x = ` and `by.y = ` arguments.  Check `?merge` for more.
+
+* you can control what happens to unmatched columns (e.g. if an ID appeared in only one of the two data frames).  This is done with the `all = `, `all.x = `, and `all.y = ` arguments.  Check `?merge` for more.
+
+
+
+
+
+
 
 
