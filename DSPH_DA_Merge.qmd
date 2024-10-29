@@ -126,5 +126,22 @@ Some things to note:
 * you can control what happens to unmatched columns (e.g. if an ID appeared in only one of the two data frames).  This is done with the `all = `, `all.x = `, and `all.y = ` arguments.  Check `?merge` for more.
 
 
+## in the dplyr package using `full_join()`
+
+The dplyr package includes the `full_join()` function as another way to merge your data frames
+
+```{r}
+
+library(dplyr) # load dplyr package
+
+mDat<-full_join(Dat1, # data frame to merge
+                Dat2, # other data frame to merge
+                by = join_by(ID, Day)) # merge by column
+
+str(mDat) # take a look at the object I made
+
+```
+
+
 
 
