@@ -127,9 +127,13 @@ Some things to note:
 
 The dplyr package includes the `full_join()` function as another way to merge your data frames
 
-```{r}
+```{r echo= FALSE}
 
 install.packages("dplyr")
+
+```
+
+```{r}
 
 library(dplyr) # load dplyr package
 
