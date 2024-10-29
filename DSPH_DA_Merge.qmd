@@ -126,58 +126,5 @@ Some things to note:
 * you can control what happens to unmatched columns (e.g. if an ID appeared in only one of the two data frames).  This is done with the `all = `, `all.x = `, and `all.y = ` arguments.  Check `?merge` for more.
 
 
-## in the dplyr package using `full_join()`
-
-The dplyr package includes the `full_join()` function as another way to merge your data frames
-
-```{r}
-
-library(dplyr) # load dplyr package
-
-mDat<-full_join(Dat1, # data frame to merge
-                Dat2, # other data frame to merge
-                by = join_by(ID, Day)) # merge by column
-
-str(mDat) # take a look at the object I made
-
-```
-
-Some things to note:
-
-* The `full_join()` function keeps all observations appearing in either data frame.
-
-* The `left_join()` function keeps all observations in the first data frame (`Dat1`) but you will lose any *unmatched* observations in the second data frame (`Dat2`).
-
-* The `right_join()` function keeps all observations in the second data frame (`Dat2`) but you will lose any *unmatched* observations in the first data frame (`Dat1`)
-
-# A final note:
-
-* it's ALWAYS a good idea to check your merged data frame to make sure the merge behaved as you expected.  This can be done by taking a random row in the first file (`Dat1`) and comparing the information for that row (ID and Day) in the second file (`Dat2`) and the merged file (`mDat`). Here is an example:
-
-
-
-```{r}
-
-k <- 5 # pick a random row to check.  Let's choose 5! 
-
-Dat1[k,] # looking at the 5th row of the first data frame
-
-indsD2 <- which(Dat2$ID == Dat1$ID[k] & Dat2$Day == Dat1$Day[k]) # which row in Dat2 has the ID and Day from the kth row in Dat1
-
-indsD2 # row with matching data
-
-Dat2[indsD2, ] # matching data
-
-indsMD <- which(mDat$ID == Dat1$ID[k] & mDat$Day == Dat1$Day[k]) # which row in mDat has the ID and Day from the kth row in Dat1
-
-indsMD # row with matching data
-
-mDat[indsMD, ] # matching data
-
-## The length and temperature in the merged data (mDat) match the data in the original data frames (Dat1 & Dat2)
-
-
-```
-
 
 
