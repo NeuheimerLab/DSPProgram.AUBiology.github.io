@@ -545,7 +545,7 @@ You can also determine how large the problem of temporal autocorrelation is by e
 
 As above, the assumption of observation independence means that your observations are independent of one another in all ways *except for the predictors included in your hypothesis*.  We need to tell R about this temporal dependence in your model.  This can be done by including time as a predictor in your model.  Note that time will need to be a fixed effect as it is continuous, and will need to be modelled with a non-linear shape assumption^[we'll talk about non-linear models in a couple of weeks] to deal with the complicated form of the temporal autocorrelation.  
 
-Alternatively, you can tell R about the correlation structure of the data directly (i.e. how similarity in observations changes as observations are further and further away from each other).<!--- need to give guidance here--->
+Alternatively, you can tell R about the correlation structure of the data directly (i.e. how similarity in observations changes as observations are further and further away from each other).
 
 
 ### Spatial autocorrelation
@@ -567,7 +567,7 @@ You can find out if observation dependence due to spatial autocorrelation is inf
 
 #### What you do if your observations are influenced by spatial autocorrelation
 
-Similarly to our discussion about temporal autocorrelation, the location of the observations (e.g. latitude and longitude) can be included in your model to account for the spatial autocorrelation^[this would be done with a non-linear model].  Alternatively, the dependence among observations due to proximity can be included in the model as a spatial autocorrelation structure.  <!---Again, this topic is beyond the scope of the course but check 9999.-->
+Similarly to our discussion about temporal autocorrelation, the location of the observations (e.g. latitude and longitude) can be included in your model to account for the spatial autocorrelation^[this would be done with a non-linear model].  Alternatively, the dependence among observations due to proximity can be included in the model as a spatial autocorrelation structure.  
 
 
 ### A final point about observation independence
