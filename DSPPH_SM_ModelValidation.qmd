@@ -37,7 +37,7 @@ library(formatR)
 # Validating your starting model
 
 ## Why do you need to validate your starting model?
-As we discussed before "All models are wrong, but some are useful".  So how do you tell if your [starting model](DSPPH_SM_ModelValidation.qmd) is a useful one; that is, one that can be used to test your hypothesis? 
+As we discussed before "All models are wrong, but some are useful".  So how do you tell if your [starting model](DSPPH_SM_StartingModel.qmd) is a useful one; that is, one that can be used to test your hypothesis? 
 
 As discussed in the last section, when you choose your starting model you make an educated guess as to what a useful starting model might be, but you can only validate that it *is* a useful starting model after you have fit the model to your data.
 
@@ -511,7 +511,7 @@ Here is a table if you are trying to determine if a variable causing dependence 
 | - the variable causing dependence is continuous<br>- if you are interested in effect sizes of the variable on your response<br>- if the factor levels are informative (vs. just numeric labels)         | fixed effect<br>  |
 | - the levels in the variable are only samples from a population of levels<br>- if you have enough levels (at least 5) to estimate the variance of the effect due to your variable | random effect<br> |
 
-(adapted from @Crawley2013TheRBook)
+(adapted from Crawley2013TheRBook)
 
 
 
