@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Modelling Handbook – Data Skills Portfolio Program</title>
+<title>Statistical Modelling: Hypothesis – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">What is the DSP Program?</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./handbookIntro.html" aria-current="page"> 
+    <a class="nav-link" href="./handbookIntro.html"> 
 <span class="menu-text">The DSP Program Handbook</span></a>
   </li>  
   <li class="nav-item">
@@ -110,76 +110,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookSMIntro.html">Statistical Modelling Handbook</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to the Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDCIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Collection &amp; Curation Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Analysis Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookSMIntro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Statistical Modelling Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./FAQ.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frequently Asked Questions</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-statistics" id="toc-why-statistics" class="nav-link active" data-scroll-target="#why-statistics">Why statistics?</a></li>
-  <li><a href="#why-statistical-modelling" id="toc-why-statistical-modelling" class="nav-link" data-scroll-target="#why-statistical-modelling">Why statistical <strong><em>modelling</em></strong>?</a></li>
-  <li><a href="#introducing-a-statistical-modelling-framework" id="toc-introducing-a-statistical-modelling-framework" class="nav-link" data-scroll-target="#introducing-a-statistical-modelling-framework">Introducing a statistical modelling framework</a>
+  <li><a href="#presenting-your-research-hypothesis" id="toc-presenting-your-research-hypothesis" class="nav-link active" data-scroll-target="#presenting-your-research-hypothesis">Presenting your research hypothesis</a>
   <ul class="collapse">
-  <li><a href="#steps-in-the-statistical-modelling-framework" id="toc-steps-in-the-statistical-modelling-framework" class="nav-link" data-scroll-target="#steps-in-the-statistical-modelling-framework">Steps in the statistical modelling framework:</a></li>
-  <li><a href="#where-we-will-begin-generalized-linear-models-glms" id="toc-where-we-will-begin-generalized-linear-models-glms" class="nav-link" data-scroll-target="#where-we-will-begin-generalized-linear-models-glms">Where we will begin: generalized linear models (GLMs)</a></li>
+  <li><a href="#hypotheses-with-more-than-one-predictor---including-interactions" id="toc-hypotheses-with-more-than-one-predictor---including-interactions" class="nav-link" data-scroll-target="#hypotheses-with-more-than-one-predictor---including-interactions">Hypotheses with more than one predictor - including interactions</a></li>
   </ul></li>
-  <li><a href="#the-examples" id="toc-the-examples" class="nav-link" data-scroll-target="#the-examples">The examples</a></li>
-  <li><a href="#from-statistical-modelling-to-scientific-report-writing" id="toc-from-statistical-modelling-to-scientific-report-writing" class="nav-link" data-scroll-target="#from-statistical-modelling-to-scientific-report-writing">From statistical modelling to scientific report writing</a></li>
-  <li><a href="#where-to-from-here" id="toc-where-to-from-here" class="nav-link" data-scroll-target="#where-to-from-here">Where to from here?</a>
-  <ul class="collapse">
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
+  <li><a href="#visualizing-your-hypothesis" id="toc-visualizing-your-hypothesis" class="nav-link" data-scroll-target="#visualizing-your-hypothesis">Visualizing your hypothesis</a></li>
   </ul>
 </nav>
     </div>
@@ -188,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistical Modelling Handbook</h1>
+<h1 class="title">Statistical Modelling: Hypothesis</h1>
 </div>
 
 
@@ -205,147 +150,183 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="why-statistics">Why statistics?</h2>
-<p>All science is explaining variability - explaining why observations are changing in time and/or space. These explanations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> lead us to mechanistic understandings of why the world is as we observe it.</p>
-<p>As biologists, the variability that you are interested in relates to the biological world, but your job is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.</p>
-<p>You need your explanations of variability to be quantitative in order to:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In this section you will:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
 <ul>
-<li>communicate how certain you are with your explanation,</li>
-<li>communicate how much variability still remains unexplained, and</li>
-<li>make useful predictions about the biological world.</li>
+<li><p>identify your model terms (main effects and interactions)</p></li>
+<li><p>present your research hypothesis in words and formula</p></li>
 </ul>
-<p>Statistics provides the mathematical tools<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to accomplish these tasks. Statistics help you determine the evidence for causal<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> mechanisms. And statistics help you make useful predictions<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> about how a biological system might behave at a different time or location.</p>
-<p>Statistics help us answer:</p>
-<ul>
-<li>can you explain the variability that you are seeing?<br>
-</li>
-<li>given your hypothesis, how much variation can you explain?</li>
-<li>given your hypothesis, what would you predict to observe?</li>
-</ul>
-</section>
-<section id="why-statistical-modelling" class="level2">
-<h2 class="anchored" data-anchor-id="why-statistical-modelling">Why statistical <strong><em>modelling</em></strong>?</h2>
-<p>You can quantify how much variability you can explain with your research hypothesis through statistical modelling. Your statistical model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:</p>
-<ul>
-<li>can I explain the variability that I am seeing? (Can I reject my hypothesis?)</li>
-<li>given my hypothesis, how much variation in the observations can I explain?</li>
-<li>given my hypothesis, what would I expect (predict) to observe under different times or locations?</li>
-</ul>
-<p>Your job then is to explain observation variability in time and space by creating a “model” of what (you think) is going on - hence statistical modelling.</p>
-<p>It is important to remember that any model is only an approximation of what is going on in the real world. As many have said before</p>
-<blockquote class="blockquote">
-<p><em>All models are wrong but some are useful.</em></p>
-</blockquote>
-<p>We will discuss how you can build useful models that you can use to test your hypotheses.</p>
-</section>
-<section id="introducing-a-statistical-modelling-framework" class="level2">
-<h2 class="anchored" data-anchor-id="introducing-a-statistical-modelling-framework">Introducing a statistical modelling framework</h2>
+</div>
+</div>
+</div>
 <p><img src="./statsModFramework.png" align="right" width="150"></p>
-<p>The focus of this section of the handbook is statistics that can be applied to your work as a biologist. For that reason, the motivation for what we are going to do together comes directly from your biological research hypotheses. As a biologist, you have a research hypothesis that you want to test. The method presented in this handbook will help you test it. You will learn how to move from biological theory to hypothesis to the statistical modelling process you will use to test your hypothesis.</p>
-<p>You will learn this process of statistical modelling by walking through a “Statistical Modelling Framework”. This is a set of steps that you can use to go from your research hypothesis to designing a model, testing your hypothesis and communicating the results.</p>
-<p>This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.</p>
-<p>As we will discuss later in the handbook, working through this framework will also guide you in creating the “guts” of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I’m trying to explain?). Once through, you’ll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in <a href="DSPPH_SM_Communicating.qmd">section</a>.</p>
-<p>A note about our Statistical Modelling Framework: The steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e.&nbsp;the model is a valid one that you can use to test your hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.</p>
-<section id="steps-in-the-statistical-modelling-framework" class="level3">
-<h3 class="anchored" data-anchor-id="steps-in-the-statistical-modelling-framework">Steps in the statistical modelling framework:</h3>
-<!--
-<img src="./statsModFramework.png" align="left" width="150"/>
--->
-<section id="responses" class="level4">
-<h4 class="anchored" data-anchor-id="responses"><a href="./DSPPH_SM_Responses.html">Response(s)</a></h4>
-<p>Here you will define your research question by identifying your response variable(s).</p>
-<ul>
-<li><p>What variability are you trying to explain?</p></li>
-<li><p>And why is it worth explaining? (your motivation)</p></li>
-</ul>
-<p>Note: we’ll begin by discussing how to model hypotheses with just one response variable before discussing multiple response variable(s).</p>
-</section>
-<section id="predictors" class="level4">
-<h4 class="anchored" data-anchor-id="predictors"><a href="./DSPPH_SM_Predictors.html">Predictor(s)</a></h4>
-<p>Here you will choose your predictor variables.</p>
-<ul>
-<li><p>what could explain the variability in your response?</p></li>
-<li><p>what are the possible mechanisms behind your argument?</p></li>
-</ul>
-</section>
-<section id="hypothesis" class="level4">
-<h4 class="anchored" data-anchor-id="hypothesis"><a href="./DSPPH_SM_Hypothesis.html">Hypothesis</a></h4>
-<p>Here you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical modelling.</p>
-</section>
-<section id="starting-model" class="level4">
-<h4 class="anchored" data-anchor-id="starting-model"><a href="DSPPH_SM_StartingModel">Starting model</a></h4>
-<p>Here you will choose and fit the starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data (i.e.&nbsp;confronting your model with your data).</p>
-</section>
-<section id="model-validation" class="level4">
-<h4 class="anchored" data-anchor-id="model-validation"><a href="DSPPH_SM_ModelValidation.qmd">Model validation</a></h4>
-<p>Here you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence.</p>
-<p>You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.</p>
-</section>
-<section id="hypothesis-testing" class="level4">
-<h4 class="anchored" data-anchor-id="hypothesis-testing"><a href="DSPPH_SM_HypothesisTesting.qmd">Hypothesis testing</a></h4>
-<p>Here you will test your hypothesis by assessing the evidence supporting your model. We will discuss a number of different methods to do this, but will focus on the model selection method as a robust way to evaluate what your model is telling you about your hypothesis.</p>
-</section>
-<section id="reporting" class="level4">
-<h4 class="anchored" data-anchor-id="reporting"><a href="DSPPH_SM_Reporting.qmd">Reporting</a></h4>
-<p>Here you will report the results of your hypothesis testing.</p>
-<p>You will report:</p>
-<ul>
-<li><p>your best-specified model identified in the hypothesis testing</p></li>
-<li><p>the effects (patterns) described by your model (including visualizing your model effects)</p></li>
-<li><p>how well your model explains variability in your response.</p></li>
-</ul>
-</section>
-<section id="predicting" class="level4">
-<h4 class="anchored" data-anchor-id="predicting"><a href="DSPPH_SM_Predicting.qmd">Predicting</a></h4>
-<p>Here you will use your model to make predictions of your response under different conditions (while considering prediction limits).</p>
-</section>
-</section>
-<section id="where-we-will-begin-generalized-linear-models-glms" class="level3">
-<h3 class="anchored" data-anchor-id="where-we-will-begin-generalized-linear-models-glms">Where we will begin: generalized linear models (GLMs)</h3>
-<p>To begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses. Also, understanding how GLMs can be used to test your hypothesis will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).</p>
-<p>Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we compare GLMs to alternative model types <a href="ExCompareTraditionalGLMs.qmd">here</a>. And remember: the steps in the statistical modelling framework are generally applicable. Regardless of the method you apply, you need to ground your choices in good biological and statistical theory.</p>
+<section id="presenting-your-research-hypothesis" class="level1">
+<h1>Presenting your research hypothesis</h1>
+<p>Together your response and predictor variables make up your research hypothesis. In general terms, your research hypothesis can be presented in words as:</p>
+<blockquote class="blockquote">
+<p>Variability in the response is explained by the predictor.</p>
+</blockquote>
+<p>In R syntax, you present your hypothesis with a tilde “~” (pronounced “till-da”) which separates the response and predictor variables.</p>
+<blockquote class="blockquote">
+<p><code>Response ~ Predictor + 1</code></p>
+</blockquote>
+<p>Note here that the <code>+ 1</code> indicates that there will be an intercept in the model. We can leave this out of our hypothesis formula as R will add it by default, but I include it here for clarity.</p>
+<section id="hypotheses-with-more-than-one-predictor---including-interactions" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-with-more-than-one-predictor---including-interactions">Hypotheses with more than one predictor - including interactions</h2>
+<p>When you are considering more than one predictor, you need to consider the possibility of both main effects and interactions.</p>
+<p>A main effect represents the direct independent effect of the predictor on the response.</p>
+<p>An interaction represents that the effect of one predictor on the response depends on the value of the other predictor.</p>
+<p>If your research hypothesis states that</p>
+<blockquote class="blockquote">
+<p>Variability in the response (<code>Resp</code>) is explained by independent effects of two predictors (<code>Pred1</code> and <code>Pred2</code>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
+<p>your hypothesis in R syntax would be:</p>
+<blockquote class="blockquote">
+<p><code>Resp ~ Pred1 + Pred2 + 1</code></p>
+</blockquote>
+<p>If your research hypothesis states that</p>
+<blockquote class="blockquote">
+<p>Variability in the response (<code>Resp</code>) is explained by effects of two predictors (<code>Pred1</code> and <code>Pred2</code> with the effect of Pred1 depending on the value of Pred2)</p>
+</blockquote>
+<p>your hypothesis in R syntax would be:</p>
+<blockquote class="blockquote">
+<p><code>Resp ~ Pred1 + Pred2 + Pred1:Pred2 + 1</code></p>
+</blockquote>
+<p>Note that <code>:</code> is used to denote an interaction. In this case, it is a two-way interaction between <code>Pred1</code> and <code>Pred2</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>R has a number of shortcuts for representing formulas in shortform. For example:</p>
+<p><code>Resp ~ Pred1 + Pred2 + Pred1:Pred2 + 1</code></p>
+<p>can be written as</p>
+<p><code>Resp ~ Pred1*Pred2</code></p>
+<p>i.e.&nbsp;<code>*</code> means to include all main effects and all possible interactions.</p>
+<p>Another example:</p>
+<p><code>Resp ~ Pred1 + Pred2 + Pred3 + Pred1:Pred2 + Pred2:Pred3 + Pred1:Pred3 + 1</code></p>
+<p>can be written as</p>
+<p><code>Resp ~ (Pred1 + Pred2 + Pred3)^2</code></p>
+<p>which tells R to include all main effects and all possible <strong>two-way</strong> interactions between the three predictors.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="the-examples" class="level2">
-<h2 class="anchored" data-anchor-id="the-examples"><a href="examples.qmd">The examples</a></h2>
-<p>Here we’ve gathered examples following our statistical modelling framework structure. <a href="./feedback.html">You can request/contribute new examples here</a></p>
-</section>
-<section id="from-statistical-modelling-to-scientific-report-writing" class="level2">
-<h2 class="anchored" data-anchor-id="from-statistical-modelling-to-scientific-report-writing">From statistical modelling to scientific report writing</h2>
-<p><a href="communication.qmd">Here</a> you can see how you can use the steps in the Statistical Modelling Framework to outline your communication of your hypothesis testing in reports and paper.</p>
-</section>
-<section id="where-to-from-here" class="level2">
-<h2 class="anchored" data-anchor-id="where-to-from-here">Where to from here?</h2>
-<p>TBA: - boosted regression trees - Bayesian negative bionomial regression mixed models - nested design in mixed models - random forest vs.&nbsp;GAMs - meta-analysis - complex models - classification (categorical response) and regression (continous response) trees - boosted regression trees - boosted regression trees iteratively fit models gradually increasing emphasis on observations that were initially poorly fit - ADMB and TMB</p>
-<ul>
-<li><p>multivariate statistics</p></li>
-<li><p>exploratoryordination/clustering</p></li>
-<li><p>cross validation</p></li>
-</ul>
-<p>[[Principle Component Analysis]] linearly transforms multivariate data into a new coordinate system where the majority of the variation in the data is captured with fewer dimensions than the initial data - Li et al.&nbsp;2023</p>
-<p>[[Principle Component Analysis|PCA]] constructs a “map” of the samples where samples that are more similar are closer together</p>
-<section id="acknowledgements" class="level3">
-<h3 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
-<p>TBA</p>
+<section id="visualizing-your-hypothesis" class="level1">
+<h1>Visualizing your hypothesis</h1>
+<p>To illustrate what we mean by interactions, we can visualize what different hypotheses are predicting will be observed. Assume you have a response <code>Resp</code> and two predictors, one that is continuous (<code>Cont</code>) and one that is categorical (<code>Cat</code>).</p>
+<p>For a hypothesis of:</p>
+<p><code>Resp ~ Cont + Cat + Cont:Cat + 1</code></p>
+<p>you are hypothesizing that there is an effect of both <code>Cont</code> and <code>Cat</code> on <code>Resp</code> but the effect of <code>Cont</code> depends on the value of <code>Cat</code>. This can be illustrated as:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Hypothesis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that the effect of <code>Cont</code> on <code>Resp</code> depends if <code>Cat</code> is <code>A</code> or <code>B</code> - this is the definition of an interaction. So this model includes all main effects and all interactions.</p>
+<p>For a hypothesis of:</p>
+<p><code>Resp ~ Cont + Cat + 1</code></p>
+<p>you are hypothesizing that there is an effect of both <code>Cont</code> and <code>Cat</code> on <code>Resp</code> and that these effects are independent of one another. This can be illustrated as:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Hypothesis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that the effect of <code>Cont</code> on <code>Resp</code> is the same regardless if <code>Cat</code> is <code>A</code> or <code>B</code>. This is a model of main effects only, and is also called an additive model.</p>
+<p>For a hypothesis of:</p>
+<p><code>Resp ~ Cont + 1</code></p>
+<p>you are hypothesizing that there is an effect of <code>Cont</code> but <strong>no effect of <code>Cat</code></strong> on <code>Resp</code>. This can be illustrated as:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Hypothesis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that there is an effect of <code>Cont</code> on <code>Resp</code> but no effect of <code>Cat</code> (the lines are overlapping).</p>
+<p>For a hypothesis of:</p>
+<p><code>Resp ~ Cat + 1</code></p>
+<p>you are hypothesizing that there is an effect of <code>Cat</code> but <strong>no effect of <code>Cont</code></strong> on <code>Resp</code>. This can be illustrated as:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Hypothesis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that there is no effect of <code>Cont</code> on <code>Resp</code> (the line is flat) but there is an effect of <code>Cat</code> on <code>Resp</code> (<code>Resp</code> is higher when <code>Cat = B</code>).</p>
+<p>Finally, a hypothesis that there are <strong>no effects of either <code>Cont</code> or <code>Cat</code> on <code>Resp</code></strong> we represent this as</p>
+<p><code>Resp ~ 1</code></p>
+<p>which can be illustrated as:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Hypothesis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that the lines are overlapping (i.e.&nbsp;no effect of <code>Cat</code>) and the line is horizontal (i.e.&nbsp;no effect of <code>Cont</code>).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>The illustrations here are considering that there are no other sources of variability in <code>Resp</code>. In the real world, your observations will include variability that will be unexplained by your hypothesis. This will be due to measurement error as well as the effects of other, unmeasured predictors. We will discuss this in the sections to come.</p>
+</div>
+</div>
+</div>
 <div class="footnotes">
 
 </div>
 
 
 </section>
-</section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>here, we can also use the term “research hypothesis” instead of explanation and you’ll see we quickly switch to using this term<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Math skills have often been underemphasized in many Biology educations. This has not been helpful or necessary. Biologists need math and are very capable at applying math to solve problems, but the math needs to be useful; that is, math that you can apply to your own needs as you research biology. The DSP Program aims at providing statistical modelling tools that will be useful to you as a biologist. It is a happy coincidence that the same skills can be applied to a lot of other situations as well. The programming and statistics skills you are learning here will be useful to you in the future - in your future courses, thesis-writing and a wide range of careers.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>more on causal vs.&nbsp;correlative explanations coming soon<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>useful predictions will always include uncertainty<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>and these will be educated guesses!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Don’t worry if these terms don’t mean anything to you yet - more to come!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Some jargon here: when the effects of each predictor is independent of other predictors, you say the model is “additive”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note: to include an interaction all predictors involved in the interaction have to have a main effect also included in the model<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
