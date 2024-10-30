@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistical Modelling: Starting Model – Data Skills Portfolio Program</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Skills Portfolio Program</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./intro.html"> 
+<span class="menu-text">What is the DSP Program?</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./handbookIntro.html"> 
+<span class="menu-text">The DSP Program Handbook</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./feedback.html"> 
+<span class="menu-text">Feedback</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#your-starting-model" id="toc-your-starting-model" class="nav-link active" data-scroll-target="#your-starting-model">Your Starting Model</a>
+  <ul class="collapse">
+  <li><a href="#sec-whyNeed" id="toc-sec-whyNeed" class="nav-link" data-scroll-target="#sec-whyNeed">Why do you need a starting model?</a></li>
+  <li><a href="#sec-WhatMeanFitModel" id="toc-sec-WhatMeanFitModel" class="nav-link" data-scroll-target="#sec-WhatMeanFitModel">What does it mean to “fit a model”?</a></li>
+  <li><a href="#choosing-your-starting-model" id="toc-choosing-your-starting-model" class="nav-link" data-scroll-target="#choosing-your-starting-model">Choosing your starting model</a>
+  <ul class="collapse">
+  <li><a href="#choosing-your-error-distribution-assumption" id="toc-choosing-your-error-distribution-assumption" class="nav-link" data-scroll-target="#choosing-your-error-distribution-assumption">1. Choosing your error distribution assumption:</a></li>
+  <li><a href="#choosing-your-shape-assumption" id="toc-choosing-your-shape-assumption" class="nav-link" data-scroll-target="#choosing-your-shape-assumption">2. Choosing your shape assumption:</a></li>
+  <li><a href="#communicating-your-starting-model" id="toc-communicating-your-starting-model" class="nav-link" data-scroll-target="#communicating-your-starting-model">Communicating your starting model</a></li>
+  </ul></li>
+  <li><a href="#sec-fitting" id="toc-sec-fitting" class="nav-link" data-scroll-target="#sec-fitting">Fitting your starting model</a>
+  <ul class="collapse">
+  <li><a href="#generalized-linear-models-glms" id="toc-generalized-linear-models-glms" class="nav-link" data-scroll-target="#generalized-linear-models-glms">Generalized Linear Models (GLMs)</a></li>
+  <li><a href="#your-glm-model-object" id="toc-your-glm-model-object" class="nav-link" data-scroll-target="#your-glm-model-object">Your GLM model object</a></li>
+  </ul></li>
+  <li><a href="#sec-firstLookModel" id="toc-sec-firstLookModel" class="nav-link" data-scroll-target="#sec-firstLookModel">A first look at your starting model</a></li>
+  <li><a href="#up-next" id="toc-up-next" class="nav-link" data-scroll-target="#up-next">Up next</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Statistical Modelling: Starting Model</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In this section you will:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>learn why you need a starting model to test your hypothesis</p></li>
+<li><p>learn what model fitting means</p></li>
+<li><p>choose and fit a starting model to start testing your hypothesis</p></li>
+<li><p>take a first look at your fitted starting model</p></li>
+</ul>
+</div>
+</div>
+</div>
+<section id="your-starting-model" class="level1">
+<h1>Your Starting Model</h1>
+<p>To test your hypothesis, you first need to build an appropriate model of your hypothesis in mathematical form. The model gives you a structure to which you can fit your data so that you can assess what the evidence (data) is saying about your hypothesis. This is called a statistical model as the model is fit by estimating parameters from the data (your observations).</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Some useful terms">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Some useful terms
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Response - the variable you are trying to explain.</p></li>
+<li><p>Predictor(s) - the variable(s) you believe are explaining the variation in your response.</p></li>
+<li><p>Parameters - values needed to be estimated when you fit your model (e.g.&nbsp;slope, intercept). These represent the effects of your predictors on your response.</p></li>
+<li><p>Coefficients - the estimates of your parameters made when you fit your model.</p></li>
+<li><p>Fitted values - these are the model’s estimate of the response at each of your predictor values.</p></li>
+<li><p>Residuals - these are a measure of the error: the difference between your observations and the fitted values</p></li>
+</ul>
+<p><img src="./residPlotReview.png" width="600px"></p>
+</div>
+</div>
+</div>
+<section id="sec-whyNeed" class="level2">
+<h2 class="anchored" data-anchor-id="sec-whyNeed">Why do you need a starting model?</h2>
+<p><img src="./statsModFramework.png" align="right" width="150"></p>
+<p>Imagine your research hypothesis is:</p>
+<blockquote class="blockquote">
+<p><code>Response ~ Predictor + 1</code></p>
+</blockquote>
+<p>where you are hypothesizing that</p>
+<blockquote class="blockquote">
+<p>variability in <code>Response</code> is explained by variability in <code>Predictor</code>.</p>
+</blockquote>
+<p>This can be tested by determining the evidence for an <strong>effect</strong> of <code>Predictor</code> on your <code>Response</code>. An effect means that we get a change in <code>Response</code> when we observe a change in <code>Predictor</code>.</p>
+<p>In fitting your model, you will be estimating the effect of <code>Predictor</code> on <code>Response</code> - the magnitude and direction of the effect, as well as an estimate of the uncertainty (error) in the effect.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Effects are coefficients">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Effects are coefficients
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When we say that a predictor has “an effect” on a response, we are saying that a change in the predictor leads to a change in the response.</p>
+<p>This change in the response that comes from a unit change in the predictor is estimated as a coefficient.</p>
+<p>The coefficient of a <strong>continuous predictor</strong> is the slope. The slope describes the change in response that you get from a unit change in the predictor. For example, if your hypothesis is <code>Growth ~ Temperature + 1</code>, (and <code>Temperature</code> is continuous), the slope (coefficient) for <code>Temperature</code> will tell you the change in <code>Growth</code> you expect for a 1˚C change in <code>Temperature</code>.</p>
+<p>The coefficient of a <strong>categorical predictor</strong> tells you how much the response will change when the categorical predictor changes from one category (level) to another. For example, if your hypothesis is <code>Growth ~ Species + 1</code>, (and <code>Species</code> is categorical with “Species A” and “Species B”), the coefficient for <code>Species</code> will tell you the change in Growth you expect when you change from one <code>Species</code> to another (e.g.&nbsp;“Species A” to “Species B”).</p>
+</div>
+</div>
+</div>
+<p>Your starting model will let you estimate this effect (coefficient) of your predictor on your response. Your starting model will also let you estimate the error (uncertainty) around this effect (coefficient).</p>
+<p>Once you have these estimates, you can test your hypothesis to see if the effect of the predictor on your response is meaningful (i.e.&nbsp;is the coefficient significantly different than zero?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>).</p>
+</section>
+<section id="sec-WhatMeanFitModel" class="level2">
+<h2 class="anchored" data-anchor-id="sec-WhatMeanFitModel">What does it mean to “fit a model”?</h2>
+<p>Let’s take a step back and start by looking at the structure of a statistical model.</p>
+<p>A statistical model is a model of your hypothesis where the coefficients of the model (e.g.&nbsp;slope, intercept) are estimated from your data.</p>
+<p>A statistical model is a model that include both a <em>deterministic</em> part and a <em>stochastic</em> part.</p>
+<ul>
+<li><p>The deterministic part represents your research hypothesis in math form - this describes how the predictors and response are related.</p></li>
+<li><p>The stochastic part represents the error in your model. This includes error due to all the other possible factors or predictors that you have not been included in your hypothesis (called “process error”) as well as any error made when you made your observations (called “measurement error”).</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="More on statistical model form">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More on statistical model form
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can represent a general statistical model as</p>
+<p><span class="math inline">\(E(Y_i) = Function(Pred1_i,  Pred2_i, ...) \tag{Deterministic part}\)</span></p>
+<p><span class="math inline">\(Resp_i \sim Distribution(E(Y_i)) \tag{Stochastic part}\)</span></p>
+<p>where <span class="math inline">\(Resp_i\)</span> is your response, <span class="math inline">\(Pred1_i, Pred2_i\)</span> are your predictors for observation <span class="math inline">\(i\)</span>, and <span class="math inline">\(E(Y_i)\)</span> is the expected value of your response.</p>
+<p>Here is an example for a case where variability in your response is explained by a continuous predictor:</p>
+<p><img src="./residPlotReview.png" class="img-fluid" style="width:90.0%"></p>
+<p>Note here that i) the shape assumption (deterministic part) is that the effect of the predictor on the response is linear, and ii) the error distribution assumption (stochastic part) is that the error is normal, meaning that your observations should be assumed to be normally distributed around the fitted value (<span class="math inline">\(\mu_i\)</span>).</p>
+</div>
+</div>
+</div>
+<p>So to choose (and eventually) fit your starting model, you need to choose both deterministic and stochastic assumptions. Happily, how we make our choices lies back in the biological world.</p>
+</section>
+<section id="choosing-your-starting-model" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-your-starting-model">Choosing your starting model</h2>
+<p>It is important to note that <strong>there is more than one model</strong> you could use to test your hypothesis. This is because each model is a simplification and approximation of the real world, and there are a number of mathematical ways one can simplify and approximate the processes involved in your research hypothesis.<br>
+In this Handbook, you will learn about some very useful models, and how to choose among them. We will also discuss alternatives - this will give you other options, but will also help you communicate to other researchers that may choose different methods for their hypothesis testing.</p>
+<p>Despite the fact that there is more than one valid starting model, not all models are <strong>useful</strong> starting models. Here we will focus on finding a useful starting model.</p>
+<p>A useful starting model is one that reflects the mechanistic<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> understanding underlying your research hypothesis and one that reflects the nature of your data (observations).</p>
+<p>Note: you will first be able to assess if your starting model is a useful one AFTER you have fit the model to the data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. At this stage you just need to pick an intelligent starting point - but what does that mean? And how do you do it?</p>
+<section id="choosing-your-error-distribution-assumption" class="level3">
+<h3 class="anchored" data-anchor-id="choosing-your-error-distribution-assumption">1. Choosing your error distribution assumption:</h3>
+<p>To choose your starting model, start by choosing the stochastic part of your model by choosing an <strong>error distribution assumption</strong>.</p>
+<p>This describes how the data should be assumed to be distributed around your model fit (e.g.&nbsp;how to model the scatter of the data around the line in the figure above). Note I use the word “assumption” here - we are picking an existing mathematical form (data distribution<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>) that can approximate the behaviour of our observations. This is an assumption that we will test in the Validate section to come.</p>
+<p><strong>How do you choose?</strong><br>
+</p>
+<p><em>Think about theory:</em> Note that the error in your statistical model (scatter in the plot above) is error around the response variable (i.e.&nbsp;on the y-axis). The key to choosing an error distribution assumption is then to <strong>look at your response variable</strong>.<br>
+</p>
+<ul>
+<li><p>Can your response be a decimal (continuous) and positive or negative? Choose a normal error distribution assumption.<br>
+</p></li>
+<li><p>Can your response be a decimal (continuous) but only positive? Start by using a Gamma error distribution assumption.<br>
+</p></li>
+<li><p>Can your response only be a positive integer? Try a poisson error distribution assumption.<br>
+</p></li>
+<li><p>Can your response only be one of two values? Start with a binomial error distribution assumption.</p></li>
+</ul>
+<p><em>Plot your data:</em> Plotting your response variable can also help you determine the data distribution that would be the best starting point for your error distribution assumption.</p>
+</section>
+<section id="choosing-your-shape-assumption" class="level3">
+<h3 class="anchored" data-anchor-id="choosing-your-shape-assumption">2. Choosing your shape assumption:</h3>
+<p>The next step in choosing your starting model is to choose your <strong>shape assumption</strong>. Your shape assumption specifies how your predictor(s) and your response are related to one another. This represents the deterministic part of your model and answers the question “what shape do I expect the relationship between my response and predictor to be?”.</p>
+<p>Your choices are linear (where a unit change in the predictor always leads to the same change in the response) or non-linear (where the effect of the predictor on the response depends on the value of the predictor). Note that you need to make a shape assumption choice for each of your predictors in your research hypothesis.</p>
+<p><strong>How do you choose?</strong></p>
+<p><em>Think about theory</em>: The first thing to consider is the nature of your predictor variable. Is it categorical? If yes, choose a linear shape assumption, as a non-linear shape assumption does not make sense for a categorical predictor (e.g.&nbsp;species).</p>
+<p>Is your predictor continuous? Then you need to think a bit more about the relationship between your predictor and response. Do you expect the predictor to always affect your response in the same way (i.e.&nbsp;a unit change in your response for a unit change in your predictor is expected to be the same over the range in your predictor)? Or do you expect that relationship to change as your predictor changes?</p>
+<!--- include figure of nonlinear vs. linear--->
+<p><em>Plot your data</em>: Plotting your response vs.&nbsp;your predictor is another good exercise to get you thinking about what shape assumption will be appropriate. The GGally package has some good options for quickly plotting your data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="co"># loading palmer penguins data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally) <span class="co"># loading GGally package</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># loading dplyr package for select() </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>myDat<span class="ot">&lt;-</span><span class="fu">select</span>(penguins, bill_length_mm, body_mass_g, species) <span class="co"># select a subset of columns to plot.  These would be your response and predictor columns</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(<span class="at">data=</span>myDat, <span class="co"># your data </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">col=</span>species), <span class="co"># ggpairs will plot all columns in myDat, so we only need to tell it here any grouping variables we also want to include</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">upper=</span><span class="st">"blank"</span> <span class="co"># keep the upper triangle of plots blank for this simple example.  Check ?ggpairs for more options.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_StartingModel_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>In this course,</strong> we will primarily focus on statistical models assuming a linear shape assumption. You will see how flexible these can be, but we will also discuss what you should do if you want to assume non-linear<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> relationships between your response and predictors.</p>
+</section>
+<section id="communicating-your-starting-model" class="level3">
+<h3 class="anchored" data-anchor-id="communicating-your-starting-model">Communicating your starting model</h3>
+<p>To communicate your starting model, report your research hypothesis, your response and predictors (main effects and interactions) along with descriptions of your error distribution and shape assumptions.</p>
+<p>For each, describe how you arrived at your choices (e.g.&nbsp;“a poisson error distribution assumption was chosen as the response variable is count data…”). We will go over examples of all this in class.</p>
+</section>
+</section>
+<section id="sec-fitting" class="level2">
+<h2 class="anchored" data-anchor-id="sec-fitting">Fitting your starting model</h2>
+<p>Once you have chosen your starting model, you will fit the model to your data so that it can be used to test your hypothesis.</p>
+<p><img src="./coefParam.png" align="right" width="350"> As mentioned <a href="#sec-WhatMeanFitModel">above</a>, fitting your model means that you are going to use your data to estimate the value of the coefficients in your model (e.g.&nbsp;slope, intercept).</p>
+<p>The best choices for the coefficient values are the coefficient values that give you the highest probability of observing your data. In other words, the best choices for the coefficients are values that are most <strong>likely</strong> given the data you have<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Fitting models this way is done using a method called <em>maximum likelihood</em>.</p>
+<p>For example, think about how we would draw a “best-fit” linear line through this relationship:</p>
+<p><img src="./FitModelToData.gif" align="center" width="350"></p>
+<p>What we do intuitively is to find a line that minimizes the error<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> in the model (i.e.&nbsp;the average difference between each observation and the fitted line). The coefficient values of this “best-fit” line have the maximum likelihood given our data.</p>
+<p>The math involved when fitting your model follows the same logic to find the most likely values for your model coefficients. The actual math used will vary based on the type of model you are fitting (i.e.&nbsp;based on your error and shape assumptions), but in general, finding the right coefficients can be illustrated like this “gradient descent” illustration:</p>
+<p><img src="./gradientDescent.png" align="center" width="450"></p>
+<p>The most likely coefficient values are found by choosing a starting point for coefficient values and fitting the model. Then, the coefficient values are changed slightly and a new fit is made. The new fit is compared to the old fit to determine if the fit improved (i.e.&nbsp;the average error around the model decreased). This procedure is repeated<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> until the error is reduced as much as possible. The resulting coefficient values are the most likely coefficient values for your model given your data.</p>
+<p>Here is another illustration showing gradient descent for two coefficients (e.g.&nbsp;two slopes):</p>
+<p><img src="./3DGradientDescentNEW.png" align="center" width="450"></p>
+<p>The mathematical methods involved to fit our model will vary depending on our error distribution assumption and shape assumption. The math methods are behind the functions you will use to fit our models in R. Let’s look at one example of this now.</p>
+<section id="generalized-linear-models-glms" class="level3">
+<h3 class="anchored" data-anchor-id="generalized-linear-models-glms">Generalized Linear Models (GLMs)</h3>
+<p>Generalized Linear Models or GLMs are statistical models that have a linear shape assumption but allow for a wide range of error distribution assumptions. The “generalized” in generalized linear model refers to the fact that the methods used to fit a GLM were developed from methods used to fit models that were restricted to a normal error distribution assumption (e.g.&nbsp;simple linear models and ANOVAs)<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>:</p>
+<p><img src="./RelationshipAmongModels.png" class="img-fluid" style="width:70.0%"></p>
+<p>So we can use a GLM as our starting model when we have a shape assumption that is linear, and one of a variety of error distribution assumptions - see a little further along to find out which error distribution assumptions are supported by GLMs.</p>
+<section id="how-to-fit-a-glm-to-data-in-r" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-fit-a-glm-to-data-in-r">How to fit a GLM to data in R</h4>
+<section id="choosing-a-link-function" class="level5">
+<h5 class="anchored" data-anchor-id="choosing-a-link-function">Choosing a link function:</h5>
+<p>To fit a GLM, you need to let R know what error distribution assumption you are using so that the math governing the stochastic part of your model can be “linked” to the original math developed for a normal error distribution assumption.</p>
+<p>So, we need to choose a “link function” to use when we fit our model to data. This is not hard: There are canonical (default) link functions associated with each of the error distribution assumptions for your GLM. You can find them in R with <code>?family</code> which will open up the help window to show:</p>
+<p><img src="./canLinkFunctions.png" class="img-fluid" style="width:50.0%"></p>
+<p>In general, start with the default link function that matches the error distribution assumption you chose for your starting model.</p>
+<!--- plot data AFTER error distribution assumption link --->
+<div class="callout callout-style-default callout-tip callout-titled" title="Transformations vs. GLMs">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Transformations vs.&nbsp;GLMs
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You may be familiar with the idea of transforming your response variable to be normally distributed for use in linear model. This idea stems from a time when methods were limited to those requiring a normal error distribution assumption. GLMs mean transformations are often no longer necessary as you can now choose an error distribution that reflects the nature of your data instead.</p>
+<p>While the idea of transformations is similar to the GLM’s link function, they are not the same. Transformations transform the response variable itself in order to try to constrain it to a normal error distribution assumption. In contrast, link functions “transform” the expected (fitted) value of the model while also indicating an error distribution that matches the original data.</p>
+<p>When possible, using a GLM with a link function is preferable to transforming your response variable. This is because transformations:</p>
+<ul>
+<li><p>change the response variable itself making interpretation of modelled effects more difficult</p></li>
+<li><p>can introduce bias in the coefficients,</p></li>
+<li><p>can result in models that make predictions that are impossible, and</p></li>
+<li><p>can be tricky to find an appropriate transformation.</p></li>
+</ul>
+<p>That said, there may be times when you want to use a transformation of your response - e.g.&nbsp;to follow a method that is already established in your field. For these cases, you can still fit the model with the GLM strategy we describe here.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="fitting-your-glm-to-your-data" class="level5">
+<h5 class="anchored" data-anchor-id="fitting-your-glm-to-your-data">Fitting your GLM to your data:</h5>
+<p>The function for fitting a GLM in R is (helpfully) <code>glm()</code> and it is already installed in base R (no need to load another package).</p>
+<p>To fit your model to the data you need to tell R your hypothesis<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, your data, and your error distribution assumption:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>startMod <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="at">formula =</span> Resp <span class="sc">~</span> Pred <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># your hypothesis</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># your data</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> ...) <span class="co"># your error distribution assumption</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, a GLM fit with a Gamma error distribution assumption would be:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>startMod <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="at">formula =</span> Resp <span class="sc">~</span> Pred <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># your hypothesis</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># your data</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">Gamma</span>(<span class="at">link=</span><span class="st">"inverse"</span>)) <span class="co"># your error distribution assumption, with the canonical link </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And that’s it! You are now ready to fit a GLM as a starting model on the road to testing your research hypothesis!</p>
+</section>
+</section>
+</section>
+<section id="your-glm-model-object" class="level3">
+<h3 class="anchored" data-anchor-id="your-glm-model-object">Your GLM model object</h3>
+<p>Before you can use your model to test your hypothesis, you need to validate your starting model. This will be the focus of the next section of your statistical modelling framework.</p>
+<p>For now though, let’s take a first look at your starting model.</p>
+<p>Fitting your GLM will produce a model object (called <code>startMod</code> above) - let’s explore this object. If you print information about the object itself, you will get something like:</p>
+<p><img src="./generalGLMOutput.png" class="img-fluid" style="width:70.0%"></p>
+<p>This output includes<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>:</p>
+<ul>
+<li><p>A: a description of your starting model: This gives back information on the starting model you fit.</p></li>
+<li><p>B: estimates of the coefficients of your model: This gives you estimates of each coefficient in your model. Remember (as mentioned above) that the coefficients tell you the direction and magnitude of the effects of your predictor on your response. Coefficients in this output can be hard to interpret (e.g.&nbsp;they may be influenced by the error distribution assumption, and/or be complicated by many factor levels in a categorical predictor). We will be discussing how to get estimates of your coefficients in meaningful ways.</p></li>
+<li><p>C: Measures of how well your model performs: This section includes:</p>
+<ul>
+<li><p>degrees of freedom for the null model (“Total” or “Null”, assuming no effects of your predictors on your response) and your starting model (“Residual”). Degrees of freedom are a measure of how complicated your model is and how much data you have.</p></li>
+<li><p>deviance for the null model (assuming no effects of your predictors on your response) and remaining deviance after your starting model is applied. Deviance represents the variability in your response variable. It is this variability we are trying to explain. Comparing the Residual Deviance (remaining variability in your response after starting model is applied) with Null Deviance (original variability in your response that you were trying to explain) tells you how your model performs (i.e.&nbsp;how much variability in your response did you manage to explain).</p></li>
+<li><p>AIC stands for Akaike Information Criterion. AIC is another way of indicating model performance. It balances the explained variation with how complicated your starting model is. Your model complexity relates to how many predictors (and individual terms) are in your model as well as the shape of your model. We will talk much more about AIC in the Hypothesis Testing section of your model framework.</p></li>
+</ul></li>
+</ul>
+<p>You can get a little more information about your model using the <code>summary()</code> command. Using <code>summary(startMod)</code> will lead to something like:</p>
+<p><img src="./generalGLMOutputSummary.png" class="img-fluid" style="width:70.0%"></p>
+<p>Similar to the output above, there are three sections produced:</p>
+<ul>
+<li><p>A: a description of your starting model</p></li>
+<li><p>B: estimates of the coefficients of your model: Notice that here you get more information about your coefficients. The <code>summary()</code> output also gives you information about the error around your coefficients as well as a test of significance of the coefficient. This test is a <em>kind</em> of hypothesis test, but the meaning behind the test and result will vary with your starting model structure. We will discuss this more in the Hypothesis Testing section coming up.</p></li>
+<li><p>C: Measures of how well your model performs: This section gives you similar information to the output above, but also includes the “Number of Fisher iterations”. This relates to how the model was fit. <a href="#sec-fitting">See the section on “Fitting your starting model”</a>.</p></li>
+</ul>
+<p>If you’re interested, here are some examples of GLM model objects. And if you’re not, skip to <a href="#sec-firstLookModel">A first look at your starting model</a>. As mentioned above, we will come back to coefficients again in the Reporting section of the Statistical Modelling Framework.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="GLM model object examples">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+GLM model object examples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let’s take a look at an examples of a GLM object in R.</p>
+<p><strong>NOTE: the descriptions here are relevant for models with a normal error distribution assumption (i.e.&nbsp;using an “identity” link). We will generally not be using information from these objects in our Statistical Modelling Framework as it is easy to misinterpret the information (e.g.&nbsp;with error distribution assumptions other than normal).</strong></p>
+<section id="example-1-resp-contpred-1" class="level5">
+<h5 class="anchored" data-anchor-id="example-1-resp-contpred-1">Example 1: <code>Resp ~ ContPred + 1</code></h5>
+<p>The first example fits a GLM to test the hypothesis that</p>
+<p><code>Resp ~ ContPred + 1</code></p>
+<p>where</p>
+<ul>
+<li><p><code>Resp</code> is your response variable,</p></li>
+<li><p><code>ContPred</code> is a continuous predictor,</p></li>
+<li><p>and your error distribution assumption is normal.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>startMod<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Resp <span class="sc">~</span> ContPred <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># your hypothesis</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> myDF, <span class="co"># your data</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># your error distribution assumption</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Getting a summary of <code>startMod.1</code> object gives you:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Resp ~ ContPred + 1, family = gaussian(link = "identity"), 
+    data = myDF)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-4645.2  -2072.8     60.6   2060.8   4885.7  
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 20871.686   2176.542   9.589  &lt; 2e-16 ***
+ContPred      -14.143      2.713  -5.212 2.74e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 5551537)
+
+    Null deviance: 2915483317  on 499  degrees of freedom
+Residual deviance: 2764665463  on 498  degrees of freedom
+AIC: 9187.7
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p><strong>At the top of the output is the “Call”</strong>- the model you fit with the <code>glm()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod<span class="fl">.1</span>)<span class="sc">$</span>call</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>glm(formula = Resp ~ ContPred + 1, family = gaussian(link = "identity"), 
+    data = myDF)</code></pre>
+</div>
+</div>
+<p><strong>Below this are the coefficients.</strong> Notice there are two coefficients, and for each coefficient, you can see four values:</p>
+<ul>
+<li><p>the coefficient estimate (<code>Estimate</code>),</p></li>
+<li><p>uncertainty (as standard error, <code>Std.Error</code>),</p></li>
+<li><p>a t-statistic (<code>t value</code>, based on the estimate and error associated with the coefficient)<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>,</p></li>
+<li><p>and probability associated with the t-statistic (<code>Pr(&gt;|t|)</code>):</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod<span class="fl">.1</span>)<span class="sc">$</span>coefficients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Estimate  Std. Error   t value     Pr(&gt;|t|)
+(Intercept) 20871.68582 2176.541631  9.589380 4.247405e-20
+ContPred      -14.14253    2.713359 -5.212184 2.739251e-07</code></pre>
+</div>
+</div>
+<p>The t-statistic is used to test the null hypothesis that an estimate (a coefficient in this case) is not different than 0. The probability gives us the probability that you would get a t-statistic at least as large as you did even though the null hypothesis is in fact true. If the probability is very low, it is more likely our estimate is different than 0.</p>
+<p><img src="./pNow1.png" align="right" width="450"></p>
+<p>Note that you have <strong>two</strong> coefficient estimates (rows) in the table above:</p>
+<ul>
+<li><p>The first row of the coefficient table gives us the coefficient estimates associated with the intercept (2.087169^{4})</p></li>
+<li><p>The second row is the coefficient estimate associated with <code>ContPred</code>. Note that as <code>ContPred</code> is a continuous variable, this estimate represents the slope of the linear effect of <code>ContPred</code> on <code>Resp</code>, i.e.&nbsp;for every unit change in <code>ContPred</code>, you get a -14.14 change in <code>Resp</code>.</p></li>
+</ul>
+</section>
+<section id="example-2-resp-catpred-1" class="level5">
+<h5 class="anchored" data-anchor-id="example-2-resp-catpred-1">Example 2: <code>Resp ~ CatPred + 1</code></h5>
+<p>The second example fits a GLM to test the hypothesis that</p>
+<p><code>Resp ~ CatPred + 1</code></p>
+<p>where</p>
+<ul>
+<li><p><code>Resp</code> is your response variable,</p></li>
+<li><p><code>CatPred</code> is a categorical predictor with three levels (“North”, “South”, “Central”),</p></li>
+<li><p>and your error distribution assumption is normal.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>startMod<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Resp <span class="sc">~</span> CatPred <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># your hypothesis</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> myDF, <span class="co"># your data</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># your error distribution assumption</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Getting a summary of <code>startMod.2</code> object gives you:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Resp ~ CatPred + 1, family = gaussian(link = "identity"), 
+    data = myDF)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-2169.85   -731.45    -53.57    712.81   2912.31  
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     6737.60      79.63   84.61   &lt;2e-16 ***
+CatPredSouth    2596.95     110.40   23.52   &lt;2e-16 ***
+CatPredCentral  5406.34     108.61   49.78   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 976451.4)
+
+    Null deviance: 2915483317  on 499  degrees of freedom
+Residual deviance:  485296363  on 497  degrees of freedom
+AIC: 8319.8
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p><img src="./pNow2.png" align="right" width="450"></p>
+<p>Note that we now have <strong>three</strong> coefficients in the table above. Recall from the <a href="#sec-whyNeed">Why do you need a starting model</a> section that, with a categorical Predictor, fitting a model finds the mean predicted value of the Response at each category (level) of the categorical Predictor. The three coefficients are:</p>
+<ul>
+<li><p>The coefficient labelled <code>(Intercept)</code> gives us the fitted value of our <code>Resp</code> when <code>CatPred</code> is “North” (6737.6). When you have a categorical predictor, R uses the Intercept coefficient to represent the predicted value of the response at one of the categories (levels).<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> By default it chooses the first of the categories (levels) of your predictor (in this case, “North”)<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></p></li>
+<li><p>The coefficient labelled <code>CatPredSouth</code> gives you the difference between the predicted value of the response when <code>CatPred = "South"</code> and when <code>CatPred = "North"</code>. So if you want to know the predicted value of <code>Resp</code> when <code>CatPred = "South"</code> you need to calculate 6737.6 + 2596.95 = 9334.55.</p></li>
+<li><p>The coefficient labelled <code>CatPredCentral</code> gives you the difference between the predicted value of the response when <code>CatPred = "Central"</code> and when <code>CatPred = "North"</code>. So if you want to know the predicted value of <code>Resp</code> when <code>CatPred = "Central"</code> you need to calculate 6737.6 + 5406.34 = 1.214394^{4}.</p></li>
+</ul>
+<p>Yes, this is tedious way to calculate the coefficients in your model! And that is why use a different way when we come to the Reporting section of the Statistical Modelling Framework.</p>
+</section>
+<section id="example-3-resp-contpred-catpred-contpredcatpred-1" class="level5">
+<h5 class="anchored" data-anchor-id="example-3-resp-contpred-catpred-contpredcatpred-1">Example 3: <code>Resp ~ ContPred + CatPred + ContPred:CatPred + 1</code></h5>
+<p>The third example fits a GLM to test the hypothesis that</p>
+<p><code>Resp ~ ContPred + CatPred + ContPred:CatPred + 1</code></p>
+<p>where</p>
+<ul>
+<li><p><code>Resp</code> is your response variable,</p></li>
+<li><p><code>ContPred</code> is a continuous predictor,</p></li>
+<li><p><code>CatPred</code> is a categorical predictor with three levels (“North”, “South”, “Central”),</p></li>
+<li><p><code>ContPred:CatPred</code> indicates that you are including an interaction term representing a two-way interaction between your predictors,</p></li>
+<li><p>and your error distribution assumption is normal.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>startMod<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Resp <span class="sc">~</span> ContPred <span class="sc">+</span> CatPred <span class="sc">+</span> ContPred<span class="sc">:</span>CatPred <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># your hypothesis</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> myDF, <span class="co"># your data</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># your error distribution assumption</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Getting a summary of <code>startMod.3</code> gives you:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Resp ~ ContPred + CatPred + ContPred:CatPred + 
+    1, family = gaussian(link = "identity"), data = myDF)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-2204.12   -545.06     58.81    574.09   3003.42  
+
+Coefficients:
+                         Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             22335.803   1283.405  17.404  &lt; 2e-16 ***
+ContPred                  -19.516      1.604 -12.169  &lt; 2e-16 ***
+CatPredSouth            -2665.492   1818.608  -1.466 0.143373    
+CatPredCentral           -964.233   1805.741  -0.534 0.593594    
+ContPred:CatPredSouth       6.660      2.266   2.939 0.003444 ** 
+ContPred:CatPredCentral     7.985      2.255   3.541 0.000436 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 638994)
+
+    Null deviance: 2915483317  on 499  degrees of freedom
+Residual deviance:  315663026  on 494  degrees of freedom
+AIC: 8110.7
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p><img src="./pNow.png" align="right" width="450"></p>
+<p>Note that we now have <strong>six</strong> coefficients in the table above:</p>
+<ul>
+<li><p>The coefficient labelled <code>(Intercept)</code> gives us the fitted value of our <code>Resp</code> when <code>CatPred</code> is “North” and <code>ContPred</code> is set to the mean value of <code>ContPred</code>.</p></li>
+<li><p>The coefficient labelled <code>ContPred</code> gives us the coefficient (slope) associated with <code>ContPred</code> when <code>CatPred = "North"</code>.</p></li>
+<li><p>The coefficient labelled <code>CatPredSouth</code> gives you the difference between the predicted value of the response when <code>CatPred = "South"</code> and when <code>CatPred = "North"</code> (with <code>ContPred</code> is set to the mean value of <code>ContPred</code>). So, when <code>CatPred = "Central"</code>, the coefficient (intercept) for <code>CatPred</code> is 2.23358^{4} + -2665.49 = 1.967031^{4}.</p></li>
+<li><p>The coefficient labelled <code>CatPredCentral</code> gives you the difference between the predicted value of the response when <code>CatPred = "Central"</code> and when <code>CatPred = "North"</code> (with <code>ContPred</code> is set to the mean value of <code>ContPred</code>). So, when <code>CatPred = "Central"</code>, the coefficient (intercept) for <code>CatPred</code> is 2.23358^{4} + -964.23 = 2.137157^{4}.</p></li>
+<li><p>The coefficient labelled <code>ContPred:CatPredSouth</code> gives us the difference between coefficient (slope) associated with <code>ContPred</code> when <code>CatPred = "South"</code> vs.&nbsp;the <code>ContPred</code> slope when <code>CatPred = "North"</code>. So, when <code>CatPred = "South"</code>, the coefficient (slope) for <code>ContPred</code> is -19.52 + 6.66 = -12.86.</p></li>
+<li><p>The coefficient labelled <code>ContPred:CatPredCentral</code> gives us the difference between coefficient (slope) associated with <code>ContPred</code> when <code>CatPred = "Central"</code> vs.&nbsp;the <code>ContPred</code> slope when <code>CatPred = "North"</code>. So, when <code>CatPred = "Central"</code>, the coefficient (slope) for <code>ContPred</code> is -19.52 + 7.99 = -11.53.</p></li>
+</ul>
+<p>Yes, this is tedious way to calculate the coefficients in your model! And that is why use a different way when we come to the Reporting section of the Statistical Modelling Framework.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-firstLookModel" class="level2">
+<h2 class="anchored" data-anchor-id="sec-firstLookModel">A first look at your starting model</h2>
+<p>You can use the <code>visreg package</code> to quickly visualize your modelled effects</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visreg) <span class="co"># load visreg package</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># load ggplot2</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(startMod<span class="fl">.3</span>, <span class="co"># model to visualize</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale =</span> <span class="st">"response"</span>, <span class="co"># plot on the scale of the response</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">xvar =</span> <span class="st">"ContPred"</span>, <span class="co"># predictor on x-axis</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">by =</span> <span class="st">"CatPred"</span>, <span class="co"># predictor plotted as colour</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">overlay =</span> <span class="cn">TRUE</span>, <span class="co"># to plot as overlay or panels </span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rug =</span> <span class="cn">FALSE</span>, <span class="co"># to include a rug</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">gg =</span> <span class="cn">TRUE</span>)<span class="sc">+</span> <span class="co"># to plot as a ggplot</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> myDF, <span class="co"># data</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ContPred, <span class="at">y =</span> Resp, <span class="at">col =</span> CatPred))<span class="sc">+</span> <span class="co"># add your data to your plot</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Response, (units)"</span>)<span class="sc">+</span> <span class="co"># change y-axis label</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Cont, (units)"</span>)<span class="sc">+</span> <span class="co"># change x-axis label</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="co"># change ggplot theme</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_StartingModel_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Remember though: before you explore these modelled effects too closely, you have to validate your model.</p>
+</section>
+<section id="up-next" class="level2">
+<h2 class="anchored" data-anchor-id="up-next">Up next</h2>
+<p>Next we will discuss how you can make validate your model (make sure your starting model can be used to test your hypothesis), and then test your hypothesis.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>More on this to come!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I will keep mentioning mechanisms. In our statistical model building, we keep our focus on biologically meaningful or mechanistic explanations of variability in our response. This is because i) explaining the world through mechanisms is necessary for true understanding and to be able to show this understanding through prediction (e.g.&nbsp;the difference between correlation and causation). And ii) this is where the joy of being a biologist lies!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>more on this to come<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>A good time to review your notes on data distributions from earlier<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>which might be non-linear of known shape, or non-linear of unknown shape<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Paraphrased from Crawley 2013 pg. 451<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>here shown as Root Mean Square Error which is a method used when one has a normal error distribution assumption and linear shape assumption<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>each repetition is called “an iteration”<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>We will discuss these other model types in upcoming classes<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>for a binomial error distribution assumption, you might have your response as the # successes in # of trials. In such cases, you would present your hypothesis as <code>cbind(Success, Trials) ~ Predictor + 1</code><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>note that we will be discussing this more in depth when we get to the Reporting section of the Statistical Modelling Framework<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>note that the type of statistic shown will depend on the structure of your model including the error distribution assumption<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>This is called “dummy level coding”. You can avoid this with “level means coding”.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Note that you can control this if needed.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/NeuheimerLab\.github\.io\/DSPProgram\.AUBiology\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
