@@ -61,7 +61,7 @@ You will learn this process of statistical modelling by walking through a "Stati
 
 This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.
 
-As we will discuss later in the handbook, working through this framework will also guide you in creating the "guts" of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I'm trying to explain?). Once through, you'll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in [section](DSPH_SM_Communicating.qmd).
+As we will discuss later in the handbook, working through this framework will also guide you in creating the "guts" of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I'm trying to explain?). Once through, you'll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in [section](DSPPH_SM_Communicating.qmd).
 
 
 A note about our Statistical Modelling Framework: The steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses[^handbooksmintro-5] as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e. the model is a valid one that you can use to test your hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.
@@ -79,7 +79,7 @@ A note about our Statistical Modelling Framework: The steps in the image to the 
 ```
 
 
-#### [Response(s)](DSPH_SM_Responses.qmd)
+#### [Response(s)](DSPPH_SM_Responses.qmd)
 
 Here you will define your research question by identifying your response variable(s). 
 
@@ -89,7 +89,7 @@ Here you will define your research question by identifying your response variabl
 
 Note: we'll begin by discussing how to model hypotheses with just one response variable before discussing multiple response variable(s).
 
-#### [Predictor(s)](DSPH_SM_Predictors.qmd) 
+#### [Predictor(s)](DSPPH_SM_Predictors.qmd) 
 
 Here you will choose your predictor variables.
 
@@ -98,25 +98,25 @@ Here you will choose your predictor variables.
 * what are the possible mechanisms behind your argument?
 
 
-#### [Hypothesis](DSPH_SM_Hypothesis.qmd)
+#### [Hypothesis](DSPPH_SM_Hypothesis.qmd)
 
 Here you will see how your response and predictor variables come together to define your research hypothesis. And we will discuss how to write this hypothesis to begin building your statistical modelling.
 
-#### [Starting model](DSPH_SM_StartingModel)
+#### [Starting model](DSPPH_SM_StartingModel)
 
 Here you will choose and fit the starting model that will be used to test your hypothesis. You will do this by choosing and communicating two key assumptions that will help you pick a useful modelling starting point. Then you will fit your model to your data (i.e. confronting your model with your data).
 
-#### [Model validation](DSPH_SM_ModelValidation.qmd) 
+#### [Model validation](DSPPH_SM_ModelValidation.qmd) 
 
 Here you will investigate whether your model will be a useful one to test your hypothesis. Your steps here will include considering if you have correlated predictors or problems with observation dependence.
 
 You will also considering if your starting model assumptions were realistic. After this step, you will have a model that you can confidently use to test your hypothesis.
 
-#### [Hypothesis testing](DSPH_SM_HypothesisTesting.qmd)
+#### [Hypothesis testing](DSPPH_SM_HypothesisTesting.qmd)
 
 Here you will test your hypothesis by assessing the evidence supporting your model. We will discuss a number of different methods to do this, but will focus on the model selection method as a robust way to evaluate what your model is telling you about your hypothesis.
 
-#### [Reporting](DSPH_SM_Reporting.qmd)
+#### [Reporting](DSPPH_SM_Reporting.qmd)
 
 Here you will report the results of your hypothesis testing.
 
@@ -128,7 +128,7 @@ You will report:
 
 * how well your model explains variability in your response.
 
-#### [Predicting](DSPH_SM_Predicting.qmd)
+#### [Predicting](DSPPH_SM_Predicting.qmd)
 
 Here you will use your model to make predictions of your response under different conditions (while considering prediction limits).
 

@@ -1,0 +1,250 @@
+---
+title: "Statistical Modelling: Hypothesis"
+---
+
+
+::: {.callout-note collapse="false"} 
+## In this section you will:
+
+* identify your model terms (main effects and interactions)
+
+* present your research hypothesis in words and formula
+
+:::
+
+<img src="./statsModFramework.png" align="right" width="150"/>
+
+# Presenting your research hypothesis
+
+Together your response and predictor variables make up your research hypothesis.  In general terms, your research hypothesis can be presented in words as:
+
+> Variability in the response is explained by the predictor.
+
+In R syntax, you present your hypothesis with a tilde "~" (pronounced "till-da") which separates the response and predictor variables.
+
+> `Response ~ Predictor + 1`
+
+Note here that the `+ 1` indicates that there will be an intercept in the model.  We can leave this out of our hypothesis formula as R will add it by default, but I include it here for clarity.
+
+## Hypotheses with more than one predictor - including interactions
+
+When you are considering more than one predictor, you need to consider the possibility of both main effects and interactions.
+
+A main effect represents the direct independent effect of the predictor on the response.
+
+An interaction represents that the effect of one predictor on the response depends on the value of the other predictor.
+
+If your research hypothesis states that
+
+> Variability in the response (`Resp`) is explained by independent effects of two predictors (`Pred1` and `Pred2`)^[Some jargon here: when the effects of each predictor is independent of other predictors, you say the model is "additive"]
+
+your hypothesis in R syntax would be:
+
+> `Resp ~ Pred1 + Pred2 + 1`
+
+
+If your research hypothesis states that
+
+> Variability in the response (`Resp`) is explained by effects of two predictors (`Pred1` and `Pred2` with the effect of Pred1 depending on the value of Pred2)
+
+your hypothesis in R syntax would be:
+
+> `Resp ~ Pred1 + Pred2 + Pred1:Pred2 + 1`
+
+Note that `:` is used to denote an interaction.  In this case, it is a two-way interaction between `Pred1` and `Pred2`.^[Note: to include an interaction all predictors involved in the interaction have to have a main effect also included in the model]
+
+
+::: {.callout-tip collapse="true"}
+R has a number of shortcuts for representing formulas in shortform.  For example: 
+
+`Resp ~ Pred1 + Pred2 + Pred1:Pred2 + 1`
+
+can be written as 
+
+`Resp ~ Pred1*Pred2`
+
+i.e. `*` means to include all main effects and all possible interactions.
+
+Another example:
+
+`Resp ~ Pred1 + Pred2 + Pred3 + Pred1:Pred2 + Pred2:Pred3 + Pred1:Pred3 + 1`
+
+can be written as
+
+`Resp ~ (Pred1 + Pred2 + Pred3)^2`
+
+which tells R to include all main effects and all possible **two-way** interactions between the three predictors.
+
+:::
+
+
+# Visualizing your hypothesis
+
+To illustrate what we mean by interactions, we can visualize what different hypotheses are predicting will be observed.  Assume you have a response `Resp` and two predictors, one that is continuous (`Cont`) and one that is categorical (`Cat`).  
+
+For a hypothesis of:
+
+`Resp ~ Cont + Cat + Cont:Cat + 1`
+
+you are hypothesizing that there is an effect of both `Cont` and `Cat` on `Resp` but the effect of `Cont` depends on the value of `Cat`.  This can be illustrated as:
+
+
+```{r include=FALSE}
+
+install.packages("ggplot2")
+
+```
+
+```{r echo=FALSE}
+#| out.width: 60%
+
+rm(list=ls())
+
+Dat<-expand.grid(
+  Cont=c(1:5),
+  Cat=c("A", "B")
+)
+
+set.seed(123)
+a<-120
+b<-7
+Dat$Response<-a*Dat$Cont*(as.numeric(Dat$Cat))+as.numeric(Dat$Cat)*100+b+rnorm(nrow(Dat), 0,0.1)
+
+library(ggplot2)
+
+ggplot()+
+  geom_line(data = Dat, 
+            mapping = aes(x = Cont, y=Response, colour=Cat), 
+            linewidth = 1.5)+
+  geom_point(data = Dat, 
+            mapping = aes(x = Cont, y=Response, colour=Cat), size=4)+
+  scale_color_manual(values=alpha(c("purple", "orange"), 0.8))+
+  theme_bw()+
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank())
+
+```
+
+Note that the effect of `Cont` on `Resp` depends if `Cat` is `A` or `B` - this is the definition of an interaction.  So this model includes all main effects and all interactions.
+
+For a hypothesis of:
+
+`Resp ~ Cont + Cat + 1`
+
+you are hypothesizing that there is an effect of both `Cont` and `Cat` on `Resp` and that these effects are independent of one another.  This can be illustrated as:
+
+
+```{r echo=FALSE}
+#| out.width: 60%
+
+set.seed(654)
+Dat$RespNoInt<-a*Dat$Cont+as.numeric(Dat$Cat)*100+b+rnorm(nrow(Dat), 0,0.1)
+ggplot(Dat, mapping=aes(x=Cont, y=RespNoInt, group=Cat))+
+  geom_line(aes(colour=Cat), linewidth=1.5)+
+  geom_point(aes(shape=Cat, colour=Cat), size=4)+
+  scale_color_manual(values=alpha(c("purple", "orange"), 0.8))+
+  theme_bw()+
+    theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank())+
+  ylab("Response")
+
+```
+
+Note that the effect of `Cont` on `Resp` is the same regardless if `Cat` is `A` or `B`.  This is a model of main effects only, and is also called an additive model.
+
+
+For a hypothesis of:
+
+`Resp ~ Cont + 1`
+
+you are hypothesizing that there is an effect of `Cont` but **no effect of `Cat`** on `Resp`.  This can be illustrated as:
+
+
+```{r echo=FALSE}
+#| out.width: 60%
+
+set.seed(224)
+Dat$RespContOnly<-a*Dat$Cont+rnorm(nrow(Dat), 0,0.1)+200
+ggplot(Dat, mapping=aes(x=Cont, y=RespContOnly, group=Cat))+
+  geom_line(aes(colour=Cat), linewidth=1.5)+
+  geom_point(aes(shape=Cat, colour=Cat), size=c(4))+
+  scale_color_manual(values=alpha(c("purple", "orange"), alpha=0.7))+
+  theme_bw()+
+    theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank())+ 
+  ylab("Response")
+
+```
+
+Note that there is an effect of `Cont` on `Resp` but no effect of `Cat` (the lines are overlapping).  
+
+
+
+For a hypothesis of:
+
+`Resp ~ Cat + 1`
+
+you are hypothesizing that there is an effect of `Cat` but **no effect of `Cont`** on `Resp`.  This can be illustrated as:
+
+
+```{r echo=FALSE}
+#| out.width: 60%
+
+set.seed(445)
+Dat$RespCatOnly<-(as.numeric(Dat$Cat)*100+b+rnorm(nrow(Dat), 0,0.1))+400
+ggplot(Dat, mapping=aes(x=Cont, y=RespCatOnly, group=Cat))+
+  geom_line(aes(colour=Cat), linewidth=1.5)+
+  geom_point(aes(shape=Cat, colour=Cat), size=4)+
+  scale_color_manual(values=alpha(c("purple", "orange"), 0.8))+
+  theme_bw()+
+    theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank())+ 
+  ylab("Response")+
+  ylim(400, 750)
+
+```
+
+Note that there is no effect of `Cont` on `Resp` (the line is flat) but there is an  effect of `Cat` on `Resp` (`Resp` is higher when `Cat = B`).
+
+Finally, a hypothesis that there are **no effects of either `Cont` or `Cat` on `Resp`** we represent this as
+
+`Resp ~ 1`
+
+which can be illustrated as:
+
+```{r echo=FALSE}
+#| out.width: 60%
+set.seed(224)
+Dat$RespNull<-4+rnorm(nrow(Dat), 0,0.1)+500
+ggplot(Dat, mapping=aes(x=Cont, y=RespNull, group=Cat))+
+  geom_line(aes(colour=Cat), linewidth=1.5)+
+  geom_point(aes(shape=Cat, colour=Cat), size=4)+
+  scale_color_manual(values=alpha(c("purple", "orange"), 0.8))+
+  theme_bw()+
+    theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank())+ 
+  ylab("Response")+
+  ylim(500, 510)
+
+```
+Note that the lines are overlapping (i.e. no effect of `Cat`) and the line is horizontal (i.e. no effect of `Cont`).
+
+::: {.callout-important collapse="false"} 
+
+The illustrations here are considering that there are no other sources of variability in `Resp`.  In the real world, your observations will include variability that will be unexplained by your hypothesis.  This will be due to measurement error as well as the effects of other, unmeasured predictors.  We will discuss this in the sections to come.
+
+:::
+
+
+::: footnotes
+:::
