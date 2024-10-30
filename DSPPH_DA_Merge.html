@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Analysis Handbook – Data Skills Portfolio Program</title>
+<title>So you want to: merge your data sets – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">What is the DSP Program?</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./handbookIntro.html" aria-current="page"> 
+    <a class="nav-link" href="./handbookIntro.html"> 
 <span class="menu-text">The DSP Program Handbook</span></a>
   </li>  
   <li class="nav-item">
@@ -110,85 +144,25 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookDAIntro.html">Data Analysis Handbook</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to the Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDCIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Collection &amp; Curation Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Analysis Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookSMIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Modelling Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./FAQ.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frequently Asked Questions</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-dsp-program-handbook-for-data-analysis" id="toc-the-dsp-program-handbook-for-data-analysis" class="nav-link active" data-scroll-target="#the-dsp-program-handbook-for-data-analysis">The DSP Program Handbook for Data Analysis</a>
+  <li><a href="#why-you-want-to-do-it" id="toc-why-you-want-to-do-it" class="nav-link active" data-scroll-target="#why-you-want-to-do-it">Why you want to do it:</a></li>
+  <li><a href="#what-merging-is" id="toc-what-merging-is" class="nav-link" data-scroll-target="#what-merging-is">What merging is:</a></li>
+  <li><a href="#what-merging-isnt" id="toc-what-merging-isnt" class="nav-link" data-scroll-target="#what-merging-isnt">What merging isn’t:</a></li>
+  <li><a href="#how-you-can-do-it" id="toc-how-you-can-do-it" class="nav-link" data-scroll-target="#how-you-can-do-it">How you can do it:</a>
   <ul class="collapse">
-  <li><a href="#a-note-on-tools" id="toc-a-note-on-tools" class="nav-link" data-scroll-target="#a-note-on-tools">A note on tools:</a></li>
-  <li><a href="#a-note-on-learning-your-first-programming-language" id="toc-a-note-on-learning-your-first-programming-language" class="nav-link" data-scroll-target="#a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</a></li>
-  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The basics</a></li>
-  <li><a href="#so-you-want-to" id="toc-so-you-want-to" class="nav-link" data-scroll-target="#so-you-want-to">So you want to…</a>
-  <ul class="collapse">
-  <li><a href="#load-your-data-into-r" id="toc-load-your-data-into-r" class="nav-link" data-scroll-target="#load-your-data-into-r">… load your data into R</a></li>
-  <li><a href="#validate-and-explore-your-data" id="toc-validate-and-explore-your-data" class="nav-link" data-scroll-target="#validate-and-explore-your-data">… validate and explore your data</a></li>
-  <li><a href="#visualize-your-data-make-a-plot" id="toc-visualize-your-data-make-a-plot" class="nav-link" data-scroll-target="#visualize-your-data-make-a-plot">… visualize your data (make a plot!)</a></li>
-  <li><a href="#deal-with-missing-values" id="toc-deal-with-missing-values" class="nav-link" data-scroll-target="#deal-with-missing-values">… deal with missing values</a></li>
-  <li><a href="#sort-your-data" id="toc-sort-your-data" class="nav-link" data-scroll-target="#sort-your-data">… sort your data</a></li>
-  <li><a href="#subset-your-data" id="toc-subset-your-data" class="nav-link" data-scroll-target="#subset-your-data">… subset your data</a></li>
-  <li><a href="#work-with-dates-and-times" id="toc-work-with-dates-and-times" class="nav-link" data-scroll-target="#work-with-dates-and-times">… work with dates and times</a></li>
-  <li><a href="#manipulate-rows-or-columns-in-your-data" id="toc-manipulate-rows-or-columns-in-your-data" class="nav-link" data-scroll-target="#manipulate-rows-or-columns-in-your-data">… manipulate rows or columns in your data</a></li>
-  <li><a href="#manipulate-subsets-of-rows-or-columns" id="toc-manipulate-subsets-of-rows-or-columns" class="nav-link" data-scroll-target="#manipulate-subsets-of-rows-or-columns">… manipulate subsets of rows or columns</a></li>
-  <li><a href="#merge-your-data-with-another-data-set" id="toc-merge-your-data-with-another-data-set" class="nav-link" data-scroll-target="#merge-your-data-with-another-data-set">… merge your data with another data set</a></li>
-  <li><a href="#control-the-flow-of-your-program" id="toc-control-the-flow-of-your-program" class="nav-link" data-scroll-target="#control-the-flow-of-your-program">… control the flow of your program</a></li>
-  <li><a href="#export-your-data-back-out-of-r" id="toc-export-your-data-back-out-of-r" class="nav-link" data-scroll-target="#export-your-data-back-out-of-r">…export your data back out of R</a></li>
+  <li><a href="#in-the-base-package-using-merge" id="toc-in-the-base-package-using-merge" class="nav-link" data-scroll-target="#in-the-base-package-using-merge">in the base package using <code>merge()</code></a></li>
+  <li><a href="#in-the-dplyr-package-using-full_join" id="toc-in-the-dplyr-package-using-full_join" class="nav-link" data-scroll-target="#in-the-dplyr-package-using-full_join">in the dplyr package using <code>full_join()</code></a></li>
   </ul></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best practices</a></li>
-  </ul></li>
+  <li><a href="#a-final-note" id="toc-a-final-note" class="nav-link" data-scroll-target="#a-final-note">A final note:</a></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Analysis Handbook</h1>
+<h1 class="title">So you want to: merge your data sets</h1>
 </div>
 
 
@@ -214,88 +188,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-dsp-program-handbook-for-data-analysis" class="level1 unnumbered">
-<h1 class="unnumbered">The DSP Program Handbook for Data Analysis</h1>
-<section id="a-note-on-tools" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-tools">A note on tools:</h2>
-<p><strong>In general</strong> we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:</p>
+<section id="why-you-want-to-do-it" class="level1">
+<h1>Why you want to do it:</h1>
+<p>Often times we are interested in exploring connections among variables from different sources. Merging your data files can be a way of collecting all the variables of interest so you can explore research questions and hypotheses about the data.</p>
+<p>In addition, merging can be used to label your observations. We go through examples below.</p>
+</section>
+<section id="what-merging-is" class="level1">
+<h1>What merging is:</h1>
+<p>Merging joins columns from two or more data frames based on matching row information across the data frames.</p>
+<p><img src="mergeEx.png" class="img-fluid"></p>
+</section>
+<section id="what-merging-isnt" class="level1">
+<h1>What merging isn’t:</h1>
+<p>Merging isn’t about joining data frames by <em>rows</em>. Instead row binding is what you need if you have two data frames with the exact same variables (columns) that you want to join in one data frame. For this, try the <code>rbind()</code> function in base R.</p>
+<p><img src="rbindEx.png" class="img-fluid"></p>
+</section>
+<section id="how-you-can-do-it" class="level1">
+<h1>How you can do it:</h1>
+<p>There are a number of different ways of merging files in R. For these examples, let’s consider two data frames:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The first data frame (Dat1) contains information on </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Day: day of sampling</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Length: length at sampling</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  3 variables:
+ $ ID    : chr  "id29" "id30" "id22" "id31" ...
+ $ Day   : num  1 2 1 2 1 1 2 1 2 2 ...
+ $ Length: num  150 164 110 134 155 125 144 144 139 167 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The second data frame (Dat2) contains information on </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Day: day of sampling</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Temp: temperature at sampling</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  3 variables:
+ $ ID  : chr  "id23" "id20" "id25" "id29" ...
+ $ Day : num  2 2 2 1 1 1 2 1 2 1 ...
+ $ Temp: num  7.1 7.2 6.4 7.4 6.3 7.2 7 8.1 7.1 6.1 ...</code></pre>
+</div>
+</div>
+<section id="in-the-base-package-using-merge" class="level2">
+<h2 class="anchored" data-anchor-id="in-the-base-package-using-merge">in the base package using <code>merge()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mDat<span class="ot">&lt;-</span><span class="fu">merge</span>(Dat1, <span class="co"># data frame to merge</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>             Dat2, <span class="co"># other data frame to merge</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ID"</span>, <span class="st">"Day"</span>)) <span class="co"># merge by variable(s)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mDat) <span class="co"># take a look at the object I made</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  4 variables:
+ $ ID    : chr  "id20" "id20" "id21" "id21" ...
+ $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...
+ $ Length: num  195 139 144 180 110 97 149 184 139 143 ...
+ $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...</code></pre>
+</div>
+</div>
+<p>Note that you don’t need to have the same number of observations (rows) in your two data frames to merge. Merging can be a great way of labelling your data. Here’s an example:</p>
+<p>Consider a data frame with strain information for each of your organism IDs:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ID: organism ID</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Strain: strain of organism</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Dat3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   20 obs. of  2 variables:
+ $ ID    : chr  "id24" "id30" "id33" "id26" ...
+ $ Strain: chr  "A" "C" "B" "C" ...</code></pre>
+</div>
+</div>
+<p>Note that <code>Dat1</code> and <code>Dat2</code> each contained 40 observations - one observation for each of 20 IDs made on each of 2 days.</p>
+<p>In contrast <code>Dat3</code> only has 20 observations - information about the strain for each of 20 IDs.</p>
+<p>By using <code>merge()</code>, we can add the strain information to <code>mDat</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>allDat <span class="ot">&lt;-</span> <span class="fu">merge</span>(mDat, <span class="co"># one data frame</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                Dat3, <span class="co"># the other data frame</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">by =</span> <span class="st">"ID"</span>) <span class="co"># variables to merge by</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(allDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  5 variables:
+ $ ID    : chr  "id20" "id20" "id21" "id21" ...
+ $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...
+ $ Length: num  195 139 144 180 110 97 149 184 139 143 ...
+ $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...
+ $ Strain: chr  "C" "C" "A" "A" ...</code></pre>
+</div>
+</div>
+<p>Now we have our observations labelled by the strain information!</p>
+<p>Some things to note:</p>
 <ul>
-<li><p>keep your analysis separate from the data (and thereby safeguard the data),</p></li>
-<li><p>keep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and</p></li>
-<li><p>allow you to use powerful tools to accomplish your analysis tasks.</p></li>
+<li><p>if you leave out the <code>by =</code> function totally, R will look for column names that are similar between the two data frames and use that for the merge.</p></li>
+<li><p>you can designate that the “merge by” variables have different column names in the two data frames. This is done with the <code>by.x =</code> and <code>by.y =</code> arguments. Check <code>?merge</code> for more.</p></li>
+<li><p>you can control what happens to unmatched columns (e.g.&nbsp;if an ID appeared in only one of the two data frames). This is done with the <code>all =</code>, <code>all.x =</code>, and <code>all.y =</code> arguments. Check <code>?merge</code> for more.</p></li>
 </ul>
-<p>That said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:</p>
+</section>
+<section id="in-the-dplyr-package-using-full_join" class="level2">
+<h2 class="anchored" data-anchor-id="in-the-dplyr-package-using-full_join">in the dplyr package using <code>full_join()</code></h2>
+<p>The dplyr package includes the <code>full_join()</code> function as another way to merge your data frames</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># load dplyr package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mDat<span class="ot">&lt;-</span><span class="fu">full_join</span>(Dat1, <span class="co"># data frame to merge</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                Dat2, <span class="co"># other data frame to merge</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">by =</span> <span class="fu">join_by</span>(ID, Day)) <span class="co"># merge by column</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mDat) <span class="co"># take a look at the object I made</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   40 obs. of  4 variables:
+ $ ID    : chr  "id29" "id30" "id22" "id31" ...
+ $ Day   : num  1 2 1 2 1 1 2 1 2 2 ...
+ $ Length: num  150 164 110 134 155 125 144 144 139 167 ...
+ $ Temp  : num  7.4 7.3 6.9 7.5 5.6 7.8 7.8 6.3 7.9 7.1 ...</code></pre>
+</div>
+</div>
+<p>Some things to note:</p>
 <ul>
-<li><p>keep your analysis separate from your data (e.g.&nbsp;in a separate sheet), and</p></li>
-<li><p>keep a record of all your analysis steps. This is done by:</p>
-<ul>
-<li><p>carefully and completely adding comments explaining your steps,</p></li>
-<li><p>and ensuring each cell contains only one step/piece of information.</p></li>
-</ul></li>
+<li><p>The <code>full_join()</code> function keeps all observations appearing in either data frame.</p></li>
+<li><p>The <code>left_join()</code> function keeps all observations in the first data frame (<code>Dat1</code>) but you will lose any <em>unmatched</em> observations in the second data frame (<code>Dat2</code>).</p></li>
+<li><p>The <code>right_join()</code> function keeps all observations in the second data frame (<code>Dat2</code>) but you will lose any <em>unmatched</em> observations in the first data frame (<code>Dat1</code>)</p></li>
 </ul>
 </section>
-<section id="a-note-on-learning-your-first-programming-language" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</h2>
-<p>A bit on strategy when learning any programming language (we’ll also cover more strategies in class): <strong>it’s important to struggle but not for too long</strong>. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.</p>
-<p><strong>Don’t worry about memorizing</strong> the details of this document or our discussions in class. You will always have reference material available to you (e.g.&nbsp;this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.</p>
 </section>
-<section id="the-basics" class="level2">
-<h2 class="anchored" data-anchor-id="the-basics">The basics</h2>
-<p><a href="DSPH_DA_RBasics.qmd">Here we will go over essential topics when you’re first learning a programming language.</a>. Here we cover:</p>
+<section id="a-final-note" class="level1">
+<h1>A final note:</h1>
 <ul>
-<li><p>installing R</p></li>
-<li><p>scripts</p></li>
-<li><p>basic syntax</p></li>
-<li><p>getting help in R (how to read help files!)</p></li>
-<li><p>objects and data structures</p></li>
-<li><p>etc.</p></li>
+<li>it’s ALWAYS a good idea to check your merged data frame to make sure the merge behaved as you expected. This can be done by taking a random row in the first file (<code>Dat1</code>) and comparing the information for that row (ID and Day) in the second file (<code>Dat2</code>) and the merged file (<code>mDat</code>). Here is an example:</li>
 </ul>
-</section>
-<section id="so-you-want-to" class="level2">
-<h2 class="anchored" data-anchor-id="so-you-want-to">So you want to…</h2>
-<p>Here we will provide examples of how to accomplish common data analysis tasks.</p>
-<section id="load-your-data-into-r" class="level3">
-<h3 class="anchored" data-anchor-id="load-your-data-into-r"><a href="DSPH_DA_Import.qmd">… load your data into R</a></h3>
-</section>
-<section id="validate-and-explore-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="validate-and-explore-your-data"><a href="DSPH_DA_Validate.qmd">… validate and explore your data</a></h3>
-</section>
-<section id="visualize-your-data-make-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="visualize-your-data-make-a-plot"><a href="DSPH_DA_Visualization.qmd">… visualize your data (make a plot!)</a></h3>
-</section>
-<section id="deal-with-missing-values" class="level3">
-<h3 class="anchored" data-anchor-id="deal-with-missing-values"><a href="DSPH_DA_MissingValues.qmd">… deal with missing values</a></h3>
-</section>
-<section id="sort-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="sort-your-data"><a href="DSPH_DA_Sort.qmd">… sort your data</a></h3>
-</section>
-<section id="subset-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="subset-your-data"><a href="DSPH_DA_Subset.qmd">… subset your data</a></h3>
-</section>
-<section id="work-with-dates-and-times" class="level3">
-<h3 class="anchored" data-anchor-id="work-with-dates-and-times"><a href="DSPH_DA_DatesTimes.qmd">… work with dates and times</a></h3>
-</section>
-<section id="manipulate-rows-or-columns-in-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-rows-or-columns-in-your-data"><a href="DSPH_DA_ManipulateRowsColumns.qmd">… manipulate rows or columns in your data</a></h3>
-</section>
-<section id="manipulate-subsets-of-rows-or-columns" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-subsets-of-rows-or-columns"><a href="DSPH_DA_ManipulateSubsets.qmd">… manipulate subsets of rows or columns</a></h3>
-</section>
-<section id="merge-your-data-with-another-data-set" class="level3">
-<h3 class="anchored" data-anchor-id="merge-your-data-with-another-data-set"><a href="DSPH_DA_Merge.qmd">… merge your data with another data set</a></h3>
-</section>
-<section id="control-the-flow-of-your-program" class="level3">
-<h3 class="anchored" data-anchor-id="control-the-flow-of-your-program"><a href="DSPH_DA_Control.qmd">… control the flow of your program</a></h3>
-</section>
-<section id="export-your-data-back-out-of-r" class="level3">
-<h3 class="anchored" data-anchor-id="export-your-data-back-out-of-r"><a href="DSPH_DA_Export.qmd">…export your data back out of R</a></h3>
-</section>
-</section>
-<section id="best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices"><a href="DSPH_DA_BestPractices.qmd">Best practices</a></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># pick a random row to check.  Let's choose 5! </span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Dat1[k,] <span class="co"># looking at the 5th row of the first data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     ID Day Length
+20 id31   1    155</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="ot">&lt;-</span> <span class="fu">which</span>(Dat2<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> Dat2<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in Dat2 has the ID and Day from the kth row in Dat1</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>indsD2 <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Dat2[indsD2, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     ID Day Temp
+20 id31   1  5.6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>indsMD <span class="ot">&lt;-</span> <span class="fu">which</span>(mDat<span class="sc">$</span>ID <span class="sc">==</span> Dat1<span class="sc">$</span>ID[k] <span class="sc">&amp;</span> mDat<span class="sc">$</span>Day <span class="sc">==</span> Dat1<span class="sc">$</span>Day[k]) <span class="co"># which row in mDat has the ID and Day from the kth row in Dat1</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>indsMD <span class="co"># row with matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mDat[indsMD, ] <span class="co"># matching data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    ID Day Length Temp
+5 id31   1    155  5.6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The length and temperature in the merged data (mDat) match the data in the original data frames (Dat1 &amp; Dat2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

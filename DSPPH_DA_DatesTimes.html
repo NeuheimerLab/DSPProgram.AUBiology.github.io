@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Analysis Handbook – Data Skills Portfolio Program</title>
+<title>So you want to: work with dates and times – Data Skills Portfolio Program</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">What is the DSP Program?</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./handbookIntro.html" aria-current="page"> 
+    <a class="nav-link" href="./handbookIntro.html"> 
 <span class="menu-text">The DSP Program Handbook</span></a>
   </li>  
   <li class="nav-item">
@@ -110,84 +144,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./handbookDAIntro.html">Data Analysis Handbook</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to the Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDCIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Collection &amp; Curation Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookDAIntro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Analysis Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./handbookSMIntro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Modelling Handbook</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./FAQ.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frequently Asked Questions</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-dsp-program-handbook-for-data-analysis" id="toc-the-dsp-program-handbook-for-data-analysis" class="nav-link active" data-scroll-target="#the-dsp-program-handbook-for-data-analysis">The DSP Program Handbook for Data Analysis</a>
+  <li><a href="#why-you-want-to-do-it" id="toc-why-you-want-to-do-it" class="nav-link active" data-scroll-target="#why-you-want-to-do-it">Why you want to do it:</a></li>
+  <li><a href="#how-you-can-do-it" id="toc-how-you-can-do-it" class="nav-link" data-scroll-target="#how-you-can-do-it">How you can do it:</a>
   <ul class="collapse">
-  <li><a href="#a-note-on-tools" id="toc-a-note-on-tools" class="nav-link" data-scroll-target="#a-note-on-tools">A note on tools:</a></li>
-  <li><a href="#a-note-on-learning-your-first-programming-language" id="toc-a-note-on-learning-your-first-programming-language" class="nav-link" data-scroll-target="#a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</a></li>
-  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The basics</a></li>
-  <li><a href="#so-you-want-to" id="toc-so-you-want-to" class="nav-link" data-scroll-target="#so-you-want-to">So you want to…</a>
-  <ul class="collapse">
-  <li><a href="#load-your-data-into-r" id="toc-load-your-data-into-r" class="nav-link" data-scroll-target="#load-your-data-into-r">… load your data into R</a></li>
-  <li><a href="#validate-and-explore-your-data" id="toc-validate-and-explore-your-data" class="nav-link" data-scroll-target="#validate-and-explore-your-data">… validate and explore your data</a></li>
-  <li><a href="#visualize-your-data-make-a-plot" id="toc-visualize-your-data-make-a-plot" class="nav-link" data-scroll-target="#visualize-your-data-make-a-plot">… visualize your data (make a plot!)</a></li>
-  <li><a href="#deal-with-missing-values" id="toc-deal-with-missing-values" class="nav-link" data-scroll-target="#deal-with-missing-values">… deal with missing values</a></li>
-  <li><a href="#sort-your-data" id="toc-sort-your-data" class="nav-link" data-scroll-target="#sort-your-data">… sort your data</a></li>
-  <li><a href="#subset-your-data" id="toc-subset-your-data" class="nav-link" data-scroll-target="#subset-your-data">… subset your data</a></li>
-  <li><a href="#work-with-dates-and-times" id="toc-work-with-dates-and-times" class="nav-link" data-scroll-target="#work-with-dates-and-times">… work with dates and times</a></li>
-  <li><a href="#manipulate-rows-or-columns-in-your-data" id="toc-manipulate-rows-or-columns-in-your-data" class="nav-link" data-scroll-target="#manipulate-rows-or-columns-in-your-data">… manipulate rows or columns in your data</a></li>
-  <li><a href="#manipulate-subsets-of-rows-or-columns" id="toc-manipulate-subsets-of-rows-or-columns" class="nav-link" data-scroll-target="#manipulate-subsets-of-rows-or-columns">… manipulate subsets of rows or columns</a></li>
-  <li><a href="#merge-your-data-with-another-data-set" id="toc-merge-your-data-with-another-data-set" class="nav-link" data-scroll-target="#merge-your-data-with-another-data-set">… merge your data with another data set</a></li>
-  <li><a href="#control-the-flow-of-your-program" id="toc-control-the-flow-of-your-program" class="nav-link" data-scroll-target="#control-the-flow-of-your-program">… control the flow of your program</a></li>
-  <li><a href="#export-your-data-back-out-of-r" id="toc-export-your-data-back-out-of-r" class="nav-link" data-scroll-target="#export-your-data-back-out-of-r">…export your data back out of R</a></li>
-  </ul></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best practices</a></li>
+  <li><a href="#in-the-base-package" id="toc-in-the-base-package" class="nav-link" data-scroll-target="#in-the-base-package">In the base package:</a></li>
+  <li><a href="#using-the-lubridate-package" id="toc-using-the-lubridate-package" class="nav-link" data-scroll-target="#using-the-lubridate-package">Using the lubridate package:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Analysis Handbook</h1>
+<h1 class="title">So you want to: work with dates and times</h1>
 </div>
 
 
@@ -214,91 +185,146 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-dsp-program-handbook-for-data-analysis" class="level1 unnumbered">
-<h1 class="unnumbered">The DSP Program Handbook for Data Analysis</h1>
-<section id="a-note-on-tools" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-tools">A note on tools:</h2>
-<p><strong>In general</strong> we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:</p>
+<section id="why-you-want-to-do-it" class="level1">
+<h1>Why you want to do it:</h1>
+<p>You will often have a time component to your biological research and research hypotheses - i.e.&nbsp;you might want to explain variability over time.. As mentioned in the Data Collection and Curation section, it is a good idea to record the time of your observation as separate columns of year, month, day, etc. But you will also need to work with data collected by others where date (and sometimes time) information is together one column (variable).</p>
+</section>
+<section id="how-you-can-do-it" class="level1">
+<h1>How you can do it:</h1>
+<p>Working with dates and times involves two steps:</p>
 <ul>
-<li><p>keep your analysis separate from the data (and thereby safeguard the data),</p></li>
-<li><p>keep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and</p></li>
-<li><p>allow you to use powerful tools to accomplish your analysis tasks.</p></li>
+<li><p>First, you need to let R know the data should be viewed as a date and time object (formatting the data as a date and time object)</p></li>
+<li><p>Second, you might want to extract some part of the date and time object (e.g.&nbsp;extract the year)</p></li>
 </ul>
-<p>That said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:</p>
-<ul>
-<li><p>keep your analysis separate from your data (e.g.&nbsp;in a separate sheet), and</p></li>
-<li><p>keep a record of all your analysis steps. This is done by:</p>
-<ul>
-<li><p>carefully and completely adding comments explaining your steps,</p></li>
-<li><p>and ensuring each cell contains only one step/piece of information.</p></li>
-</ul></li>
-</ul>
+<p>R has many options for working with dates and times.</p>
+<section id="in-the-base-package" class="level2">
+<h2 class="anchored" data-anchor-id="in-the-base-package">In the base package:</h2>
+<p>In the base package which is installed along with R<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, you can use the <code>as.Date()</code> function to format your data as a date:</p>
+<p>Consider the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myDat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"DTData.csv"</span>) <span class="co"># load in the data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(myDat) <span class="co"># examine the first few rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Time Value
+1 2024/10/3 10:32    36
+2   2020/6/9 0:17    35
+3 2020/10/7 18:38    57
+4 2021/10/9 11:42    43
+5   2020/6/4 1:40    44
+6 2021/12/2 20:42    36</code></pre>
+</div>
+</div>
+<p>where the <code>Dat$Time</code> column gives the year, month, day, hour and minutes of an observation given in the <code>Dat$Value</code> column.</p>
+<ol type="1">
+<li>You can format the <code>Dat$Time</code> column as a date and time with:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>myDat<span class="sc">$</span>Time <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="at">x =</span> myDat<span class="sc">$</span>Time, <span class="co"># the date and time column</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">format =</span> <span class="st">"%Y/%m/%d %H:%M"</span>) <span class="co"># describing the format of the date and time column</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(myDat) <span class="co"># examine the first few rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Time Value
+1 2024-10-03    36
+2 2020-06-09    35
+3 2020-10-07    57
+4 2021-10-09    43
+5 2020-06-04    44
+6 2021-12-02    36</code></pre>
+</div>
+</div>
+<p>You can learn more about the formatting syntax with <code>?strptime</code>. Note that the code above replaces the <code>myDat$Time</code> column with the new, formatted date and time information.</p>
+<ol start="2" type="1">
+<li>You can extract parts of the date and time column with functions like <code>months()</code> for months, <code>years()</code> for years, etc.</li>
+</ol>
+<p>For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>myDat<span class="sc">$</span>Months <span class="ot">&lt;-</span> <span class="fu">months</span>(myDat<span class="sc">$</span>Time) <span class="co"># extract only the months</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(myDat) <span class="co"># structure of the data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   15 obs. of  3 variables:
+ $ Time  : Date, format: "2024-10-03" "2020-06-09" ...
+ $ Value : int  36 35 57 43 44 36 47 39 38 50 ...
+ $ Months: chr  "October" "June" "October" "October" ...</code></pre>
+</div>
+</div>
 </section>
-<section id="a-note-on-learning-your-first-programming-language" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-learning-your-first-programming-language">A note on learning your first programming language:</h2>
-<p>A bit on strategy when learning any programming language (we’ll also cover more strategies in class): <strong>it’s important to struggle but not for too long</strong>. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.</p>
-<p><strong>Don’t worry about memorizing</strong> the details of this document or our discussions in class. You will always have reference material available to you (e.g.&nbsp;this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.</p>
-</section>
-<section id="the-basics" class="level2">
-<h2 class="anchored" data-anchor-id="the-basics">The basics</h2>
-<p><a href="DSPH_DA_RBasics.qmd">Here we will go over essential topics when you’re first learning a programming language.</a>. Here we cover:</p>
-<ul>
-<li><p>installing R</p></li>
-<li><p>scripts</p></li>
-<li><p>basic syntax</p></li>
-<li><p>getting help in R (how to read help files!)</p></li>
-<li><p>objects and data structures</p></li>
-<li><p>etc.</p></li>
-</ul>
-</section>
-<section id="so-you-want-to" class="level2">
-<h2 class="anchored" data-anchor-id="so-you-want-to">So you want to…</h2>
-<p>Here we will provide examples of how to accomplish common data analysis tasks.</p>
-<section id="load-your-data-into-r" class="level3">
-<h3 class="anchored" data-anchor-id="load-your-data-into-r"><a href="DSPH_DA_Import.qmd">… load your data into R</a></h3>
-</section>
-<section id="validate-and-explore-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="validate-and-explore-your-data"><a href="DSPH_DA_Validate.qmd">… validate and explore your data</a></h3>
-</section>
-<section id="visualize-your-data-make-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="visualize-your-data-make-a-plot"><a href="DSPH_DA_Visualization.qmd">… visualize your data (make a plot!)</a></h3>
-</section>
-<section id="deal-with-missing-values" class="level3">
-<h3 class="anchored" data-anchor-id="deal-with-missing-values"><a href="DSPH_DA_MissingValues.qmd">… deal with missing values</a></h3>
-</section>
-<section id="sort-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="sort-your-data"><a href="DSPH_DA_Sort.qmd">… sort your data</a></h3>
-</section>
-<section id="subset-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="subset-your-data"><a href="DSPH_DA_Subset.qmd">… subset your data</a></h3>
-</section>
-<section id="work-with-dates-and-times" class="level3">
-<h3 class="anchored" data-anchor-id="work-with-dates-and-times"><a href="DSPH_DA_DatesTimes.qmd">… work with dates and times</a></h3>
-</section>
-<section id="manipulate-rows-or-columns-in-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-rows-or-columns-in-your-data"><a href="DSPH_DA_ManipulateRowsColumns.qmd">… manipulate rows or columns in your data</a></h3>
-</section>
-<section id="manipulate-subsets-of-rows-or-columns" class="level3">
-<h3 class="anchored" data-anchor-id="manipulate-subsets-of-rows-or-columns"><a href="DSPH_DA_ManipulateSubsets.qmd">… manipulate subsets of rows or columns</a></h3>
-</section>
-<section id="merge-your-data-with-another-data-set" class="level3">
-<h3 class="anchored" data-anchor-id="merge-your-data-with-another-data-set"><a href="DSPH_DA_Merge.qmd">… merge your data with another data set</a></h3>
-</section>
-<section id="control-the-flow-of-your-program" class="level3">
-<h3 class="anchored" data-anchor-id="control-the-flow-of-your-program"><a href="DSPH_DA_Control.qmd">… control the flow of your program</a></h3>
-</section>
-<section id="export-your-data-back-out-of-r" class="level3">
-<h3 class="anchored" data-anchor-id="export-your-data-back-out-of-r"><a href="DSPH_DA_Export.qmd">…export your data back out of R</a></h3>
-</section>
-</section>
-<section id="best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices"><a href="DSPH_DA_BestPractices.qmd">Best practices</a></h2>
+<section id="using-the-lubridate-package" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-lubridate-package">Using the lubridate package:</h2>
+<p>The lubridate package was created to make working with dates and times easier. There are still two steps to the process. You can repeat the steps above but now with the lubridate package.</p>
+<p>Again, consider the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>myDat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"DTData.csv"</span>) <span class="co"># load in the data</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(myDat) <span class="co"># examine the first few rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Time Value
+1 2024/10/3 10:32    36
+2   2020/6/9 0:17    35
+3 2020/10/7 18:38    57
+4 2021/10/9 11:42    43
+5   2020/6/4 1:40    44
+6 2021/12/2 20:42    36</code></pre>
+</div>
+</div>
+<p>where the <code>Dat$Time</code> column gives the year, month, day, hour and minutes of an observation given in the <code>Dat$Value</code> column.</p>
+<ol type="1">
+<li>You can format the <code>Dat$Time</code> column as a date and time with:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate) <span class="co"># load the lubridate package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lubridate'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>myDat<span class="sc">$</span>Time <span class="ot">&lt;-</span> <span class="fu">ymd_hm</span>(myDat<span class="sc">$</span>Time) <span class="co"># the date and time column</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(myDat) <span class="co"># examine the structure of the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   15 obs. of  2 variables:
+ $ Time : POSIXct, format: "2024-10-03 10:32:00" "2020-06-09 00:17:00" ...
+ $ Value: int  36 35 57 43 44 36 47 39 38 50 ...</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>You can extract parts of the date and time column with functions like <code>month()</code> for months, <code>year()</code> for years, etc. <strong>Notice that the function names are not plural with the lubridate package.</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+</ol>
+<p>For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>myDat<span class="sc">$</span>Months <span class="ot">&lt;-</span> <span class="fu">month</span>(myDat<span class="sc">$</span>Time) <span class="co"># extract only the months</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(myDat) <span class="co"># examine the structure of the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   15 obs. of  3 variables:
+ $ Time  : POSIXct, format: "2024-10-03 10:32:00" "2020-06-09 00:17:00" ...
+ $ Value : int  36 35 57 43 44 36 47 39 38 50 ...
+ $ Months: num  10 6 10 10 6 12 3 4 11 11 ...</code></pre>
+</div>
+</div>
+<p>Much more is available in the lubridate packages, including determining durations and dealing with time-zones. Check the <a href="https://github.com/rstudio/cheatsheets/blob/main/lubridate.pdf">lubridate package “cheat sheet”</a> for more information.</p>
+<div class="footnotes">
+
+</div>
 
 
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>no need to load a separate package<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Both <code>months()</code> and <code>month()</code> will work with lubridate, but <code>months()</code> is also used to denote a <em>duration</em> of a month. <a href="https://github.com/rstudio/cheatsheets/blob/main/lubridate.pdf">See the cheat sheet for more.</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
