@@ -145,23 +145,6 @@ Other <-as.factor(sample(c("G328", "G128", "G333", "G23", "G428"), n, replace = 
 uResp<-exp(0.0006*Cont1 +  as.numeric(Cat)*Cont1*0.0108+3)
 Resp<-rgamma(n, shape=uResp, scale=0.5)
 myDat<-data.frame(Cont1=Cont1, Cont2 = Cont2, Cat=Cat, Resp=Resp, Other=Other)
-# library(ggplot2)
-# ggplot()+
-#   geom_point(data=myDat,
-#              mapping=aes(x=Cont, y=Resp, col=Cat))
-# 
-# startMod<-glm(formula = Resp ~ Cont + Cat + Cont:Cat, # hypothesis
-#               data = myDat, # data
-#               family = Gamma(link="inverse")) # error distribution assumption
-# 
-# library(DHARMa)
-# simOut <- simulateResiduals(fittedModel = startMod, n = 250) # simulate data from our model n times
-# 
-# plot(simOut, asFactor=FALSE) # compare simulated data to our observations
-# 
-# library(MuMIn)
-# options(na.action = "na.fail") # needed for dredge() function to prevent illegal model comparisons
-# (dredgeOut<-dredge(startMod, extra = "R^2")) # fit and compare a model set representing all possible predictor combinations
 
 
 ```
