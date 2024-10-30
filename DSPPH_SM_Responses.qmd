@@ -1,0 +1,35 @@
+---
+title: "Statistical modelling: Responses"
+---
+::: {.callout-note collapse="false"} 
+## In this section you will:
+
+* Define your research question and response variable (what variability are you trying to explain?)
+
+* Present the motivation for your research question (why is it worth explaining?)
+
+:::
+
+<img src="./statsModFramework.png" align="right" width="150"/>
+
+The first step of the statistical modelling framework is to identify your response variable^[Notice I write "Response(s)" in the title of this section - plural. It is possible to have multiple response variables and we will discuss this elsewhere in the handbook when we discuss multivariate data. For the focus of this handbook though, we will begin by working with one response variable].
+
+Your response variable is the observed variability you are trying to explain. As mentioned earlier, all science is explaining variability - why something you observe is changing. Your response variable is the "thing" you are trying to explain. It is sometimes called by other names such as "dependent variable" or "y variable". 
+
+Before you can proceed with your hypothesis making and testing, you need to be clear about the variation you are trying to explain and how it was observed. What is making you curious?
+
+- "Why are these plants smaller over here?" (response variable is observed plant heights)
+
+- "Why are there more fish in my net today than last month?" (response variable is observed fish abundance)
+
+- "Why does the hormone level in the blood differ from one individual to another?" (response variable is hormone level)
+
+These questions are called "research questions" and they identify your response variable (contrast this with your research hypothesis in an upcoming section). 
+
+Though it is not necessary to be able to proceed with statistical modelling, it is useful at this point to stop and think about **why** you want to explain the variation in your response. Why is it important to explain different tree heights? Or fish abundance? Or hormone level? Being clear about what variation you are trying to explain (your response variable) and why it is important to explain that variation will make up a good portion of your introduction section to a report or paper - and help shape your discussion section as well.
+
+
+::: footnotes
+:::
+
+
