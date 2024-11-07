@@ -217,8 +217,8 @@ This is an extreme case (where your predictors are 100% correlated with one anot
 
 Here is a helpful bit of code for your investigations, applied to our example model:
   
-  
-  ```{r include=FALSE}
+
+```{r include=FALSE}
 
 install.packages("GGally")
 
