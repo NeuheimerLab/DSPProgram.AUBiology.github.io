@@ -12,6 +12,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 install.packages("png")
 install.packages("grid")
 install.packages("formatR")
+install.packages("ggplot2")
 
 ```
 
@@ -20,6 +21,7 @@ install.packages("formatR")
 library(png)
 library(grid)
 library(formatR)
+library(ggplot2)
 ```
 
 ::: {.callout-note collapse="false"} 
