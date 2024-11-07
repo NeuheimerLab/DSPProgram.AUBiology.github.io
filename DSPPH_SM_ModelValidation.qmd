@@ -194,7 +194,42 @@ str(myDat) # check the structure of the data
 The residuals have been added to the data frame as `myDat$Resid`.  We will take a look at these residuals as we walk through the model validation below.
 
 
+# Considering predictor collinearity
 
+**What it is:**
+  
+  NOTE: predictor collinearity^[sometimes also called multicollinearity] is only a problem if you have multiple predictors in your hypothesis.
+
+Your model assumes that your predictors are not correlated with one another, and that each predictor explains a unique part of the variation in your response.  When this assumption is violated, the estimates of the coefficients^[remember, these are the modelled effects of your predictors on your response] become more uncertain and you are unable to test your hypothesis in a robust way. 
+
+Let us use an extreme case to see why this might be a problem:  
+  
+  >Imagine you are interested in explaining variability in plant growth (your response is plant growth).  You think temperature and water may influence plant growth, so you set up an experiment where you will grow plants under high and low temperature and high and low water (your predictors are temperature and water treatments).  But in your experimental set-up you only include two treatments: one where the plants are grown with high temperature and high water, and another where plants are grown with low temperature and low water.  In your experiment, your predictors are correlated with one another^[your predictors are so correlated, in fact, we say they are  "aliased" with one another].  When you try to test your hypothesis, you will not be able to say if the growth differences between treatments is due to differences in temperature or water. 
+
+This is an extreme case (where your predictors are 100% correlated with one another), and one that can easily be avoided with a better experimental design.  But, predictors that are at least partially correlated with one another are very common in observational/field studies (e.g. things like salinity, temperature and depth in marine studies).
+<br clear="right"/>
+  
+  Predictor collinearity causes a problem with our interpretation of our model because it increases the error around the coefficients (modelled effects).  This error can be so large, that we are unable to assess the effect of a predictor in explaining the response.  This increase in error due to predictor collinearity is called "variance inflation"^[the error (variance) around the coefficient estimates is getting bigger (inflation)].
+
+**How you know if you have a problem:**
+  
+  You may have a hunch that you will have a problem with predictor collinearity before you even fit a model.  You can identify potential problems by looking at correlations of your predictors with one another.   
+
+Here is a helpful bit of code for your investigations, applied to our example model:
+  
+  
+  ```{r include=FALSE}
+
+install.packages("GGally")
+
+```
+
+```{r}
+library(GGally) # loading GGally package
+
+ggpairs(data=myDat) # make a plot of your data - each column vs. another - often called a "pairs plot"
+
+```
 
 
 
