@@ -288,8 +288,6 @@ startMod.noInt
 ```
 
 
-
-
 ```{r include=FALSE}
 
 install.packages("car")
@@ -302,7 +300,7 @@ And then estimate VIFs:
 
 library(car) # load the car package
 
-vif(startMod.noInt) # estimate VIFs
+#vif(startMod.noInt) # estimate VIFs
 
 ```
 
