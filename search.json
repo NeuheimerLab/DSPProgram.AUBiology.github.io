@@ -169,212 +169,6 @@
     "text": "Footnotes\n\n\nMore on this to come!↩︎\nI will keep mentioning mechanisms. In our statistical model building, we keep our focus on biologically meaningful or mechanistic explanations of variability in our response. This is because i) explaining the world through mechanisms is necessary for true understanding and to be able to show this understanding through prediction (e.g. the difference between correlation and causation). And ii) this is where the joy of being a biologist lies!↩︎\nmore on this to come↩︎\nA good time to review your notes on data distributions from earlier↩︎\nwhich might be non-linear of known shape, or non-linear of unknown shape↩︎\nParaphrased from Crawley 2013 pg. 451↩︎\nhere shown as Root Mean Square Error which is a method used when one has a normal error distribution assumption and linear shape assumption↩︎\neach repetition is called “an iteration”↩︎\nWe will discuss these other model types in upcoming classes↩︎\nfor a binomial error distribution assumption, you might have your response as the # successes in # of trials. In such cases, you would present your hypothesis as cbind(Success, Trials) ~ Predictor + 1↩︎\nnote that we will be discussing this more in depth when we get to the Reporting section of the Statistical Modelling Framework↩︎\nnote that the type of statistic shown will depend on the structure of your model including the error distribution assumption↩︎\nThis is called “dummy level coding”. You can avoid this with “level means coding”.↩︎\nNote that you can control this if needed.↩︎"
   },
   {
-    "objectID": "DSPPH_SM_Predictors.html",
-    "href": "DSPPH_SM_Predictors.html",
-    "title": "Statistical Modelling: Predictor(s)",
-    "section": "",
-    "text": "In this section you will:\n\n\n\n\n\n\nDefine your predictor variables (what could explain the variability in your response?)\nPresent possible mechanisms behind your argument (why might your predictor variables explain variability in your response?\n\n\n\n\n\nOften very quickly, you will start to have ideas about what mechanistically might be responsible for the variation in your response. This is exciting! This is where you can apply biological theory to form your research hypothesis of why observations are as they appear. This step needs you to be curious, creative, and tap into your foundation of biological theory. And this step is where you identify the predictors in your statistical model.\nHere your focus is on the biological mechanisms (or processes) that you expect affect change in your response variable. An example of a mechanism affecting plant height might be temperature-dependent growth as temperature controls the rate of enzymatic reactions involved in plant growth.\nOnce you have identified a possible mechanism, you can identify a measurable factor that can be used to quantify that mechanism. This is a predictor. To follow our example, a corresponding predictor to measure an effect of temperature-dependent growth is ambient temperature.\nIt is necessary also to spend some time thinking about how you measure your predictor - what measure is relevant to your response variable? Here think about how measures of your predictor can be relevant to the time and space resolution of your response variable. To complete our example, you will want to measure ambient temperature quite close to each plant, and need to consider not just the temperature on the day the plant height was measured, but throughout the growing period of the plant (e.g. by considering average or integrated temperature measures).\nSo your response variable is the variability you are trying to explain, and your predictor(s) is what you think is causing the variability. In this course, we will use the term “predictors” but note that they are also known as “covariates”, “factors”, “independent variables”, “explanatory variables”, or “x variables”.\nIt is important that you let yourself think freely when you are considering what might by causing the variability in your response variable. At this early stage, do not restrict yourself to what you will be able to measure and test - let your curiosity and ideas range freely (called “blue-sky thinking”). Think first about all the mechanisms that may be responsible for the response variability. Then think about all the ways observations may be limited (e.g. limitations in our ability to measure certain variables or access data from certain places or times). And take lots of notes! As you move on in the framework, you will quickly simplify your hypothesis into what is measured and what is testable, but all your exciting ideas will be used in to communicate the scope of your study, motivate your predictor choice (in your Introduction and Methods), to put your results into context of greater biological theory, as well as direct future study efforts to focus on variation in your response that remains unexplained (in your Discussion section). Spending some time allowing yourself to brainstorm at this point is time well spent.\nFinally, notice that throughout this section, we emphasized mechanisms. You want to develop and test a hypothesis that is grounded in biological mechanisms."
-  },
-  {
-    "objectID": "DSPPH_SM_Hypothesis.html",
-    "href": "DSPPH_SM_Hypothesis.html",
-    "title": "Statistical Modelling: Hypothesis",
-    "section": "",
-    "text": "In this section you will:\n\n\n\n\n\n\nidentify your model terms (main effects and interactions)\npresent your research hypothesis in words and formula"
-  },
-  {
-    "objectID": "DSPPH_SM_Hypothesis.html#hypotheses-with-more-than-one-predictor---including-interactions",
-    "href": "DSPPH_SM_Hypothesis.html#hypotheses-with-more-than-one-predictor---including-interactions",
-    "title": "Statistical Modelling: Hypothesis",
-    "section": "Hypotheses with more than one predictor - including interactions",
-    "text": "Hypotheses with more than one predictor - including interactions\nWhen you are considering more than one predictor, you need to consider the possibility of both main effects and interactions.\nA main effect represents the direct independent effect of the predictor on the response.\nAn interaction represents that the effect of one predictor on the response depends on the value of the other predictor.\nIf your research hypothesis states that\n\nVariability in the response (Resp) is explained by independent effects of two predictors (Pred1 and Pred2)1\n\nyour hypothesis in R syntax would be:\n\nResp ~ Pred1 + Pred2 + 1\n\nIf your research hypothesis states that\n\nVariability in the response (Resp) is explained by effects of two predictors (Pred1 and Pred2 with the effect of Pred1 depending on the value of Pred2)\n\nyour hypothesis in R syntax would be:\n\nResp ~ Pred1 + Pred2 + Pred1:Pred2 + 1\n\nNote that : is used to denote an interaction. In this case, it is a two-way interaction between Pred1 and Pred2.2\n\n\n\n\n\n\nTip\n\n\n\n\n\nR has a number of shortcuts for representing formulas in shortform. For example:\nResp ~ Pred1 + Pred2 + Pred1:Pred2 + 1\ncan be written as\nResp ~ Pred1*Pred2\ni.e. * means to include all main effects and all possible interactions.\nAnother example:\nResp ~ Pred1 + Pred2 + Pred3 + Pred1:Pred2 + Pred2:Pred3 + Pred1:Pred3 + 1\ncan be written as\nResp ~ (Pred1 + Pred2 + Pred3)^2\nwhich tells R to include all main effects and all possible two-way interactions between the three predictors."
-  },
-  {
-    "objectID": "DSPPH_SM_Hypothesis.html#footnotes",
-    "href": "DSPPH_SM_Hypothesis.html#footnotes",
-    "title": "Statistical Modelling: Hypothesis",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nSome jargon here: when the effects of each predictor is independent of other predictors, you say the model is “additive”↩︎\nNote: to include an interaction all predictors involved in the interaction have to have a main effect also included in the model↩︎"
-  },
-  {
-    "objectID": "handbookIntro.html",
-    "href": "handbookIntro.html",
-    "title": "Introduction to the Handbook",
-    "section": "",
-    "text": "The DSP Program Handbook contains information on the DSP Program as well as resources for data collection, analysis and statistical modelling tasks.\nThe information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercises consistent with the DSP Program.\n\n\n\nThere are many, many resources available for help with both programming and statistical modelling. Our intention is not to “reinvent the wheel”. Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out.\nThe methods contained in this handbook are not your only options. Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.\n\n\n\nThe ideas and tools developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.\n\n\nThe benefits of using a scripted programming language vs. ‘point & click’ programs (e.g. Excel, but see ### below) is that programming languages help make sure:\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.\n\nWith a programming language, your original data remains unchanged during your analysis and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.\nIt is not enough for you to trust your own work. You have to work in a way that others can trust in your work as well. Programming languages help you do that.\n\n\nYour first language should be one that is\n\nrelevant (one that matches your immediate needs),\ncommon (one that is used by your community), and\nfree (one that doesn’t require an expensive license)\n\n\n\n\nOur starting point will be the R Programming Language.\nR is a scripted programming language and an environment for statistical computing and graphics. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux.\nWe will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.\nRegardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking, or how to break down a task into steps and communicate this to a computer)1. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.\n\n\n\nOur advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. If you find yourself needing a more general purpose language, try Python or Julia.\n\n\n\n\nYou will quickly note that you will not only be learning R in the DSP Program. We will also go over skills for correctly using a spreadsheet editor (e.g. Microsoft’s Excel) in your work. This is because Biologists still use Excel for a large number of tasks (e.g. designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Introduction to the Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookIntro.html#what-this-handbook-is.",
-    "href": "handbookIntro.html#what-this-handbook-is.",
-    "title": "Introduction to the Handbook",
-    "section": "",
-    "text": "The DSP Program Handbook contains information on the DSP Program as well as resources for data collection, analysis and statistical modelling tasks.\nThe information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercises consistent with the DSP Program.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Introduction to the Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookIntro.html#what-this-handbook-is-not.",
-    "href": "handbookIntro.html#what-this-handbook-is-not.",
-    "title": "Introduction to the Handbook",
-    "section": "",
-    "text": "There are many, many resources available for help with both programming and statistical modelling. Our intention is not to “reinvent the wheel”. Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out.\nThe methods contained in this handbook are not your only options. Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Introduction to the Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookIntro.html#dsp-program-tools",
-    "href": "handbookIntro.html#dsp-program-tools",
-    "title": "Introduction to the Handbook",
-    "section": "",
-    "text": "The ideas and tools developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.\n\n\nThe benefits of using a scripted programming language vs. ‘point & click’ programs (e.g. Excel, but see ### below) is that programming languages help make sure:\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.\n\nWith a programming language, your original data remains unchanged during your analysis and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.\nIt is not enough for you to trust your own work. You have to work in a way that others can trust in your work as well. Programming languages help you do that.\n\n\nYour first language should be one that is\n\nrelevant (one that matches your immediate needs),\ncommon (one that is used by your community), and\nfree (one that doesn’t require an expensive license)\n\n\n\n\nOur starting point will be the R Programming Language.\nR is a scripted programming language and an environment for statistical computing and graphics. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux.\nWe will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.\nRegardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking, or how to break down a task into steps and communicate this to a computer)1. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.\n\n\n\nOur advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. If you find yourself needing a more general purpose language, try Python or Julia.\n\n\n\n\nYou will quickly note that you will not only be learning R in the DSP Program. We will also go over skills for correctly using a spreadsheet editor (e.g. Microsoft’s Excel) in your work. This is because Biologists still use Excel for a large number of tasks (e.g. designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Introduction to the Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookIntro.html#footnotes",
-    "href": "handbookIntro.html#footnotes",
-    "title": "Introduction to the Handbook",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nComputational thinking includes skills in decomposition (breaking down tasks into small steps), pattern recognition (observing patterns in tasks and data), abstraction (identifying and extracting relevant information, ignoring or removing unnecessary information), algorithms (creating an ordered set of instructions for solving a problem), modelling and simulation (statistical modelling for hypothesis testing, imitating processes and problems), and evaluation (determining the effectiveness of a solution, generalizing to apply the solution to a new problem) - adapted from digitalcareers.csiro.au.↩︎",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Introduction to the Handbook"
-    ]
-  },
-  {
-    "objectID": "DSPPH_DA_Merge.html",
-    "href": "DSPPH_DA_Merge.html",
-    "title": "So you want to: merge your data sets",
-    "section": "",
-    "text": "Often times we are interested in exploring connections among variables from different sources. Merging your data files can be a way of collecting all the variables of interest so you can explore research questions and hypotheses about the data.\nIn addition, merging can be used to label your observations. We go through examples below."
-  },
-  {
-    "objectID": "DSPPH_DA_Merge.html#in-the-base-package-using-merge",
-    "href": "DSPPH_DA_Merge.html#in-the-base-package-using-merge",
-    "title": "So you want to: merge your data sets",
-    "section": "in the base package using merge()",
-    "text": "in the base package using merge()\n\nmDat&lt;-merge(Dat1, # data frame to merge\n             Dat2, # other data frame to merge\n             by = c(\"ID\", \"Day\")) # merge by variable(s)\n\nstr(mDat) # take a look at the object I made\n\n'data.frame':   40 obs. of  4 variables:\n $ ID    : chr  \"id20\" \"id20\" \"id21\" \"id21\" ...\n $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...\n $ Length: num  195 139 144 180 110 97 149 184 139 143 ...\n $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...\n\n\nNote that you don’t need to have the same number of observations (rows) in your two data frames to merge. Merging can be a great way of labelling your data. Here’s an example:\nConsider a data frame with strain information for each of your organism IDs:\n\n## ID: organism ID\n## Strain: strain of organism\n\nstr(Dat3)\n\n'data.frame':   20 obs. of  2 variables:\n $ ID    : chr  \"id24\" \"id30\" \"id33\" \"id26\" ...\n $ Strain: chr  \"A\" \"C\" \"B\" \"C\" ...\n\n\nNote that Dat1 and Dat2 each contained 40 observations - one observation for each of 20 IDs made on each of 2 days.\nIn contrast Dat3 only has 20 observations - information about the strain for each of 20 IDs.\nBy using merge(), we can add the strain information to mDat:\n\nallDat &lt;- merge(mDat, # one data frame\n                Dat3, # the other data frame\n                by = \"ID\") # variables to merge by\n\nstr(allDat)\n\n'data.frame':   40 obs. of  5 variables:\n $ ID    : chr  \"id20\" \"id20\" \"id21\" \"id21\" ...\n $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...\n $ Length: num  195 139 144 180 110 97 149 184 139 143 ...\n $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...\n $ Strain: chr  \"C\" \"C\" \"A\" \"A\" ...\n\n\nNow we have our observations labelled by the strain information!\nSome things to note:\n\nif you leave out the by = function totally, R will look for column names that are similar between the two data frames and use that for the merge.\nyou can designate that the “merge by” variables have different column names in the two data frames. This is done with the by.x = and by.y = arguments. Check ?merge for more.\nyou can control what happens to unmatched columns (e.g. if an ID appeared in only one of the two data frames). This is done with the all =, all.x =, and all.y = arguments. Check ?merge for more."
-  },
-  {
-    "objectID": "DSPPH_DA_Merge.html#in-the-dplyr-package-using-full_join",
-    "href": "DSPPH_DA_Merge.html#in-the-dplyr-package-using-full_join",
-    "title": "So you want to: merge your data sets",
-    "section": "in the dplyr package using full_join()",
-    "text": "in the dplyr package using full_join()\nThe dplyr package includes the full_join() function as another way to merge your data frames\n\nlibrary(dplyr) # load dplyr package\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nmDat&lt;-full_join(Dat1, # data frame to merge\n                Dat2, # other data frame to merge\n                by = join_by(ID, Day)) # merge by column\n\nstr(mDat) # take a look at the object I made\n\n'data.frame':   40 obs. of  4 variables:\n $ ID    : chr  \"id29\" \"id30\" \"id22\" \"id31\" ...\n $ Day   : num  1 2 1 2 1 1 2 1 2 2 ...\n $ Length: num  150 164 110 134 155 125 144 144 139 167 ...\n $ Temp  : num  7.4 7.3 6.9 7.5 5.6 7.8 7.8 6.3 7.9 7.1 ...\n\n\nSome things to note:\n\nThe full_join() function keeps all observations appearing in either data frame.\nThe left_join() function keeps all observations in the first data frame (Dat1) but you will lose any unmatched observations in the second data frame (Dat2).\nThe right_join() function keeps all observations in the second data frame (Dat2) but you will lose any unmatched observations in the first data frame (Dat1)"
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#purpose",
-    "href": "intro.html#purpose",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#learning-objectives",
-    "href": "intro.html#learning-objectives",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
-    "title": "What is the DSP Program?",
-    "section": "",
-    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
-    "crumbs": [
-      "What is the DSP Program?"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html",
-    "href": "handbookDAIntro.html",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nHere we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#a-note-on-tools",
-    "href": "handbookDAIntro.html#a-note-on-tools",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
-    "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#the-basics",
-    "href": "handbookDAIntro.html#the-basics",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "handbookDAIntro.html#so-you-want-to",
-    "href": "handbookDAIntro.html#so-you-want-to",
-    "title": "Data Analysis Handbook",
-    "section": "",
-    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
-    "crumbs": [
-      "The DSP Program Handbook",
-      "Data Analysis Handbook"
-    ]
-  },
-  {
-    "objectID": "feedback.html",
-    "href": "feedback.html",
-    "title": "Contacts and Feedback for the DSP Program",
-    "section": "",
-    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
-  },
-  {
     "objectID": "handbookSMIntro.html",
     "href": "handbookSMIntro.html",
     "title": "Statistical Modelling Handbook",
@@ -461,6 +255,240 @@
       "The DSP Program Handbook",
       "Statistical Modelling Handbook"
     ]
+  },
+  {
+    "objectID": "feedback.html",
+    "href": "feedback.html",
+    "title": "Contacts and Feedback for the DSP Program",
+    "section": "",
+    "text": "The DSP Program is a joint venture by colleagues across AU’s Department of Biology.\nProgram development is led by the DSP Program Taskforce:\n\nAnna B. Neuheimer (Aquatic Biology, Taskforce head)\nRobert Buitenwerf (Ecoinformatics and Biodiversity)\nAlejandro Ordonez Gloria (Ecoinformatics and Biodiversity)\nTove Hedegaard Jørgensen (Genetics, Ecology and Evolution & Centre for Educational Development)\nIan Marshall (Microbiology)\nBirgit Olesen (Aquatic Biology & Arctic Research Centre)\nPeter Teglberg Madsen (Zoophysiology)\nJesper Givskov Sørensen (Genetics, Ecology and Evolution)\n\n\n\nSend your questions and feedback to the DSP Program Taskforce\nWe welcome your questions and feedback. Please submit them using this form or send an email to abneuheimer@bio.au.dk."
+  },
+  {
+    "objectID": "handbookDAIntro.html",
+    "href": "handbookDAIntro.html",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nHere we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-tools",
+    "href": "handbookDAIntro.html#a-note-on-tools",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#the-basics",
+    "href": "handbookDAIntro.html#the-basics",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookDAIntro.html#so-you-want-to",
+    "href": "handbookDAIntro.html#so-you-want-to",
+    "title": "Data Analysis Handbook",
+    "section": "",
+    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Data Analysis Handbook"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.\n\n\n\nThe Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions\n\n\n\n\n\n\n\nModules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#purpose",
+    "href": "intro.html#purpose",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The goal of the DSP Program is to help students become more capable, confident and employable:\nCapable: The skills at the heart of the DSP Program represent those needed to pursue quantitative biological research. By developing these skills in our students, students will be more capable of successfully pursuing research projects both in their studies and post-graduate careers. Moreover, these skills are those required for data analysis tasks across fields. By developing their data skills during the program, students will be deemed more capable and attractive to a variety of data-focused careers. By focusing skills in an open-sourced programming language, students will be able to implement the tools they learnt after their degree is finished.\nConfident: A major focus of the DSP program is to make the students aware of the skills they are learning (the “why” and the “how”) and the general applicability of these skills across research projects, fields and careers. This includes repeated practice to a variety of biological-based research questions. By empowering students to see their abilities in these areas, we empower them to promote themselves when they pursue future research or career opportunities.\nEmployable: Students that are more capable and confident are more employable. The DSP program aims at increasing the skills, awareness and confidence of AU’s Biology students to increase employability, and in particular, allowing our students to access data-based careers that were previously off their, and the employers’, “radar”.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#learning-objectives",
+    "href": "intro.html#learning-objectives",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "The Data Skills Portfolio participants will gain training in:\n\nComputational thinking - breaking down complex problems (decomposition), looking for similarities within and among problems (pattern recognition), identifying relevant information (abstraction), developing step-by-step solutions to a problem (algorithms)\nData handling and management - data acquisition, manipulation, exploration, visualization, and storage\nResearch ethics and transparency - data skills to support ethical research practices and transparent science (e.g. documenting science); communication of analysis choices and results, including standard graphical forms\nExperimental design - robust, ethical experimental design\nHypothesis testing - identifying the hypothesis, designing a model to test the hypothesis, assessing and communicating model fit and results.\nSkills marketing - communicating data skills, and marketing skills to a wide-range of career positions",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "href": "intro.html#interested-in-contributing-to-the-dsp-program",
+    "title": "What is the DSP Program?",
+    "section": "",
+    "text": "Modules are being designed to fit into existing course activities (and ECTS). Please contact the DSP Program Taskforce if you would like to co-develop a DSP module for your course.",
+    "crumbs": [
+      "What is the DSP Program?"
+    ]
+  },
+  {
+    "objectID": "DSPPH_DA_Merge.html",
+    "href": "DSPPH_DA_Merge.html",
+    "title": "So you want to: merge your data sets",
+    "section": "",
+    "text": "Often times we are interested in exploring connections among variables from different sources. Merging your data files can be a way of collecting all the variables of interest so you can explore research questions and hypotheses about the data.\nIn addition, merging can be used to label your observations. We go through examples below."
+  },
+  {
+    "objectID": "DSPPH_DA_Merge.html#in-the-base-package-using-merge",
+    "href": "DSPPH_DA_Merge.html#in-the-base-package-using-merge",
+    "title": "So you want to: merge your data sets",
+    "section": "in the base package using merge()",
+    "text": "in the base package using merge()\n\nmDat&lt;-merge(Dat1, # data frame to merge\n             Dat2, # other data frame to merge\n             by = c(\"ID\", \"Day\")) # merge by variable(s)\n\nstr(mDat) # take a look at the object I made\n\n'data.frame':   40 obs. of  4 variables:\n $ ID    : chr  \"id20\" \"id20\" \"id21\" \"id21\" ...\n $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...\n $ Length: num  195 139 144 180 110 97 149 184 139 143 ...\n $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...\n\n\nNote that you don’t need to have the same number of observations (rows) in your two data frames to merge. Merging can be a great way of labelling your data. Here’s an example:\nConsider a data frame with strain information for each of your organism IDs:\n\n## ID: organism ID\n## Strain: strain of organism\n\nstr(Dat3)\n\n'data.frame':   20 obs. of  2 variables:\n $ ID    : chr  \"id24\" \"id30\" \"id33\" \"id26\" ...\n $ Strain: chr  \"A\" \"C\" \"B\" \"C\" ...\n\n\nNote that Dat1 and Dat2 each contained 40 observations - one observation for each of 20 IDs made on each of 2 days.\nIn contrast Dat3 only has 20 observations - information about the strain for each of 20 IDs.\nBy using merge(), we can add the strain information to mDat:\n\nallDat &lt;- merge(mDat, # one data frame\n                Dat3, # the other data frame\n                by = \"ID\") # variables to merge by\n\nstr(allDat)\n\n'data.frame':   40 obs. of  5 variables:\n $ ID    : chr  \"id20\" \"id20\" \"id21\" \"id21\" ...\n $ Day   : num  1 2 1 2 1 2 1 2 1 2 ...\n $ Length: num  195 139 144 180 110 97 149 184 139 143 ...\n $ Temp  : num  6.1 7.2 8.7 5.3 6.9 7.5 7.2 7.1 8.1 7.1 ...\n $ Strain: chr  \"C\" \"C\" \"A\" \"A\" ...\n\n\nNow we have our observations labelled by the strain information!\nSome things to note:\n\nif you leave out the by = function totally, R will look for column names that are similar between the two data frames and use that for the merge.\nyou can designate that the “merge by” variables have different column names in the two data frames. This is done with the by.x = and by.y = arguments. Check ?merge for more.\nyou can control what happens to unmatched columns (e.g. if an ID appeared in only one of the two data frames). This is done with the all =, all.x =, and all.y = arguments. Check ?merge for more."
+  },
+  {
+    "objectID": "DSPPH_DA_Merge.html#in-the-dplyr-package-using-full_join",
+    "href": "DSPPH_DA_Merge.html#in-the-dplyr-package-using-full_join",
+    "title": "So you want to: merge your data sets",
+    "section": "in the dplyr package using full_join()",
+    "text": "in the dplyr package using full_join()\nThe dplyr package includes the full_join() function as another way to merge your data frames\n\nlibrary(dplyr) # load dplyr package\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nmDat&lt;-full_join(Dat1, # data frame to merge\n                Dat2, # other data frame to merge\n                by = join_by(ID, Day)) # merge by column\n\nstr(mDat) # take a look at the object I made\n\n'data.frame':   40 obs. of  4 variables:\n $ ID    : chr  \"id29\" \"id30\" \"id22\" \"id31\" ...\n $ Day   : num  1 2 1 2 1 1 2 1 2 2 ...\n $ Length: num  150 164 110 134 155 125 144 144 139 167 ...\n $ Temp  : num  7.4 7.3 6.9 7.5 5.6 7.8 7.8 6.3 7.9 7.1 ...\n\n\nSome things to note:\n\nThe full_join() function keeps all observations appearing in either data frame.\nThe left_join() function keeps all observations in the first data frame (Dat1) but you will lose any unmatched observations in the second data frame (Dat2).\nThe right_join() function keeps all observations in the second data frame (Dat2) but you will lose any unmatched observations in the first data frame (Dat1)"
+  },
+  {
+    "objectID": "handbookIntro.html",
+    "href": "handbookIntro.html",
+    "title": "Introduction to the Handbook",
+    "section": "",
+    "text": "The DSP Program Handbook contains information on the DSP Program as well as resources for data collection, analysis and statistical modelling tasks.\nThe information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercises consistent with the DSP Program.\n\n\n\nThere are many, many resources available for help with both programming and statistical modelling. Our intention is not to “reinvent the wheel”. Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out.\nThe methods contained in this handbook are not your only options. Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.\n\n\n\nThe ideas and tools developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.\n\n\nThe benefits of using a scripted programming language vs. ‘point & click’ programs (e.g. Excel, but see ### below) is that programming languages help make sure:\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.\n\nWith a programming language, your original data remains unchanged during your analysis and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.\nIt is not enough for you to trust your own work. You have to work in a way that others can trust in your work as well. Programming languages help you do that.\n\n\nYour first language should be one that is\n\nrelevant (one that matches your immediate needs),\ncommon (one that is used by your community), and\nfree (one that doesn’t require an expensive license)\n\n\n\n\nOur starting point will be the R Programming Language.\nR is a scripted programming language and an environment for statistical computing and graphics. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux.\nWe will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.\nRegardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking, or how to break down a task into steps and communicate this to a computer)1. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.\n\n\n\nOur advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. If you find yourself needing a more general purpose language, try Python or Julia.\n\n\n\n\nYou will quickly note that you will not only be learning R in the DSP Program. We will also go over skills for correctly using a spreadsheet editor (e.g. Microsoft’s Excel) in your work. This is because Biologists still use Excel for a large number of tasks (e.g. designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Introduction to the Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookIntro.html#what-this-handbook-is.",
+    "href": "handbookIntro.html#what-this-handbook-is.",
+    "title": "Introduction to the Handbook",
+    "section": "",
+    "text": "The DSP Program Handbook contains information on the DSP Program as well as resources for data collection, analysis and statistical modelling tasks.\nThe information in this handbook is provided as a resource for the AU Biology community including both those wanting to apply the skills in their own work, and those wanting to design data skills exercises consistent with the DSP Program.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Introduction to the Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookIntro.html#what-this-handbook-is-not.",
+    "href": "handbookIntro.html#what-this-handbook-is-not.",
+    "title": "Introduction to the Handbook",
+    "section": "",
+    "text": "There are many, many resources available for help with both programming and statistical modelling. Our intention is not to “reinvent the wheel”. Instead we aim to connect relevant data analysis and hypothesis testing strategies to your work as a biologist - both in class and out.\nThe methods contained in this handbook are not your only options. Where possible, we will give links to further information that can help if you would like to delve deeper on a subject.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Introduction to the Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookIntro.html#dsp-program-tools",
+    "href": "handbookIntro.html#dsp-program-tools",
+    "title": "Introduction to the Handbook",
+    "section": "",
+    "text": "The ideas and tools developed through the DSP Program are universal and not tied to a particular programming language. That said, most of our teaching takes place through the use of a scripted programming language.\n\n\nThe benefits of using a scripted programming language vs. ‘point & click’ programs (e.g. Excel, but see ### below) is that programming languages help make sure:\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.\n\nWith a programming language, your original data remains unchanged during your analysis and your work-flow is documented as a complete “recipe” of what you have done. This helps you and your colleagues understand and track what you are doing, it promotes experimentation and exploration, and reduces the potential for errors in the analysis. It will also allow you to learn from one project to another where you can often transfer your code to tackle new problems.\nIt is not enough for you to trust your own work. You have to work in a way that others can trust in your work as well. Programming languages help you do that.\n\n\nYour first language should be one that is\n\nrelevant (one that matches your immediate needs),\ncommon (one that is used by your community), and\nfree (one that doesn’t require an expensive license)\n\n\n\n\nOur starting point will be the R Programming Language.\nR is a scripted programming language and an environment for statistical computing and graphics. R provides a wide variety of statistical and graphical techniques, and can be extended to meet all sorts of needs. R is available for Windows, MacOS, and Linux.\nWe will start with R as i) R is heavily used in biological research already, ii) R is flexible and applicable to many tasks, iii) R is open-source and free, iv) R has an extensive community supporting new learners, and v) R is already taught in a number of AU courses.\nRegardless of the language chosen, the skills you gain learning your first programming language will help you learn any other languages you want to learn in the future. This is because learning a programming language involves learning (computational thinking, or how to break down a task into steps and communicate this to a computer)1. These skills are universal to all programming languages, as well as many of the tasks you need to pursue your biological research goals.\n\n\n\nOur advice is to learn one language deeply as it is much easier to switch languages after you have developed your computational skills. If you find yourself needing a more general purpose language, try Python or Julia.\n\n\n\n\nYou will quickly note that you will not only be learning R in the DSP Program. We will also go over skills for correctly using a spreadsheet editor (e.g. Microsoft’s Excel) in your work. This is because Biologists still use Excel for a large number of tasks (e.g. designing an experiment, data collection, budgeting), and many Biology graduates need to use Excel in some aspect of their future careers. Even though Excel is not a programming language, we will still be using best practices to ensure that\n\nyour analysis is kept separate from your data, and\nyour analysis is explicit and documented.",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Introduction to the Handbook"
+    ]
+  },
+  {
+    "objectID": "handbookIntro.html#footnotes",
+    "href": "handbookIntro.html#footnotes",
+    "title": "Introduction to the Handbook",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nComputational thinking includes skills in decomposition (breaking down tasks into small steps), pattern recognition (observing patterns in tasks and data), abstraction (identifying and extracting relevant information, ignoring or removing unnecessary information), algorithms (creating an ordered set of instructions for solving a problem), modelling and simulation (statistical modelling for hypothesis testing, imitating processes and problems), and evaluation (determining the effectiveness of a solution, generalizing to apply the solution to a new problem) - adapted from digitalcareers.csiro.au.↩︎",
+    "crumbs": [
+      "The DSP Program Handbook",
+      "Introduction to the Handbook"
+    ]
+  },
+  {
+    "objectID": "DSPPH_SM_Hypothesis.html",
+    "href": "DSPPH_SM_Hypothesis.html",
+    "title": "Statistical Modelling: Hypothesis",
+    "section": "",
+    "text": "In this section you will:\n\n\n\n\n\n\nidentify your model terms (main effects and interactions)\npresent your research hypothesis in words and formula"
+  },
+  {
+    "objectID": "DSPPH_SM_Hypothesis.html#hypotheses-with-more-than-one-predictor---including-interactions",
+    "href": "DSPPH_SM_Hypothesis.html#hypotheses-with-more-than-one-predictor---including-interactions",
+    "title": "Statistical Modelling: Hypothesis",
+    "section": "Hypotheses with more than one predictor - including interactions",
+    "text": "Hypotheses with more than one predictor - including interactions\nWhen you are considering more than one predictor, you need to consider the possibility of both main effects and interactions.\nA main effect represents the direct independent effect of the predictor on the response.\nAn interaction represents that the effect of one predictor on the response depends on the value of the other predictor.\nIf your research hypothesis states that\n\nVariability in the response (Resp) is explained by independent effects of two predictors (Pred1 and Pred2)1\n\nyour hypothesis in R syntax would be:\n\nResp ~ Pred1 + Pred2 + 1\n\nIf your research hypothesis states that\n\nVariability in the response (Resp) is explained by effects of two predictors (Pred1 and Pred2 with the effect of Pred1 depending on the value of Pred2)\n\nyour hypothesis in R syntax would be:\n\nResp ~ Pred1 + Pred2 + Pred1:Pred2 + 1\n\nNote that : is used to denote an interaction. In this case, it is a two-way interaction between Pred1 and Pred2.2\n\n\n\n\n\n\nTip\n\n\n\n\n\nR has a number of shortcuts for representing formulas in shortform. For example:\nResp ~ Pred1 + Pred2 + Pred1:Pred2 + 1\ncan be written as\nResp ~ Pred1*Pred2\ni.e. * means to include all main effects and all possible interactions.\nAnother example:\nResp ~ Pred1 + Pred2 + Pred3 + Pred1:Pred2 + Pred2:Pred3 + Pred1:Pred3 + 1\ncan be written as\nResp ~ (Pred1 + Pred2 + Pred3)^2\nwhich tells R to include all main effects and all possible two-way interactions between the three predictors."
+  },
+  {
+    "objectID": "DSPPH_SM_Hypothesis.html#footnotes",
+    "href": "DSPPH_SM_Hypothesis.html#footnotes",
+    "title": "Statistical Modelling: Hypothesis",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSome jargon here: when the effects of each predictor is independent of other predictors, you say the model is “additive”↩︎\nNote: to include an interaction all predictors involved in the interaction have to have a main effect also included in the model↩︎"
+  },
+  {
+    "objectID": "DSPPH_SM_Predictors.html",
+    "href": "DSPPH_SM_Predictors.html",
+    "title": "Statistical Modelling: Predictor(s)",
+    "section": "",
+    "text": "In this section you will:\n\n\n\n\n\n\nDefine your predictor variables (what could explain the variability in your response?)\nPresent possible mechanisms behind your argument (why might your predictor variables explain variability in your response?\n\n\n\n\n\nOften very quickly, you will start to have ideas about what mechanistically might be responsible for the variation in your response. This is exciting! This is where you can apply biological theory to form your research hypothesis of why observations are as they appear. This step needs you to be curious, creative, and tap into your foundation of biological theory. And this step is where you identify the predictors in your statistical model.\nHere your focus is on the biological mechanisms (or processes) that you expect affect change in your response variable. An example of a mechanism affecting plant height might be temperature-dependent growth as temperature controls the rate of enzymatic reactions involved in plant growth.\nOnce you have identified a possible mechanism, you can identify a measurable factor that can be used to quantify that mechanism. This is a predictor. To follow our example, a corresponding predictor to measure an effect of temperature-dependent growth is ambient temperature.\nIt is necessary also to spend some time thinking about how you measure your predictor - what measure is relevant to your response variable? Here think about how measures of your predictor can be relevant to the time and space resolution of your response variable. To complete our example, you will want to measure ambient temperature quite close to each plant, and need to consider not just the temperature on the day the plant height was measured, but throughout the growing period of the plant (e.g. by considering average or integrated temperature measures).\nSo your response variable is the variability you are trying to explain, and your predictor(s) is what you think is causing the variability. In this course, we will use the term “predictors” but note that they are also known as “covariates”, “factors”, “independent variables”, “explanatory variables”, or “x variables”.\nIt is important that you let yourself think freely when you are considering what might by causing the variability in your response variable. At this early stage, do not restrict yourself to what you will be able to measure and test - let your curiosity and ideas range freely (called “blue-sky thinking”). Think first about all the mechanisms that may be responsible for the response variability. Then think about all the ways observations may be limited (e.g. limitations in our ability to measure certain variables or access data from certain places or times). And take lots of notes! As you move on in the framework, you will quickly simplify your hypothesis into what is measured and what is testable, but all your exciting ideas will be used in to communicate the scope of your study, motivate your predictor choice (in your Introduction and Methods), to put your results into context of greater biological theory, as well as direct future study efforts to focus on variation in your response that remains unexplained (in your Discussion section). Spending some time allowing yourself to brainstorm at this point is time well spent.\nFinally, notice that throughout this section, we emphasized mechanisms. You want to develop and test a hypothesis that is grounded in biological mechanisms."
+  },
+  {
+    "objectID": "DSPPH_SM_ModelValidation.html",
+    "href": "DSPPH_SM_ModelValidation.html",
+    "title": "Statistical Modelling: Validation",
+    "section": "",
+    "text": "In this section you will learn:\n\n\n\n\n\n\nwhy model validation is necessary\nhow to determine if your starting model can be used to test your hypothesis\nwhat to do if your model is misspecified"
+  },
+  {
+    "objectID": "DSPPH_SM_ModelValidation.html#why-do-you-need-to-validate-your-starting-model",
+    "href": "DSPPH_SM_ModelValidation.html#why-do-you-need-to-validate-your-starting-model",
+    "title": "Statistical Modelling: Validation",
+    "section": "Why do you need to validate your starting model?",
+    "text": "Why do you need to validate your starting model?\nAs we discussed before “All models are wrong, but some are useful”. So how do you tell if your starting model is a useful one; that is, one that can be used to test your hypothesis?\nAs discussed in the last section, when you choose your starting model you make an educated guess as to what a useful starting model might be, but you can only validate that it is a useful starting model after you have fit the model to your data.\nA useful model is one that reflects the mechanistic understanding of your research hypothesis (the deterministic part of your model - your shape assumption) as well as the nature of your observations (the stochastic part of your model - your error distribution assumption)1.\nIn addition, a useful model is one that conforms to the assumptions of the method you use to test your model (e.g. GLM). The assumptions of the GLM include that your predictors are not correlated with one another, and that your observations are independent of one another.\nIn this section, we will explore each of these assumptions by considering if your:\n\npredictors are correlated with one another,\nobservations are independent of one another,\nerror distribution assumption was adequate, and\nshape distribution assumption was adequate.\n\nBy considering these four points, you can determine if your model is “well-specified” to test your hypothesis.\nIn this section, we will go over tools that will help you determine if your model is well-specified and what to do if you find yourself with a misspecified starting model.\n\n\n\n\n\n\n“A well-specified model”\n\n\n\n\n\nNote that you are trying to find “a well-specified model”. This terminology reflects the fact that more than one model2 is likely appropriate to test your hypothesis."
+  },
+  {
+    "objectID": "DSPPH_SM_ModelValidation.html#a-useful-residual---the-scaled-residual",
+    "href": "DSPPH_SM_ModelValidation.html#a-useful-residual---the-scaled-residual",
+    "title": "Statistical Modelling: Validation",
+    "section": "A useful residual - the scaled residual",
+    "text": "A useful residual - the scaled residual\nAs mentioned above, inspecting scaled residuals gives us a method of validating our model that is generally applicable - GREAT - but it also is a method that is intuitive: The scaled residual method checks to see if your model is useful (valid) by seeing if it can even produce data that looks like the data you used to fit your model (i.e. your observations). A model that is well-specified will be able to simulate data that looks like the data used to fix it.\nWe will estimate and explore scaled residuals using functions in the DHARMa package.\n\n\n\n\n\n\nDHARMa’s scaled residuals\n\n\n\n\n\n\nThe DHARMa package uses a simulation-based approach to estimate scaled residuals. These scaled residuals are standardized to a uniform distribution regardless of the model structure.\nHere’s how it works:\n\nDHARMa uses your starting model to simulate new response data for each observation (each row in your data frame). The default is that it simulates 250 new data sets from your model6.\nDHARMa uses the simulated values at each observation to calculate the empirical cumulative density function (ECDF) of the simulated values at that observation.\nThe scaled residual for observed data point i is then defined as the value of the ECDF at the value of the observed data i (see figure to the right).\nEstimated this way, if your model is wellspecified, the scaled residuals will always follow a uniform distribution, regardless of your starting model structure. Put another way: if the observed data were created from the same data-generating process of your starting model, all values of the cumulative distribution should appear with equal probability and the DHARMa residuals will be distributed uniformly.\n\nYou can explore more about the DHARMa package here."
+  },
+  {
+    "objectID": "DSPPH_SM_ModelValidation.html#footnotes",
+    "href": "DSPPH_SM_ModelValidation.html#footnotes",
+    "title": "Statistical Modelling: Validation",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nsee course notes from last week if this is unclear↩︎\nbut not all models↩︎\nnotice I say “can be defined as…”. This is because there are many different definitions of a residual that have been made to deal with different model structures. We are going to use a very useful one - the scaled residuals - that will let you explore residuals for a wide range of models. More on this below!↩︎\nincluding those predictors inside your model, and possible predictors not included in your model. More on this to come!↩︎\nincluding those predictors inside your model, and possible predictors not included in your model. More on this to come!↩︎\nthis can be adjusted if needed↩︎"
   },
   {
     "objectID": "handbookDCIntro.html",
