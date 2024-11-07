@@ -243,6 +243,50 @@ toRep <-round(as.numeric(substr(result[[2]][[1]]$label,7,11)),2)
 
 ```
 
+Note in the figure above that there is a linear pattern in the `Cont1` vs. `Cont2` plot, and that there is a correlation estimate of `r toRep` for this predictor pair.  This indicates predictor collinearity, and that having both `Cont1` and `Cont2` in your model may result in variance inflation.  
+
+You can also see how much of a problem predictor collinearity is causing by by estimating **variance inflation factors (VIFs)** after you fit your starting model.  VIFs look at your model to see how much correlation among predictors is making your coefficient estimates uncertain. 
+
+Note that when you have a categorical predictor that has more than two categories (levels), VIFs need to be calculated in a different way - as generalized VIFs (GVIF)^[the function we will use to calculate this will choose the correct estimate - either VIF or GVIF - depending on your model.]
+
+In general, when a VIF is greater than 3 (or GVIF is greater than $\sqrt 3$), predictor collinearity is influencing your coefficient estimates enough that you may need to take action.  
+
+An example of how to estimate VIFs is given in the next section.  
+
+**What to do if it is a problem:**
+  
+  You can limit the risk of predictor collinearity by carefully planning your experiments to limit predictor correlation as much as possible. If you identify a problem with collinearity, you can:
+  
+  * remove one or more of the offending predictors to remove the problem.  Note that removing a predictor will change your research hypothesis.
+
+* keep the predictor(s) in but be careful when you interpret the effects estimated by your model.
+
+As is the case with all your choices, the important thing is to be transparent about your process and choices.  In a few weeks, we will practice how to communicate the choices and results of your statistical modelling.
+
+To estimate VIFs, you:
+  
+  * fit a temporary model without interactions^[the model can not have interactions when estimating VIFs because an interaction term will *always* be correlated with the main effect predictor terms involved in the interaction.  Ask in class if you have questions about this.]
+
+* estimate the VIFs for the temporary model
+
+* remove a predictor if there is a problem with predictor collinearity
+
+* repeat this process until you are satisfied with your model
+
+* refit a new starting model with the reduced number of predictors.
+
+Here is an example of using VIFs to  investigate covariate collinearity with our example model.  Let us start by fitting a model with no interactions:
+  
+```{r}
+## Fit a model without interactions
+startMod.noInt <- glm(formula = Resp ~ Cat + Cont1 + Cont2 + 1, # hypothesis
+                      data = myDat, # data
+                      family = Gamma(link = "log")) # error distribution assumption
+
+startMod.noInt
+
+```
+
 
 
 
