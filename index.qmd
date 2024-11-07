@@ -6,7 +6,7 @@ title: "Data Skills Portfolio Program"
 
 ## DRAFT WEBSITE ##
 
-<img src="./DSPPLogo.png" align="right" width="150"/>
+<img src="./data_skills_logo_2.png" align="right" width="150"/>
 
 The Data Skills Portfolio (DSP) Program is based at Aarhus University's Department of Biology.
 
