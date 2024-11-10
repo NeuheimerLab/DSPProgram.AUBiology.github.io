@@ -1,24 +1,5 @@
 
 
-Note that there are two VIF values higher than the threshold value (in this case VIFs > 3).  This means that the presence of both `Cont1` and `Cont2` in the model is resulting in variance inflation.  
-
-Let us remove one of the predictors (`Cont2`)^[in your own work, you will choose the predictor to remove based on your study goals and particular situation] and recalculate the VIFs:
-  
-  ```{r}
-
-startMod.noInt.noCont2 <- glm(formula = Resp ~ Cat + Cont1 + 1, # hypothesis
-                              data = myDat, # data
-                              family = Gamma(link = "log")) # error distribution assumption
-
-startMod.noInt.noCont2
-
-## Recalculating the VIFs
-
-vif(startMod.noInt.noCont2) # estimate VIFs
-
-
-```
-
 There are no longer major problems with predictor collinearity, as all VIFs < 3.  Let us refit this as our starting model, and recalculate the residuals (as we will need them soon):
   
   ```{r}
