@@ -962,6 +962,7 @@ summary(bestMod3.b) # from this summary, you can see that the needed intercept i
 
 ```
 
+REMOVED AFTER MASS ERROR
 The result is that we will have a 50% probability of `Resp3.b` being 1 if your `Cont4` is r round(unname(myInvPred)[1],1) ± r as.numeric(round(attr(unname(myInvPred), "SE"),1)) units. 
 
 
@@ -1012,11 +1013,12 @@ ggplot() + # start ggplot
               mapping = aes(x = Cont4, y = Lower),
               size = 0.8, # control thickness of line
               linetype = 2) + # control style of line
+  # MASS ISSUE:
   
-      geom_segment(aes(x=unname(myInvPred)[1], y=0.75, xend=unname(myInvPred)[1], yend=0), linewidth = 1.4, col="orange", arrow = arrow(length=unit(.3, 'cm')))+
-  
-    geom_segment(aes(x=25, y=0.75, xend=unname(myInvPred)[1], yend=0.75), linewidth = 1.4, col="orange")+
-  
+    #   geom_segment(aes(x=unname(myInvPred)[1], y=0.75, xend=unname(myInvPred)[1], yend=0), linewidth = 1.4, col="orange", arrow = arrow(length=unit(.3, 'cm')))+
+    # 
+    # geom_segment(aes(x=25, y=0.75, xend=unname(myInvPred)[1], yend=0.75), linewidth = 1.4, col="orange")+
+    # 
   scale_x_continuous(expand = c(0, 0), limits = c(25, NA))+
   
   # xlim(0, max(myDat3.b$Cont4))+
