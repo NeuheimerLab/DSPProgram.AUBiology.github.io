@@ -4438,8 +4438,8 @@ startMod.noInt <- glm(formula = delMass ~ Lat + WTemp + Sex, # hypothesis
 startMod.noInt
 
 ## Calculate Variance Inflation Factors (VIFs)
-library(car) # load the car package
-vif(startMod.noInt) # estimate VIFs
+#library(car) # load the car package
+#vif(startMod.noInt) # estimate VIFs
 
 ## there are VIF values higher than the threshold value (in this case VIFs > 3).  Let's remove WTemp and recalculate the VIFs:
 
@@ -4451,7 +4451,7 @@ startMod.noInt.noWTemp
 
 ## Recalculating the VIFs
 
-vif(startMod.noInt.noWTemp) # estimate VIFs
+#vif(startMod.noInt.noWTemp) # estimate VIFs
 
 ## there are no longer any problems with covariate collinearity, as all VIFs < 3
 
