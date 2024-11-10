@@ -287,6 +287,13 @@ startMod.noInt
 
 ```
 
+
+```{r include=FALSE}
+
+install.packages("car")
+
+```
+
 And then estimate VIFs:
   
 ```{r}
