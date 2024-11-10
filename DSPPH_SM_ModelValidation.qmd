@@ -289,16 +289,17 @@ startMod.noInt
 
 
 ```{r include=FALSE}
-
-#install.packages("car")
+install.packages("Matrix")
+library(Matrix)
+install.packages("carData")
+library(carData)
+install.packages("car")
 
 ```
 
 And then estimate VIFs:
   
 ```{r}
-
-install.packages("car")
 
 library(car) # load the car package
 
