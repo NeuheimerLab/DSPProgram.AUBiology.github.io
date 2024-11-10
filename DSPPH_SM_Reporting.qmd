@@ -83,6 +83,8 @@ Finally, note that I am not going through all the steps that got us to these exa
 ```{r include=FALSE}
 
 install.packages("dplyr")
+install.packages("MuMIn")
+
 
 ```
 
