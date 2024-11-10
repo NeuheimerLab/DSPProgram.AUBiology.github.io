@@ -959,6 +959,8 @@ summary(bestMod3.b) # from this summary, you can see that the needed intercept i
 
 #myInvPred
 
+myInvPred <- 0 # ERROR DUE TO MISSING MASS
+
 ```
 
 The result is that we will have a 50% probability of `Resp3.b` being 1 if your `Cont4` is `r round(unname(myInvPred)[1],1)` ± `r as.numeric(round(attr(unname(myInvPred), "SE"),1))` units.
