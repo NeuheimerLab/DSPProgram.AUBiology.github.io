@@ -290,6 +290,8 @@ startMod.noInt
 
 ```{r include=FALSE}
 
+install.packages("matrix")
+library(matrix)
 install.packages("car")
 
 ```
