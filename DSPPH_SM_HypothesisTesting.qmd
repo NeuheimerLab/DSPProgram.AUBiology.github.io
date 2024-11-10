@@ -259,6 +259,12 @@ You can fit and rank your models quickly using a function called `dredge()` in t
 
 Let's explore this now.
 
+```{r include=FALSE}
+
+install.packages("MuMIn")
+
+```
+
 
 ```{r}
 
