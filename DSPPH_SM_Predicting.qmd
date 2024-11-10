@@ -953,11 +953,11 @@ summary(bestMod3.b) # from this summary, you can see that the needed intercept i
 
 #library(MASS) # load MASS package
 
-myInvPred <- dose.p(obj = bestMod3.b, # your model
+#myInvPred <- dose.p(obj = bestMod3.b, # your model
                     cf = c(1,2), # the position in your coefficient list of the appropriate intercept and slope
                     p = 0.75) # the probability of Resp = 1 for your prediction
 
-myInvPred
+#myInvPred
 
 ```
 
