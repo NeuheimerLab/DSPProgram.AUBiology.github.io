@@ -290,7 +290,7 @@ startMod.noInt
 
 ```{r include=FALSE}
 
-#install.packages("car")
+install.packages("car")
 
 ```
 
