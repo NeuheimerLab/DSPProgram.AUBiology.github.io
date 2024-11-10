@@ -1,0 +1,1050 @@
+---
+title: "Statistical Modelling: Predicting"
+---
+
+
+```{r} 
+#| echo: false
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
+
+
+```{r}
+#| echo: false
+library(png)
+library(grid)
+library(formatR)
+library(dplyr)
+```
+
+::: {.callout-tip collapse="false"} 
+## In this chapter you will learn:
+
+- how to use your statistical model to make a prediction
+
+:::
+
+# Predicting
+Now that you have your best-specified model, you may want to use it to make a response prediction^[I realize that the term "prediction" and "predictor" can be confusing.  Remember that another word for your model predictor is "covariate".], e.g. "what would I expect the value of my response to be at a different value of my predictor?" 
+
+::: {.alert .alert-warning}
+
+The predicting process outlined here is similar regardless of your model structure (e.g. error distribution assumption).  You can use the same process for models of any structure.
+
+:::
+
+## The process
+
+Here we will go through the steps involved in using your model to make a prediction about your response, including (most importantly):
+
+### Step Zero: consider your prediction limits {.unnumbered}
+
+Before using your model to make a prediction, ask yourself: is it even logical to make this prediction?
+
+Things you should consider:
+
+* **do I have a continuous predictor in my best-specified model?**
+
+If you have only categorical predictors in your model, you can not use your model to make a prediction outside the categories already in your model.
+
+Let's bring in our Example 1 from the last chapter on Reporting to illustrate the prediction limits of models with only categorical predictors:
+
+`Resp1 ~ Cat1`
+
+```{r include=FALSE}
+
+install.packages("dplyr")
+install.packages("DHARMa")
+install.packages("MuMIn")
+install.packages("MASS")
+
+```
+
+
+```{r echo = FALSE}
+
+library(dplyr)
+
+# Example 1: Resp1 ~ Cat1
+ n=100
+ ss<-sample(c(1:1000), 1)
+ set.seed(679) #582
+Cat1<-as.factor(sample(c("G", "K", "R"), size=n, replace=TRUE))
+
+Group <- as.factor(sample(c("Site1", "Site2", "Site3", "Site4", "Site5", "Site6"),
+                           n, replace=TRUE))
+uResp<-(as.numeric(Cat1)*4.4+3.9*as.numeric(Group))#+sample(c(200:900), n, replace = TRUE)
+Resp<-rnorm(n, uResp, 4.5)
+Group <- recode(Group,
+                    Site1 = 'Site3',
+                    Site2 = 'Site1',
+                    Site3 = 'Site5',
+                   Site4 = 'Site4',
+                   Site5 = 'Site2',
+                   Site6 = 'Site6')
+Group <- factor(Group, levels = c("Site1","Site2","Site3","Site4","Site5","Site6"))
+Cat1 <- recode(Cat1,
+                    K = 'Sp1',
+                    R = 'Sp2',
+                    G = 'Sp3')
+Cat1<-factor(Cat1, levels = c("Sp1", "Sp2", "Sp3"))
+myDat1<-data.frame(Cat1=Cat1, Resp1=round(Resp,1))
+# #write.csv(myDat, "DatEx1.csv", row.names = FALSE)
+# 
+# library(ggplot2)
+# ggplot()+
+#   geom_point(data=myDat,
+#              mapping=aes(x=Cat1, y=Resp1))
+#
+startMod<-glm(formula = Resp1 ~ Cat1 + 1, # hypothesis
+              data = myDat1, # data
+              family = gaussian(link="identity")) # error distribution assumption
+# 
+# 
+# 
+library(DHARMa)
+# simulationOutput <- simulateResiduals(fittedModel = startMod, n = 250) # simulate data from our model n times
+# #
+# plot(simulationOutput, asFactor=TRUE) # compare simulated data to our observations
+# #
+# plot(simulationOutput,
+#      form=myDat1$Cat1,
+#      asFactor=TRUE) # compare simulated data to our observations
+# # #
+# myDat$Resid<-simulationOutput$scaledResiduals
+# # # # 
+# 
+# # #
+# ggplot()+
+#   geom_violin(data=myDat,
+#              mapping = aes(x=Group, y=Resid))
+# 
+# #
+# #
+library(MuMIn)
+options(na.action = "na.fail") # needed for dredge() function to prevent illegal model comparisons
+dredgeOut<-dredge(startMod) # fit and compare a model set representing all possible predictor combinations
+#
+bestMod<-(eval(attr(dredgeOut, "model.calls")$`2`)) # extract model #8 from dredge table
+#
+# #
+# library(emmeans)
+# forComp <- emmeans(bestMod, specs =  ~ Cat1, type = "response")
+# forComp
+# plot(forComp)
+# plot(forComp, comparisons = TRUE)
+# plot(pairs(emmeans(bestMod, "Cat1"),
+#               adjust="scheffe"))
+
+dredgeOut1<-dredgeOut
+bestMod1<-bestMod
+
+# Set up your predictors for the visualized fit
+forCat1<-unique(myDat1$Cat1) # every value of your categorical predictor
+
+# create a data frame with your predictors
+forVis<-expand.grid(Cat1=forCat1) # expand.grid() function makes sure you have all combinations of predictors
+
+
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod1, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+
+
+library(ggplot2)
+
+ggplot() + # start ggplot
+  geom_point(data = myDat1, # add observations to your plot
+             mapping = aes(x = Cat1, y = Resp1), 
+             position=position_jitter(width=0.1)) + # control position of data points so they are easier to see on the plot
+  geom_errorbar(data = forVis, # add the uncertainty to your plot
+              mapping = aes(x = Cat1, y = Fit, ymin = Lower, ymax = Upper),
+              linewidth=1.2) + # control thickness of errorbar line
+  geom_point(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cat1, y = Fit), 
+             shape = 22, # shape of point
+             size = 3, # size of point
+             fill = "white", # fill colour for plot
+             col = 'black') + # outline colour for plot
+  ylab("Resp1, (units)")+ # change y-axis label
+  xlab("Cat1, (units)")+ # change x-axis label
+  theme_bw() # change ggplot theme
+
+```
+Here you can see the modelled `Resp1` when `Cat1` is Sp1, Sp2 or Sp3.  You are not able to make a prediction for `Cat1 = Sp4` or `Cat1 = Sp63`.  This is limits of prediction limit when you have a categorical predictor.  You are able to report the variability in `Resp1` that is explained by `Cat1` - this can give you an idea for how much `Resp1` might vary if you study a new species.
+
+
+
+* **Can I assume that my model assumptions will hold under my prediction conditions?**
+
+By using your model to make a prediction, you are assuming that the same processes that govern the relationship(s) between your predictor(s) and response will hold at the new value of your predictor. 
+For example, you might have used a linear shape assumption that was appropriate for modelling how growth varies due to temperature for your data, but now you want to estimate growth at an even higher temperature than you tested.  Is this appropriate?  Would it be possible that temperature has exceeded a tolerance limit and that growth starts to respond non-linearly with temperature? 
+
+
+<img src="./predLimitsTPC.png" width="700px"/>
+
+
+
+As you can see, you need to consider prediction limits particularly when you are making a prediction using a value of your predictor *outside* the range in your predictor used to fit your model.
+
+You also need to consider prediction limits when you are wanting to predict your response at a future time or different location.
+
+In all cases: Think about the mechanisms underlying your hypothesis to consider if they are likely to be the same under your prediction conditions.  This will help you decide if making a prediction is appropriate.
+
+### Step One: Define the predictor values for your response prediction {.unnumbered}
+
+The first step in using your model to make a response prediction is to define the values of your predictor(s) at which you want to make the response prediction.  Note that you need to define a value for each of the predictors in your model, the defined values need to be in a data frame, and the columns should be given the same names as your predictors.  
+
+### Step Two: Make your response prediction {.unnumbered}
+
+You can use the `predict()`^[note that when you hand a GLM object to `predict()`, R actually uses a function called `predict.glm()`.  This does not affect what you need to do; it is just good to know in case you need help with the function] function to predict the value of your response.
+
+## Examples 
+
+Note that Example 1 (`Resp1 ~ Cat1`) and Example 2 (`Resp2 ~ Cat2 + Cat3 + Cat2:Cat3 + 1`) from the previous chapter on Reporting only contained categorical predictors, so we will not explore them further here.
+
+Examples 3 (`Resp3 ~ Cont4 + 1`) and 4 (`Resp4 ~ Cat5 + Cont6 + Cat5:Cont6 + 1`) each contain a continuous predictor, so we will use those here as an example of how to use your models to make a prediction of your response.
+
+### Example 3: Resp3 ~ Cont4 + 1 {.unnumbered}
+
+Here's a reminder of Example 3 (`Resp3 ~ Cont4 + 1`): 
+
+```{r echo = FALSE}
+
+#rm(list=ls())
+n=100
+ss<-sample(c(1:1000), 1)
+set.seed(261) #261
+Cont4<-round(runif(n, 0.3, 20.9),2)
+uResp<-245*Cont4+ 10
+Resp<-rnorm(n, uResp, 850)
+myDat3<-data.frame(Resp3=Resp, Cont4=Cont4)
+
+# # #write.csv(myDat3, "DatEx3.csv", row.names = FALSE)
+
+
+# ggplot()+
+#   geom_point(data=myDat3,
+#              mapping=aes(x=Cont4, y=Resp3))
+
+startMod<-glm(formula = Resp3 ~ Cont4 + 1, # hypothesis
+              data = myDat3, # data
+              family = gaussian(link="identity")) # error distribution assumption
+
+
+# # 
+# library(DHARMa)
+# simulationOutput <- simulateResiduals(fittedModel = startMod, n = 250) # simulate data from our model n times
+# #
+# plot(simulationOutput, asFactor=TRUE) # compare simulated data to our observations
+# #
+# plot(simulationOutput,
+#      form=myDat3$Cont4,
+#      asFactor=FALSE) # compare simulated data to our observations
+# 
+# #
+# #
+# #
+library(MuMIn)
+options(na.action = "na.fail") # needed for dredge() function to prevent illegal model comparisons
+dredgeOut<-dredge(startMod) # fit and compare a model set representing all possible predictor combinations
+#dredgeOut
+#
+bestMod<-(eval(attr(dredgeOut, "model.calls")$`2`)) # extract model #8 from dredge table
+#
+# #
+# library(emmeans)
+# forComp <- emmeans(bestMod, specs =  ~ Cat1, type = "response")
+# forComp
+# plot(forComp)
+# plot(forComp, comparisons = TRUE)
+# plot(pairs(emmeans(bestMod, "Cat1"),
+#               adjust="scheffe"))
+
+dredgeOut3<-dredgeOut
+bestMod3<-bestMod
+
+#### i) choosing the values of your predictors at which to make a prediction
+
+
+# Set up your predictors for the visualized fit
+forCont4<-seq(from = min(myDat3$Cont4), to = max(myDat3$Cont4), by = 1)# a sequence of numbers in your continuous predictor range
+  
+# create a data frame with your predictors
+forVis<-expand.grid(Cont4 = forCont4) # expand.grid() function makes sure you have all combinations of predictors.  
+
+#### ii) using `predict()` to use your model to estimate your response variable at those values of your predictor
+
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod3, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+#### iii) use the model estimates to plot your model fit
+
+
+library(ggplot2) # load ggplot2 library
+
+ggplot() + # start ggplot
+  
+  geom_point(data = myDat3, # add observations to your plot
+             mapping = aes(x = Cont4, y = Resp3)) + # control position of data points so they are easier to see on the plot
+  
+  geom_line(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cont4, y = Fit),
+              size = 1.2) + # control thickness of line
+  
+    geom_line(data = forVis, # add uncertainty to your plot (upper line)
+              mapping = aes(x = Cont4, y = Upper),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_line(data = forVis, # add uncertainty to your plot (lower line)
+              mapping = aes(x = Cont4, y = Lower),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+  ylab("Resp3, (units)") + # change y-axis label
+  
+  xlab("Cont4, (units)") + # change x-axis label
+  
+  theme_bw() # change ggplot theme
+
+
+
+```
+
+
+
+#### What is the predicted response of `Resp3` when `Cont4 = 30`?
+
+
+```{r}
+
+## Step One: Define the predictor values for your response prediction
+forPred <- data.frame(Cont4 = 30) # the values of my predictor at which I want a response prediction
+
+## Step Two: Make your response prediction
+myPred <- predict(object = bestMod3, # your model
+                  newdata = forPred, # the values of the predictors at which to make the prediction
+                  type = "response", # to make the prediction on the response scale. IMPORTANT if you have a non-normal error distributions assumption
+                  se.fit = TRUE) # to include a measure of uncertainty around the prediction
+
+### This can be added to our forPred data frame as:
+forPred$fit <- myPred$fit
+forPred$se <- myPred$se.fit
+
+forPred
+     
+```
+Note that you get the response prediction in `myPred$fit` = `r round(myPred$fit)` and an estimate of uncertainty around this prediction as standard error in `myPred$se.fit` = `r round(myPred$se.fit)` (the last value `myPred$residual.scale` gives information on how the standard errors were estimated.  See the help file for more.)
+
+So the value of `Resp3` when `Cont4 = 30 units` is `r round(myPred$fit)` ± `r round(myPred$se.fit)` units.
+
+You can add this to your plot with:
+
+```{r}
+
+# Set up your predictors for the visualized fit
+forCont4<-seq(from = min(myDat3$Cont4), to = max(myDat3$Cont4), by = 1)# a sequence of numbers in your continuous predictor range
+  
+# create a data frame with your predictors
+forVis<-expand.grid(Cont4 = forCont4) # expand.grid() function makes sure you have all combinations of predictors.  
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod3, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+library(ggplot2) # load ggplot2 library
+
+ggplot() + # start ggplot
+  
+  geom_point(data = myDat3, # add observations to your plot
+             mapping = aes(x = Cont4, y = Resp3)) + # control position of data points so they are easier to see on the plot
+  
+  geom_line(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cont4, y = Fit),
+              size = 1.2) + # control thickness of line
+  
+    geom_line(data = forVis, # add uncertainty to your plot (upper line)
+              mapping = aes(x = Cont4, y = Upper),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_line(data = forVis, # add uncertainty to your plot (lower line)
+              mapping = aes(x = Cont4, y = Lower),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+  ### NEW!  Adding your response prediction to the plot:
+  geom_point(data = forPred, # prediction data frame
+             mapping = aes(x = Cont4, y = fit), # coordinates of prediction
+             col = "red", # change point colour
+             size = 3) + # change point size
+  
+  ### NEW!  Adding errorbars for your response prediction to the plot:
+  geom_errorbar(data = forPred, # prediction data frame
+             mapping = aes(x = Cont4, ymax = fit+se, ymin = fit-se), # coordinates of prediction
+             width = 1, # the width of the error bars
+             col = "red") + # change point colour
+  
+  
+  ylab("Resp3, (units)") + # change y-axis label
+  
+  xlab("Cont4, (units)") + # change x-axis label
+  
+  theme_bw() # change ggplot theme
+
+
+
+```
+
+
+#### What are the predicted responses of `Resp3` when `Cont4 = 9` and `Cont4 = 22`?
+
+```{r}
+
+## Step One: Define the predictor values for your response prediction
+forPred <- data.frame(Cont4 = c(9,22)) # the values of my predictor at which I want a response prediction
+
+## Step Two: Make your response prediction
+myPred <- predict(object = bestMod3, # your model
+                  newdata = forPred, # the values of the predictors at which to make the prediction
+                  type = "response", # to make the prediction on the response scale. IMPORTANT if you have a non-normal error distributions assumption
+                  se.fit = TRUE) # to include a measure of uncertainty around the prediction
+
+### This can be added to our forPred data frame as:
+forPred$fit <- myPred$fit
+forPred$se <- myPred$se.fit
+
+forPred
+     
+```
+Note that you now get two predictions, one for `Cont4 = 9` and one for `Cont4 = 22`:
+
+* The value of `Resp3` when `Cont4 = 9 units` is `r round(myPred$fit[1])` ± `r round(myPred$se.fit[1])` units.
+
+* The value of `Resp3` when `Cont4 = 22 units` is `r round(myPred$fit[2])` ± `r round(myPred$se.fit[2])` units.
+
+
+You can add this to your plot with:
+
+```{r}
+
+# Set up your predictors for the visualized fit
+forCont4<-seq(from = min(myDat3$Cont4), to = max(myDat3$Cont4), by = 1)# a sequence of numbers in your continuous predictor range
+  
+# create a data frame with your predictors
+forVis<-expand.grid(Cont4 = forCont4) # expand.grid() function makes sure you have all combinations of predictors.  
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod3, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+library(ggplot2) # load ggplot2 library
+
+ggplot() + # start ggplot
+  
+  geom_point(data = myDat3, # add observations to your plot
+             mapping = aes(x = Cont4, y = Resp3)) + # control position of data points so they are easier to see on the plot
+  
+  geom_line(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cont4, y = Fit),
+              size = 1.2) + # control thickness of line
+  
+    geom_line(data = forVis, # add uncertainty to your plot (upper line)
+              mapping = aes(x = Cont4, y = Upper),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_line(data = forVis, # add uncertainty to your plot (lower line)
+              mapping = aes(x = Cont4, y = Lower),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+  ### NEW!  Adding your response prediction to the plot:
+  geom_point(data = forPred, # prediction data frame
+             mapping = aes(x = Cont4, y = fit), # coordinates of prediction
+             col = "orange", # change point colour
+             size = 3) + # change point size
+  
+  ### NEW!  Adding errorbars for your response prediction to the plot:
+  geom_errorbar(data = forPred, # prediction data frame
+             mapping = aes(x = Cont4, ymax = fit+se, ymin = fit-se), # coordinates of prediction
+             width = 1, # the width of the error bars
+             col = "orange") + # change point colour
+  
+  ylab("Resp3, (units)") + # change y-axis label
+  
+  xlab("Cont4, (units)") + # change x-axis label
+  
+  theme_bw() # change ggplot theme
+
+
+
+```
+
+### Example 4: Resp4 ~ Cat5 + Cont6 + Cat5:Cont6 + 1 {.unnumbered}
+
+
+Here's a reminder of Example 4 (`Resp4 ~ Cat5 + Cont6 + Cat5:Cont6 + 1`): 
+
+```{r echo = FALSE}
+
+#rm(list=ls())
+n=100
+ss<-sample(c(1:1000), 1)
+set.seed(444) #444
+Cat5<-as.factor(sample(c("Wild", "Farm", "Urban"), size=n, replace=TRUE))
+Cont6<-round(runif(n, 300, 700),2)
+uResp<-(as.numeric(Cat5)*0.014-0.02*Cont6+ as.numeric(Cat5)*0.014*Cont6)+100
+Resp<-rnorm(n, uResp, 2.5)
+myDat4<-data.frame(Resp4=Resp, Cat5=Cat5, Cont6=Cont6)
+
+# # #write.csv(myDat3, "DatEx3.csv", row.names = FALSE)
+
+
+# ggplot()+
+#   geom_point(data=myDat3,
+#              mapping=aes(x=Cont5, y=Resp3, col=Cat4))
+
+startMod<-glm(formula = Resp4 ~ Cat5 + Cont6 + Cat5:Cont6 + 1, # hypothesis
+              data = myDat4, # data
+              family = gaussian(link="identity")) # error distribution assumption
+
+
+# 
+# library(DHARMa)
+# simulationOutput <- simulateResiduals(fittedModel = startMod, n = 250) # simulate data from our model n times
+# #
+# plot(simulationOutput, asFactor=TRUE) # compare simulated data to our observations
+# #
+# plot(simulationOutput,
+#      form=myDat3$Cat4,
+#      asFactor=TRUE) # compare simulated data to our observations
+# 
+# plot(simulationOutput,
+#      form=myDat3$Cont5,
+#      asFactor=FALSE) # compare simulated data to our observations
+
+#
+#
+# #
+library(MuMIn)
+options(na.action = "na.fail") # needed for dredge() function to prevent illegal model comparisons
+dredgeOut<-dredge(startMod, extra = "R^2") # fit and compare a model set representing all possible predictor combinations
+#dredgeOut
+#
+bestMod<-(eval(attr(dredgeOut, "model.calls")$`8`)) # extract model #8 from dredge table
+#
+# #
+# library(emmeans)
+# forComp <- emmeans(bestMod, specs =  ~ Cat1, type = "response")
+# forComp
+# plot(forComp)
+# plot(forComp, comparisons = TRUE)
+# plot(pairs(emmeans(bestMod, "Cat1"),
+#               adjust="scheffe"))
+
+dredgeOut4<-dredgeOut
+bestMod4<-bestMod
+
+#### i) choosing the values of your predictors at which to make a prediction
+
+
+# Set up your predictors for the visualized fit
+forCat5<-unique(myDat4$Cat5) # all levels of your categorical predictor
+forCont6<-seq(from = min(myDat4$Cont6), to = max(myDat4$Cont6), by = 1)# a sequence of numbers in your continuous predictor range
+  
+# create a data frame with your predictors
+forVis<-expand.grid(Cat5 = Cat5, Cont6 = forCont6) # expand.grid() function makes sure you have all combinations of predictors.  
+
+#### ii) using `predict()` to use your model to estimate your response variable at those values of your predictor
+
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod4, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+#### iii) use the model estimates to plot your model fit
+
+
+library(ggplot2) # load ggplot2 library
+
+ggplot() + # start ggplot
+  
+  geom_point(data = myDat4, # add observations to your plot
+             mapping = aes(x = Cont6, y = Resp4, col = Cat5)) + # control position of data points so they are easier to see on the plot
+  
+  geom_line(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cont6, y = Fit, col = Cat5),
+              size = 1.2) + # control thickness of line
+  
+    geom_line(data = forVis, # add uncertainty to your plot (upper line)
+              mapping = aes(x = Cont6, y = Upper, col = Cat5),
+              size = 0.4, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_line(data = forVis, # add uncertainty to your plot (lower line)
+              mapping = aes(x = Cont6, y = Lower, col = Cat5),
+              size = 0.4, # control thickness of line
+              linetype = 2) + # control style of line
+  
+  ylab("Resp4, (units)") + # change y-axis label
+  
+  xlab("Cont6, (units)") + # change x-axis label
+  
+  labs(fill="Cat5, (units)", col="Cat5, (units)") + # change legend title
+  
+  theme_bw() # change ggplot theme
+
+
+
+```
+
+
+#### Example: What is the predicted response of `Resp4` when `Cont6 = 800` for `Cat5 = Urban`?
+
+
+```{r}
+
+## Step One: Define the predictor values for your response prediction
+forPred <- data.frame(Cont6 = 800,
+                      Cat5 = "Urban") # the values of my predictor at which I want a response prediction
+
+## Step Two: Make your response prediction
+myPred <- predict(object = bestMod4, # your model
+                  newdata = forPred, # the values of the predictors at which to make the prediction
+                  type = "response", # to make the prediction on the response scale. IMPORTANT if you have a non-normal error distributions assumption
+                  se.fit = TRUE) # to include a measure of uncertainty around the prediction
+
+### This can be added to our forPred data frame as:
+forPred$fit <- myPred$fit
+forPred$se <- myPred$se.fit
+
+forPred
+     
+```
+
+So the value of `Resp4` when `Cont6 = 800` units for `Cat5 = Urban` is `r round(myPred$fit,1)` ± `r round(myPred$se.fit,1)` units.
+
+You can add this to your plot with:
+
+```{r}
+
+#### i) choosing the values of your predictors at which to make a prediction
+# Set up your predictors for the visualized fit
+forCat5<-unique(myDat4$Cat5) # all levels of your categorical predictor
+forCont6<-seq(from = min(myDat4$Cont6), to = max(myDat4$Cont6), by = 1)# a sequence of numbers in your continuous predictor range
+  
+# create a data frame with your predictors
+forVis<-expand.grid(Cat5 = Cat5, Cont6 = forCont6) # expand.grid() function makes sure you have all combinations of predictors.  
+
+#### ii) using `predict()` to use your model to estimate your response variable at those values of your predictor
+
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod4, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+#### iii) use the model estimates to plot your model fit
+
+
+library(ggplot2) # load ggplot2 library
+
+ggplot() + # start ggplot
+  
+  geom_point(data = myDat4, # add observations to your plot
+             mapping = aes(x = Cont6, y = Resp4, col = Cat5)) + # control position of data points so they are easier to see on the plot
+  
+  geom_line(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cont6, y = Fit, col = Cat5),
+              size = 1.2) + # control thickness of line
+  
+    geom_line(data = forVis, # add uncertainty to your plot (upper line)
+              mapping = aes(x = Cont6, y = Upper, col = Cat5),
+              size = 0.4, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_line(data = forVis, # add uncertainty to your plot (lower line)
+              mapping = aes(x = Cont6, y = Lower, col = Cat5),
+              size = 0.4, # control thickness of line
+              linetype = 2) + # control style of line
+  
+  
+    ### NEW!  Adding your response prediction to the plot:
+  geom_point(data = forPred, # prediction data frame
+             mapping = aes(x = Cont6, y = fit, col = Cat5), # coordinates of prediction
+             #col = "black", # change point colour
+             size = 3) + # change point size
+  
+  ### NEW!  Adding errorbars for your response prediction to the plot:
+  geom_errorbar(data = forPred, # prediction data frame
+             mapping = aes(x = Cont6, ymax = fit+se, ymin = fit-se,  col = Cat5), # coordinates of prediction
+             width = 20, # the width of the error bars
+             #col = "black"
+             ) + # change point colour
+  
+  ylab("Resp4, (units)") + # change y-axis label
+  
+  xlab("Cont6, (units)") + # change x-axis label
+  
+  labs(fill="Cat5, (units)", col="Cat5, (units)") + # change legend title
+  
+  theme_bw() # change ggplot theme
+
+
+
+
+
+```
+
+#### Example: What is the predicted response of `Resp4` when `Cont6 = 800` for both `Cat5 = Urban` and `Cat5 = Wild`?
+
+Note the extra step with `expand.grid()` that allows you to quickly set up your predictor values for the prediction.
+
+```{r}
+
+## Step One: Define the predictor values for your response prediction
+forCat5 <- c("Urban", "Wild") # values of Cat5 for predictions
+forCont6 <- 800 # value of Cont6 for prediction
+
+forPred <- expand.grid(Cat5 = forCat5, Cont6 = forCont6) # expand.grid() function makes sure you have all combinations of predictors.
+
+## Step Two: Make your response prediction
+myPred <- predict(object = bestMod4, # your model
+                  newdata = forPred, # the values of the predictors at which to make the prediction
+                  type = "response", # to make the prediction on the response scale. IMPORTANT if you have a non-normal error distributions assumption
+                  se.fit = TRUE) # to include a measure of uncertainty around the prediction
+
+### This can be added to our forPred data frame as:
+forPred$fit <- myPred$fit
+forPred$se <- myPred$se.fit
+
+forPred
+     
+```
+
+So
+
+* the value of `Resp4` when `Cont6 = 800` units is  both `Cat5 = Urban` is `r round(myPred$fit,1)` ± `r round(myPred$se.fit,1)` units.
+
+* the value of `Resp4` when `Cont6 = 800` units is  both `Cat5 = Wild` is `r round(myPred$fit,2)` ± `r round(myPred$se.fit,2)` units.
+
+
+You can add this to your plot with:
+
+```{r}
+
+#### i) choosing the values of your predictors at which to make a prediction
+# Set up your predictors for the visualized fit
+forCat5<-unique(myDat4$Cat5) # all levels of your categorical predictor
+forCont6<-seq(from = min(myDat4$Cont6), to = max(myDat4$Cont6), by = 1)# a sequence of numbers in your continuous predictor range
+  
+# create a data frame with your predictors
+forVis<-expand.grid(Cat5 = forCat5, Cont6 = forCont6) # expand.grid() function makes sure you have all combinations of predictors.  
+
+#### ii) using `predict()` to use your model to estimate your response variable at those values of your predictor
+
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod4, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+#### iii) use the model estimates to plot your model fit
+
+
+library(ggplot2) # load ggplot2 library
+
+ggplot() + # start ggplot
+  
+  geom_point(data = myDat4, # add observations to your plot
+             mapping = aes(x = Cont6, y = Resp4, col = Cat5)) + # control position of data points so they are easier to see on the plot
+  
+  geom_line(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cont6, y = Fit, col = Cat5),
+              size = 1.2) + # control thickness of line
+  
+    geom_line(data = forVis, # add uncertainty to your plot (upper line)
+              mapping = aes(x = Cont6, y = Upper, col = Cat5),
+              size = 0.4, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_line(data = forVis, # add uncertainty to your plot (lower line)
+              mapping = aes(x = Cont6, y = Lower, col = Cat5),
+              size = 0.4, # control thickness of line
+              linetype = 2) + # control style of line
+  
+  
+    ### NEW!  Adding your response prediction to the plot:
+  geom_point(data = forPred, # prediction data frame
+             mapping = aes(x = Cont6, y = fit, col = Cat5), # coordinates of prediction
+             #col = "black", # change point colour
+             size = 3) + # change point size
+  
+  ### NEW!  Adding errorbars for your response prediction to the plot:
+  geom_errorbar(data = forPred, # prediction data frame
+             mapping = aes(x = Cont6, ymax = fit+se, ymin = fit-se,  col = Cat5), # coordinates of prediction
+             width = 20, # the width of the error bars
+             #col = "black"
+             ) + # change point colour
+  
+  ylab("Resp4, (units)") + # change y-axis label
+  
+  xlab("Cont6, (units)") + # change x-axis label
+  
+  labs(fill="Cat5, (units)", col="Cat5, (units)") + # change legend title
+  
+  theme_bw() # change ggplot theme
+
+
+
+
+
+```
+## Inverse predicting for models with a binomial error distribution assumption
+
+While the process (and code) above is *identical* regardless of your error distribution assumption, there is a second type of predicting one often uses when one has a model with a binomial error distribution assumption^[recall that this is also called "logistic regression"].  
+
+Here, you are "inverse predicting" to predict the value of your *predictor* that will lead to a certain probability of your response being 1.
+
+For example, you might want to know the amount of a toxin (your predictor) that leads to a 25% probability of dying^[sometimes called $LD_{25}$ where LD is lethal dose], or the age (your predictor) at which a fish has a 50% probability of being mature^[sometimes called the $A_{50}$].
+
+
+```{r echo = FALSE}
+
+n = 300 # sample size
+
+## Prep data
+### random number generator tracking
+ss<-sample(c(1:1000), 1) # for setting random number generating
+set.seed(100) # for setting random number generating, 308
+
+### Prep predictor(s)
+Cont1 <- runif(n, min = 30, max = 120)
+
+forNoise <-1  # change to vary noise (actually controls effect, not noise)
+forSlope2 <- runif(1, min = 0.1, max = 0.14) # effect size as change categorical levels (or slope)
+forInt <- runif(1, min = 0.001, max = 0.004) # intercept
+xbeta <- ((Cont1*forSlope2) + forInt)^(1/forNoise)
+xbeta <-xbeta - mean(xbeta)
+pr <- 1/(1+exp(-xbeta)) # or plogis(xbeta)?
+#### response data
+Resp<- rbinom(length(pr), 1, pr)
+
+
+## make data frame
+myDat3.b<-data.frame(Cont4 = Cont1, Resp3.b=Resp)
+
+
+## get best-specified model - normal:
+startMod3.b<-glm(formula = Resp3.b ~ Cont4 + 1, # hypothesis
+               data = myDat3.b, # data
+               family = binomial(link="logit")) # error distribution assumption
+
+simulationOutput <- simulateResiduals(fittedModel = startMod, n = 250) # simulate data from our model n times
+# 
+# plotQQunif(simulationOutput, # the object made when estimating the scaled residuals.  See section 2.1 above
+#            testUniformity = TRUE, # testing the distribution of the residuals 
+#            testOutliers = TRUE, # testing the presence of outliers
+#            testDispersion = TRUE) # testing the dispersion of the distribution
+# 
+# plotResiduals(simulationOutput, # the object made when estimating the scaled residuals.  See section 2.1 above
+#               form = NULL) # the variable against which to plot the residuals.  When form = NULL, we see the residuals vs. fitted values
+#               
+#            
+# plotResiduals(simulationOutput, # the object made when estimating the scaled residuals.  See section 2.1 above
+#               form = myDat3.b$Cont1) # the variable against which to plot the residuals.  When form = NULL, we see the residuals vs. fitted values
+#                  
+
+options(na.action = "na.fail") # needed for dredge() function to prevent illegal model comparisons
+
+dredgeOut<-dredge(startMod3.b, extra = "R^2") # fit and compare a model set representing all possible predictor combinations
+
+bestMod<-(eval(attr(dredgeOut, "model.calls")$`2`))
+
+
+
+
+dredgeOut3.b<-dredgeOut
+bestMod3.b<-bestMod
+
+```
+
+
+One method to do this would be to predict your response at values of your predictor in high enought resolution so that you can pick out the appropriate predictor value.  Here is an example where you want to know the value of `Cont4` that will give a 75% probability of `Resp3.b` being 1, given your bestmod3.b of `Resp3.b ~ Cont4 + 1`:
+
+```{r}
+
+forCont4<-seq(from = min(myDat3.b$Cont4), to = max(myDat3.b$Cont4), by = 0.01)# a sequence of numbers in your continuous predictor range, notice that you are using a very high resolution series of your predictor here.
+
+forPred <- expand.grid(Cont4 = forCont4) # expand.grid() function makes sure you have all combinations of predictors.
+
+
+## Step Two: Make your response prediction
+myPred <- predict(object = bestMod3.b, # your model
+                  newdata = forPred, # the values of the predictors at which to make the prediction
+                  type = "response", # to make the prediction on the response scale. IMPORTANT if you have a non-normal error distributions assumption
+                  se.fit = TRUE) # to include a measure of uncertainty around the prediction
+
+myPredDF <- data.frame(Cont4 = forCont4,
+                       fit = myPred$fit,
+                       se.fit = myPred$fit)
+
+myPredDF$Diff <- abs(myPred$fit - 0.75)
+
+myInvPred <- myPredDF[which(myPredDF$Diff == min(myPredDF$Diff)),]
+
+myInvPred
+
+```
+The estimate of `Cont4` that leads to a 75% probability of `Resp3.b` being 1 is `r round(myInvPred$fit, 1)` ± `r round(myInvPred$se.fit, 1)`.
+
+As you can see, this is a bit tedious.  Another method of inverse predicting can be made with a function called `dose.p()` in the MASS package.  Again, you might want to know the value of `Cont4` that will give a 75% probability of `Resp3.b` being 1:
+
+```{r}
+
+
+summary(bestMod3.b) # from this summary, you can see that the needed intercept is the first coefficient, and the slope is the second coefficient
+
+library(MASS) # load MASS package
+
+myInvPred <- dose.p(obj = bestMod3.b, # your model
+                    cf = c(1,2), # the position in your coefficient list of the appropriate intercept and slope
+                    p = 0.75) # the probability of Resp = 1 for your prediction
+
+myInvPred
+
+```
+
+The result is that we will have a 50% probability of `Resp3.b` being 1 if your `Cont4` is `r round(unname(myInvPred)[1],1)` ± `r as.numeric(round(attr(unname(myInvPred), "SE"),1))` units.
+
+```{r echo = FALSE}
+
+#### i) choosing the values of your predictors at which to make a prediction
+
+
+# Set up your predictors for the visualized fit
+forCont4<-seq(from = min(myDat3.b$Cont4), to = max(myDat3.b$Cont4), by = 1)# a sequence of numbers in your continuous predictor range
+  
+# create a data frame with your predictors
+forVis<-expand.grid(Cont4 = forCont4) # expand.grid() function makes sure you have all combinations of predictors.  
+
+#### ii) using `predict()` to use your model to estimate your response variable at those values of your predictor
+
+
+# Get your model fit estimates at each value of your predictors
+modFit<-predict(bestMod3.b, # the model
+                newdata = forVis, # the predictor values
+                type = "response", # make the predictions on the response scale
+                se.fit = TRUE) # include uncertainty estimate
+
+forVis$Fit<-modFit$fit # add your fit to the data frame
+forVis$Upper<-modFit$fit+modFit$se.fit # add your uncertainty to the data frame
+forVis$Lower<-modFit$fit-modFit$se.fit # add your uncertainty to the data frame
+
+#### iii) use the model estimates to plot your model fit
+
+
+library(ggplot2) # load ggplot2 library
+
+ggplot() + # start ggplot
+  
+  geom_point(data = myDat3.b, # add observations to your plot
+             mapping = aes(x = Cont4, y = Resp3.b)) + # control position of data points so they are easier to see on the plot
+  
+  geom_line(data = forVis, # add the modelled fit to your plot
+              mapping = aes(x = Cont4, y = Fit),
+              size = 1.2) + # control thickness of line
+  
+    geom_line(data = forVis, # add uncertainty to your plot (upper line)
+              mapping = aes(x = Cont4, y = Upper),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_line(data = forVis, # add uncertainty to your plot (lower line)
+              mapping = aes(x = Cont4, y = Lower),
+              size = 0.8, # control thickness of line
+              linetype = 2) + # control style of line
+  
+      geom_segment(aes(x=unname(myInvPred)[1], y=0.75, xend=unname(myInvPred)[1], yend=0), linewidth = 1.4, col="orange", arrow = arrow(length=unit(.3, 'cm')))+
+  
+    geom_segment(aes(x=25, y=0.75, xend=unname(myInvPred)[1], yend=0.75), linewidth = 1.4, col="orange")+
+  
+  scale_x_continuous(expand = c(0, 0), limits = c(25, NA))+
+  
+  # xlim(0, max(myDat3.b$Cont4))+
+  
+  ylab("probability Resp2.b = 1")+ # change y-axis label
+  
+  xlab("Cont4, (units)") + # change x-axis label
+  
+  theme_bw() # change ggplot theme
+
+
+
+```
+
+The `dose.p()` function is a nice one, but can get complicated when you have multiple predictors in your model.  Tip: pay attention to your coefficients (the `cf=` arguement) if you do want to inverse predict with a model with more than one predictor.
+
+## Up next
+
+You did it!  You made it through all the steps of our Statistical Modelling Framework.  Nice work!
+
+Up next we will practice applying the framework to new examples, and learn how to communicate the whole process in reports and papers.
+
+
+
+ 
+```         
+- Use your model to make predictions (while considering prediction limits)
+```
+
+"all data are wrong, but models can make data useful" Pershing
+
+
+

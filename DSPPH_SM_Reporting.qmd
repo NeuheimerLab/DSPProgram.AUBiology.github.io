@@ -1,18 +1,7 @@
 ---
 title: "Statistical Modelling: Reporting"
-subtitle: "DSP Handbook for PSB2024"
-author: "Anna B. Neuheimer"
-date: "today"
-date-format: "DD-MM-YYYY"
-title-block-banner: true
-format: 
-  html:
-    toc: true
-    self-contained: true
-    toc-depth: 4
-    number-sections: true
-    number-depth: 3
 ---
+
 
 ```{r} 
 #| echo: false
