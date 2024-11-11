@@ -34,7 +34,7 @@ A bit on strategy when learning any programming language (we'll also cover more 
 
 ## The basics
 
-[Here we will go over essential topics when you're first learning a programming language.](DSPPH_DA_RBasics.qmd). Here we cover:
+[TBA_Here we will go over essential topics when you're first learning a programming language.](DSPPH_DA_RBasics.qmd). Here we cover:
 
 * installing R 
 
@@ -53,30 +53,31 @@ A bit on strategy when learning any programming language (we'll also cover more 
 
 Here we will provide examples of how to accomplish common data analysis tasks.
 
-### [... load your data into R](DSPPH_DA_Import.qmd) 
+### [TBA_... load your data into R](DSPPH_DA_Import.qmd) 
 
-### [... validate and explore your data](DSPPH_DA_Validate.qmd)
+### [TBA_... validate and explore your data](DSPPH_DA_Validate.qmd)
 
-### [... visualize your data (make a plot!)](DSPPH_DA_Visualization.qmd)
+### [TBA_... visualize your data (make a plot!)](DSPPH_DA_Visualization.qmd)
 
 ### [... deal with missing values](DSPPH_DA_MissingValues.qmd)
 
-### [... sort your data](DSPPH_DA_Sort.qmd)
+### [TBA_... sort your data](DSPPH_DA_Sort.qmd)
 
-### [... subset your data](DSPPH_DA_Subset.qmd) 
+### [TBA_... subset your data](DSPPH_DA_Subset.qmd) 
 
 ### [... work with dates and times](DSPPH_DA_DatesTimes.qmd)
 
-### [... manipulate rows or columns in your data](DSPPH_DA_ManipulateRowsColumns.qmd) 
+### [TBA_... manipulate rows or columns in your data](DSPPH_DA_ManipulateRowsColumns.qmd) 
 
-### [... manipulate subsets of rows or columns](DSPPH_DA_ManipulateSubsets.qmd) 
+### [TBA_... manipulate subsets of rows or columns](DSPPH_DA_ManipulateSubsets.qmd) 
 
 ### [... merge your data with another data set](DSPPH_DA_Merge.qmd)
 
-### [... control the flow of your program](DSPPH_DA_Control.qmd)
+### [TBA_... control the flow of your program](DSPPH_DA_Control.qmd)
 
-### [...export your data back out of R](DSPPH_DA_Export.qmd)
+### [TBA_...export your data back out of R](DSPPH_DA_Export.qmd)
 
-## [Best practices](DSPPH_DA_BestPractices.qmd)
+## [TBA_Best practices](DSPPH_DA_BestPractices.qmd)
+
 
 
