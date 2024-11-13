@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistical Modelling: Communicating – Data Skills Portfolio Program</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Skills Portfolio Program</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./intro.html"> 
+<span class="menu-text">What is the DSP Program?</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./handbookIntro.html"> 
+<span class="menu-text">The DSP Program Handbook</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./feedback.html"> 
+<span class="menu-text">Feedback</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#communicating-your-hypothesis-testing-results" id="toc-communicating-your-hypothesis-testing-results" class="nav-link active" data-scroll-target="#communicating-your-hypothesis-testing-results">Communicating your hypothesis testing results</a>
+  <ul class="collapse">
+  <li><a href="#a-familiar-example" id="toc-a-familiar-example" class="nav-link" data-scroll-target="#a-familiar-example">A familiar example</a></li>
+  <li><a href="#responses" id="toc-responses" class="nav-link" data-scroll-target="#responses">RESPONSE(S)</a></li>
+  <li><a href="#predictors" id="toc-predictors" class="nav-link" data-scroll-target="#predictors">PREDICTORS</a></li>
+  <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis">HYPOTHESIS</a></li>
+  <li><a href="#starting-model" id="toc-starting-model" class="nav-link" data-scroll-target="#starting-model">STARTING MODEL</a></li>
+  <li><a href="#model-validation" id="toc-model-validation" class="nav-link" data-scroll-target="#model-validation">MODEL VALIDATION</a></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">HYPOTHESIS TESTING</a></li>
+  <li><a href="#reporting" id="toc-reporting" class="nav-link" data-scroll-target="#reporting">REPORTING</a>
+  <ul class="collapse">
+  <li><a href="#reporting-how-well-your-model-explains-your-response" id="toc-reporting-how-well-your-model-explains-your-response" class="nav-link" data-scroll-target="#reporting-how-well-your-model-explains-your-response">Reporting how well your model explains your response</a></li>
+  <li><a href="#visualizing-your-model-effects" id="toc-visualizing-your-model-effects" class="nav-link" data-scroll-target="#visualizing-your-model-effects">Visualizing your model effects</a></li>
+  <li><a href="#quantifying-your-model-effects" id="toc-quantifying-your-model-effects" class="nav-link" data-scroll-target="#quantifying-your-model-effects">Quantifying your model effects</a></li>
+  </ul></li>
+  <li><a href="#predicting" id="toc-predicting" class="nav-link" data-scroll-target="#predicting">PREDICTING</a></li>
+  </ul></li>
+  <li><a href="#commenting-your-code" id="toc-commenting-your-code" class="nav-link" data-scroll-target="#commenting-your-code">COMMENTING YOUR CODE</a>
+  <ul class="collapse">
+  <li><a href="#why-comment" id="toc-why-comment" class="nav-link" data-scroll-target="#why-comment">Why comment</a></li>
+  <li><a href="#how-to-comment" id="toc-how-to-comment" class="nav-link" data-scroll-target="#how-to-comment">How to comment</a></li>
+  </ul></li>
+  <li><a href="#up-next" id="toc-up-next" class="nav-link" data-scroll-target="#up-next">Up Next</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Statistical Modelling: Communicating</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In this chapter you will learn:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>how to communicate motivations, methods and results of your data analysis and hypothesis testing for publication as a biological report/article</li>
+</ul>
+</div>
+</div>
+</div>
+<section id="communicating-your-hypothesis-testing-results" class="level1">
+<h1>Communicating your hypothesis testing results</h1>
+<p>Here we will walk through your statistical modelling framework and discuss how to communicate motivations, methods and results of your data analysis and hypothesis testing for a biological report/article (&amp; the exam!).</p>
+<p>Here again is our statistical modelling framework:</p>
+<p><img src="./StatsModelFrameworkDetails.png" width="400px"></p>
+<section id="a-familiar-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-familiar-example">A familiar example</h2>
+<p><img src="./MooseBerg.png" align="right" width="200px"></p>
+<p>I’ll use the following example case as I discuss how to communicate your results<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p>You are interested in moose (or elk, <em>Alces alces</em>) and how their growth rate changes from population to population. You find information on mean annual weight change by moose in 12 locations in Sweden. You wonder if latitude can explain some of the variability in growth rates you are observing. You also wonder if minimum winter temperature might explain some variability in growth rate. Finally, you wonder if changes in growth rate with latitude and/or winter temperature depend on each other (i.e, latitudinal dependent effects on growth rate depend on what the minimum winter temperature is) and/or sex (male and female) - i.e.&nbsp;the environmentally dependent change in growth rate depends on what sex the animal is.</p>
+<p><br clear="right"></p>
+<p>And here’s a screenshot of the readme file for the moose data:</p>
+<p><img src="./ReadmeScreenshot.png" width="500px"></p>
+</section>
+<section id="responses" class="level2">
+<h2 class="anchored" data-anchor-id="responses">RESPONSE(S)</h2>
+<section id="the-task" class="level4">
+<h4 class="anchored" data-anchor-id="the-task">The task:</h4>
+<p>Your response variable is the observed variability you are trying to explain. Your response forms your <strong>research question</strong> - i.e.&nbsp;“why is my response varying?”. In this section, you need to identify the variability you are trying to explain and why (your motivation).</p>
+</section>
+<section id="the-code" class="level4">
+<h4 class="anchored" data-anchor-id="the-code">The code:</h4>
+<p>Code supporting your tasks in this section allow you to import your data and help you describe your response variable, e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()) <span class="co"># make sure your workspace is clear</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Import the data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>myDat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"ExDatComm.csv"</span>, <span class="co"># file name</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sep =</span> <span class="st">','</span>,  <span class="co"># lines in the file are separated by a comma - this information is in the README file</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">dec =</span> <span class="st">'.'</span>, <span class="co"># decimals are denoted by '.' - this information is in the README file</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>, <span class="co"># make sure strings (characters) are imported as factors</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">header =</span> <span class="cn">TRUE</span>) <span class="co"># there is a column header in the file</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(myDat) <span class="co"># check the structure of the data file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   24 obs. of  6 variables:
+ $ Study     : int  1 2 3 4 5 6 7 8 9 12 ...
+ $ Sex       : Factor w/ 2 levels "Females","Males": 1 1 1 1 1 1 1 1 1 1 ...
+ $ MassChange: num  10.2 8.7 11.2 9.4 6.2 10 14.1 12.2 16.2 13.6 ...
+ $ DDLat     : num  58 57.7 58 57.9 59.8 61.6 62 62.7 64 65.5 ...
+ $ WTemp     : num  -2.4 -1.7 -1.7 -1.7 -4.2 -5.6 -8.1 -7.7 -7.6 -9.3 ...
+ $ Source    : Factor w/ 3 levels "Gothenburg","Lund",..: 2 3 3 2 3 2 1 1 3 3 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(myDat) <span class="co"># get summary information of each column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Study            Sex       MassChange        DDLat           WTemp        
+ Min.   : 1.00   Females:12   Min.   : 6.20   Min.   :57.70   Min.   :-11.900  
+ 1st Qu.: 3.75   Males  :12   1st Qu.:11.95   1st Qu.:58.00   1st Qu.: -8.400  
+ Median : 6.50                Median :17.35   Median :61.80   Median : -6.600  
+ Mean   : 7.00                Mean   :17.77   Mean   :61.60   Mean   : -6.100  
+ 3rd Qu.: 9.75                3rd Qu.:24.23   3rd Qu.:64.38   3rd Qu.: -2.225  
+ Max.   :14.00                Max.   :30.60   Max.   :66.00   Max.   : -1.700  
+        Source  
+ Gothenburg: 6  
+ Lund      : 8  
+ Stockholm :10  
+                
+                
+                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(myDat<span class="sc">$</span>MassChange)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  6.2 30.6</code></pre>
+</div>
+</div>
+</section>
+<section id="the-write-up" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up">The write-up:</h4>
+<p>Use the code above, the data readme file, as well as supporting literature to communicate about your response variable and motivation. Include:</p>
+<ul>
+<li><p>what your response variable is</p></li>
+<li><p>why you want to explain variability in your response</p></li>
+<li><p>your research question</p></li>
+<li><p>how your response variable was measured and a description of how your response varies. For example, give the range in your response if possible. If your response is a category, give the levels of the category (e.g.&nbsp;alive vs.&nbsp;dead). Always give units, if applicable.</p></li>
+</ul>
+<p>For example:</p>
+<div class="alert alert-success">
+<p>Here I want to explain variability in growth rate in moose (<em>Alces alces</em>). Moose size will be related to survival rates, and likely also their ability to reproduce (e.g.&nbsp;Sand et al.&nbsp;1995). Being able to explain what controls growth rates in moose may help us explain why some populations are more productive than other populations, and it will help us predict productivity for populations at other places or times.</p>
+<p>My research question is “why does growth rate vary?”. My observations of growth rate were measured from adult moose across 12 locations in Sweden. The growth rate varied from 6.2 to 30.6 kg per year.</p>
+</div>
+</section>
+</section>
+<section id="predictors" class="level2">
+<h2 class="anchored" data-anchor-id="predictors">PREDICTORS</h2>
+<section id="the-task-1" class="level4">
+<h4 class="anchored" data-anchor-id="the-task-1">The task:</h4>
+<p>Here you will identify the predictors in your model - i.e.&nbsp;what variables might explain variability in your response. To write-up this section, start with the biological mechanism (or process) that make you think the predictor could be influencing your response. Then describe how that predictor was measured. At this point you might identify mechanisms that you are not able to measure, e.g.&nbsp;because they were beyond the scope of your study. Make note of these. You will have a chance to talk about them at the end of this exercise (in Reporting).</p>
+</section>
+<section id="the-code-1" class="level4">
+<h4 class="anchored" data-anchor-id="the-code-1">The code:</h4>
+<p>Code supporting your tasks in this section will help you describe your predictors, e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting information on my predictors</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(myDat<span class="sc">$</span>DDLat) <span class="co"># ranges for continuous predictors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 57.7 66.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(myDat<span class="sc">$</span>WTemp) <span class="co"># ranges for continuous predictors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -11.9  -1.7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(myDat<span class="sc">$</span>Sex) <span class="co"># factor levels for categorical predictors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Females Males  
+Levels: Females Males</code></pre>
+</div>
+</div>
+</section>
+<section id="the-write-up-1" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up-1">The write-up:</h4>
+<p>Use the code above, the data readme file, as well as supporting literature to communicate about your predictor variables. Include:</p>
+<ul>
+<li><p>what your predictor variables are</p></li>
+<li><p>why you think <strong>each</strong> predictor might explain variability in your response (mechanisms)</p></li>
+<li><p>how <strong>each</strong> predictor variable was measured and a description of the predictor. This means at least giving the range of each predictor (for continuous predictors) or the levels of any categorical predictor. Remember to include units where applicable.</p></li>
+</ul>
+<p>For example:</p>
+<div class="alert alert-success">
+<p>Here I consider the effects of latitude (˚N), minimum winter temperature (˚C) and sex (male vs.&nbsp;female) on annual growth in adult moose.</p>
+<p>Latitude may impact the growth of the moose as the environment changes with latitude (e.g.&nbsp;temperature, food, light level, growing season). Differences in food availability may lead to growth differences [citation]<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. In this study, latitude is measured in decimal degrees North and ranges from 57.7 to 66.0˚N.</p>
+<p>Winter harshness may impact annual moose growth by making energetic losses larger in the winter due to increased costs of temperature regulation [citation]. Here, I measure winter harshness as minimum winter temperature (˚C) which ranged from -11.9 to -1.7˚C in my study.</p>
+<p>Growth differences might also occur due to sex of the animal as male and female moose have different life history strategies (e.g.&nbsp;reproductive investment)[citation]. Here, I include effects of sex with observations of male vs.&nbsp;female for each growth rate measurement.</p>
+</div>
+</section>
+</section>
+<section id="hypothesis" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis">HYPOTHESIS</h2>
+<section id="the-task-2" class="level4">
+<h4 class="anchored" data-anchor-id="the-task-2">The task:</h4>
+<p>In this section you will describe your research hypothesis including main effects and any interactions. Remember to include the formula notation we’ve been practicing in class (i.e.&nbsp;Response ~ predictor…)</p>
+</section>
+<section id="the-code-2" class="level4">
+<h4 class="anchored" data-anchor-id="the-code-2">The code:</h4>
+<p>No code needed here!</p>
+</section>
+<section id="the-write-up-2" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up-2">The write-up:</h4>
+<p>Use your answers to the previous sections to state your research hypothesis. Remember to consider interactions as well as the main effects. Include:</p>
+<ul>
+<li><p>a description in words</p></li>
+<li><p>a description in the formula notation</p></li>
+<li><p>a definition of each term</p></li>
+</ul>
+<p>For example,</p>
+<div class="alert alert-success">
+<p>I will test the research hypothesis that variability in adult moose growth rate (<em>MassChange</em>, kg per year) is explained by latitude (<em>DDLat</em>, ˚N), minimum winter temperature (<em>WTemp</em>, ˚C) and sex (<em>Sex</em>, male or female). I will test this by modelling:</p>
+<p><em>MassChange ~ DDLat + WTemp + Sex + DDLat:Sex + WTemp:Sex + DDLat:WTemp + DDLat:WTemp:Sex</em></p>
+<p>which includes main effects and all possible interaction effects of my predictors (where “:” indicates an interaction between predictors).</p>
+</div>
+</section>
+</section>
+<section id="starting-model" class="level2">
+<h2 class="anchored" data-anchor-id="starting-model">STARTING MODEL</h2>
+<section id="the-task-3" class="level4">
+<h4 class="anchored" data-anchor-id="the-task-3">The task:</h4>
+<p>This step involves describing how you built the statistical model to test your hypothesis. Here, you will:</p>
+<ul>
+<li><p>Choose your error distribution assumption</p></li>
+<li><p>Choose your shape assumption</p></li>
+<li><p>Choose your starting model</p></li>
+<li><p>Fit your starting model</p></li>
+</ul>
+</section>
+<section id="the-code-3" class="level4">
+<h4 class="anchored" data-anchor-id="the-code-3">The code:</h4>
+<p>Code supporting your tasks in this section will help you support your choices of your model assumptions, e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Choosing your error distribution assumption:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Understanding the nature of your response variable</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(myDat<span class="sc">$</span>MassChange) <span class="co"># a summary description of MassChange</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   6.20   11.95   17.35   17.77   24.23   30.60 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Choosing your shape assumption:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="do">## This can include plotting your response variable vs. each continuous predictor</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="do">### For DDLat:</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># load ggplot2 library</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="co"># start ggplot</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> myDat,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> DDLat, <span class="at">y =</span> MassChange))<span class="sc">+</span> <span class="co"># add observations</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Latitude, ˚N"</span>)<span class="sc">+</span> <span class="co"># change x-axis label</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Annual growth rate, kg per year"</span>)<span class="sc">+</span> <span class="co"># change y-axis label</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Figure 1: Observed annual growth rate (kg per year) vs. latitude (˚N)"</span>)<span class="sc">+</span> <span class="co"># add figure caption</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span> <span class="co"># change theme of plot</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="dv">0</span>)) <span class="co"># move figure legend (caption) to left alignment. Use hjust = 0.5 to align in the center.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Relationship between DDLat and MassChange looks linear</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">### For WTemp:</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span> <span class="co"># start ggplot</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> myDat,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> WTemp, <span class="at">y =</span> MassChange))<span class="sc">+</span> <span class="co"># add observations</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Minimum winter temperature, ˚C"</span>)<span class="sc">+</span> <span class="co"># change x-axis label</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Annual growth rate, kg per year"</span>)<span class="sc">+</span> <span class="co"># change y-axis label</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Figure 2: Observed annual growth rate (kg per year) vs. minimum winter temperature (˚C)"</span>)<span class="sc">+</span> <span class="co"># add figure caption</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span> <span class="co"># change theme of plot</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="dv">0</span>)) <span class="co"># move figure legend (caption) to left alignment. Use hjust = 0.5 to align in the center.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Relationship between WTemp and MassChange looks linear</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting your starting model</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>startMod<span class="ot">&lt;-</span><span class="fu">glm</span>(<span class="at">formula =</span> MassChange <span class="sc">~</span> DDLat <span class="sc">+</span> WTemp <span class="sc">+</span> Sex <span class="sc">+</span> DDLat<span class="sc">:</span>Sex <span class="sc">+</span> WTemp<span class="sc">:</span>Sex <span class="sc">+</span> DDLat<span class="sc">:</span>WTemp <span class="sc">+</span> DDLat<span class="sc">:</span>WTemp<span class="sc">:</span>Sex, <span class="co"># hypothesis</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>startMod</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:  glm(formula = MassChange ~ DDLat + WTemp + Sex + DDLat:Sex + 
+    WTemp:Sex + DDLat:WTemp + DDLat:WTemp:Sex, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Coefficients:
+         (Intercept)                 DDLat                 WTemp  
+           -16.13632               0.43887               1.37886  
+            SexMales        DDLat:SexMales        WTemp:SexMales  
+           -54.84374               1.09654              -5.46475  
+         DDLat:WTemp  DDLat:WTemp:SexMales  
+            -0.02401               0.08799  
+
+Degrees of Freedom: 23 Total (i.e. Null);  16 Residual
+Null Deviance:      1200 
+Residual Deviance: 75.09    AIC: 113.5</code></pre>
+</div>
+</div>
+</section>
+<section id="the-write-up-3" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up-3">The write-up:</h4>
+<p>Use the code in the previous section as well as your theoretical understanding of the variables to communicate how you chose and fit your starting model. Include:</p>
+<ul>
+<li><p>what your error distribution assumption is and how you chose it</p></li>
+<li><p>what your shape assumption is and how you chose it</p></li>
+<li><p>what type of model you chose for your starting model (e.g.&nbsp;GLM)</p></li>
+</ul>
+<p>For example,</p>
+<div class="alert alert-success">
+<p>I built a model to test my hypothesis that variability in adult moose growth rate (<em>MassChange</em>, kg per year) is explained by latitude (<em>DDLat</em>, ˚N), minimum winter temperature (<em>WTemp</em>, ˚C) and sex (<em>Sex</em>, male or female). My error distribution assumption was normal (gaussian) as <em>MassChange</em> is continuous and can be positive or negative. My shape assumption regarding the relationship between <em>MassChange</em> and each predictor was linear. This was chosen after inspecting plots of <em>MassChange</em> and both <em>WTemp</em> and <em>DDLat</em> (Figures 1 &amp; 2). Plots were made using the ggplot2 package (Wickham 2016)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In addition, a linear shape assumption was chosen to describe the relationship between <em>Sex</em> and <em>MassChange</em> as <em>Sex</em> is a categorical variable.</p>
+<p>Based on these assumption I tested my hypothesis by fitting a generalized linear model to my data with normal error distribution assumption and identity link. All model fitting and analysis was done in R (R Core Team 2022).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+</div>
+</section>
+</section>
+<section id="model-validation" class="level2">
+<h2 class="anchored" data-anchor-id="model-validation">MODEL VALIDATION</h2>
+<section id="the-task-4" class="level4">
+<h4 class="anchored" data-anchor-id="the-task-4">The task:</h4>
+<p>Here, you will describe how you assessed your model to ensure that it can be used to test your hypothesis. Remember that the assumptions you made above (error distribution &amp; shape assumptions) were a “best guess” but it is only after the model is fit that we can confirm that it is useful. In this section you will:</p>
+<ul>
+<li><p>Consider predictor collinearity</p></li>
+<li><p>Consider observation independence</p></li>
+<li><p>Consider your error distribution assumption</p></li>
+<li><p>Consider your shape assumption</p></li>
+</ul>
+<p>and report your results.</p>
+</section>
+<section id="the-code-4" class="level4">
+<h4 class="anchored" data-anchor-id="the-code-4">The code:</h4>
+<p>Code supporting your tasks in this section will help you assess your model for violations that may make it invalid for testing your hypothesis, e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consider predictor collinearity </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Fit a model without interactions</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>startMod.noInt <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="at">formula =</span> MassChange <span class="sc">~</span> DDLat <span class="sc">+</span> WTemp <span class="sc">+</span> Sex, <span class="co"># hypothesis</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>startMod.noInt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:  glm(formula = MassChange ~ DDLat + WTemp + Sex, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Coefficients:
+(Intercept)        DDLat        WTemp     SexMales  
+    -43.013        0.879       -0.105       12.000  
+
+Degrees of Freedom: 23 Total (i.e. Null);  20 Residual
+Null Deviance:      1200 
+Residual Deviance: 99.43    AIC: 112.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculate Variance Inflation Factors (VIFs)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># library(car) # load the car package</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># vif(startMod.noInt) # estimate VIFs</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="do">## there are VIF values higher than the threshold value (in this case VIFs &gt; 3).  Let's remove WTemp and recalculate the VIFs:</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>startMod.noInt.noWTemp <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="at">formula =</span> MassChange <span class="sc">~</span> DDLat <span class="sc">+</span> Sex, <span class="co"># hypothesis</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>startMod.noInt.noWTemp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:  glm(formula = MassChange ~ DDLat + Sex, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Coefficients:
+(Intercept)        DDLat     SexMales  
+   -49.5975       0.9963      12.0000  
+
+Degrees of Freedom: 23 Total (i.e. Null);  21 Residual
+Null Deviance:      1200 
+Residual Deviance: 99.58    AIC: 110.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Recalculating the VIFs</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># vif(startMod.noInt.noWTemp) # estimate VIFs</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="do">## there are no longer any problems with predictor collinearity, as all VIFs &lt; 3</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Refitting your starting model with the interactions back in:</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>startMod <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="at">formula =</span> MassChange <span class="sc">~</span> DDLat <span class="sc">+</span> Sex <span class="sc">+</span> DDLat<span class="sc">:</span>Sex, <span class="co"># hypothesis</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Consider observation independence</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="do">## You wonder if Source could be violating your observation independence assumption.  Check to see with a plot of your residuals vs. Source</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DHARMa) <span class="co"># load package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>This is DHARMa 0.4.7. For overview type '?DHARMa'. For recent changes, type news(package = 'DHARMa')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> <span class="fu">simulateResiduals</span>(<span class="at">fittedModel =</span> startMod, <span class="at">n =</span> <span class="dv">250</span>) <span class="co"># simulate data from our model n times and calculate residuals</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>myDat<span class="sc">$</span>myResid <span class="ot">&lt;-</span> simOut<span class="sc">$</span>scaledResiduals <span class="co"># add residuals to data frame</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">testCategorical</span>(simOut, <span class="co"># the residuals </span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">catPred =</span> myDat<span class="sc">$</span>Source)<span class="sc">$</span>homogeneity <span class="co"># the grouping variable of concern</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = median)
+      Df F value Pr(&gt;F)
+group  2  0.2979 0.7455
+      21               </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotResiduals</span>(<span class="at">simulationOutput =</span> simOut, <span class="co"># compare simulated data to </span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">form =</span> myDat<span class="sc">$</span>Source, <span class="co"># our observations</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">asFactor =</span> <span class="cn">TRUE</span>) <span class="co"># whether the variable plotted is a factor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consider your error distribution assumption</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotQQunif</span>(<span class="at">simulationOutput =</span> simOut, <span class="co"># the object made when estimating the scaled residuals.  See section 2.1 above</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">testUniformity =</span> <span class="cn">TRUE</span>, <span class="co"># testing the distribution of the residuals </span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">testOutliers =</span> <span class="cn">TRUE</span>, <span class="co"># testing the presence of outliers</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">testDispersion =</span> <span class="cn">TRUE</span>) <span class="co"># testing the dispersion of the distribution</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consider your shape assumptions</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A plot of residuals vs. fitted values</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotResiduals</span>(<span class="at">simulationOutput =</span> simOut, <span class="co"># the object made when estimating the scaled residuals.  See section 2.1 above</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">form =</span> <span class="cn">NULL</span>) <span class="co"># the variable against which to plot the residuals.  When form = NULL, we see the residuals vs. fitted values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotResiduals</span>(<span class="at">simulationOutput =</span> simOut, <span class="co"># compare simulated data to </span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">form =</span> myDat<span class="sc">$</span>DDLat, <span class="co"># our observations</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">asFactor =</span> <span class="cn">FALSE</span>) <span class="co"># whether the variable plotted is a factor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-7-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotResiduals</span>(<span class="at">simulationOutput =</span> simOut, <span class="co"># compare simulated data to </span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">form =</span> myDat<span class="sc">$</span>Sex, <span class="co"># our observations</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">asFactor =</span> <span class="cn">TRUE</span>) <span class="co"># whether the variable plotted is a factor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-7-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-write-up-4" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up-4">The write-up:</h4>
+<p>Use the code in the previous section to comment on your model’s validity in testing your research hypothesis. Include:</p>
+<ul>
+<li><p>how you determined if there were problems with predictor collinearity and any actions you took if you detected a problem</p></li>
+<li><p>how you determined if there were problems with observation dependence and any actions you took if you detected a problem</p></li>
+<li><p>how you determined if your error distribution assumption was valid and any actions you took to address problems</p></li>
+<li><p>how you determined if your shape assumption was valid and any actions you took to address problems</p></li>
+</ul>
+<p>For example,</p>
+<div class="alert alert-success">
+<p>I tested if collinearity among my predictors was making my model coefficients uncertain by estimating variance inflation factors (VIFs) with the car package (Fox &amp; Weisberg 2019)<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Initial VIFs for <em>DDLat</em> and <em>WTemp</em> were &gt; 23 indicating a high level of predictor collinearity. <em>WTemp</em> was removed from the model and the VIFs were re-estimated. VIFs in the new model were both 1, and it was concluded that there was no further issue with predictor collinearity.</p>
+<p>The new starting model will test the hypothesis:</p>
+<p><em>MassChange ~ Latitude + Sex + Latitude:Sex</em></p>
+<p>I tested my assumption of observation independence by determining if the observations were grouped by <em>Source</em> (the source university for the data<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>). I estimated my model residuals using the DHARMA package (Hartig 2022)<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> and plotted my residuals vs.&nbsp;<em>Source</em>. I tested for patterns in the residuals due to <em>Source</em> by the Levene test for the homogeneity of variances. There was no evidence that the observations were dependent on <em>Source</em> (Levene test, P = 0.745) concluded my data were not dependent on one another based on <em>Source</em> as the residuals were evenly distributed across the three source universities (see figure 3).</p>
+<p>I assessed my error distribution assumption by inspected my residuals. Observed residuals were similar to those expected given my normal error distribution assumption. The Kolmogorov-Smirnov test comparing the observed to the expected distribution was not significant (P = 0.96). The dispersion and outlier tests were also not significant (P = 0.74 and P = 0.99 respectively). From these results, I concluded that my error distribution assumption was appropriate.</p>
+<p>I assessed my shape assumption by inspected my residuals vs.&nbsp;each predictor. My residuals were evenly distributed with Latitude, indicating a linear shape assumption for Latitude was appropriate. The linear shape assumption for Sex was necessary as Sex is a categorical variable. A plot of the residuals vs.&nbsp;Sex showed residuals were evenly distributed across the two sexes. From these results, I concluded that my linear shape assumptions were appropriate.</p>
+<p>Given these results, I determined that the new starting model (<em>MassChange ~ Latitude + Sex + Latitude:Sex</em>) can be used to test my hypothesis.</p>
+</div>
+</section>
+</section>
+<section id="hypothesis-testing" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-testing">HYPOTHESIS TESTING</h2>
+<section id="the-task-5" class="level4">
+<h4 class="anchored" data-anchor-id="the-task-5">The task:</h4>
+<p>Here, you will use your model to test your hypothesis. For the purposes of this course, you will do this with the model selection method we practiced in class<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. In this section you will:</p>
+<ul>
+<li><p>fit and compare models representing all possible combinations of the predictors in your starting model</p></li>
+<li><p>use the results to choose best-specified model(s)</p></li>
+<li><p>report your results.</p></li>
+</ul>
+</section>
+<section id="the-code-5" class="level4">
+<h4 class="anchored" data-anchor-id="the-code-5">The code:</h4>
+<p>Code supporting your tasks in this section will help you test and rank your models, e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MuMIn) <span class="co"># load package</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">na.action =</span> <span class="st">"na.fail"</span>) <span class="co"># needed for dredge() function to prevent illegal model comparisons</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>(dredgeOut<span class="ot">&lt;-</span><span class="fu">dredge</span>(startMod, <span class="at">extra =</span> <span class="st">"R^2"</span>)) <span class="co"># fit and compare a model set representing all possible predictor combinations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fixed term is "(Intercept)"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Global model call: glm(formula = MassChange ~ DDLat + Sex + DDLat:Sex, family = gaussian(link = "identity"), 
+    data = myDat)
+---
+Model selection table 
+   (Int)    DDL Sex DDL:Sex    R^2 df  logLik  AICc delta weight
+8 -31.60 0.7041   +       + 0.9340  5 -48.387 110.1  0.00  0.756
+4 -49.60 0.9963   +         0.9170  4 -51.130 112.4  2.26  0.244
+3  11.78          +         0.7200  3 -65.726 138.7 28.54  0.000
+2 -43.60 0.9963             0.1971  3 -78.366 163.9 53.82  0.000
+1  17.78                    0.0000  2 -80.999 166.6 56.46  0.000
+Models ranked by AICc(x) </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can make a pretty table to use in your write-up</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt) <span class="co"># load gt package</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>myTable <span class="ot">&lt;-</span> <span class="fu">gt</span>(dredgeOut) <span class="co"># make a pretty table</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>myTable <span class="ot">&lt;-</span> <span class="fu">fmt_number</span>(myTable, <span class="co"># to format the numbers in my table</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">columns =</span> <span class="fu">everything</span>(), <span class="co"># which columns to format</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">decimals =</span> <span class="dv">2</span>) <span class="co"># round to 2 decimal places</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>myTable <span class="ot">&lt;-</span> <span class="fu">tab_caption</span>(myTable, </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">caption =</span> <span class="st">"Table 1: Model selection table for hypothesis testing. Each row is a model fit to my data. predictors included in each model are indicated by a number (for continuous predictors and intercept) or '+' (for categorical predictors). R^2 is the likelihood ratio R-squared, df indicates number of model parameters, logLik is the model Log-likelihood, AICc is the corrected Akaike Information Criteria, delta is the change in AICc between the model and that of the lowest AICc, and weight is the Akaike weights."</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>myTable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="sjsmgnhuuk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sjsmgnhuuk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sjsmgnhuuk thead, #sjsmgnhuuk tbody, #sjsmgnhuuk tfoot, #sjsmgnhuuk tr, #sjsmgnhuuk td, #sjsmgnhuuk th {
+  border-style: none;
+}
+
+#sjsmgnhuuk p {
+  margin: 0;
+  padding: 0;
+}
+
+#sjsmgnhuuk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sjsmgnhuuk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sjsmgnhuuk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sjsmgnhuuk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sjsmgnhuuk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sjsmgnhuuk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sjsmgnhuuk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sjsmgnhuuk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sjsmgnhuuk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#sjsmgnhuuk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#sjsmgnhuuk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sjsmgnhuuk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sjsmgnhuuk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sjsmgnhuuk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sjsmgnhuuk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sjsmgnhuuk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sjsmgnhuuk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sjsmgnhuuk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#sjsmgnhuuk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sjsmgnhuuk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sjsmgnhuuk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sjsmgnhuuk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sjsmgnhuuk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sjsmgnhuuk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sjsmgnhuuk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sjsmgnhuuk .gt_left {
+  text-align: left;
+}
+
+#sjsmgnhuuk .gt_center {
+  text-align: center;
+}
+
+#sjsmgnhuuk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sjsmgnhuuk .gt_font_normal {
+  font-weight: normal;
+}
+
+#sjsmgnhuuk .gt_font_bold {
+  font-weight: bold;
+}
+
+#sjsmgnhuuk .gt_font_italic {
+  font-style: italic;
+}
+
+#sjsmgnhuuk .gt_super {
+  font-size: 65%;
+}
+
+#sjsmgnhuuk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#sjsmgnhuuk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sjsmgnhuuk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sjsmgnhuuk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sjsmgnhuuk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sjsmgnhuuk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sjsmgnhuuk .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#sjsmgnhuuk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#sjsmgnhuuk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Table 1: Model selection table for hypothesis testing. Each row is a model fit to my data. predictors included in each model are indicated by a number (for continuous predictors and intercept) or '+' (for categorical predictors). R^2 is the likelihood ratio R-squared, df indicates number of model parameters, logLik is the model Log-likelihood, AICc is the corrected Akaike Information Criteria, delta is the change in AICc between the model and that of the lowest AICc, and weight is the Akaike weights.</caption>
+<thead>
+<tr class="header gt_col_headings">
+<th id="a(Intercept)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">(Intercept)</th>
+<th id="DDLat" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">DDLat</th>
+<th id="Sex" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Sex</th>
+<th id="DDLat:Sex" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">DDLat:Sex</th>
+<th id="R^2" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">R^2</th>
+<th id="df" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">df</th>
+<th id="logLik" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">logLik</th>
+<th id="AICc" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">AICc</th>
+<th id="delta" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">delta</th>
+<th id="weight" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">weight</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="(Intercept)">−31.60</td>
+<td class="gt_row gt_right" headers="DDLat">0.70</td>
+<td class="gt_row gt_center" headers="Sex">+</td>
+<td class="gt_row gt_center" headers="DDLat:Sex">+</td>
+<td class="gt_row gt_right" headers="R^2">0.93</td>
+<td class="gt_row gt_right" headers="df">5.00</td>
+<td class="gt_row gt_right" headers="logLik">−48.39</td>
+<td class="gt_row gt_right" headers="AICc">110.11</td>
+<td class="gt_row gt_right" headers="delta">0.00</td>
+<td class="gt_row gt_center" headers="weight">0.76</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="(Intercept)">−49.60</td>
+<td class="gt_row gt_right" headers="DDLat">1.00</td>
+<td class="gt_row gt_center" headers="Sex">+</td>
+<td class="gt_row gt_center" headers="DDLat:Sex">NA</td>
+<td class="gt_row gt_right" headers="R^2">0.92</td>
+<td class="gt_row gt_right" headers="df">4.00</td>
+<td class="gt_row gt_right" headers="logLik">−51.13</td>
+<td class="gt_row gt_right" headers="AICc">112.36</td>
+<td class="gt_row gt_right" headers="delta">2.26</td>
+<td class="gt_row gt_center" headers="weight">0.24</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="(Intercept)">11.78</td>
+<td class="gt_row gt_right" headers="DDLat">NA</td>
+<td class="gt_row gt_center" headers="Sex">+</td>
+<td class="gt_row gt_center" headers="DDLat:Sex">NA</td>
+<td class="gt_row gt_right" headers="R^2">0.72</td>
+<td class="gt_row gt_right" headers="df">3.00</td>
+<td class="gt_row gt_right" headers="logLik">−65.73</td>
+<td class="gt_row gt_right" headers="AICc">138.65</td>
+<td class="gt_row gt_right" headers="delta">28.54</td>
+<td class="gt_row gt_center" headers="weight">0.00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="(Intercept)">−43.60</td>
+<td class="gt_row gt_right" headers="DDLat">1.00</td>
+<td class="gt_row gt_center" headers="Sex">NA</td>
+<td class="gt_row gt_center" headers="DDLat:Sex">NA</td>
+<td class="gt_row gt_right" headers="R^2">0.20</td>
+<td class="gt_row gt_right" headers="df">3.00</td>
+<td class="gt_row gt_right" headers="logLik">−78.37</td>
+<td class="gt_row gt_right" headers="AICc">163.93</td>
+<td class="gt_row gt_right" headers="delta">53.82</td>
+<td class="gt_row gt_center" headers="weight">0.00</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="(Intercept)">17.78</td>
+<td class="gt_row gt_right" headers="DDLat">NA</td>
+<td class="gt_row gt_center" headers="Sex">NA</td>
+<td class="gt_row gt_center" headers="DDLat:Sex">NA</td>
+<td class="gt_row gt_right" headers="R^2">0.00</td>
+<td class="gt_row gt_right" headers="df">2.00</td>
+<td class="gt_row gt_right" headers="logLik">−81.00</td>
+<td class="gt_row gt_right" headers="AICc">166.57</td>
+<td class="gt_row gt_right" headers="delta">56.46</td>
+<td class="gt_row gt_center" headers="weight">0.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Could also be written as:</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a> <span class="co"># dredgeOut %&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a> <span class="co">#   gt() %&gt;% # make a pretty table</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a> <span class="co">#   fmt_number(columns = everything(), # which columns to format</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a> <span class="co">#                     decimals = 2) %&gt;% # round to 2 decimal places</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a> <span class="co">#   tab_caption(caption = "Table 1: Model selection table for hypothesis testing. Each row is a model fit to my data. predictors included in each model are indicated by a number (for continuous predictors and intercept) or '+' (for categorical predictors). R^2 is the likelihood ratio R-squared, df indicates number of model parameters, logLik is the model Log-likelihood, AICc is the corrected Akaike Information Criteria, delta is the change in AICc between the model and that of the lowest AICc, and weight is the Akaike weights.")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-write-up-5" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up-5">The write-up:</h4>
+<p>Use the code in the previous section to explain how you chose your best-specified model. Include:</p>
+<ul>
+<li><p>the method you are using to test your hypothesis</p></li>
+<li><p>how you fit and rank your candidate model set</p></li>
+<li><p>how you made your decision regarding your best-specified model</p></li>
+</ul>
+<p>For example,</p>
+<div class="alert alert-success">
+<p>I used model selection to test my hypothesis that variability in adult moose growth rate is explained by latitude, sex and the interaction between the latitude and sex. I used the <code>dredge()</code> function from the MuMIn package (Bartón 2022) to fit and rank models representing all possible predictor combinations. Models were ranked by corrected Akaike Information Criteria<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> which [add a brief description of what AICc is].<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<p>The model with the lowest AICc was chosen as the best-specified model, with models within ∆AICc = 2 of the lowest AICc model being considered equally best-specified.</p>
+<p>The best-specified model was the full model:</p>
+<p><em>MassChange ~ DDLat + Sex + DDLat:Sex</em></p>
+<p>with an Akaike weight (normalized relative likelihood) of 0.756. The next best model had an AIC of 2.26 more than the top model and an Akaike weight of 0.244.</p>
+</div>
+</section>
+</section>
+<section id="reporting" class="level2">
+<h2 class="anchored" data-anchor-id="reporting">REPORTING</h2>
+<section id="the-task-6" class="level4">
+<h4 class="anchored" data-anchor-id="the-task-6">The task:</h4>
+<p>In this section, you will report your hypothesis testing results. Specifically,</p>
+<ul>
+<li><p>Report your best-specified model(s): Report your best-specified model and communicate the terms (predictors and interactions) that are in your model, and the terms that were in your starting model that are not in your best-specified model.</p></li>
+<li><p>Report how well your model explains your response: Report how much deviance in your reponse your model explains. If you have more than one predictor, you should also report how important each term is in explaining the deviance.</p></li>
+<li><p>Report your modelled effects: Report your effects visually and quantitatively.</p></li>
+</ul>
+</section>
+<section id="the-code-6" class="level4">
+<h4 class="anchored" data-anchor-id="the-code-6">The code:</h4>
+<p>Code supporting your tasks in this section will help you communicate what your results tell you about your hypothesis, e.g.:</p>
+<p><strong>Reporting your best-specified model(s)</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Report your best-specified model(s)</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Our best-specified model is MassChange ~ DDLat + Sex + DDLat:Sex (model #8 in the dredge() output).</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>bestMod<span class="ot">&lt;-</span>(<span class="fu">eval</span>(<span class="fu">attr</span>(dredgeOut, <span class="st">"model.calls"</span>)<span class="sc">$</span><span class="st">`</span><span class="at">8</span><span class="st">`</span>)) <span class="co"># extract model #8 from dredge table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="reporting-how-well-your-model-explains-your-response" class="level3">
+<h3 class="anchored" data-anchor-id="reporting-how-well-your-model-explains-your-response">Reporting how well your model explains your response</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Report explained deviance</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">r.squaredLR</span>(bestMod) <span class="co"># estimates the likelihood ratio R^2.  Could also estimate a traditional R^2 with 1-summary(bestMod)$deviance/summary(bestMod)$null.deviance here as the error distribution assumption is normal and the shape assumption is linear, but the likelihood ratio R^2 function is generally applicable to many error distribution assumptions and equivalent to the traditional R^2 when the error distribution assumption is normal and the shape assumption is linear.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9339728
+attr(,"adj.r.squared")
+[1] 0.9350677</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Report how important each model term (predictor fixed effects and any interactions) is in explaining the deviation in your response. </span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sw</span>(dredgeOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     Sex  DDLat DDLat:Sex
+Sum of weights:      1.00 1.00  0.76     
+N containing models:    3    3     1     </code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-your-model-effects" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-your-model-effects">Visualizing your model effects</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up your predictors for the visualized fit</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>forLat<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="at">from =</span> <span class="fu">min</span>(myDat<span class="sc">$</span>DDLat), </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">to =</span> <span class="fu">max</span>(myDat<span class="sc">$</span>DDLat), </span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="dv">1</span>) <span class="co"># get a range of latitudes for making predictions</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>forSex<span class="ot">&lt;-</span><span class="fu">unique</span>(myDat<span class="sc">$</span>Sex) <span class="co"># get every level of my Sex predictor</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>forVis<span class="ot">&lt;-</span><span class="fu">expand.grid</span>(<span class="at">DDLat=</span>forLat, <span class="at">Sex=</span>forSex) <span class="co"># create a data frame with all combinations of predictors</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Get your model fit estimates at each value of your predictors</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>modFit<span class="ot">&lt;-</span><span class="fu">predict</span>(bestMod, <span class="co"># the model</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">newdata =</span> forVis, <span class="co"># the predictor values</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">type =</span> <span class="st">"response"</span>, <span class="co"># make the predictions on the response scale</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">se.fit =</span> <span class="cn">TRUE</span>) <span class="co"># include uncertainty estimate</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>forVis<span class="sc">$</span>Fit<span class="ot">&lt;-</span>modFit<span class="sc">$</span>fit <span class="co"># add your fit to the data frame</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>forVis<span class="sc">$</span>Upper<span class="ot">&lt;-</span>modFit<span class="sc">$</span>fit<span class="sc">+</span>modFit<span class="sc">$</span>se.fit <span class="co"># add your uncertainty to the data frame</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>forVis<span class="sc">$</span>Lower<span class="ot">&lt;-</span>modFit<span class="sc">$</span>fit<span class="sc">-</span>modFit<span class="sc">$</span>se.fit <span class="co"># add your uncertainty to the data frame</span></span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>myPlot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> DDLat, <span class="at">y =</span> MassChange, <span class="at">col =</span> Sex))<span class="sc">+</span> <span class="co"># add data to your plot</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> forVis, </span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>              <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> DDLat, <span class="at">ymin =</span> Lower, <span class="at">ymax =</span> Upper, <span class="at">fill =</span> Sex), <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span> <span class="co"># add the uncertainty to your plot</span></span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> forVis, </span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> DDLat, <span class="at">y =</span> Fit, <span class="at">col =</span> Sex))<span class="sc">+</span> <span class="co"># add the model fit to your plot</span></span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Change in body mass (kg per year)"</span>)<span class="sc">+</span> <span class="co"># change y-axis label</span></span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Latitude (˚N)"</span>)<span class="sc">+</span> <span class="co"># change x-axis label</span></span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Figure 4: Modelled effects (lines, mean +/- standard error) of latitude and sex (colours) on growth rate </span><span class="sc">\n</span><span class="st">along with observations (points)"</span>)<span class="sc">+</span></span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span> <span class="co"># change ggplot theme</span></span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="dv">0</span>)) <span class="co"># move figure legend (caption) to left alignment. Use hjust = 0.5 to align in the center.</span></span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>myPlot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DSPPH_SM_Communicating_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to save the ggplot </span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"myPlot.png"</span>, <span class="co"># filename</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> myPlot) <span class="co"># plot to save</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
+</div>
+</div>
+</section>
+<section id="quantifying-your-model-effects" class="level3">
+<h3 class="anchored" data-anchor-id="quantifying-your-model-effects">Quantifying your model effects</h3>
+<ul>
+<li><p>for each categorical predictor:</p></li>
+<li><p>the modelled response on the linked scale for each level in your categorical predictor</p></li>
+<li><p>the modelled response on the response scale for each level in your categorical predictor</p></li>
+<li><p>the evidence that the modelled response is different across levels of your categorical predictor</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Find the effects for Sex.  As Sex is categorical, we do this for emmeans() and the reported coefficients are predicted mean response at each level of Sex. </span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans) <span class="co"># load emmeans package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Welcome to emmeans.
+Caution: You lose important information if you filter this package's results.
+See '? untidy'</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### the modelled response on the linked scale for each level in your categorical predictor</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>emmOutLink <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(<span class="at">object =</span> bestMod, <span class="co"># your model</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">specs =</span> <span class="sc">~</span> DDLat <span class="sc">+</span> Sex <span class="sc">+</span> DDLat<span class="sc">:</span>Sex <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># your predictors</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">type =</span> <span class="st">"link"</span>) <span class="co"># report coefficients on the response scale</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>emmOutLink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> DDLat Sex     emmean    SE df lower.CL upper.CL
+  61.6 Females   11.8 0.575 20     10.6       13
+  61.6 Males     23.8 0.575 20     22.6       25
+
+Confidence level used: 0.95 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### the modelled response on the response scale for each level in your categorical predictor</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>emmOut <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(<span class="at">object =</span> bestMod, <span class="co"># your model</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">specs =</span> <span class="sc">~</span> DDLat <span class="sc">+</span> Sex <span class="sc">+</span> DDLat<span class="sc">:</span>Sex <span class="sc">+</span> <span class="dv">1</span>, <span class="co"># your predictors</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">type =</span> <span class="st">"response"</span>) <span class="co"># report coefficients on the response scale</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>emmOut <span class="co"># note that the link and response scale here are identical because we are using an identity link.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> DDLat Sex     emmean    SE df lower.CL upper.CL
+  61.6 Females   11.8 0.575 20     10.6       13
+  61.6 Males     23.8 0.575 20     22.6       25
+
+Confidence level used: 0.95 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### the evidence that the modelled response is different across levels of your categorical predictor.  Are the effects of Sex different from each other?</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(emmOut, <span class="co"># emmeans object</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">simple =</span> <span class="st">"Sex"</span>) <span class="co"># simple comparison by Sex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DDLat = 61.6:
+ contrast        estimate    SE df t.ratio p.value
+ Females - Males      -12 0.813 20 -14.768  &lt;.0001</code></pre>
+</div>
+</div>
+<ul>
+<li><p>for each continuous predictor:</p></li>
+<li><p>the effect on your response of a unit change in your continuous predictor on the LINK scale</p></li>
+<li><p>the effect on your response of a unit change in your continuous predictor on the RESPONSE scale</p></li>
+<li><p>if there is an interaction: report how the interaction shows up in your modelled effects, making comparison across levels of a categorical predictor as appropriate (see example)</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="do">## the effect on your response of a unit change in your continuous predictor on the LINK scale</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Find the coefficients for Latitude.  As Latitude is continuous, we do this with emtrends() and the reported coefficients are the slope describing the change in predicted mean response with a unit change in Latitude.  Note that emtrends() reports coefficients on the LINK scale.  You need to convert this to the response scale.  In our case, the error distribution assumption is normal so nothing needs to be done to convert the coefficients.</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>trendsOut <span class="ot">&lt;-</span> <span class="fu">emtrends</span>(<span class="at">object =</span> bestMod, <span class="co"># your model</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">specs =</span> <span class="sc">~</span> DDLat <span class="sc">+</span> Sex <span class="sc">+</span> DDLat<span class="sc">:</span>Sex, <span class="co"># your predictors</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">var =</span> <span class="st">"DDLat"</span>) <span class="co"># name of your continuous predictor</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>trendsOut</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> DDLat Sex     DDLat.trend    SE df lower.CL upper.CL
+  61.6 Females       0.704 0.182 20    0.324     1.08
+  61.6 Males         1.289 0.182 20    0.908     1.67
+
+Confidence level used: 0.95 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="do">## the effect on your response of a unit change in your continuous predictor on the RESPONSE scale</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Note that emtrends() reports coefficients on the LINK scale.  You need to convert this to the response scale.  In our case, the error distribution assumption is normal so nothing needs to be done to convert the coefficients.</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="do">## report how the interaction shows up in your modelled effects, making comparison across levels of a categorical predictor as appropriate (see example)</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="do">#### Are the effects of DDLat different from each other across Sex?</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(trendsOut, <span class="co"># trendsOut object</span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">simple =</span> <span class="st">"Sex"</span>) <span class="co"># simple comparisons by Sex</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DDLat = 61.6:
+ contrast        estimate    SE df t.ratio p.value
+ Females - Males   -0.584 0.258 20  -2.266  0.0347</code></pre>
+</div>
+</div>
+<section id="the-write-up-6" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up-6">The write-up:</h4>
+<p>Use the results of the code above to report your hypothesis testing results. Include:</p>
+<ul>
+<li><p>a description of the terms (predictor fixed effects and any interactions) that are in your best-specified model</p></li>
+<li><p>a comparison these terms to your starting model - are all terms in your starting model in you best-specified model?</p></li>
+<li><p>how much deviance in your response is explained by your model</p></li>
+<li><p>how important each term (predictor or interaction) is in explaining the deviance in your response</p></li>
+<li><p>a visual representation of your modelled effects (a plot): Remember to include your model predictions, uncertainty as well as your observations. Include units on your axes and a figure number and legend.</p></li>
+<li><p>a report of your modelled effects quantitatively by reporting coefficients on the response scale:</p>
+<ul>
+<li><p>for each categorical predictor:</p>
+<ul>
+<li><p>the modelled response on the link scale for each level in your categorical predictor</p></li>
+<li><p>the modelled response on the response scale for each level in your categorical predictor</p></li>
+<li><p>the evidence that the modelled response is different across levels of your categorical predictor</p></li>
+</ul></li>
+<li><p>for each continuous predictor:</p>
+<ul>
+<li><p>the effect on your response of a unit change in your continuous predictor on the LINK scale</p></li>
+<li><p>the effect on your response of a unit change in your continuous predictor on the RESPONSE scale</p></li>
+<li><p>if there is an interaction: report how the interaction shows up in your modelled effects, making comparison across levels of a categorical predictor as appropriate (see example)</p></li>
+</ul></li>
+</ul></li>
+<li><p>linking the modelled effects back to the mechanisms</p></li>
+<li><p>consider what might be explaining the remaining (unexplained) deviation in your response</p></li>
+</ul>
+<p>For example,</p>
+<div class="alert alert-success">
+<p>My best-specified model tells me that the growth varies with latitude and sex, and that the effect of latitude on growth varies with sex<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. The terms in my best-specified model are the same as those in my starting model indicating that there is evidence that the main effects of latitude and sex as well as the interaction are explaining variability in moose growth.</p>
+<p>Growth rate is higher for males than females: the predicted growth when latitude is 61.6˚N (the mean of the latitudinal range) is 11.8 ± 0.6 kg year<sup>-1</sup> for females and 23.8 ± 0.6 kg year<sup>-1</sup> for males.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>. There is evidence the predictions of growth between sexes are different (t-test; t-ratio = -14.8; P &lt; 0.0001). Note that these estimates are the same on the link and response scales as the model uses an identity link.</p>
+<p>The coefficient (slope) for the effect of a change of latitude on the growth rate is 0.70 ± 0.18 kg year<sup>-1</sup> ˚N<sup>-1</sup> for females and 1.29 ± 0.18 kg year<sup>-1</sup> ˚N<sup>-1</sup> for males. There is evidence that these effects (slopes) are different from one another (t-test, t-ratio = -2.3, P = 0.035). These coefficients show that growth rates increase with latitude for both sexes, but that the effect of latitude on growth is higher for male vs.&nbsp;female moose. Note that these estimates are the same on the link and response scales as the model uses an identity link.</p>
+<p>Figure 4 shows the modelled effects of latitude and sex on growth rate along with my observations.</p>
+<p><img src="./myPlot.png" width="400px"></p>
+<p>Together the effects of latitude and sex explain 93% of the deviance in growth rate (Likelihood ratio R<sup>2</sup>).<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>.</p>
+<p>Based on the sum of Akaike weights, latitude and sex are equally important in explaining the deviance in growth rate as they appear in all models with Akaike weights &gt; 0. The interaction between latitude and sex is slightly less important appearing only in the best-specified model with an Akaike weight of 0.76.</p>
+<p>An increase in annual growth rate with latitude may indicate… [link to mechanisms].</p>
+<p>A sex-specific increase in annual growth rate may indicate… [link to mechanisms].</p>
+<p>[a discussion on study limitations (e.g.&nbsp;how the growth rate, latitude, etc. were measured)].</p>
+<p>The remaining unexplained deviance may be due to other factors affecting growth rate such as winter harshness, food availability, etc. Note that I was not able to include minimum winter temperature in my hypothesis test due to high collinearity between latitude and minimum winter temperature. Therefore, I do not know if the measured latitudinal effect on growth might mechanistically be due to winter harshness (here estimated as minimum winter temperature). This could be tested if I was able to expand my data set to include sites where latitude and minimum winter temperature were less correlated… [discussion on other, untested factors that may be responsible for the unexplained deviance].</p>
+</div>
+</section>
+</section>
+</section>
+<section id="predicting" class="level2">
+<h2 class="anchored" data-anchor-id="predicting">PREDICTING</h2>
+<section id="the-task-7" class="level4">
+<h4 class="anchored" data-anchor-id="the-task-7">The task:</h4>
+<p>Here you <em>may</em> use your model to make predictions (remembering prediction limits). For the assignments and exam, we will explicitly ask you to make a prediction if we want to see one.</p>
+<p>If you want to make a prediction (e.g.&nbsp;“based on your best-specified model, what is your predicted mean annual growth of a female moose living in Sicily, Italy?”), in this section you want to report your prediction results and give any limitations to the prediction.</p>
+</section>
+<section id="the-code-7" class="level4">
+<h4 class="anchored" data-anchor-id="the-code-7">The code:</h4>
+<p>Code supporting your tasks in this section will help you communicate what prediction you made and the results, e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Based on your best-specified model, what is your predicted mean annual growth of an adult female moose living in Sicily, Italy?</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Looking on the internet, we see that Sicily, IT is at 37.6˚N.</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(bestMod, <span class="co"># our model</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">Sex =</span> <span class="st">"Females"</span>, <span class="at">DDLat =</span> <span class="fl">37.6</span>), <span class="co"># values of the predictors at which to make the prediction</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">se.fit=</span><span class="cn">TRUE</span>, <span class="co"># include an estimate of error around the prediction</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">type=</span><span class="st">"response"</span>) <span class="co"># make sure the prediction is on the response scale</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fit
+        1 
+-5.122918 
+
+$se.fit
+[1] 4.414466
+
+$residual.scale
+[1] 1.990439</code></pre>
+</div>
+</div>
+</section>
+<section id="the-write-up-7" class="level4">
+<h4 class="anchored" data-anchor-id="the-write-up-7">The write-up:</h4>
+<p>Use the code in the previous section to present the results of your prediction. Include</p>
+<ul>
+<li><p>the prediction and an estimate of uncertainty</p></li>
+<li><p>any perceived prediction limits.</p></li>
+</ul>
+<p>For example,</p>
+<div class="alert alert-success">
+<p>I used my best-specified model to estimate the mean annual growth rate of adult female moose living in Sicily, Italy (~ 37.6˚N) as -5.1 +/- 4.4 kg per year (mean +/- standard error). While this is an estimate consistent with my model, it likely is unrealistic as the distribution of moose does not currently extend as far south as Sicily. It is likely there are limitations to their dispersal to or survival in this area and my model may not be valid for latitudes so far south (as evidenced by the predicted negative growth).</p>
+</div>
+</section>
+</section>
+</section>
+<section id="commenting-your-code" class="level1">
+<h1>COMMENTING YOUR CODE</h1>
+<p>Finally, let’s talk about commenting your code.</p>
+<section id="why-comment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="why-comment">Why comment</h3>
+<p>Commenting your code (using <code>#</code>) allows you to clarify what your R code is doing at each step. This will help you when you share your code with collaborators and it will help you catch errors in your code. Commenting will also help you make your code useful to yourself for future projects. Remember that your closest collaborator is yourself six months ago and they don’t return emails!</p>
+</section>
+<section id="how-to-comment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="how-to-comment">How to comment</h3>
+<p>Clarify each line of your code by adding a <code>#</code> and then a description of what the code is doing. Don’t just write the function name in your comments. Add (in human language) what that line of code is doing. Use your comments to:</p>
+<ul>
+<li>Define variables, e.g.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>forSex<span class="ot">&lt;-</span><span class="fu">unique</span>(myDat<span class="sc">$</span>Sex) <span class="co"># get every level of my Sex predictor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Explain what the code is trying to do, e.g.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get your model fit estimates at each value of your predictors</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>modFit<span class="ot">&lt;-</span><span class="fu">predict</span>(bestMod, <span class="co"># the model</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">newdata =</span> forVis, <span class="co"># the predictor values</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">type =</span> <span class="st">"response"</span>, <span class="co"># make the predictions on the response scale</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">se.fit =</span> <span class="cn">TRUE</span>) <span class="co"># include uncertainty estimate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Explain why you chose a particular strategy, e.g.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r.squaredLR</span>(bestMod) <span class="co"># estimates the likelihood ratio R^2.  Could also estimate a traditional R^2 with 1-summary(bestMod)$deviance/summary(bestMod)$null.deviance here as the error distribution assumption is normal and the shape assumption is linear, but the likelihood ratio R^2 function is generally applicable to many error distribution assumptions and equivalent to the traditional R^2 when the error distribution assumption is normal and the shape assumption is linear.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="up-next" class="level1">
+<h1>Up Next</h1>
+<p>In the next chapter, we will discuss how the GLM methods we have been using relate to other types of statistical models. This will help you communicate your choices and methods to others that may differ in the way they are approaching their statistical modelling.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>note that it has changed slightly from the case used for your practical<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>here, I’ll write “citation” where you would support your statements with the existing literature<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>find this citation with <code>citation("ggplot2")</code><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>you can find which version of R you are using with <code>citation()</code> (nothing inside the parentheses)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>you can find the citation for the car package with <code>citation("car")</code>. Remember to cite every package you use in R.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>see readme file above<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>find this with <code>citation("DHARMa")</code><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>As a reminder, in your Hypothesis Testing notes, we also discussed testing your hypothesis via p-values, as well as the limitations of this method when you have more than one predictor<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>AICc is the corrected Akaike Information Criterion which is more conservative than traditional AIC, i.e.&nbsp;models with more predictors need to increase the explained deviance quite a bit before the AICc metric improves<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>note that you can also include tables directly from R using the gt package<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>the interaction<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>watch your number of significant units here. Make sure they make sense for the type of measurement. And be consistent<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>here equivalent to the traditional R<sup>2</sup> as we have a normal error distribution assumption and linear shape assumption. The traditional R<sup>2</sup> is found with <code>1-summary(bestMod)$deviance/summary(bestMod)$null.deviance</code> = 0.9339728<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/NeuheimerLab\.github\.io\/DSPProgram\.AUBiology\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How GLMs relate to other types of models – Data Skills Portfolio Program</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Skills Portfolio Program</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./intro.html"> 
+<span class="menu-text">What is the DSP Program?</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./handbookIntro.html"> 
+<span class="menu-text">The DSP Program Handbook</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./feedback.html"> 
+<span class="menu-text">Feedback</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#beyond-glms" id="toc-beyond-glms" class="nav-link active" data-scroll-target="#beyond-glms">Beyond GLMs</a>
+  <ul class="collapse">
+  <li><a href="#other-types-of-linear-models" id="toc-other-types-of-linear-models" class="nav-link" data-scroll-target="#other-types-of-linear-models">Other types of linear models</a>
+  <ul class="collapse">
+  <li><a href="#resp-cat-where-cat-has-two-factor-levels" id="toc-resp-cat-where-cat-has-two-factor-levels" class="nav-link" data-scroll-target="#resp-cat-where-cat-has-two-factor-levels">Resp ~ Cat (where Cat has two factor levels)</a></li>
+  <li><a href="#resp-cat-where-cat-has-more-than-two-factor-levels" id="toc-resp-cat-where-cat-has-more-than-two-factor-levels" class="nav-link" data-scroll-target="#resp-cat-where-cat-has-more-than-two-factor-levels">Resp ~ Cat (where Cat has <strong>more than two</strong> factor levels)</a></li>
+  <li><a href="#resp-cont" id="toc-resp-cont" class="nav-link" data-scroll-target="#resp-cont">Resp ~ Cont</a></li>
+  <li><a href="#resp-cont-cat" id="toc-resp-cont-cat" class="nav-link" data-scroll-target="#resp-cont-cat">Resp ~ Cont + Cat</a></li>
+  <li><a href="#resp-cat-with-two-samples-and-observation-dependence" id="toc-resp-cat-with-two-samples-and-observation-dependence" class="nav-link" data-scroll-target="#resp-cat-with-two-samples-and-observation-dependence">Resp ~ Cat with two samples and observation dependence</a></li>
+  <li><a href="#resp-constant" id="toc-resp-constant" class="nav-link" data-scroll-target="#resp-constant">Resp ~ constant</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">How GLMs relate to other types of models</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!--- bartlett's --->
+<section id="beyond-glms" class="level1">
+<h1>Beyond GLMs</h1>
+<p>When to use GLMs (vs.&nbsp;these other methods) - when you have a linear shape assumption</p>
+<p>When to use these other methods (vs.&nbsp;a GLM) - when you need to relate to previous research (e.g.&nbsp;interpretting coefficients, comparing results across)</p>
+<p>Remember: that all models are wrong, some are useful.</p>
+<hr style="border:1px solid grey">
+<section id="other-types-of-linear-models" class="level2">
+<h2 class="anchored" data-anchor-id="other-types-of-linear-models">Other types of linear models</h2>
+<p>As we’ve discussed in class, you are testing your hypothesis by building a model of your hypothesis so that you can fit the model to data and determine the evidence for your hypothesis. Remember that models are an approximation of what is going on in the real world and that “all models are wrong, but some are useful”. It follows then that there could be more than one useful model that can represent your hypothesis.</p>
+<p>Here we’ll talk about classical models or tests<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. These are other types of models that can be used to test your hypothesis when you have a linear shape assumption. We won’t be practicing these in class, but it is important they are on your radar so that you can better communicate with those who might be using different methods than you.</p>
+<p>A few things to note about these “classical” models:</p>
+<ul>
+<li><p>With classical models, assessing if your model is valid often comes <strong>before</strong> you apply the model (e.g.&nbsp;checking to see that your Response is normal before you apply the model)</p></li>
+<li><p>Classical models rely on p-values to determine the evidence for your hypothesis<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
+<li><p>Some classical models are mathematically identical to a GLM, e.g.</p>
+<ul>
+<li>a simple linear model (<code>lm()</code>) is the same as a GLM when your error distribution assumption is normal</li>
+<li>an Analysis of Variance or ANOVA is the same as a GLM when your error distribution assumption is normal, and your covariates are all categorical</li>
+</ul></li>
+<li><p>For some types of observations, there are no equivalent “classical” models - you need a GLM. This is particularly the case when you have non-normal error distribution assumptions that are discrete, such as poisson (count data) or binomial.</p></li>
+<li><p>When the effect of your covariate on your response is big, your results from a GLM will agree with the classical model equivalent. When the effect of your covariate on your response is small, you might conclude different things about your hypothesis depending on the model you use to test it. This can be frustrating/confusing, but it is just the nature of the process: we are applying models that are only approximations of the real world.</p></li>
+</ul>
+<p>Here we’ll compare the method we’ve been using (GLM) with a classical model for a number of situations:</p>
+<ul>
+<li><p>Resp ~ Cat (where you have a categorical covariate with only two factor levels)</p></li>
+<li><p>Resp ~ Cat (where you have a categorical covariate with more than two factor levels)</p></li>
+<li><p>Resp ~ Cont (where you have a continuous covariate)</p></li>
+<li><p>Resp ~ Cat + Cont (where you have a categorical and a continuous covariate)</p></li>
+<li><p>Resp ~ Cat (where you have a categorical covariate with only two factor levels AND observation dependence)</p></li>
+</ul>
+<p>We’ll also include one more example that we haven’t talked about yet - how you test if the mean of your response is equal to a constant value (i.e.&nbsp;a “one-sample test”): * Resp ~ constant</p>
+<p><strong>This section may seem overwhelming, but remember that you already know how to address every hypothesis discussed here (with a GLM). This section is to make you aware of the other options available to you.</strong></p>
+<hr>
+<section id="resp-cat-where-cat-has-two-factor-levels" class="level3">
+<h3 class="anchored" data-anchor-id="resp-cat-where-cat-has-two-factor-levels">Resp ~ Cat (where Cat has two factor levels)</h3>
+<section id="resp-cat-where-cat-has-two-factor-levels-with-a-normal-error-distribution-assumption---glm-vs.-two-sample-t-test" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cat-where-cat-has-two-factor-levels-with-a-normal-error-distribution-assumption---glm-vs.-two-sample-t-test">Resp ~ Cat (where Cat has two factor levels) with a normal error distribution assumption - GLM vs.&nbsp;two-sample t-test</h4>
+<p>An example: monthly weight change is different between North and South populations or <code>WtChange ~ Pop</code></p>
+<p>Using our GLM method, we would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(WtChange <span class="sc">~</span> Pop, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = WtChange ~ Pop, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Deviance Residuals: 
+   Min      1Q  Median      3Q     Max  
+-3.700  -1.325   0.050   1.375   4.600  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  33.9000     0.5352   63.34   &lt;2e-16 ***
+PopSouth     15.0000     0.7569   19.82   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 4.297143)
+
+    Null deviance: 1807.82  on 29  degrees of freedom
+Residual deviance:  120.32  on 28  degrees of freedom
+AIC: 132.81
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p>and would go on with our statistical modelling framework.</p>
+<p>Using a classical model, we can choose the two-sample t-test:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first check to see the response is normally distributed with a shapiro test for each population:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>samp1<span class="ot">&lt;-</span><span class="fu">subset</span>(myDat, Pop <span class="sc">==</span> <span class="st">"South"</span>)<span class="sc">$</span>WtChange</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>samp2<span class="ot">&lt;-</span><span class="fu">subset</span>(myDat, Pop <span class="sc">==</span> <span class="st">"North"</span>)<span class="sc">$</span>WtChange</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(samp1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  samp1
+W = 0.9388, p-value = 0.3675</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(samp2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  samp2
+W = 0.97638, p-value = 0.9388</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># then check to see if the variances of the two observations for the two populations are equal:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(samp1, samp2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    F test to compare two variances
+
+data:  samp1 and samp2
+F = 0.94693, num df = 14, denom df = 14, p-value = 0.9202
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.3179109 2.8205007
+sample estimates:
+ratio of variances 
+         0.9469256 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># finally we can apply our two-sample t-test: </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(samp1, <span class="co"># one population</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       samp2, <span class="co"># another population</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>) <span class="co"># the variances were equal.  If they aren't equal, set to FALSE to fit a Welch's two-sample test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  samp1 and samp2
+t = 19.817, df = 28, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 13.44949 16.55051
+sample estimates:
+mean of x mean of y 
+     48.9      33.9 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Note you can also use the syntax:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># t.test(WtChange~Pop, # formula</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#        data = myDat, # data</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#        var.equal = TRUE) # the variances were equal.  If they aren't equal, set to FALSE to fit a Welch's two-sample test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that the two methods lead to <strong>identical</strong> results based on p-values.</p>
+<hr>
+</section>
+<section id="resp-cat-where-cat-has-two-factor-levels-with-a-non-normal-but-continuous-error-distribution-assumption---glm-vs.-wilcoxon-rank-sum-test" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cat-where-cat-has-two-factor-levels-with-a-non-normal-but-continuous-error-distribution-assumption---glm-vs.-wilcoxon-rank-sum-test">Resp ~ Cat (where Cat has two factor levels) with a non-normal (but continuous) error distribution assumption - GLM vs.&nbsp;Wilcoxon Rank Sum test</h4>
+<p>Example: tree height variation is explained by population (North vs.&nbsp;South) or <code>Height ~ Pop</code></p>
+<p>Using our GLM method we would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Height <span class="sc">~</span> Pop, <span class="co"># hypothesis</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">Gamma</span>(<span class="at">link =</span> <span class="st">"inverse"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Height ~ Pop, family = Gamma(link = "inverse"), 
+    data = myDat)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-0.50795  -0.14174  -0.07058   0.09982   0.64932  
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.049242   0.002856   17.24  &lt; 2e-16 ***
+PopSouth    -0.038930   0.002918  -13.34 1.18e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for Gamma family taken to be 0.05047313)
+
+    Null deviance: 17.9989  on 29  degrees of freedom
+Residual deviance:  1.2768  on 28  degrees of freedom
+AIC: 222.93
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+</div>
+<p>and would then go on with our statistical modelling framework.</p>
+<p>Using a classical model, we can choose the Wilcoxon Rank Sum test.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(Height<span class="sc">~</span>Pop, <span class="co"># hypothesis</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> myDat) <span class="co"># data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum exact test
+
+data:  Height by Pop
+W = 0, p-value = 1.289e-08
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<p>Notice that the two methods lead to similar results (both methods show evidence that the mean height of the trees is different across the populations).</p>
+<hr>
+</section>
+</section>
+<section id="resp-cat-where-cat-has-more-than-two-factor-levels" class="level3">
+<h3 class="anchored" data-anchor-id="resp-cat-where-cat-has-more-than-two-factor-levels">Resp ~ Cat (where Cat has <strong>more than two</strong> factor levels)</h3>
+<section id="resp-cat-where-cat-has-more-than-two-factor-levels-with-a-normal-error-distribution-assumption---glm-vs.-anova" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cat-where-cat-has-more-than-two-factor-levels-with-a-normal-error-distribution-assumption---glm-vs.-anova">Resp ~ Cat (where Cat has more than two factor levels) with a normal error distribution assumption - GLM vs.&nbsp;ANOVA</h4>
+<p>An example: monthly weight change is explained by species (Sp1, Sp2 and Sp3) or <code>WtChange ~ Sp</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in as.numeric(forCat) * 14 + 20 + rnorm(n, 0, 3): longer object length
+is not a multiple of shorter object length</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+</div>
+<p>Using our GLM method we would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(WtChange <span class="sc">~</span> Sp, </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = WtChange ~ Sp, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Deviance Residuals: 
+   Min      1Q  Median      3Q     Max  
+-7.753  -1.153  -0.180   1.847   5.247  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  32.3533     0.7854   41.19   &lt;2e-16 ***
+SpSp1        16.2267     1.1107   14.61   &lt;2e-16 ***
+SpSp3        28.0000     1.1107   25.21   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 9.252349)
+
+    Null deviance: 6318.2  on 44  degrees of freedom
+Residual deviance:  388.6  on 42  degrees of freedom
+AIC: 232.72
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p>and would go on with our statistical modelling framework. Here we can get a p-value associated with our covariate with:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(startMod.glm, <span class="at">test =</span> <span class="st">"F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Deviance Table
+
+Model: gaussian, link: identity
+
+Response: WtChange
+
+Terms added sequentially (first to last)
+
+     Df Deviance Resid. Df Resid. Dev      F    Pr(&gt;F)    
+NULL                    44     6318.2                     
+Sp    2   5929.6        42      388.6 320.44 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Using a classical model, we can choose an Analysis of Variance model or ANOVA:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>startMod.aov<span class="ot">&lt;-</span><span class="fu">aov</span>(WtChange <span class="sc">~</span> Sp, <span class="co">#hypothesis</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> myDat) <span class="co">#data</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.aov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)    
+Sp           2   5930  2964.8   320.4 &lt;2e-16 ***
+Residuals   42    389     9.3                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Notice that the ANOVA and GLM methods lead to <strong>identical</strong> results.</p>
+<p>Other notes about ANOVAs:</p>
+<ul>
+<li><p>With an ANOVA, you assess your model’s validity by inspecting residuals, i.e.&nbsp;after you fit the model (as we do with the GLM).</p></li>
+<li><p>You might see people mentioning one-way vs.&nbsp;two-way ANOVA. This just describes if you have one categorical covariate in your model (one-way ANOVA) or two (two-way ANOVA).</p></li>
+<li><p>You might see people mentioning Type I vs.&nbsp;Type II vs.&nbsp;Type III ANOVAs. These are different ANOVA methods used to handle covariate collinearity when selecting which covariates should be in your best-specified model. You can change the type of ANOVA you are fitting with the <code>Anova()</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> function in the car package.</p></li>
+</ul>
+<hr>
+</section>
+<section id="resp-cat-where-cat-has-more-than-two-factor-levels-with-a-non-normal-but-continuous-error-distribution-assumption---glm-vs.-kruskal-wallis" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cat-where-cat-has-more-than-two-factor-levels-with-a-non-normal-but-continuous-error-distribution-assumption---glm-vs.-kruskal-wallis">Resp ~ Cat (where Cat has more than two factor levels) with a non-normal (but continuous) error distribution assumption - GLM vs.&nbsp;Kruskal-Wallis</h4>
+<p>Example: tree height variation is explained by species (Sp1, Sp2 and Sp3) or <code>Height ~ Sp</code></p>
+<p>Using our GLM method we would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Height <span class="sc">~</span> Sp, <span class="co"># hypothesis</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">Gamma</span>(<span class="at">link =</span> <span class="st">"inverse"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Height ~ Sp, family = Gamma(link = "inverse"), 
+    data = myDat)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-0.44058  -0.18877  -0.06964   0.16091   0.71889  
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.050292   0.004403  11.422 7.61e-12 ***
+SpSp2       -0.004090   0.005979  -0.684    0.500    
+SpSp3       -0.005772   0.005880  -0.982    0.335    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for Gamma family taken to be 0.07664606)
+
+    Null deviance: 1.8873  on 29  degrees of freedom
+Residual deviance: 1.8098  on 27  degrees of freedom
+AIC: 190.92
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(startMod.glm, <span class="at">test =</span> <span class="st">"F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Deviance Table
+
+Model: Gamma, link: inverse
+
+Response: Height
+
+Terms added sequentially (first to last)
+
+     Df Deviance Resid. Df Resid. Dev      F Pr(&gt;F)
+NULL                    29     1.8873              
+Sp    2 0.077499        27     1.8098 0.5056 0.6088</code></pre>
+</div>
+</div>
+<p>and would then go on with our statistical modelling framework.</p>
+<p>Using a classical model, we can use the Kruskal-Wallis model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(Height <span class="sc">~</span> Sp, </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Kruskal-Wallis rank sum test
+
+data:  Height by Sp
+Kruskal-Wallis chi-squared = 0.90794, df = 2, p-value = 0.6351</code></pre>
+</div>
+</div>
+<p>Notice that the two methods lead to similar results (both conclude that the mean height of the trees is explained by species).</p>
+<hr>
+</section>
+</section>
+<section id="resp-cont" class="level3">
+<h3 class="anchored" data-anchor-id="resp-cont">Resp ~ Cont</h3>
+<section id="resp-cont-with-a-normal-error-distribution-assumption---glm-vs.-lm" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cont-with-a-normal-error-distribution-assumption---glm-vs.-lm">Resp ~ Cont with a normal error distribution assumption - GLM vs.&nbsp;LM</h4>
+<p>An example: monthly weight change is explained by temperature or <code>WtChange ~ Temp</code></p>
+<p>Using our GLM method we would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(WtChange <span class="sc">~</span> Temp, </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>))</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = WtChange ~ Temp, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-4.6278  -1.4179  -0.0812   0.9774   8.7171  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 18.35091    1.28827   14.24 2.36e-14 ***
+Temp         1.46301    0.09006   16.24 8.75e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 8.665215)
+
+    Null deviance: 2529.20  on 29  degrees of freedom
+Residual deviance:  242.63  on 28  degrees of freedom
+AIC: 153.85
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p>Using a classical model, we can choose a simple linear model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>startMod.lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(WtChange <span class="sc">~</span> Temp, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = WtChange ~ Temp, data = myDat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.6278 -1.4179 -0.0812  0.9774  8.7171 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 18.35091    1.28827   14.24 2.36e-14 ***
+Temp         1.46301    0.09006   16.24 8.75e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.944 on 28 degrees of freedom
+Multiple R-squared:  0.9041,    Adjusted R-squared:  0.9006 
+F-statistic: 263.9 on 1 and 28 DF,  p-value: 8.754e-16</code></pre>
+</div>
+</div>
+<p>Notice that the simple linear model and GLM methods lead to <strong>identical</strong> results.</p>
+<hr>
+</section>
+<section id="resp-cont-with-a-non-normal-error-distribution-assumption---glm" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cont-with-a-non-normal-error-distribution-assumption---glm">Resp ~ Cont with a non-normal error distribution assumption - GLM!!</h4>
+<p>An example: plant height is explained by temperature or <code>Height ~ Temp</code></p>
+<p>If your error distribution assumption is continuous, you can <strong>try</strong> a normal error distribution assumption and fit a simple linear model but you need to carefully assess your residuals.</p>
+<p>If your error distribution assumption is discrete (e.g.&nbsp;poisson, binomial), you <strong>need</strong> a GLM.</p>
+<p>e.g.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Height <span class="sc">~</span> Temp, </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">Gamma</span>(<span class="at">link =</span> <span class="st">"inverse"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="resp-cont-cat" class="level3">
+<h3 class="anchored" data-anchor-id="resp-cont-cat">Resp ~ Cont + Cat</h3>
+<section id="resp-cont-cat-with-a-normal-error-distribution-assumption---glm-vs.-ancova" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cont-cat-with-a-normal-error-distribution-assumption---glm-vs.-ancova">Resp ~ Cont + Cat with a normal error distribution assumption - GLM vs.&nbsp;ANCOVA</h4>
+<p>An example: monthly weight change is explained by temperature and location or <code>WtChange ~ Temp + Location + Temp:Location</code></p>
+<p>Using our GLM method we would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(WtChange <span class="sc">~</span> Temp <span class="sc">+</span> Location <span class="sc">+</span> Temp<span class="sc">:</span>Location, </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>))</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = WtChange ~ Temp + Location + Temp:Location, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-7.2037  -2.8275   0.3637   2.7260   5.0448  
+
+Coefficients:
+                   Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)        15.44539    2.89167   5.341 1.76e-05 ***
+Temp                1.23328    0.19375   6.365 1.40e-06 ***
+LocationSiteA      -8.00589    3.92130  -2.042   0.0523 .  
+LocationSiteB      -9.88392    4.00728  -2.466   0.0212 *  
+Temp:LocationSiteA  0.26727    0.27400   0.975   0.3391    
+Temp:LocationSiteB  0.07746    0.27428   0.282   0.7800    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 13.26608)
+
+    Null deviance: 2745.60  on 29  degrees of freedom
+Residual deviance:  318.39  on 24  degrees of freedom
+AIC: 170
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(startMod.glm, <span class="at">test =</span> <span class="st">"F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Deviance Table
+
+Model: gaussian, link: identity
+
+Response: WtChange
+
+Terms added sequentially (first to last)
+
+              Df Deviance Resid. Df Resid. Dev        F    Pr(&gt;F)    
+NULL                             29    2745.60                       
+Temp           1  2027.62        28     717.98 152.8426 6.728e-12 ***
+Location       2   386.23        26     331.75  14.5570 7.245e-05 ***
+Temp:Location  2    13.36        24     318.39   0.5037    0.6105    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Using a classical model, we can fit an Analysis of Covariance (ANCOVA) with the <code>aov()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>startMod.ancova <span class="ot">&lt;-</span> <span class="fu">aov</span>(WtChange <span class="sc">~</span> Temp <span class="sc">+</span> Location <span class="sc">+</span> Temp<span class="sc">:</span>Location, </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">data =</span> myDat)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.ancova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+Temp           1 2027.6  2027.6 152.843 6.73e-12 ***
+Location       2  386.2   193.1  14.557 7.24e-05 ***
+Temp:Location  2   13.4     6.7   0.504    0.611    
+Residuals     24  318.4    13.3                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Notice that the ANCOVA and GLM method lead to <strong>identical</strong> results. These are the same model.</p>
+<hr>
+</section>
+<section id="resp-cont-cat-with-a-non-normal-error-distribution-assumption---glm" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cont-cat-with-a-non-normal-error-distribution-assumption---glm">Resp ~ Cont + Cat with a non-normal error distribution assumption - GLM!!</h4>
+<p>An example: plant height is explained by temperature and location or <code>Height ~ Temp + Location + Temp:Location</code></p>
+<p>If your error distribution assumption is continuous, you can <strong>try</strong> a normal error distribution assumption and fit a ANCOVA to test your hypothesis but you need to carefully assess your residuals.</p>
+<p>If your error distribution assumption is discrete (e.g.&nbsp;poisson, binomial), you <strong>need</strong> a GLM.</p>
+<p>e.g.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Height <span class="sc">~</span> Temp <span class="sc">+</span> Location <span class="sc">+</span> Temp<span class="sc">:</span>Location, </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat,</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">Gamma</span>(<span class="at">link =</span> <span class="st">"inverse"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="resp-cat-with-two-samples-and-observation-dependence" class="level3">
+<h3 class="anchored" data-anchor-id="resp-cat-with-two-samples-and-observation-dependence">Resp ~ Cat with two samples and observation dependence</h3>
+<section id="resp-cat-where-you-have-a-categorical-covariate-with-only-two-factor-levels-and-observation-dependence---glm-vs.-paired-t-test" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cat-where-you-have-a-categorical-covariate-with-only-two-factor-levels-and-observation-dependence---glm-vs.-paired-t-test">Resp ~ Cat (where you have a categorical covariate with only two factor levels AND observation dependence) - GLM vs.&nbsp;paired t-test</h4>
+<p>An example: monthly weight change before and after maturity or <code>WtChange ~ State</code>, but observations are dependent on one another as the weight change was measured from the same individual before and after maturity.</p>
+<p>Using our GLM method, we could set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(WtChange <span class="sc">~</span> State <span class="sc">+</span> ID, <span class="co"># hypothesis</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># error distribution assumption</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>where individual <code>ID</code> is included as a fixed effect. Note that we could also set up a mixed model including <code>ID</code> as a random effect<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>Here we can get a p-value associated with our covariate with:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(startMod.glm, <span class="at">test =</span> <span class="st">"F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Deviance Table
+
+Model: gaussian, link: identity
+
+Response: WtChange
+
+Terms added sequentially (first to last)
+
+      Df Deviance Resid. Df Resid. Dev        F    Pr(&gt;F)    
+NULL                     29    22618.5                       
+State  1  19405.6        28     3212.8 163.5332 5.712e-13 ***
+ID     1      8.9        27     3203.9   0.0748    0.7866    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Using a classical model, we can fit a paired two-sample model. We first need to change the format of our data from long:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(myDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID    State WtChange
+1  1 Immature    155.7
+2  2 Immature    143.2
+3  3 Immature    125.3
+4  4 Immature    165.0
+5  5 Immature    142.6
+6  6 Immature    136.0</code></pre>
+</div>
+</div>
+<p>to wide:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2) <span class="co"># load the reshape package</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>myDat.paired <span class="ot">&lt;-</span> <span class="fu">dcast</span>(myDat, ID<span class="sc">~</span>State) <span class="co"># change orientation from long to wide</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using WtChange as value column: use value.var to override.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(myDat.paired)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID Immature Mature
+1  1    155.7   81.6
+2  2    143.2   95.6
+3  3    125.3   84.5
+4  4    165.0  113.2
+5  5    142.6   96.0
+6  6    136.0   94.4</code></pre>
+</div>
+</div>
+<p>Then we can fit a paired two-sample test:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test if we meet the assumption of normal distribution for the **difference** between the two measures:</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(myDat.paired<span class="sc">$</span>Immature <span class="sc">-</span> myDat.paired<span class="sc">$</span>Mature)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  myDat.paired$Immature - myDat.paired$Mature
+W = 0.96462, p-value = 0.772</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we meet the assumption, so can go on to apply the paired two-sample model:</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(myDat.paired<span class="sc">$</span>Immature, myDat.paired<span class="sc">$</span>Mature, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Paired t-test
+
+data:  myDat.paired$Immature and myDat.paired$Mature
+t = 14.563, df = 14, p-value = 7.522e-10
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ 43.37517 58.35816
+sample estimates:
+mean difference 
+       50.86667 </code></pre>
+</div>
+</div>
+<p>Again, results between the GLM and paired two-sample test are similar (i.e.&nbsp;both say there is evidence of an effect of <code>State</code> on <code>WtChange</code>, while accounting for observation dependence due to <code>ID</code>)</p>
+<hr>
+</section>
+<section id="resp-cat-where-you-have-a-categorical-covariate-with-only-two-factor-levels-and-observation-dependence---glm-vs.-wilcoxon-signed-rank" class="level4">
+<h4 class="anchored" data-anchor-id="resp-cat-where-you-have-a-categorical-covariate-with-only-two-factor-levels-and-observation-dependence---glm-vs.-wilcoxon-signed-rank">Resp ~ Cat (where you have a categorical covariate with only two factor levels AND observation dependence) - GLM vs.&nbsp;Wilcoxon Signed Rank</h4>
+<p>An example: Abundance is explained by treatment as before and after rewilding or <code>Abund ~ Treat</code>, but observations are dependent on one another as the abundance was measured from the same location before and after rewilding.</p>
+<p>Using our GLM method, we could set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Abund <span class="sc">~</span> Treat <span class="sc">+</span> ID, <span class="co"># hypothesis</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">poisson</span>(<span class="at">link =</span> <span class="st">"log"</span>)) <span class="co"># error distribution assumption </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>where location <code>ID</code> is included as a fixed effect. Note that we could also set up a mixed model including <code>ID</code> as a random effect<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p>Here we can get a p-value associated with our covariate with:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(startMod.glm, <span class="at">test =</span> <span class="st">"Chisq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Deviance Table
+
+Model: poisson, link: log
+
+Response: Abund
+
+Terms added sequentially (first to last)
+
+      Df Deviance Resid. Df Resid. Dev Pr(&gt;Chi)    
+NULL                     29    125.214             
+Treat  1   97.585        28     27.629   &lt;2e-16 ***
+ID     1    0.146        27     27.483   0.7028    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Using a classical model, we can fit a paired two-sample model. We first need to change the format of our data from long:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(myDat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID  Treat Abund
+1  1 Before     1
+2  2 Before     8
+3  3 Before     4
+4  4 Before     3
+5  5 Before     2
+6  6 Before     2</code></pre>
+</div>
+</div>
+<p>to wide:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2) <span class="co"># load the reshape package</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>myDat.paired <span class="ot">&lt;-</span> <span class="fu">dcast</span>(myDat, ID<span class="sc">~</span>Treat) <span class="co"># change orientation from long to wide</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using Abund as value column: use value.var to override.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(myDat.paired)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID After Before
+1  1    16      1
+2  2     9      8
+3  3    14      4
+4  4     9      3
+5  5    11      2
+6  6    10      2</code></pre>
+</div>
+</div>
+<p>Then we can fit a Wilcoxon signed rank model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(myDat.paired<span class="sc">$</span>Before, <span class="co"># observations before</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>            myDat.paired<span class="sc">$</span>After, <span class="co"># observation after</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>) <span class="co"># the observations are paired by rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wilcox.test.default(myDat.paired$Before, myDat.paired$After, :
+cannot compute exact p-value with ties</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon signed rank test with continuity correction
+
+data:  myDat.paired$Before and myDat.paired$After
+V = 0, p-value = 0.0007211
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<p>Again, results between the GLM and paired two-sample test are similar (i.e.&nbsp;both say there is evidence of an effect of <code>Treat</code> on <code>Abund</code>, while accounting for observation dependence due to <code>ID</code>)</p>
+</section>
+</section>
+<section id="resp-constant" class="level3">
+<h3 class="anchored" data-anchor-id="resp-constant">Resp ~ constant</h3>
+<p>The formula notation may look like the null model but it is slightly different. This hypothesis states that our mean value is equal to a known value. In classical testing, this is sometimes called a “one sample” test. Note that there are no covariates here.</p>
+<section id="resp-constant-with-a-normal-error-distribution-assumption---glm-vs.-one-sample-t-test" class="level4">
+<h4 class="anchored" data-anchor-id="resp-constant-with-a-normal-error-distribution-assumption---glm-vs.-one-sample-t-test">Resp ~ constant with a normal error distribution assumption - GLM vs.&nbsp;one-sample t-test</h4>
+<p>An example: monthly weight change is 50 g or WtChange ~ 50</p>
+<p>Using our GLM method we need to subtract the constant from the response and would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(WtChange <span class="sc">-</span> <span class="dv">50</span> <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># hypothesis</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = WtChange - 50 ~ 1, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Deviance Residuals: 
+   Min      1Q  Median      3Q     Max  
+-9.608  -4.833   2.042   3.017  11.992  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)    2.008      2.007   1.001    0.339
+
+(Dispersion parameter for gaussian family taken to be 48.34629)
+
+    Null deviance: 531.81  on 11  degrees of freedom
+Residual deviance: 531.81  on 11  degrees of freedom
+AIC: 83.551
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p>and would go on with our statistical modelling framework.</p>
+<p>Using a classical model, we can choose the one-sample t-test:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(myDat<span class="sc">$</span>WtChange) <span class="co"># first check to see the response is normally distributed with a shapiro test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  myDat$WtChange
+W = 0.93208, p-value = 0.4027</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(myDat<span class="sc">$</span>WtChange, <span class="co"># response</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">50</span>) <span class="co"># constant to check</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  myDat$WtChange
+t = 1.0006, df = 11, p-value = 0.3385
+alternative hypothesis: true mean is not equal to 50
+95 percent confidence interval:
+ 47.59051 56.42615
+sample estimates:
+mean of x 
+ 52.00833 </code></pre>
+</div>
+</div>
+<p>Notice that the two methods lead to <strong>identical</strong> results.</p>
+</section>
+<section id="resp-constant-with-a-non-normal-but-continuous-error-distribution-assumption---glm-vs.-one-sample-wilcoxon-test" class="level4">
+<h4 class="anchored" data-anchor-id="resp-constant-with-a-non-normal-but-continuous-error-distribution-assumption---glm-vs.-one-sample-wilcoxon-test">Resp ~ constant with a non-normal (but continuous) error distribution assumption - GLM vs.&nbsp;one-sample Wilcoxon test</h4>
+<p>An example: tree height is 30m or <code>Height ~ 30</code></p>
+<p>Using our GLM method we need to subtract the constant from the response and would set up our starting model as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>startMod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Height <span class="sc">-</span> <span class="dv">30</span> <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># hypothesis</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> myDat, <span class="co"># data</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>)) <span class="co"># error distribution assumption</span></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(startMod.glm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Height - 30 ~ 1, family = gaussian(link = "identity"), 
+    data = myDat)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-6.2556  -2.7556   0.4444   3.0444   4.5444  
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)  -0.1444     1.1864  -0.122    0.906
+
+(Dispersion parameter for gaussian family taken to be 12.66778)
+
+    Null deviance: 101.34  on 8  degrees of freedom
+Residual deviance: 101.34  on 8  degrees of freedom
+AIC: 51.332
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p>and would go on with our statistical modelling framework. Note that the error distribution assumption here is still normal because our response is <code>Height - 30</code> which could be negative or positive, and is continuous.</p>
+<p>Using a classical model, we can choose the one-sample Wilcoxon test:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(myDat<span class="sc">$</span>Height, <span class="co"># response</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">30</span>) <span class="co"># constant to check</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wilcox.test.default(myDat$Height, mu = 30): cannot compute exact
+p-value with ties</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon signed rank test with continuity correction
+
+data:  myDat$Height
+V = 22.5, p-value = 1
+alternative hypothesis: true location is not equal to 30</code></pre>
+</div>
+</div>
+<p>Notice that the two methods lead to similar results (both methods say there is evidence that the average tree height is similar to 30m)</p>
+<hr style="border:1px solid grey">
+<!--- 
+
+    - linear regression
+    - correlation
+    - one sample t-test
+    - dependent (paired) samples t-test as `RespAfter - RespBefore ~ 1`
+    - independent samples t-test
+    - one-way anova
+    - factorial anova (more than one covariate)
+    
+    --->
+
+
+</section>
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>See Chapter 8 in our Crawley book<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>see Week 9’s course notes for a discussion of p-values, and their limitations<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>there is also a classical model called prop.test() for binomially distributed data<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>note the capital letter A here<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>See Week 13’s course notes for more<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>See Week 13’s course notes for more<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/NeuheimerLab\.github\.io\/DSPProgram\.AUBiology\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

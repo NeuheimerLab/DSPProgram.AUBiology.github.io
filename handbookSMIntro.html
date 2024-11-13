@@ -209,14 +209,14 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="why-statistics">Why statistics?</h2>
 <p>All science is explaining variability - explaining why observations are changing in time and/or space. These explanations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> lead us to mechanistic understandings of why the world is as we observe it.</p>
 <p>As biologists, the variability that you are interested in relates to the biological world, but your job is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.</p>
-<p>You need your explanations of variability to be quantitative in order to:</p>
+<p>You need your explanations of variability to be <strong>quantitative</strong> in order to:</p>
 <ul>
 <li>communicate how certain you are with your explanation,</li>
 <li>communicate how much variability still remains unexplained, and</li>
 <li>make useful predictions about the biological world.</li>
 </ul>
 <p>Statistics provides the mathematical tools<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to accomplish these tasks. Statistics help you determine the evidence for causal<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> mechanisms. And statistics help you make useful predictions<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> about how a biological system might behave at a different time or location.</p>
-<p>Statistics help us answer:</p>
+<p>Statistics help you answer:</p>
 <ul>
 <li>can you explain the variability that you are seeing?<br>
 </li>
@@ -226,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="why-statistical-modelling" class="level2">
 <h2 class="anchored" data-anchor-id="why-statistical-modelling">Why statistical <strong><em>modelling</em></strong>?</h2>
-<p>You can quantify how much variability you can explain with your research hypothesis through statistical modelling. Your statistical model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:</p>
+<p>You can quantify how much variability you can explain with your research hypothesis through <strong>statistical modelling</strong>. Your statistical model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:</p>
 <ul>
 <li>can I explain the variability that I am seeing? (Can I reject my hypothesis?)</li>
 <li>given my hypothesis, how much variation in the observations can I explain?</li>
@@ -244,8 +244,8 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="./statsModFramework.png" align="right" width="150"></p>
 <p>The focus of this section of the handbook is statistics that can be applied to your work as a biologist. For that reason, the motivation for what we are going to do together comes directly from your biological research hypotheses. As a biologist, you have a research hypothesis that you want to test. The method presented in this handbook will help you test it. You will learn how to move from biological theory to hypothesis to the statistical modelling process you will use to test your hypothesis.</p>
 <p>You will learn this process of statistical modelling by walking through a “Statistical Modelling Framework”. This is a set of steps that you can use to go from your research hypothesis to designing a model, testing your hypothesis and communicating the results.</p>
-<p>This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.</p>
-<p>As we will discuss later in the handbook, working through this framework will also guide you in creating the “guts” of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I’m trying to explain?). Once through, you’ll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in <a href="DSPPH_SM_Communicating.qmd">section</a>.</p>
+<p>This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. You will be able to apply the framework to help you in your statistical analysis in your courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.</p>
+<p>As we will discuss later in the handbook, working through this framework will also guide you in creating the “guts” of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I’m trying to explain?). Once through, you’ll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in <a href="./DSPPH_SM_Communicating.html">the section on Communicating</a>.</p>
 <p>A note about our Statistical Modelling Framework: The steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e.&nbsp;the model is a valid one that you can use to test your hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.</p>
 <section id="steps-in-the-statistical-modelling-framework" class="level3">
 <h3 class="anchored" data-anchor-id="steps-in-the-statistical-modelling-framework">Steps in the statistical modelling framework:</h3>
@@ -304,16 +304,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="where-we-will-begin-generalized-linear-models-glms" class="level3">
 <h3 class="anchored" data-anchor-id="where-we-will-begin-generalized-linear-models-glms">Where we will begin: generalized linear models (GLMs)</h3>
 <p>To begin with, we will be discussing generalized linear models (GLMs) as models that can be useful to test many different hypotheses. Also, understanding how GLMs can be used to test your hypothesis will help you understand other, including more advanced, statistical models (Pongpipat_et_al_PracticalExtensionStatisticsForPsychology).</p>
-<p>Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we compare GLMs to alternative model types <a href="ExCompareTraditionalGLMs.qmd">here</a>. And remember: the steps in the statistical modelling framework are generally applicable. Regardless of the method you apply, you need to ground your choices in good biological and statistical theory.</p>
+<p>Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we compare GLMs to alternative model types <a href="./ExCompareTraditionalGLMs.html">here</a>. And remember: the steps in the statistical modelling framework are generally applicable. Regardless of the method you apply, you need to ground your choices in good biological and statistical theory.</p>
 </section>
 </section>
 <section id="the-examples" class="level2">
-<h2 class="anchored" data-anchor-id="the-examples"><a href="examples.qmd">The examples</a></h2>
-<p>Here we’ve gathered examples following our statistical modelling framework structure. <a href="./feedback.html">You can request/contribute new examples here</a></p>
+<h2 class="anchored" data-anchor-id="the-examples">The examples</h2>
+<p>Here we’ve gathered <a href="examples.qmd">TBA_examples</a> following our statistical modelling framework structure. <a href="./feedback.html">You can request/contribute new examples here</a></p>
 </section>
 <section id="from-statistical-modelling-to-scientific-report-writing" class="level2">
 <h2 class="anchored" data-anchor-id="from-statistical-modelling-to-scientific-report-writing">From statistical modelling to scientific report writing</h2>
-<p><a href="communication.qmd">Here</a> you can see how you can use the steps in the Statistical Modelling Framework to outline your communication of your hypothesis testing in reports and paper.</p>
+<p><a href="./DSPPH_SM_Communicating.html">Here</a> you can see how you can use the steps in the Statistical Modelling Framework to outline your communication of your hypothesis testing in reports and paper.</p>
 </section>
 <section id="where-to-from-here" class="level2">
 <h2 class="anchored" data-anchor-id="where-to-from-here">Where to from here?</h2>

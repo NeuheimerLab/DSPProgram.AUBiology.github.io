@@ -399,12 +399,12 @@ Another example
 <div class="callout-body-container callout-body">
 <p>Here is another example:</p>
 <p>if your hypothesis is</p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span></p>
 <p>your candidate model set is</p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span></p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + 1\)</span></p>
-<p><span class="math inline">\(Resp \sim Cov1 + 1\)</span></p>
-<p><span class="math inline">\(Resp \sim Cov2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred2 + 1\)</span></p>
 <p><span class="math inline">\(Resp \sim 1\)</span></p>
 <p>Note that the more predictors you have in your model, the bigger your candidate model set.</p>
 </div>
@@ -581,12 +581,12 @@ More examples
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>if our starting hypothesis was:</p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span></p>
 <ul>
-<li><p>A best-specified model of <span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span> would indicate that we have evidence that there are effects of <code>Cov1</code> and <code>Cov2</code> on <code>Resp</code> and that the effect of <code>Cov1</code> on <code>Resp</code> depends on <code>Cov2</code> (an interaction).</p></li>
-<li><p>A best-specified model of <span class="math inline">\(Resp \sim Cov1 + Cov2 + 1\)</span> would indicate that we have evidence that there are effects of <code>Cov1</code> and <code>Cov2</code> on <code>Resp</code> but no evidence of an interaction effect.</p></li>
-<li><p>A best-specified model of <span class="math inline">\(Resp \sim Cov1 + 1\)</span> would indicate that we have evidence that there is an effect of <code>Cov1</code> but not <code>Cov2</code> on <code>Resp</code>.</p></li>
-<li><p>A best-specified model of <span class="math inline">\(Resp \sim 1\)</span> (i.e.&nbsp;the null hypothesis) would indicate that we have no evidence for effects of <code>Cov1</code> or <code>Cov2</code> on <code>Resp</code>. This is also a valid scientific result!</p></li>
+<li><p>A best-specified model of <span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span> would indicate that we have evidence that there are effects of <code>Pred1</code> and <code>Pred2</code> on <code>Resp</code> and that the effect of <code>Pred1</code> on <code>Resp</code> depends on <code>Pred2</code> (an interaction).</p></li>
+<li><p>A best-specified model of <span class="math inline">\(Resp \sim Pred1 + Pred2 + 1\)</span> would indicate that we have evidence that there are effects of <code>Pred1</code> and <code>Pred2</code> on <code>Resp</code> but no evidence of an interaction effect.</p></li>
+<li><p>A best-specified model of <span class="math inline">\(Resp \sim Pred1 + 1\)</span> would indicate that we have evidence that there is an effect of <code>Pred1</code> but not <code>Pred2</code> on <code>Resp</code>.</p></li>
+<li><p>A best-specified model of <span class="math inline">\(Resp \sim 1\)</span> (i.e.&nbsp;the null hypothesis) would indicate that we have no evidence for effects of <code>Pred1</code> or <code>Pred2</code> on <code>Resp</code>. This is also a valid scientific result!</p></li>
 </ul>
 </div>
 </div>
@@ -649,12 +649,12 @@ refinements of your hypothesis after you collect the data will result in a hypot
 <section id="the-candidate-model-set" class="level3">
 <h3 class="anchored" data-anchor-id="the-candidate-model-set">The candidate model set</h3>
 <p>We expand this idea from two models to all models in your “candidate model set”. This set are the models representing all possible covariate combinations. So if your hypothesis is</p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span></p>
 <p>your candidate model set is</p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span></p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + 1\)</span></p>
-<p><span class="math inline">\(Resp \sim Cov1 + 1\)</span></p>
-<p><span class="math inline">\(Resp \sim Cov2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred2 + 1\)</span></p>
 <p><span class="math inline">\(Resp \sim 1\)</span></p>
 <p>Model selection for hypothesis testing therefore involves:</p>
 <ul>
@@ -675,20 +675,20 @@ refinements of your hypothesis after you collect the data will result in a hypot
 <h3 class="anchored" data-anchor-id="choosing-you-best-specified-model">Choosing you best-specified model</h3>
 <!--- vs. backward selection, etc --->
 <p>For example, if your starting model is</p>
-<p><span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span></p>
+<p><span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span></p>
 <p>your candidate model set is:</p>
-<p>1: <span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span></p>
-<p>2: <span class="math inline">\(Resp \sim Cov1 + Cov2 + 1\)</span></p>
-<p>3: <span class="math inline">\(Resp \sim Cov1 + 1\)</span></p>
-<p>4: <span class="math inline">\(Resp \sim Cov2 + 1\)</span></p>
+<p>1: <span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span></p>
+<p>2: <span class="math inline">\(Resp \sim Pred1 + Pred2 + 1\)</span></p>
+<p>3: <span class="math inline">\(Resp \sim Pred1 + 1\)</span></p>
+<p>4: <span class="math inline">\(Resp \sim Pred2 + 1\)</span></p>
 <p>5: <span class="math inline">\(Resp \sim 1\)</span>.</p>
 <p>You will fit each of these models and estimate their AIC, for example:</p>
-<p>1: <span class="math inline">\(Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1\)</span> (AIC = 60)</p>
-<p>2: <span class="math inline">\(Resp \sim Cov1 + Cov2 + 1\)</span> (AIC = 78)</p>
-<p>3: <span class="math inline">\(Resp \sim Cov1 + 1\)</span> (AIC = 20)</p>
-<p>4: <span class="math inline">\(Resp \sim Cov2 + 1\)</span> (AIC = 140)</p>
+<p>1: <span class="math inline">\(Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1\)</span> (AIC = 60)</p>
+<p>2: <span class="math inline">\(Resp \sim Pred1 + Pred2 + 1\)</span> (AIC = 78)</p>
+<p>3: <span class="math inline">\(Resp \sim Pred1 + 1\)</span> (AIC = 20)</p>
+<p>4: <span class="math inline">\(Resp \sim Pred2 + 1\)</span> (AIC = 140)</p>
 <p>5: <span class="math inline">\(Resp \sim 1\)</span> (AIC = 234).</p>
-<p>You then use this information to pick your best-specified model as the model with the lowest AIC<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a>. Your best-specified model tells you how to interpret the evidence for your hypothesis. With the example above, you would conclude that the 3rd model (<span class="math inline">\(Resp \sim Cov1 + 1\)</span>) is your best-specified model (it has by far the lowest AIC), indicating that <span class="math inline">\(Cov1\)</span> explains variablity in <span class="math inline">\(Resp\)</span>, but that there is no evidence that <span class="math inline">\(Cov2\)</span> explains variability in <span class="math inline">\(Resp\)</span> (as <span class="math inline">\(Cov2\)</span> doesn’t appear in your best-specified model).</p>
+<p>You then use this information to pick your best-specified model as the model with the lowest AIC<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a>. Your best-specified model tells you how to interpret the evidence for your hypothesis. With the example above, you would conclude that the 3rd model (<span class="math inline">\(Resp \sim Pred1 + 1\)</span>) is your best-specified model (it has by far the lowest AIC), indicating that <span class="math inline">\(Pred1\)</span> explains variablity in <span class="math inline">\(Resp\)</span>, but that there is no evidence that <span class="math inline">\(Pred2\)</span> explains variability in <span class="math inline">\(Resp\)</span> (as <span class="math inline">\(Pred2\)</span> doesn’t appear in your best-specified model).</p>
 <p>Model selection like this can be easily done using the <code>dredge()</code> function in the MuMIn package. We’ll practice this in class.</p>
 
 
