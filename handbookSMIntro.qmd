@@ -10,7 +10,7 @@ All science is explaining variability - explaining why observations are changing
 
 As biologists, the variability that you are interested in relates to the biological world, but your job is really no different from other scientists/researchers/data analysts, etc. - you are all explaining variability.
 
-You need your explanations of variability to be quantitative in order to:
+You need your explanations of variability to be **quantitative** in order to:
 
 -   communicate how certain you are with your explanation,
 -   communicate how much variability still remains unexplained, and
@@ -26,7 +26,7 @@ Statistics provides the mathematical tools[^handbooksmintro-2] to accomplish the
 
 [^handbooksmintro-4]: useful predictions will always include uncertainty
 
-Statistics help us answer:
+Statistics help you answer:
 
 -   can you explain the variability that you are seeing?\
 -   given your hypothesis, how much variation can you explain?
@@ -35,7 +35,7 @@ Statistics help us answer:
 
 ## Why statistical ***modelling***?
 
-You can quantify how much variability you can explain with your research hypothesis through statistical modelling. Your statistical model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:
+You can quantify how much variability you can explain with your research hypothesis through **statistical modelling**. Your statistical model represents your research hypothesis in a mathematical structure. This mathematical structure can be tested against your data to determine what evidence there is for your hypothesis:
 
 -   can I explain the variability that I am seeing? (Can I reject my hypothesis?)
 -   given my hypothesis, how much variation in the observations can I explain?
@@ -59,9 +59,9 @@ The focus of this section of the handbook is statistics that can be applied to y
 
 You will learn this process of statistical modelling by walking through a "Statistical Modelling Framework". This is a set of steps that you can use to go from your research hypothesis to designing a model, testing your hypothesis and communicating the results.
 
-This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. And after you leave the course you will be able to apply the framework to help you in your statistical analysis in other courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.
+This handbook will walk through the parts of this framework one by one. During DSP modules throughout your degree, you will do the same in class while you practice applying the framework to case studies. In this way, you should see how the framework is generally applicable but also flexible. You will be able to apply the framework to help you in your statistical analysis in your courses, your thesis, and your future career - in every case, your process will take its starting point and focus from the hypothesis that is motivating you.
 
-As we will discuss later in the handbook, working through this framework will also guide you in creating the "guts" of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I'm trying to explain?). Once through, you'll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in [section](DSPPH_SM_Communicating.qmd).
+As we will discuss later in the handbook, working through this framework will also guide you in creating the "guts" of a paper or report. As well as clarifying how and why you made your analysis choices, it will guide you in describing your motivation behind your research question (why is it worthwhile to spend time explaining this variation?) as well as the mechanisms behind your research hypothesis (why do I think X is responsible for the variation I'm trying to explain?). Once through, you'll have a solid draft that can be the basis of a report, thesis chapter or scientific paper. We will talk about how this works in [the section on Communicating](DSPPH_SM_Communicating.qmd).
 
 
 A note about our Statistical Modelling Framework: The steps in the image to the right as a linear process but it is not actually a linear process. As you will see in the examples, sometimes you will need to make best guesses[^handbooksmintro-5] as to what model might be useful and only after confronting the model with your data will you know if your guesses were reasonable (and useful!) - i.e. the model is a valid one that you can use to test your hypothesis. We will talk about how to find a useful model, how to choose when there are multiple options, and how to communicate your choices.
@@ -139,13 +139,13 @@ To begin with, we will be discussing generalized linear models (GLMs) as models 
 
 Remember: the model you choose is just an approximation of the real world. This means that often times alternative models would be possible (models like t-tests, ANOVAs, ANCOVAs, etc.^[Don't worry if these terms don't mean anything to you yet - more to come!]). In fact, you may be collaborating with someone who wants to model your hypothesis with a different method. In this handbook, we compare GLMs to alternative model types [here](ExCompareTraditionalGLMs.qmd). And remember: the steps in the statistical modelling framework are generally applicable. Regardless of the method you apply, you need to ground your choices in good biological and statistical theory.
 
-## [The examples](examples.qmd) 
+## The examples
 
-Here we've gathered examples following our statistical modelling framework structure. [You can request/contribute new examples here](feedback.qmd)
+Here we've gathered [TBA_examples](examples.qmd) following our statistical modelling framework structure. [You can request/contribute new examples here](feedback.qmd)
 
 ## From statistical modelling to scientific report writing
 
-[Here](communication.qmd) you can see how you can use the steps in the Statistical Modelling Framework to outline your communication of your hypothesis testing in reports and paper.
+[Here](DSPPH_SM_Communicating.qmd) you can see how you can use the steps in the Statistical Modelling Framework to outline your communication of your hypothesis testing in reports and paper.
 
 ## Where to from here?
 TBA:
