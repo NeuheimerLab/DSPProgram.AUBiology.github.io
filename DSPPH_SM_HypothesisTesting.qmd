@@ -211,17 +211,17 @@ Here is another example:
 
 if your hypothesis is
 
-$Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$
 
 your candidate model set is 
 
-$Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$
 
-$Resp \sim Cov1 + Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + 1$
 
-$Resp \sim Cov1 + 1$
+$Resp \sim Pred1 + 1$
 
-$Resp \sim Cov2 + 1$
+$Resp \sim Pred2 + 1$
 
 $Resp \sim 1$
 
@@ -389,15 +389,15 @@ We can conclude that there is evidence that `Prey` explains variability in `WtCh
 
 if our starting hypothesis was: 
 
-$Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$
 
-* A best-specified model of $Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$ would indicate that we have evidence that there are effects of `Cov1` and `Cov2` on `Resp` and that the effect of `Cov1` on `Resp` depends on `Cov2` (an interaction).
+* A best-specified model of $Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$ would indicate that we have evidence that there are effects of `Pred1` and `Pred2` on `Resp` and that the effect of `Pred1` on `Resp` depends on `Pred2` (an interaction).
 
-* A best-specified model of $Resp \sim Cov1 + Cov2 + 1$ would indicate that we have evidence that there are effects of `Cov1` and `Cov2` on `Resp` but no evidence of an interaction effect.
+* A best-specified model of $Resp \sim Pred1 + Pred2 + 1$ would indicate that we have evidence that there are effects of `Pred1` and `Pred2` on `Resp` but no evidence of an interaction effect.
 
-* A best-specified model of $Resp \sim Cov1 + 1$ would indicate that we have evidence that there is an effect of `Cov1` but not `Cov2` on `Resp`.
+* A best-specified model of $Resp \sim Pred1 + 1$ would indicate that we have evidence that there is an effect of `Pred1` but not `Pred2` on `Resp`.
 
-* A best-specified model of $Resp \sim 1$ (i.e. the null hypothesis) would indicate that we have no evidence for effects of `Cov1` or `Cov2` on `Resp`.  This is also a valid scientific result!
+* A best-specified model of $Resp \sim 1$ (i.e. the null hypothesis) would indicate that we have no evidence for effects of `Pred1` or `Pred2` on `Resp`.  This is also a valid scientific result!
 
 :::
 
@@ -483,17 +483,17 @@ Note that model 2 is obtained by making $\beta_1 = 0$.  If you determined which 
 ### The candidate model set
 We expand this idea from two models to all models in your "candidate model set".  This set are the models representing all possible covariate combinations.  So if your hypothesis is
 
-$Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$
 
 your candidate model set is 
 
-$Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$
 
-$Resp \sim Cov1 + Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + 1$
 
-$Resp \sim Cov1 + 1$
+$Resp \sim Pred1 + 1$
 
-$Resp \sim Cov2 + 1$
+$Resp \sim Pred2 + 1$
 
 $Resp \sim 1$
 
@@ -522,33 +522,33 @@ In all cases, the model with the lowest AIC is our "best-specified" model, thoug
 
 For example, if your starting model is 
 
-$Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$
+$Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$
 
 your candidate model set is:
 
-1: $Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$ 
+1: $Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$ 
 
-2: $Resp \sim Cov1 + Cov2 + 1$ 
+2: $Resp \sim Pred1 + Pred2 + 1$ 
 
-3: $Resp \sim Cov1 + 1$ 
+3: $Resp \sim Pred1 + 1$ 
 
-4: $Resp \sim Cov2 + 1$ 
+4: $Resp \sim Pred2 + 1$ 
 
 5: $Resp \sim 1$. 
 
 You will fit each of these models and estimate their AIC, for example: 
 
-1: $Resp \sim Cov1 + Cov2 + Cov1:Cov2 + 1$ (AIC = 60)
+1: $Resp \sim Pred1 + Pred2 + Pred1:Pred2 + 1$ (AIC = 60)
 
-2: $Resp \sim Cov1 + Cov2 + 1$ (AIC = 78)
+2: $Resp \sim Pred1 + Pred2 + 1$ (AIC = 78)
 
-3: $Resp \sim Cov1 + 1$ (AIC = 20)
+3: $Resp \sim Pred1 + 1$ (AIC = 20)
 
-4: $Resp \sim Cov2 + 1$ (AIC = 140)
+4: $Resp \sim Pred2 + 1$ (AIC = 140)
 
 5: $Resp \sim 1$ (AIC = 234).
 
-You then use this information to pick your best-specified model as the model with the lowest AIC^[models within 2 of the lowest AIC are all chosen as the best-specified model].  Your best-specified model tells you how to interpret the evidence for your hypothesis.  With the example above, you would conclude that the 3rd model ($Resp \sim Cov1 + 1$) is your best-specified model (it has by far the lowest AIC), indicating that $Cov1$ explains variablity in $Resp$, but that there is no evidence that $Cov2$ explains variability in $Resp$ (as $Cov2$ doesn't appear in your best-specified model).  
+You then use this information to pick your best-specified model as the model with the lowest AIC^[models within 2 of the lowest AIC are all chosen as the best-specified model].  Your best-specified model tells you how to interpret the evidence for your hypothesis.  With the example above, you would conclude that the 3rd model ($Resp \sim Pred1 + 1$) is your best-specified model (it has by far the lowest AIC), indicating that $Pred1$ explains variablity in $Resp$, but that there is no evidence that $Pred2$ explains variability in $Resp$ (as $Pred2$ doesn't appear in your best-specified model).  
 
 Model selection like this can be easily done using the `dredge()` function in the MuMIn package. We'll practice this in class.
 

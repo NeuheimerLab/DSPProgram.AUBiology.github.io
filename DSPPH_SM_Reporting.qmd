@@ -608,7 +608,7 @@ Let's compare this to the traditional $R^2$:
 
 Note that the two estimates are similar: One nice feature of the $R^2_{LR}$ is that it is equivalent to the regular $R^2$ when our model assumes a normal error distribution assumption and linear shape assumption, so **you can use $R^2_{LR}$ for any of the models that we are discussing in class.**
 
-## how important each of your predictors is in explaining that variation
+## how important is each of your predictors in explaining that variation
 
 When you have more than one predictor in your model. you may also want to report how relatively important each predictor is to explaining deviance in your response.  This is also called "partitioning the explained deviance" to the predictors.
 
