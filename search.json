@@ -102,21 +102,21 @@
     "href": "index.html",
     "title": "Data Skills Portfolio Program",
     "section": "",
-    "text": "The Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.\nThe DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.\nHere you will find a description of the program along with DSP handbook materials.\nExplore and enjoy!\nAnd remember: your feedback is welcome!\n\n\n\nto the Data Skills Portfolio Program Handbook for\n\nData Collection & Curation\nData Analysis\nStatistical Modelling"
+    "text": "The Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.\nThe DSP Program is designed to help you develop robust and useful quantitative skills for biological research and many fields beyond.\nHere you will find a description of the program along with DSP handbook materials.\nExplore and enjoy!\nAnd remember: your feedback is welcome!\n\n\n\nto the Data Skills Portfolio Program Handbook for\n\nData Collection & Curation\nData Management\nStatistical Modelling"
   },
   {
     "objectID": "index.html#draft-website",
     "href": "index.html#draft-website",
     "title": "Data Skills Portfolio Program",
     "section": "",
-    "text": "The Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.\nThe DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.\nHere you will find a description of the program along with DSP handbook materials.\nExplore and enjoy!\nAnd remember: your feedback is welcome!"
+    "text": "The Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.\nThe DSP Program is designed to help you develop robust and useful quantitative skills for biological research and many fields beyond.\nHere you will find a description of the program along with DSP handbook materials.\nExplore and enjoy!\nAnd remember: your feedback is welcome!"
   },
   {
     "objectID": "index.html#quick-links",
     "href": "index.html#quick-links",
     "title": "Data Skills Portfolio Program",
     "section": "",
-    "text": "to the Data Skills Portfolio Program Handbook for\n\nData Collection & Curation\nData Analysis\nStatistical Modelling"
+    "text": "to the Data Skills Portfolio Program Handbook for\n\nData Collection & Curation\nData Management\nStatistical Modelling"
   },
   {
     "objectID": "handbookDCIntro.html",
@@ -362,56 +362,56 @@
   {
     "objectID": "handbookDAIntro.html",
     "href": "handbookDAIntro.html",
-    "title": "Data Analysis Handbook",
+    "title": "Data Management Handbook",
     "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nTBA_Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data analysis tasks.",
+    "text": "In general we will be encouraging you to do all data management skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your management separate from the data (and thereby safeguard the data),\nkeep a record of all your management steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your management tasks.\n\nThat said, there may be times where you need to do management in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your management separate from your data (e.g. in a separate sheet), and\nkeep a record of all your management steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.\n\n\n\n\n\nA bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.\n\n\n\nTBA_Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.\n\n\n\n\nHere we will provide examples of how to accomplish common data management tasks.",
     "crumbs": [
       "The DSP Program Handbook",
-      "Data Analysis Handbook"
+      "Data Management Handbook"
     ]
   },
   {
     "objectID": "handbookDAIntro.html#a-note-on-tools",
     "href": "handbookDAIntro.html#a-note-on-tools",
-    "title": "Data Analysis Handbook",
+    "title": "Data Management Handbook",
     "section": "",
-    "text": "In general we will be encouraging you to do all data analysis skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your analysis separate from the data (and thereby safeguard the data),\nkeep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your analysis tasks.\n\nThat said, there may be times where you need to do analysis in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your analysis separate from your data (e.g. in a separate sheet), and\nkeep a record of all your analysis steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
+    "text": "In general we will be encouraging you to do all data management skills using a scripted programming language like R. See ### here for more discussion about this, but in short, a scripted program language will allow you to:\n\nkeep your management separate from the data (and thereby safeguard the data),\nkeep a record of all your management steps (and thereby more easily find errors, make your methods reproducible and transparent), and\nallow you to use powerful tools to accomplish your management tasks.\n\nThat said, there may be times where you need to do management in a spreadsheet editor, like Excel. You will find the ideas presented below are still relevant. And if you do need to analyse data in a program like Excel, remember to:\n\nkeep your management separate from your data (e.g. in a separate sheet), and\nkeep a record of all your management steps. This is done by:\n\ncarefully and completely adding comments explaining your steps,\nand ensuring each cell contains only one step/piece of information.",
     "crumbs": [
       "The DSP Program Handbook",
-      "Data Analysis Handbook"
+      "Data Management Handbook"
     ]
   },
   {
     "objectID": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
     "href": "handbookDAIntro.html#a-note-on-learning-your-first-programming-language",
-    "title": "Data Analysis Handbook",
+    "title": "Data Management Handbook",
     "section": "",
     "text": "A bit on strategy when learning any programming language (we’ll also cover more strategies in class): it’s important to struggle but not for too long. Learning programming means learning computational thinking, or the logic behind breaking a problem down for a computer to solve. Struggling helps us learn this logic (ensuring we truly see the patterns in the code) but struggling too long can be an energy- and time-waster and may make us lose motivation for the process. The most successful path forward is a middle way: Read through this document, try to reproduce the examples and try the exercises, but if you’ve been staring at a problem for hours, it’s time to ask for help. Ask google, ask another R user, ask me, and if you don’t understand the answers you are given, ask again.\nDon’t worry about memorizing the details of this document or our discussions in class. You will always have reference material available to you (e.g. this document, the class notes, R’s help files, the internet). You can let memorization happen organically: Depending on your individual research adventures, you will use some of these tools more often than others and they will likely become committed to memory. Other tools will prove less useful to you. Memorizing this latter group would be a waste of time.",
     "crumbs": [
       "The DSP Program Handbook",
-      "Data Analysis Handbook"
+      "Data Management Handbook"
     ]
   },
   {
     "objectID": "handbookDAIntro.html#the-basics",
     "href": "handbookDAIntro.html#the-basics",
-    "title": "Data Analysis Handbook",
+    "title": "Data Management Handbook",
     "section": "",
     "text": "TBA_Here we will go over essential topics when you’re first learning a programming language.. Here we cover:\n\ninstalling R\nscripts\nbasic syntax\ngetting help in R (how to read help files!)\nobjects and data structures\netc.",
     "crumbs": [
       "The DSP Program Handbook",
-      "Data Analysis Handbook"
+      "Data Management Handbook"
     ]
   },
   {
     "objectID": "handbookDAIntro.html#so-you-want-to",
     "href": "handbookDAIntro.html#so-you-want-to",
-    "title": "Data Analysis Handbook",
+    "title": "Data Management Handbook",
     "section": "",
-    "text": "Here we will provide examples of how to accomplish common data analysis tasks.",
+    "text": "Here we will provide examples of how to accomplish common data management tasks.",
     "crumbs": [
       "The DSP Program Handbook",
-      "Data Analysis Handbook"
+      "Data Management Handbook"
     ]
   },
   {
@@ -419,7 +419,7 @@
     "href": "DSPPH_SM_Reporting.html",
     "title": "Statistical Modelling: Reporting",
     "section": "",
-    "text": "In this chapter you will learn:\n\n\n\n\n\n\nhow to report your hypothesis testing results (including visualizations) to communicate what your model says about your hypothesis."
+    "text": "# Downloading packages -------------------------------------------------------\n- Downloading png from CRAN ...                 OK [39 Kb in 0.4s]\nSuccessfully downloaded 1 package in 0.55 seconds.\n\nThe following package(s) will be installed:\n- png [0.1-8]\nThese packages will be installed into \"~/work/DSPProgram.AUBiology.github.io/DSPProgram.AUBiology.github.io/renv/library/R-4.2/x86_64-pc-linux-gnu\".\n\n# Installing packages --------------------------------------------------------\n- Installing png ...                            OK [installed binary and cached in 0.42s]\nSuccessfully installed 1 package in 0.45 seconds.\n\n\n# Downloading packages -------------------------------------------------------\n- Downloading formatR from CRAN ...             OK [146 Kb in 0.37s]\nSuccessfully downloaded 1 package in 0.45 seconds.\n\nThe following package(s) will be installed:\n- formatR [1.14]\nThese packages will be installed into \"~/work/DSPProgram.AUBiology.github.io/DSPProgram.AUBiology.github.io/renv/library/R-4.2/x86_64-pc-linux-gnu\".\n\n# Installing packages --------------------------------------------------------\n- Installing formatR ...                        OK [installed binary and cached in 0.43s]\nSuccessfully installed 1 package in 0.45 seconds."
   },
   {
     "objectID": "DSPPH_SM_Reporting.html#how-much-variation-in-your-response-is-explained-by-your-model",

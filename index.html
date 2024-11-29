@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-89d1223f096c59d3549f7beb552c8045.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="draft-website">DRAFT WEBSITE</h2>
 <p><img src="./data_skills_logo_2.png" align="right" width="150"></p>
 <p>The Data Skills Portfolio (DSP) Program is based at Aarhus University’s Department of Biology.</p>
-<p>The DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.</p>
+<p>The DSP Program is designed to help you develop robust and useful quantitative skills for biological research and many fields beyond.</p>
 <p>Here you will find a description of the program along with DSP handbook materials.</p>
 <p>Explore and enjoy!</p>
 <p>And remember: <a href="./feedback.html">your feedback is welcome!</a></p>
@@ -166,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 <p>to the Data Skills Portfolio Program Handbook for</p>
 <ul>
 <li><p><a href="./handbookDCIntro.html">Data Collection &amp; Curation</a></p></li>
-<li><p><a href="./handbookDAIntro.html">Data Analysis</a></p></li>
+<li><p><a href="./handbookDAIntro.html">Data Management</a></p></li>
 <li><p><a href="./handbookSMIntro.html">Statistical Modelling</a></p></li>
 </ul>
 
@@ -257,8 +257,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -369,7 +367,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
