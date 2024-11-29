@@ -11,6 +11,8 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 
 ```{r}
 #| echo: false
+
+install.packages("png")
 library(png)
 library(grid)
 library(formatR)
