@@ -1,26 +1,26 @@
 ---
-title: "Data Analysis Handbook"
+title: "Data Management Handbook"
 ---
 
 
-# The DSP Program Handbook for Data Analysis {.unnumbered}
+# The DSP Program Handbook for Data Management {.unnumbered}
 
 ## A note on tools:
 
-**In general** we will be encouraging you to do all data analysis skills using a scripted programming language like R.  See ### here for more discussion about this, but in short, a scripted program language will allow you to:  
+**In general** we will be encouraging you to do all data management skills using a scripted programming language like R.  See ### here for more discussion about this, but in short, a scripted program language will allow you to:  
 
-* keep your analysis separate from the data (and thereby safeguard the data),
+* keep your management separate from the data (and thereby safeguard the data),
 
-* keep a record of all your analysis steps (and thereby more easily find errors, make your methods reproducible and transparent), and 
+* keep a record of all your management steps (and thereby more easily find errors, make your methods reproducible and transparent), and 
 
-* allow you to use powerful tools to accomplish your analysis tasks.  
+* allow you to use powerful tools to accomplish your management tasks.  
 
 
-That said, there may be times where you need to do analysis in a spreadsheet editor, like Excel.  You will find the ideas presented below are still relevant.  And if you do need to analyse data in a program like Excel, remember to:  
+That said, there may be times where you need to do management in a spreadsheet editor, like Excel.  You will find the ideas presented below are still relevant.  And if you do need to analyse data in a program like Excel, remember to:  
 
-* keep your analysis separate from your data (e.g. in a separate sheet), and 
+* keep your management separate from your data (e.g. in a separate sheet), and 
 
-* keep a record of all your analysis steps.  This is done by:
+* keep a record of all your management steps.  This is done by:
 
   + carefully and completely adding comments explaining your steps, 
 
@@ -51,7 +51,7 @@ A bit on strategy when learning any programming language (we'll also cover more 
 
 ## So you want to...
 
-Here we will provide examples of how to accomplish common data analysis tasks.
+Here we will provide examples of how to accomplish common data management tasks.
 
 ### [TBA_... load your data into R](DSPPH_DA_Import.qmd) 
 

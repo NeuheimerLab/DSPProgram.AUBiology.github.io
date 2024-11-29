@@ -69,6 +69,6 @@ You will quickly note that you will not *only* be learning R in the DSP Program.
 
 ## [Data Collection & Curation](handbookDCIntro.qmd)
 
-## [Data Analysis](handbookDAIntro.qmd)
+## [Data Management](handbookDAIntro.qmd)
 
 ## [Statistical Modelling](handbookSMIntro.qmd)

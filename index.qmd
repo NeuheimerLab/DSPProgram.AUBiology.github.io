@@ -10,7 +10,7 @@ title: "Data Skills Portfolio Program"
 
 The Data Skills Portfolio (DSP) Program is based at Aarhus University's Department of Biology.
 
-The DSP Program is designed to help our Biology students develop robust and useful quantitative skills for biological research and many fields beyond.
+The DSP Program is designed to help you develop robust and useful quantitative skills for biological research and many fields beyond.
 
 Here you will find a description of the program along with DSP handbook materials.
 
@@ -24,7 +24,7 @@ to the Data Skills Portfolio Program Handbook for
 
 - [Data Collection & Curation](handbookDCIntro.qmd)
 
-- [Data Analysis](handbookDAIntro.qmd)
+- [Data Management](handbookDAIntro.qmd)
 
 - [Statistical Modelling](handbookSMIntro.qmd)
 
