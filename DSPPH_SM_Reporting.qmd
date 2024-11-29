@@ -76,6 +76,7 @@ Finally, note that I am not going through all the steps that got us to these exa
 
 install.packages("dplyr")
 install.packages("MuMIn")
+install.packages("DHARMa")
 
 
 ```
